@@ -3,7 +3,7 @@
 namespace Application\BDEBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use nk\UserBundle\Entity\User;
+use Application\Sonata\UserBundle\Entity\User;
 use Symfony\Component\Validator\Constraints as Assert;
 use \Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 
