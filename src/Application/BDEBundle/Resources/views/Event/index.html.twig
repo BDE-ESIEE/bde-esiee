@@ -1,0 +1,65 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Calendrier{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    {% stylesheets 
+        'bundles/applicationbde/css/bootstrap-fullcalendar.css'
+
+        filter='cssrewrite,?yui_css' 
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %} 
+{% endblock %}
+
+{% block body %}
+	<aside class="col-lg-12">
+		<section class="panel">
+			<div class="panel-body">
+				<div id="calendar" class="has-toolbar"></div>
+			</div>
+		</section>
+	</aside>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+    {% javascripts 
+        'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js' 
+        'bundles/applicationbde/js/fullcalendar.js' 
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} 
+    <script>
+    	$(function(){
+			$('#calendar').fullCalendar({
+			    header: {
+			        left: 'prev,next today',
+			        center: 'title',
+			        right: 'month,agendaWeek,agendaDay'
+			    },
+			    monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+			    monthNamesShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Dec'],
+			    dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+			    dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+			    buttonText: {
+				    today:    'aujourd\'hui',
+				    month:    'mois',
+				    week:     'semaine',
+				    day:      'jour'
+				},
+				titleFormat: {
+				    day: 'dddd d MMM, yyyy',
+				    week: "d[ MMM yyyy]{ '&#8212;' d MMM yyyy}",
+				},
+			    firstDay: 1,
+			    weekNumbers: true,
+			    axisFormat: 'H(:mm)',
+			    slotMinutes: 60,
+			    allDaySlot: false,
+			    events: {{ event_json|raw }},
+			});
+    	});
+    </script>
+{% endblock %}

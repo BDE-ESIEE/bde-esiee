@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Media - {{ gallery.name }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets 
+        'bundles/applicationbde/css/jquery.fancybox.css'
+        'bundles/applicationbde/css/gallery.css'
+
+        filter='cssrewrite,?yui_css' 
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block container %}
+    {% sonata_template_box 'Gallery view template' %}
+    <section class="panel">
+        <header class="panel-heading">
+            {{ gallery.name }}
+        </header>
+        <div class="panel-body">
+            <ul class="grid cs-style-3">
+                {% for galleryHasMedia in gallery.GalleryHasMedias %}
+                    <li>
+                        <figure>
+                            <img src="{% path galleryHasMedia.media, 'big' %}">
+                            <figcaption>
+                                <h3>{{ galleryHasMedia.media.name }}</h3>
+                                {% if galleryHasMedia.media.description is not null %}
+                                    <span>{{ galleryHasMedia.media.description|raw }}</span>
+                                {% endif %}
+                                <a class="fancybox" rel="group" href="{% path galleryHasMedia.media, 'reference' %}" title="{{ galleryHasMedia.media.name }}">
+                                    {% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}
+                                        Télécharger
+                                    {% else %}
+                                        Zoom
+                                    {% endif %}
+                                </a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                {% endfor %}
+          </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts 
+        'bundles/applicationbde/js/jquery.fancybox.js'
+        'bundles/applicationbde/js/toucheffects.js' 
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} 
+    <script>
+        $(function() {
+            //    fancybox
+            jQuery(".fancybox").fancybox();
+        });
+    </script>
+{% endblock %}

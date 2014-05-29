@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ club.title }}{% endblock %}
+
+{% block body %}
+    {% sonata_template_box 'Détails du club' %}  
+    <div>
+        <div>
+            <h2>
+                <a>{{ club.title }}</a>
+            </h2>
+
+            {% thumbnail club.logo, 'big' %}
+            <br />
+            {{ club.rawContent|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

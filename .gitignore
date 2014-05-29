@@ -1,0 +1,17 @@
+/www/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/config/parameters.yml
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/vendor/
+/bin/
+/composer.phar
+/composer.lock
+/*.sublime-workspace
+/*.sublime-project
+/www/uploads/media/default/
+/www/css/
+/www/js/

@@ -1,0 +1,33 @@
+application_bde_homepage:
+    pattern:  /
+    defaults: { _controller: ApplicationBDEBundle:Default:index }
+
+application_bde_breguet_shop:
+    pattern:  /shop
+    defaults: { _controller: ApplicationBDEBundle:Shop:index }
+
+application_bde_breguet_shop_filter:
+    pattern:  /shop/filter/{id}
+    defaults: { _controller: ApplicationBDEBundle:Shop:index }
+    requirements:
+        id: \w+
+
+application_bde_breguet_shop_show:
+    pattern:  /shop/view/{id}
+    defaults: { _controller: ApplicationBDEBundle:Shop:view }
+    requirements:
+        id: \d+
+
+application_bde_club:
+    pattern:  /clubs
+    defaults: { _controller: ApplicationBDEBundle:Club:index }
+
+application_bde_club_show:
+    pattern:  /clubs/view/{id}-{shortcode}
+    defaults: { _controller: ApplicationBDEBundle:Club:show }
+    requirements:
+        id: \d+
+
+application_bde_events:
+    pattern: /events
+    defaults: { _controller: ApplicationBDEBundle:Event:index }

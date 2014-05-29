@@ -1,0 +1,92 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Breguet Shop - {{ product.name }}{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+
+    {% stylesheets 
+        'bundles/applicationbde/css/etalage.css'
+
+        filter='cssrewrite,?yui_css' 
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %} 
+{% endblock %}
+
+{% block body %}
+	{{ form_errors(form) }}
+	{{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
+	<div class="col-md-9">
+		<section class="panel">
+			<div class="panel-body">
+				<div class="col-md-6">
+					<ul id="etalage">
+						{% for galleryHasMedia in product.photos.GalleryHasMedias %}
+							<li><img class="etalage_source_image" src="{% path galleryHasMedia.media, 'big' %}"/> </li>
+						{% endfor %}
+					</ul>
+{# 					<div class="pro-img-details">
+						{% thumbnail product.photos.GalleryHasMedias[0].media, 'big' %}
+					</div>
+					<div class="pro-img-list">
+					</div> #}
+				</div>
+				<div class="col-md-6">
+					<h4 class="pro-d-title">
+                        <a href="#" class="">
+                            {{ product.name }}
+                        </a>
+                    </h4>
+					<p>
+						{{ product.rawDescription|raw }}
+					</p>
+					<div class="product_meta">
+						<span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span>
+					</div>
+					{% if product.enableCounter %}
+						<div>
+							<button id="showForm" class="btn btn-round btn-danger" type="button">
+								<i class="fa fa-shopping-cart"></i> Cet article m'intéresse
+							</button>
+						</div>
+						<div id="formSam" style="display:none;">
+							{{ form(form) }}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts 
+        'bundles/applicationbde/js/jquery.etalage.js' 
+
+        filter='?yui_js' 
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} 
+
+	<script>
+		$(function() {
+			$('#showForm').click(function(e) {
+				if ($('#formSam').is(":visible"))
+					$('#formSam').hide();
+				else
+					$('#formSam').show();
+			});
+
+			$('#etalage').etalage({
+				thumb_image_width: 230,
+				thumb_image_height: 230,
+				zoom_area_width: 500,
+				smallthumb_inactive_opacity: 0.3,
+				show_hint: true
+			});
+		})
+	</script>
+{% endblock %}

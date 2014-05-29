@@ -1,0 +1,57 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Media{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    {% stylesheets 
+        'bundles/applicationbde/css/jquery.fancybox.css'
+        'bundles/applicationbde/css/gallery.css'
+
+        filter='cssrewrite,?yui_css' 
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block container %}
+    {% sonata_template_box 'Gallery template' %}
+    <section class="panel">
+        <header class="panel-heading">
+            Media
+        </header>
+        <div class="panel-body">
+            <ul class="grid cs-style-3">
+			    {% for gallery in galleries %}
+			        {# <li><a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid }) }}">{{ gallery.name }}</a></li> #}
+	                <li>
+	                    <figure>
+	                        <img src="{% path gallery.GalleryHasMedias[0].media, 'big' %}">
+	                        <figcaption>
+	                            <h3>{{ gallery.name }}</h3>
+	                            {# <span>lorem ipsume </span> #}
+	                            <a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid }) }}">Parcourir</a>
+	                        </figcaption>
+	                    </figure>
+	                </li>
+			    {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+    {% javascripts 
+        'bundles/applicationbde/js/jquery.fancybox.js'
+        'bundles/applicationbde/js/toucheffects.js' 
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} 
+    <script>
+		$(function() {
+			//    fancybox
+			jQuery(".fancybox").fancybox();
+		});
+    </script>
+{% endblock %}

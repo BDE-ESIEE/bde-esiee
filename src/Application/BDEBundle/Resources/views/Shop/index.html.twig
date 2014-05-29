@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Breguet Shop{% endblock %}
+
+{% block body %}
+    {{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
+    <div class="col-md-9">
+{#         <section class="panel">
+            <div class="panel-body">
+                <div class="pull-right">
+                    <ul class="pagination pagination-sm pro-page-list">
+
+                        <li><a href="#">1</a>
+                        </li>
+                        <li><a href="#">2</a>
+                        </li>
+                        <li><a href="#">3</a>
+                        </li>
+                        <li><a href="#">»</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section> #}
+
+        <div class="row product-list">
+            {% set i = 1 %}
+            {% for product in product_list %}
+                {% if not product.hidden %}
+                    <div class="col-md-4">
+                        <section class="panel">
+                            <div class="pro-img-box">
+                                {% thumbnail product.photos.GalleryHasMedias[0].media, product.photos.defaultFormat with {'class': 'media-object'} %}
+                                <a href="#" class="adtocart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+
+                            <div class="panel-body text-center">
+                                <h4>
+                                    <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}" class="pro-title">
+                                        {{ product.name }}
+                                    </a>
+                                </h4>
+                            </div>
+                        </section>
+                    </div>
+                {% endif %}
+            {% else %}
+                Aucun produit
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

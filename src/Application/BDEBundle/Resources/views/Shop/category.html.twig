@@ -1,0 +1,23 @@
+<div class="col-md-3">
+{#     <section class="panel">
+        <div class="panel-body">
+            <input type="text" placeholder="Keyword Search" class="form-control">
+        </div>
+    </section> #}
+    <section class="panel">
+        <header class="panel-heading">
+            Categorie
+        </header>
+        <div class="panel-body">
+            <ul class="nav prod-cat">
+                {% for category in category_list %}
+                    <li>
+                        <a href="{{ path('application_bde_breguet_shop_filter', {id: category.id}) }}">
+                            <i class="fa fa-angle-right"></i> {{ category.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</div>

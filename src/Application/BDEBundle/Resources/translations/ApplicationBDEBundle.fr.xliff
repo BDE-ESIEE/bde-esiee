@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="" >
+        <body>
+            <trans-unit id="form_label_title">
+                <source>form.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="form_label_shortcode">
+                <source>form.label_shortcode</source>
+                <target>Acronyme</target>
+            </trans-unit>
+            <trans-unit id="form_label_abstract">
+                <source>form.label_abstract</source>
+                <target>Extrait</target>
+            </trans-unit>
+            <trans-unit id="form_label_content">
+                <source>form.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="form_label_logo">
+                <source>form.label_logo</source>
+                <target>Logo</target>
+            </trans-unit>
+
+            <trans-unit id="show_label_title">
+                <source>show.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="show_label_shortcode">
+                <source>show.label_shortcode</source>
+                <target>Acronyme</target>
+            </trans-unit>
+            <trans-unit id="show_label_abstract">
+                <source>show.label_abstract</source>
+                <target>Extrait</target>
+            </trans-unit>
+            <trans-unit id="show_label_content">
+                <source>show.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="show_label_logo">
+                <source>show.label_logo</source>
+                <target>Logo</target>
+            </trans-unit>
+
+            <trans-unit id="filter_label_title">
+                <source>filter.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="filter_label_shortcode">
+                <source>filter.label_shortcode</source>
+                <target>Acronyme</target>
+            </trans-unit>
+            <trans-unit id="filter_label_abstract">
+                <source>filter.label_abstract</source>
+                <target>Extrait</target>
+            </trans-unit>
+            <trans-unit id="filter_label_content">
+                <source>filter.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="filter_label_logo">
+                <source>filter.label_logo</source>
+                <target>Logo</target>
+            </trans-unit>
+
+            <trans-unit id="list_label_title">
+                <source>list.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="list_label_shortcode">
+                <source>list.label_shortcode</source>
+                <target>Acronyme</target>
+            </trans-unit>
+            <trans-unit id="list_label_abstract">
+                <source>list.label_abstract</source>
+                <target>Extrait</target>
+            </trans-unit>
+            <trans-unit id="list_label_content">
+                <source>list.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="list_label_logo">
+                <source>list.label_logo</source>
+                <target>Logo</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_club_list">
+                <source>breadcrumb.link_club_list</source>
+                <target>Liste des Clubs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_club_history">
+                <source>breadcrumb.link_club_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

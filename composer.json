@@ -1,0 +1,70 @@
+{
+    "name": "claros/bde-esiee",
+    "license": "MIT",
+    "type": "project",
+    "description": "Site web du BDE ESIEE Paris",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php"                                     : ">=5.3.3",
+        "symfony/symfony"                         : "~2.4",
+        "doctrine/orm"                            : "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle"                : "~1.2",
+        "twig/extensions"                         : "~1.0",
+        "symfony/assetic-bundle"                  : "~2.3",
+        "symfony/swiftmailer-bundle"              : "~2.3",
+        "symfony/monolog-bundle"                  : "~2.4",
+        "sensio/distribution-bundle"              : "~2.3",
+        "sensio/framework-extra-bundle"           : "~3.0",
+        "sensio/generator-bundle"                 : "~2.3",
+        "incenteev/composer-parameter-handler"    : "~2.0",
+        "friendsofsymfony/rest-bundle"            : "1.3.*",
+        "nelmio/api-doc-bundle"                   : "@stable",
+        "sonata-project/admin-bundle"             : "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "sonata-project/easy-extends-bundle"      : "dev-master",
+        "sonata-project/user-bundle"              : "~2.2",
+        "sonata-project/news-bundle"              : "~2.3",
+        "sonata-project/media-bundle"             : "~2.2",
+        "sonata-project/timeline-bundle"          : "~2.2@dev",
+        "simplethings/entity-audit-bundle"        : "~0.5",
+        "stephpy/TimelineBundle"                  : "~2.0@dev",
+        "stephpy/timeline"                        : "~1.0@dev",
+        "mopa/bootstrap-bundle"                   : "dev-master",
+        "twbs/bootstrap"                          : "dev-master",
+        "shivas/versioning-bundle"                : "dev-master",
+        "friendsofsymfony/comment-bundle"         : "dev-master",
+        "sonata-project/comment-bundle": "~2.2@dev"
+
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "www",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": {
+            "dev-master": "2.4-dev"
+        }
+    }
+}
