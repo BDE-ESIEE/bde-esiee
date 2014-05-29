@@ -10,7 +10,9 @@
             <generator strategy="AUTO" />
         </id>
 
-        <field name="resource_id" column="resource_id" type="integer" />
+        <many-to-one field="resource" target-entity="Application\BDEBundle\Entity\Resource" inversed-by="users">
+        	<join-column name="resource_id" referenced-column-name="id" nullable="false" />
+        </many-to-one>
 
         <field name="week_before_exam" column="week_before_exam" type="integer" />
 

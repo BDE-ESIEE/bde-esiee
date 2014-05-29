@@ -11,12 +11,10 @@
 
 namespace Application\Sonata\UserBundle\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use FOS\UserBundle\Form\Type\RegistrationFormType;
+use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 
-class RegistrationFormType extends RegistrationFormType
+class RegistrationFormType extends BaseType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -30,6 +28,12 @@ class RegistrationFormType extends RegistrationFormType
             ->add('email', 'email', array(
                 'label'                          => 'form.email', 
                 'translation_domain'             => 'FOSUserBundle',
+                'horizontal_label_class'         => 'col-lg-3 col-sm-3 control-label',
+                'horizontal_input_wrapper_class' => 'col-lg-9 col-sm-9',
+            ))
+            ->add('resource', 'entity', array(
+                'class'                          => 'Application\BDEBundle\Entity\Resource',
+                'label'                          => 'Promo :',
                 'horizontal_label_class'         => 'col-lg-3 col-sm-3 control-label',
                 'horizontal_input_wrapper_class' => 'col-lg-9 col-sm-9',
             ))
@@ -49,5 +53,10 @@ class RegistrationFormType extends RegistrationFormType
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
         ;
+    }
+
+    public function getName()
+    {
+        return 'sonata_user_registration';
     }
 }

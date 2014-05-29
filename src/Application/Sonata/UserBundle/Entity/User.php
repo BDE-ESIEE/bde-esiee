@@ -29,9 +29,9 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var integer $resource_id
+     * @var integer $resource
      */
-    protected $resource_id;
+    protected $resource;
 
     /**
      * @var integer $week_before_exam
@@ -46,5 +46,37 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param $resource
+     */
+    public function setResource(Resource $resource)
+    {
+        $this->resource = $resource;
+    }
+
+    /**
+     * @return Resource
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * @param int $weekBeforeExam
+     */
+    public function setWeekBeforeExam($weekBeforeExam)
+    {
+        $this->weekBeforeExam = $weekBeforeExam;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeekBeforeExam()
+    {
+        return $this->weekBeforeExam;
     }
 }
