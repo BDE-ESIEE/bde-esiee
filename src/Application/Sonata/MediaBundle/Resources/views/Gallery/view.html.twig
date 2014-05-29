@@ -31,13 +31,19 @@
                                 {% if galleryHasMedia.media.description is not null %}
                                     <span>{{ galleryHasMedia.media.description|raw }}</span>
                                 {% endif %}
-                                <a class="fancybox" rel="group" href="{% path galleryHasMedia.media, 'reference' %}" title="{{ galleryHasMedia.media.name }}">
-                                    {% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}
-                                        Télécharger
-                                    {% else %}
-                                        Zoom
-                                    {% endif %}
-                                </a>
+                                {% if galleryHasMedia.media.providerName=="sonata.media.provider.youtube" %}
+                                    <a class="fancybox" rel="media-gallery" href="http://www.youtube.com/watch?v={{ galleryHasMedia.media.providerReference }}" title="{{ galleryHasMedia.media.name }}">
+                                        Regarder
+                                    </a>
+                                {% else %}
+                                    <a class="fancybox" rel="group" href="{% path galleryHasMedia.media, 'reference' %}" title="{{ galleryHasMedia.media.name }}">
+                                        {% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}
+                                            Télécharger
+                                        {% else %}
+                                            Zoom
+                                        {% endif %}
+                                    </a>
+                                {% endif %}
                             </figcaption>
                         </figure>
                     </li>
@@ -52,13 +58,18 @@
     {% javascripts 
         'bundles/applicationbde/js/jquery.fancybox.js'
         'bundles/applicationbde/js/toucheffects.js' 
+        'bundles/applicationbde/js/jquery.fancybox-media.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %} 
     <script>
         $(function() {
             //    fancybox
-            jQuery(".fancybox").fancybox();
+            jQuery(".fancybox").fancybox({
+                    helpers : {
+                        media : {}
+                    }
+                });
         });
     </script>
 {% endblock %}
