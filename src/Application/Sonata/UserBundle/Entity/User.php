@@ -29,6 +29,16 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @var integer $resource_id
+     */
+    protected $resource_id;
+
+    /**
+     * @var integer $week_before_exam
+     */
+    protected $week_before_exam;
+
+    /**
      * Get id
      *
      * @return integer $id

@@ -92,6 +92,8 @@ fos_user:
 sonata_user:
     security_acl: true
     manager_type: orm
+    table:
+        user_group: nk_user_user_group
     profile:
         # Profile show page is a dashboard as in SonataAdminBundle
         dashboard:

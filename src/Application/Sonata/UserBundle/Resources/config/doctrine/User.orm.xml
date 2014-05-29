@@ -4,11 +4,15 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                   http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="Application\Sonata\UserBundle\Entity\User" table="fos_user_user">
+    <entity name="Application\Sonata\UserBundle\Entity\User" table="nk_user">
 
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
+
+        <field name="resource_id" column="resource_id" type="integer" />
+
+        <field name="week_before_exam" column="week_before_exam" type="integer" />
 
     </entity>
 

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Club
  *
- * @ORM\Table(name="club")
+ * @ORM\Table(name="bde__club")
  * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\ClubRepository")
  */
 class Club
