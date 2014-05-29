@@ -339,3 +339,6 @@ sonata_classification:
     admin:
         collection:
             class:        Application\Sonata\ClassificationBundle\Admin\CollectionAdmin
+
+shivas_versioning:
+    version_parameter:  application_version
