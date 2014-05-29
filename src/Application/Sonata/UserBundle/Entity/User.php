@@ -51,7 +51,7 @@ class User extends BaseUser
     /**
      * @param $resource
      */
-    public function setResource(Resource $resource)
+    public function setResource(\Application\BDEBundle\Entity\Resource $resource)
     {
         $this->resource = $resource;
     }
