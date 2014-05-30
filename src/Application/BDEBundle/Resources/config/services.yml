@@ -4,7 +4,7 @@ services:
     bde.admin.product:
         class: Application\BDEBundle\Admin\ProductAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Article" }
+            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Article", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\Product
@@ -14,7 +14,7 @@ services:
     bde.admin.product_category:
         class: Application\BDEBundle\Admin\CategoryAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Catégorie" }
+            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Catégorie", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\Category
@@ -34,7 +34,7 @@ services:
     bde.admin.event:
         class: Application\BDEBundle\Admin\EventAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Événement" }
+            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Événement", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\Event

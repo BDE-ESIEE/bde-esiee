@@ -94,6 +94,237 @@
                 <source>breadcrumb.link_club_history</source>
                 <target>Historique des modifications</target>
             </trans-unit>
+
+            <trans-unit id="breadcrumb_link_event_list">
+                <source>breadcrumb.link_event_list</source>
+                <target>Liste des événements</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_event_history">
+                <source>breadcrumb.link_event_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+
+            <trans-unit id="list_label_date_start">
+                <source>list.label_date_start</source>
+                <target>Début</target>
+            </trans-unit>
+            <trans-unit id="list_label_date_end">
+                <source>list.label_date_end</source>
+                <target>Fin</target>
+            </trans-unit>
+            <trans-unit id="list_label_private">
+                <source>list.label_private</source>
+                <target>Privée</target>
+            </trans-unit>
+
+            <trans-unit id="filter_label_date_start">
+                <source>filter.label_date_start</source>
+                <target>Début</target>
+            </trans-unit>
+            <trans-unit id="filter_label_date_end">
+                <source>filter.label_date_end</source>
+                <target>Fin</target>
+            </trans-unit>
+            <trans-unit id="filter_label_private">
+                <source>filter.label_private</source>
+                <target>Privée</target>
+            </trans-unit>
+
+            <trans-unit id="form_label_date_start">
+                <source>form.label_date_start</source>
+                <target>Début</target>
+            </trans-unit>
+            <trans-unit id="form_label_date_end">
+                <source>form.label_date_end</source>
+                <target>Fin</target>
+            </trans-unit>
+            <trans-unit id="form_label_private">
+                <source>form.label_private</source>
+                <target>Privée</target>
+            </trans-unit>
+
+            <trans-unit id="show_label_date_start">
+                <source>show.label_date_start</source>
+                <target>Début</target>
+            </trans-unit>
+            <trans-unit id="show_label_date_end">
+                <source>show.label_date_end</source>
+                <target>Fin</target>
+            </trans-unit>
+            <trans-unit id="show_label_private">
+                <source>show.label_private</source>
+                <target>Privée</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_product_list">
+                <source>breadcrumb.link_product_list</source>
+                <target>Liste des articles</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_product_history">
+                <source>breadcrumb.link_product_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+
+            <trans-unit id="list_label_name">
+                <source>list.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="list_label_hidden">
+                <source>list.label_hidden</source>
+                <target>Masqué</target>
+            </trans-unit>
+            <trans-unit id="list_enable_counter">
+                <source>list.label_enable_counter</source>
+                <target>Activer compteur</target>
+            </trans-unit>
+            <trans-unit id="list_label_categories">
+                <source>list.label_categories</source>
+                <target>Catégories</target>
+            </trans-unit>
+            <trans-unit id="list_label_counter">
+                <source>list.label_counter</source>
+                <target>Compteur</target>
+            </trans-unit>
+            <trans-unit id="list_photos">
+                <source>list.label_photos</source>
+                <target>Photos</target>
+            </trans-unit>
+            <trans-unit id="list_description">
+                <source>list.label_description</source>
+                <target>Description</target>
+            </trans-unit>
+
+            <trans-unit id="filter_label_name">
+                <source>filter.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="filter_label_hidden">
+                <source>filter.label_hidden</source>
+                <target>Masqué</target>
+            </trans-unit>
+            <trans-unit id="filter_enable_counter">
+                <source>filter.label_enable_counter</source>
+                <target>Activer compteur</target>
+            </trans-unit>
+            <trans-unit id="filter_label_categories">
+                <source>filter.label_categories</source>
+                <target>Catégories</target>
+            </trans-unit>
+            <trans-unit id="filter_label_counter">
+                <source>filter.label_counter</source>
+                <target>Compteur</target>
+            </trans-unit>
+            <trans-unit id="filter_photos">
+                <source>filter.label_photos</source>
+                <target>Photos</target>
+            </trans-unit>
+            <trans-unit id="filter_interested_person">
+                <source>filter.label_interested_person</source>
+                <target>Personne intéréssée</target>
+            </trans-unit>
+            <trans-unit id="filter_description">
+                <source>filter.label_description</source>
+                <target>Description</target>
+            </trans-unit>
+
+            <trans-unit id="show_label_name">
+                <source>show.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="show_label_hidden">
+                <source>show.label_hidden</source>
+                <target>Masqué</target>
+            </trans-unit>
+            <trans-unit id="show_enable_counter">
+                <source>show.label_enable_counter</source>
+                <target>Activer compteur</target>
+            </trans-unit>
+            <trans-unit id="show_label_categories">
+                <source>show.label_categories</source>
+                <target>Catégories</target>
+            </trans-unit>
+            <trans-unit id="show_label_counter">
+                <source>show.label_counter</source>
+                <target>Compteur</target>
+            </trans-unit>
+            <trans-unit id="show_photos">
+                <source>show.label_photos</source>
+                <target>Photos</target>
+            </trans-unit>
+            <trans-unit id="show_interested_person">
+                <source>show.label_interested_person</source>
+                <target>Personnes intéréssées</target>
+            </trans-unit>
+            <trans-unit id="show_description">
+                <source>show.label_description</source>
+                <target>Description</target>
+            </trans-unit>
+
+            <trans-unit id="form_label_name">
+                <source>form.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="form_label_hidden">
+                <source>form.label_hidden</source>
+                <target>Masqué</target>
+            </trans-unit>
+            <trans-unit id="form_enable_counter">
+                <source>form.label_enable_counter</source>
+                <target>Activer compteur</target>
+            </trans-unit>
+            <trans-unit id="form_label_categories">
+                <source>form.label_categories</source>
+                <target>Catégories</target>
+            </trans-unit>
+            <trans-unit id="form_label_counter">
+                <source>form.label_counter</source>
+                <target>Compteur</target>
+            </trans-unit>
+            <trans-unit id="form_photos">
+                <source>form.label_photos</source>
+                <target>Photos</target>
+            </trans-unit>
+            <trans-unit id="form_interested_person">
+                <source>form.label_interested_person</source>
+                <target>Personnes intéréssée</target>
+            </trans-unit>
+            <trans-unit id="form_description">
+                <source>form.label_description</source>
+                <target>Description</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_category_list">
+                <source>breadcrumb.link_category_list</source>
+                <target>Liste des catégories</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_category_history">
+                <source>breadcrumb.link_category_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+
+            <trans-unit id="list_label_enabled">
+                <source>list.label_enabled</source>
+                <target>Activé</target>
+            </trans-unit>
+
+            <trans-unit id="form_label_enabled">
+                <source>form.label_enabled</source>
+                <target>Activé</target>
+            </trans-unit>
+
+            <trans-unit id="show_label_enabled">
+                <source>show.label_enabled</source>
+                <target>Activé</target>
+            </trans-unit>
+            <trans-unit id="show_label_products">
+                <source>show.label_products</source>
+                <target>Articles</target>
+            </trans-unit>
+
+            <trans-unit id="filter_label_enabled">
+                <source>filter.label_enabled</source>
+                <target>Activé</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
