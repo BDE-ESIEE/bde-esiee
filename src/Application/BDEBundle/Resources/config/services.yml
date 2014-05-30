@@ -1,7 +1,7 @@
 parameters:
 
 services:
-    sonata.admin.product:
+    bde.admin.product:
         class: Application\BDEBundle\Admin\ProductAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Article" }
@@ -11,30 +11,30 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]
-    sonata.admin.product.category:
+    bde.admin.product_category:
         class: Application\BDEBundle\Admin\CategoryAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Categorie" }
+            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Catégorie" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\Category
             - ~
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]
-    sonata.admin.club:
+    bde.admin.club:
         class: Application\BDEBundle\Admin\ClubAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Pages Clubs", label: "Club", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Club", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\Club
             - ~
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]
-    sonata.admin.event:
+    bde.admin.event:
         class: Application\BDEBundle\Admin\EventAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Calendrier", label: "Evénement" }
+            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Événement" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\Event

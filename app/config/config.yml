@@ -233,6 +233,36 @@ sonata_admin:
                 settings:
                     context: SONATA_ADMIN
                     max_per_page: 10
+        groups:
+            blog:
+                label: Blog
+                items:
+                    - sonata.news.admin.post
+                    - sonata.comment.admin.thread
+                    - sonata.classification.admin.collection
+                    - sonata.classification.admin.tag
+            bde:
+                label: Associatif
+                items:
+                    - bde.admin.event
+                    - bde.admin.club
+            shop:
+                label: Breguet Shop
+                items:
+                    - bde.admin.product
+                    - bde.admin.product_category
+            media:
+                label: sonata_media
+                label_catalogue: SonataMediaBundle
+                items: 
+                    - sonata.media.admin.media
+                    - sonata.media.admin.gallery
+            user:
+                label: sonata_user
+                label_catalogue: SonataUserBundle
+                items: 
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group
     security:
         handler: sonata.admin.security.handler.acl
         # acl security information
