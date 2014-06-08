@@ -35,7 +35,8 @@
         "twbs/bootstrap"                          : "dev-master",
         "shivas/versioning-bundle"                : "dev-master",
         "friendsofsymfony/comment-bundle"         : "dev-master",
-        "sonata-project/comment-bundle": "~2.2@dev"
+        "sonata-project/comment-bundle"           : "~2.2@dev",
+        "jms/serializer-bundle"                   : "dev-master"
 
     },
     "scripts": {
