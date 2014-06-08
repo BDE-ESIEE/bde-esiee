@@ -49,6 +49,13 @@ class Event
      */
     private $private;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="place", type="string", length=255, nullable=true)
+     */
+    private $place;
+
     public function __toString()
     {
         return $this->title;
@@ -155,5 +162,28 @@ class Event
     public function getPrivate()
     {
         return $this->private;
+    }
+
+    /**
+     * Set place
+     *
+     * @param string $place
+     * @return Event
+     */
+    public function setPlace($place)
+    {
+        $this->place = $place;
+
+        return $this;
+    }
+
+    /**
+     * Get place
+     *
+     * @return string 
+     */
+    public function getPlace()
+    {
+        return $this->place;
     }
 }

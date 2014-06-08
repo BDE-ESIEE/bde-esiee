@@ -20,6 +20,7 @@ class EventController extends Controller
 				'start'  => $event->getDateStart()->format('Y-m-d H:i:s'),
 				'end'    => $event->getDateEnd()->format('Y-m-d H:i:s'),
 				'allDay' => /*$event->getDateEnd()->diff($event->getDateStart())->h > 4*/ false,
+                'place'  => $event->getPlace(),
     		);
     	}
 

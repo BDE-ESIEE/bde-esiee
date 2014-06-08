@@ -24,6 +24,7 @@ class EventAdmin extends Admin
                 'years' => array(2014, 2015, 2016),
             ))
             ->add('private', null, array('required' => false))
+            ->add('place', null, array('required' => false))
         ;
     }
 
@@ -35,6 +36,7 @@ class EventAdmin extends Admin
             ->add('dateStart')
             ->add('dateEnd')
             ->add('private')
+            ->add('place')
         ;
     }
 
@@ -46,6 +48,7 @@ class EventAdmin extends Admin
             ->add('dateStart')
             ->add('dateEnd')
             ->add('private')
+            ->add('place')
         ;
     }
     
@@ -56,6 +59,7 @@ class EventAdmin extends Admin
             ->add('dateStart')
             ->add('dateEnd')
             ->add('private')
+            ->add('place')
         ;
     }
 }
