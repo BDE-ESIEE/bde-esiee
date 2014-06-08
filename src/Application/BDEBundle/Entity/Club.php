@@ -3,12 +3,15 @@
 namespace Application\BDEBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Club
  *
  * @ORM\Table(name="bde__club")
  * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\ClubRepository")
+ * @ExclusionPolicy("none")
  */
 class Club
 {
@@ -38,6 +41,7 @@ class Club
     /**
      * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
+     * @Exclude
      */
     private $logo;
 
@@ -52,6 +56,7 @@ class Club
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Exclude
      */
     private $content;
 
@@ -66,8 +71,11 @@ class Club
      * @var string
      *
      * @ORM\Column(name="contentFormatter", type="string", length=255)
+     * @Exclude
      */
     private $contentFormatter;
+
+    public $logoUrl;
 
 
     /**

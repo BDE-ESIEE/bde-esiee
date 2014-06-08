@@ -19,8 +19,19 @@ application_bde_breguet_shop_show:
         id: \d+
 
 application_bde_club:
-    pattern:  /clubs
-    defaults: { _controller: ApplicationBDEBundle:Club:index }
+    pattern:  /clubs.{_format}
+    defaults: { _controller: ApplicationBDEBundle:Club:index, _format:html }
+    requirements:
+        _format: html|json|xml
+        _method:  GET
+
+application_bde_club_get:
+    pattern:  /clubs/{id}.{_format}
+    defaults: { _controller: ApplicationBDEBundle:Club:getClub, _format:html }
+    requirements:
+        id: \d+
+        _format: html|json|xml
+        _method:  GET
 
 application_bde_club_show:
     pattern:  /clubs/view/{id}-{shortcode}
