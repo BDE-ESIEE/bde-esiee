@@ -40,5 +40,8 @@ application_bde_club_show:
         id: \d+
 
 application_bde_events:
-    pattern: /events
-    defaults: { _controller: ApplicationBDEBundle:Event:index }
+    pattern: /events.{_format}
+    defaults: { _controller: ApplicationBDEBundle:Event:index, _format:html }
+    requirements:
+        _format: html|json|xml|ics
+        _method:  GET

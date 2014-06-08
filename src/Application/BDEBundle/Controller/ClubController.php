@@ -15,8 +15,7 @@ class ClubController extends FOSRestController
      *  section="/clubs",
      *  output={"class"="Application\BDEBundle\Entity\Club"},
      *  statusCodes={
-     *      200="Returned when successful",
-     *      404="Returned when club is not found"
+     *      200="Returned when successful"
      *  }
      * )
      * @Rest\View(statusCode=200)

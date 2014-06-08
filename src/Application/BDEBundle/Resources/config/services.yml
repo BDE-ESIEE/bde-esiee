@@ -41,3 +41,13 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]
+    bde.decoder.ics:
+        class: Application\BDEBundle\Decoder\ICSDecoder
+    bde.handler.ics:
+        class: Application\BDEBundle\Handler\ICSHandler
+        arguments:
+            - "@bde.decoder.ics"
+    bde.view_handler.ics:
+        parent: fos_rest.view_handler.default
+        calls:
+            - ['registerHandler', [ 'ics', ["@bde.handler.ics", 'createResponse'] ] ]

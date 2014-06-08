@@ -58,7 +58,7 @@
 			    axisFormat: 'H(:mm)',
 			    slotMinutes: 60,
 			    allDaySlot: false,
-			    events: {{ event_json|raw }},
+			    events: {{ events|serialize('json')|raw }},
 			});
     	});
     </script>

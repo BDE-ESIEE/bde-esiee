@@ -317,7 +317,11 @@ mopa_bootstrap:
 
 fos_rest:
     param_fetcher_listener: true
-    body_listener:          true
+    body_listener:
+        decoders:
+            ics:            bde.decoder.ics
+    service:
+        view_handler: bde.view_handler.ics
     format_listener:        true
     view:
         view_response_listener: force
