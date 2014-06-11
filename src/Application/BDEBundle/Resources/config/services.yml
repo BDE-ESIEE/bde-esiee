@@ -51,3 +51,17 @@ services:
         parent: fos_rest.view_handler.default
         calls:
             - ['registerHandler', [ 'ics', ["@bde.handler.ics", 'createResponse'] ] ]
+    bde.admin.post:
+        class: Application\BDEBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Blog", label: "News", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - %sonata.news.admin.post.entity%
+            - %sonata.news.admin.post.controller%
+        calls:
+            - [ setTranslationDomain, [%sonata.news.admin.post.translation_domain%]]
+            - [ setUserManager, [@fos_user.user_manager]]
+            - [ setPoolFormatter, [@sonata.formatter.pool]]
+            - [ addChild, [@sonata.news.admin.comment]]
+            - [ setCommentManager, [@sonata.news.manager.comment]]

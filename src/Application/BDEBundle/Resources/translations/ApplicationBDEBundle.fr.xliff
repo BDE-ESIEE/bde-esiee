@@ -154,6 +154,10 @@
                 <source>form.label_place</source>
                 <target>Lieu</target>
             </trans-unit>
+            <trans-unit id="form_label_news">
+                <source>form.label_news</source>
+                <target>News</target>
+            </trans-unit>
 
             <trans-unit id="show_label_date_start">
                 <source>show.label_date_start</source>
@@ -170,6 +174,10 @@
             <trans-unit id="show_label_place">
                 <source>show.label_place</source>
                 <target>Lieu</target>
+            </trans-unit>
+            <trans-unit id="show_label_news">
+                <source>show.label_news</source>
+                <target>News</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb_link_product_list">

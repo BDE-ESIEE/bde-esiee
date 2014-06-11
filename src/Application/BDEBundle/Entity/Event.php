@@ -50,6 +50,11 @@ class Event
     private $private;
 
     /**
+     * @ORM\OneToMany(targetEntity="Application\Sonata\NewsBundle\Entity\Post", mappedBy="event")
+     */
+    private $news;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="place", type="string", length=255, nullable=true)
@@ -61,6 +66,10 @@ class Event
         return $this->title;
     }
 
+    public function __construct()
+    {
+        $this->news = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -185,5 +194,33 @@ class Event
     public function getPlace()
     {
         return $this->place;
+    }
+
+    /**
+     * Add news
+     *
+     * @param \Application\Sonata\NewsBundle\Entity\Post $news
+     * @return Event
+     */
+    public function addNews(\Application\Sonata\NewsBundle\Entity\Post $news)
+    {
+        $this->news[] = $news;
+
+        return $this;
+    }
+
+    public function removeNews(\Application\Sonata\NewsBundle\Entity\Post $news)
+    {
+        $this->news->removeElevent($news);
+    }
+
+    /**
+     * Get news
+     *
+     * @return \Application\Sonata\NewsBundle\Entity\Post 
+     */
+    public function getNews()
+    {
+        return $this->news;
     }
 }

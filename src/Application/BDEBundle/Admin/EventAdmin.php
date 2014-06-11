@@ -60,6 +60,9 @@ class EventAdmin extends Admin
             ->add('dateEnd')
             ->add('private')
             ->add('place')
+            ->add('news', null, array(
+                'admin_code' => 'bde.admin.post'
+            ))
         ;
     }
 }

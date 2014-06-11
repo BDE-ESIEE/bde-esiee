@@ -15,31 +15,35 @@
                     <i class="fa fa-calendar"></i>
                     {{ post.publicationDateStart | format_date }}
 
-                    <span class="sonata-blog-post-author">{{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}</span>
+                    <span>{{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}</span>
                 </h5>
             </div>
 
-            <div class="sonata-blog-post-information">
-                <div class="sonata-blog-post-tag-container">
-                    <div class="sonata-blog-post-tag-title">
+            <div>
+                <div>
+                    <div>
                         {% if post.tags|length > 1 %}
                             <i class="fa fa-tags"></i>
                         {% else %}
                             <i class="fa fa-tag"></i>
                         {% endif %}
                         {{ 'published_under'|transchoice(post.tags|length, {}, 'SonataNewsBundle') }}
-                    </div>
-                    <div class="sonata-blog-post-tag-list">
                         {% for tag in post.tags %}
                             <a href="{{ url('sonata_news_tag', { 'tag': tag.slug } ) }}">{{ tag.name }}</a>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-
-            <div class="sonata-blog-post-content">
+            <br />
+            <div>
                 {{ post.content|raw }}
             </div>
+            {% if post.event %}
+                <div style="margin-top:50px;">
+                    <i class="fa fa-calendar"></i>
+                    {{ post.event.title }} le {{ post.event.dateStart|date("m/d/Y", "Europe/Paris") }}
+                </div>
+            {% endif %}
         </div>
     </section>
     
