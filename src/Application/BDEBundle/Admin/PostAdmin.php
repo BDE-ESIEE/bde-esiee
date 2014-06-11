@@ -22,6 +22,15 @@ class PostAdmin extends BaseAdmin
                     'label'      => 'Événement',
                 ))
             ->end()
+            ->with('Photo')
+                ->add('photo', 'sonata_media_type', array(
+                    'required'      => false,
+                    'provider'      => 'sonata.media.provider.image',
+                    'context'       => 'default',
+                    'new_on_update' => false,
+                    'label'         => 'Photo',
+                ))
+            ->end()
         ;
     }
 }

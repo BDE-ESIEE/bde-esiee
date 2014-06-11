@@ -20,5 +20,12 @@
         <many-to-one field="event" target-entity="Application\BDEBundle\Entity\Event" inversed-by="news">
             <join-column name="event_id" referenced-column-name="id" nullable="true" />
         </many-to-one> 
+
+        <one-to-one field="photo" target-entity="Application\Sonata\MediaBundle\Entity\Media">
+            <cascade>
+                <cascade-persist/>
+            </cascade>
+            <join-column nullable="true" />
+        </one-to-one>
     </entity>
 </doctrine-mapping>

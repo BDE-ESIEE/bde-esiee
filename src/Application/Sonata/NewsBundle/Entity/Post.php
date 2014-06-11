@@ -31,6 +31,8 @@ class Post extends BasePost
 
     private $event;
 
+    private $photo;
+
     /**
      * Get id
      *
@@ -62,5 +64,28 @@ class Post extends BasePost
     public function getEvent()
     {
         return $this->event;
+    }
+
+    /**
+     * Set photo
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $photo
+     * @return Post
+     */
+    public function setPhoto(\Application\Sonata\MediaBundle\Entity\Media $photo = null)
+    {
+        $this->photo = $photo;
+
+        return $this->photo;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media $photo
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
     }
 }
