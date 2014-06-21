@@ -5,9 +5,13 @@ namespace Application\Sonata\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Application\Sonata\AdminBundle\Form\SendMailType;
 use Symfony\Component\HttpFoundation\Response;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class MailController extends Controller
 {
+    /**
+     * @Secure(roles="ROLE_COMMUNICATION")
+     */
     public function sendMailAction()
     {
 
@@ -78,30 +82,5 @@ class MailController extends Controller
 			'posts'      => $posts,
 			'message'    => $message,
         ));
-    }
-
-    public function previewMailAction($posts, $message)
-    {
-		$request = $this->get('request');
-		if ($request->getMethod() == 'POST') {
-			$form = $this->createForm(new SendMailType(), $posts, array(
-			    'action' => $this->generateUrl('application_sonata_admin_send_mail'),
-			    'method' => 'POST',
-			));
-
-			$form->bind($request);
-
-			if ($form->isValid()) {
-				$posts = $form->get('news');
-				$message = $form->get('message');
-
-				return $this->render('ApplicationSonataAdminBundle:Mail:newsletter.html.twig', array(
-					'posts'   => $posts,
-					'message' => $message,
-		        ));
-			}
-		}
-
-		return $this->redirect($this->generateUrl('application_sonata_admin_send_mail'));
     }
 }

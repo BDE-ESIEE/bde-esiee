@@ -36,8 +36,10 @@
         "shivas/versioning-bundle"                : "dev-master",
         "friendsofsymfony/comment-bundle"         : "dev-master",
         "sonata-project/comment-bundle"           : "~2.2@dev",
-        "jms/serializer-bundle"                   : "dev-master"
-
+        "jms/serializer-bundle"                   : "dev-master",
+        "jms/security-extra-bundle"               : "dev-master",
+        "knplabs/knp-menu"                        : "dev-master as 1.1",
+        "knplabs/knp-menu-bundle"                 : "dev-master as 1.1"
     },
     "scripts": {
         "post-install-cmd": [

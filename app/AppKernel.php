@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            //Dependencies
+            // Dependencies
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
@@ -33,7 +33,12 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Shivas\VersioningBundle\ShivasVersioningBundle(),
 
-            //Sonata
+            // Security
+            new JMS\AopBundle\JMSAopBundle(),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+
+            // Sonata
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             //new Sonata\jQueryBundle\SonatajQueryBundle(),
@@ -50,7 +55,7 @@ class AppKernel extends Kernel
             new Sonata\TimelineBundle\SonataTimelineBundle(),
             new Sonata\CommentBundle\SonataCommentBundle(),
 
-            //Application
+            // Application
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\CommentBundle\ApplicationSonataCommentBundle(),

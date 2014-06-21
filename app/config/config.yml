@@ -384,3 +384,6 @@ sonata_classification:
 
 shivas_versioning:
     version_parameter:  application_version
+
+jms_security_extra:
+    expressions: true
