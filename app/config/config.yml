@@ -97,6 +97,7 @@ fos_user:
 sonata_user:
     security_acl: true
     manager_type: orm
+    impersonating_route:    sonata_admin_dashboard
     table:
         user_group: nk_user_user_group
     profile:
