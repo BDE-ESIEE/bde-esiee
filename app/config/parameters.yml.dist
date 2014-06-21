@@ -14,3 +14,4 @@ parameters:
     locale:            fr
     secret:            ThisTokenIsNotSoSecretChangeIt
     application_version: 1.0.0
+    hostname: http://bde/

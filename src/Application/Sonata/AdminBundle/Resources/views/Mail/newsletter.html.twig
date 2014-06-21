@@ -1,0 +1,110 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- If you delete this meta tag, the ground will open and swallow you. -->
+	<meta name="viewport" content="width=device-width" />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>FERUSMail</title>
+
+	<style type="text/css">*{font-family:"Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif;margin:0;padding:0}img{max-width:100%}.circular{border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%}.collapse{margin:0!important;padding:0}body{-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:none;width:100%!important;height:100%}a{color:#2BA6CB}p.callout{background-color:#ECF8FF;margin-bottom:15px;padding:15px}.callout a{font-weight:700;color:#2BA6CB}table.social{background-color:#ebebeb}.social .soc-btn{font-size:12px;margin-bottom:10px;text-decoration:none;color:#FFF;font-weight:700;display:block;text-align:center;padding:3px 7px}a.fb{background-color:#3B5998!important}.sidebar .soc-btn{display:block;width:100%}table.body-wrap{width:100%;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}h1,h2,h3,h4,h5,h6{font-family:HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;line-height:1.1;margin-bottom:15px;color:#000}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-size:60%;color:#6f6f6f;line-height:0;text-transform:none}h1{font-weight:200;font-size:44px}h2{font-weight:200;font-size:37px}h3{font-weight:500;font-size:27px}h4{font-weight:500;font-size:23px;color:#3EC8B7}h5{font-weight:900;font-size:17px}h6{font-weight:900;font-size:14px;text-transform:uppercase;color:#444}p,ul{margin-bottom:10px;font-weight:400;font-size:14px;line-height:1.6}p.lead{font-size:17px}p.last{margin-bottom:0}ul li{margin-left:5px;list-style-position:inside}.container{display:block!important;max-width:600px!important;clear:both!important;margin:0 auto!important}.content{max-width:600px;display:block;margin:0 auto;padding:15px}.arrondi{-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}.text{padding-left:20px}.column{width:300px;float:left}.column tr td{padding:15px}.column-wrap{max-width:600px!important;margin:0 auto;padding:0!important}.social .column{width:280px;min-width:279px;float:left}.clear{display:block;clear:both}.content table,.column table{width:100%}@media only screen and max-width 600px{a[class=btn]{display:block!important;margin-bottom:10px!important;background-image:none!important;margin-right:0!important}div[class=column]{width:auto!important;float:none!important}table.social div[class=column]{width:auto!important}}    </style>
+</head>
+ 
+<body bgcolor="#E7E7E7" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+	<!-- BODY -->
+	<table class="body-wrap" bgcolor="">
+		<tr>
+			<td></td>
+			<td class="container" align="" bgcolor="#FFFFFF">
+				<!-- content -->
+				<div class="content">
+					<table>
+						<tr>
+							<td>
+								<p><img class="arrondi" src="{{ app.request.uriForPath('/bundles/applicationbde/img/banniere.png')| replace({'/app_dev.php': ''}) }}" style ="width:100%;"/></p><!-- /hero -->
+								<p>{{ message }}</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				{% set alternate = true %}
+				{% for post in posts %}
+					<div class="content text">
+						<table bgcolor="">
+							<tr>
+								{% if alternate and post.photo is not null %}
+								<td class="small" width="20%" style="vertical-align: top; padding-right:10px;">
+									<img class="circular" src="{% path post.photo, 'small' %}"/>
+									{#{% thumbnail post.photo, 'small' with {'class': 'circular'} %}#}
+								</td>
+								{% endif %}
+								<td>
+									<h4>{{ post.title }}<small> {{ post.publicationDateStart | format_date }}</small></h4>
+									<p class="">{{ post.abstract }}</p>
+								</td>
+								{% if not alternate and post.photo is not null %}
+								<td class="small" width="20%" style="vertical-align: top; padding-right:10px;">
+									<img class="circular" src="{% path post.photo, 'small' %}"/>
+								</td>
+								{% endif %}
+							</tr>
+						</table>
+					</div>
+					{% set alternate = not alternate %}
+				{% else %}
+					Aucune news...
+				{% endfor %}
+{#				<div class="content"><table bgcolor="">
+					<tr>
+						<td>
+							<!-- Callout Panel -->
+							<p class="callout">Infos importantes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. <a href="#">Do it Now!</a>	</p><!-- /callout panel -->
+						</td>
+					</tr>
+				</table></div>#}
+				<div class="content">
+					<table bgcolor="">
+						<tr>
+							<td>
+								<!-- social & contact -->
+								<table bgcolor="" class="social" width="100%">
+									<tr>
+										<td>
+											<!--- column 1 -->
+											<div class="column">
+												<table bgcolor="" cellpadding="" align="left">
+													<tr>
+														<td>				
+															<h5 class="">Suivez nous:</h5>
+															<p class=""><a href="https://www.facebook.com/bde.esieeparis" class="soc-btn fb">Facebook</a></p>
+														</td>
+													</tr>
+												</table><!-- /column 1 -->
+											</div>
+											<!--- column 2 -->
+											<div class="column">
+												<table bgcolor="" cellpadding="" align="left">
+													<tr>
+														<td>											
+															<h5>Info de contact:</h5>
+															<p>Email: <strong><a href="mailto:bde@edu.esiee.fr">bde@edu.esiee.fr</a></strong></p>
+														</td>
+													</tr>
+												</table><!-- /column 2 -->	
+											</div>
+											<div class="clear"></div>
+										</td>
+									</tr>
+								</table><!-- /social & contact -->
+							</td>
+						</tr>
+					</table>
+				</div><!-- /content -->
+			</td>
+			<td></td>
+		</tr>
+	</table><!-- /BODY -->
+</body>
+</html>
+{% endspaceless %}

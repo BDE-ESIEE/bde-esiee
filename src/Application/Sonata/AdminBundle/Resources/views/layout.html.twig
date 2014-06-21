@@ -26,6 +26,13 @@
 {% block sonata_top_nav_menu %}
     <div class="navbar-right">
         <ul class="nav navbar-nav">
+            {% if is_granted('ROLE_COMMUNICATION') %}
+                <li>
+                    <a href="{{ path('application_sonata_admin_send_mail') }}">
+                        <i class="fa fa-envelope fa-fw"></i> Mail hebdo
+                    </a>
+                </li>
+            {% endif %}
             <li>
                 <a href="{{ path('application_bde_homepage') }}">
                     <i class="fa fa-home fa-fw"></i> Retourner sur le site

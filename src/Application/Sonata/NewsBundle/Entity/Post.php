@@ -88,4 +88,9 @@ class Post extends BasePost
     {
         return $this->photo;
     }
+
+    public function __toString()
+    {
+        return $this->publicationDateStart->format('d/m/Y').' - '.$this->title.' ('.$this->author.')';
+    }
 }

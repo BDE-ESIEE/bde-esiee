@@ -1,0 +1,65 @@
+{% extends 'ApplicationSonataAdminBundle::layout.html.twig' %}
+
+{% block sonata_breadcrumb %}
+	<ol class="nav navbar-top-links breadcrumb">
+		<li>
+			<a href="{{ path('sonata_admin_dashboard') }}">⌂</a>
+		</li>
+		<li class="active">
+			<span>Envoyer Mail Hebdo</span>
+		</li>
+	</ol>
+{% endblock %}
+
+{% block title %}- Envoyer Mail Hebdo{% endblock %}
+
+{% block sonata_page_content %}
+	<section class="content">
+        {% block notice %}
+            {{ parent() }}
+        {% endblock notice %}
+		<div class="sonata-ba-form">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-success">
+						<div class="box-header">
+							<h4 class="box-title">Envoyer Mail Hebdo</h4>
+						</div>
+						<div class="box-body">
+							<div class="sonata-ba-collapsed-fields">
+	    						{{ form(form) }}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% if posts is not null and message is not null %}
+					<div class="col-md-12">
+						<div class="box box-success">
+							<div class="box-header">
+								<h4 class="box-title">Aperçu</h4>
+							</div>
+							<div class="box-body">
+								<iframe src="about:blank" id="apercu" width="650px" height="800px">
+								</iframe>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{% if posts is not null and message is not null %}
+		<script>
+			$(function() {
+				var doc = $("iframe#apercu")[0].contentWindow.document;
+				doc.open();
+					doc.write('{% include "ApplicationSonataAdminBundle:Mail:newsletter.html.twig" with {"posts": posts, "message" : message} %}');
+				doc.close();
+			});
+		</script>
+	{% endif %}
+{% endblock %}
