@@ -1,23 +1,18 @@
-<div class="col-md-3">
-{#     <section class="panel">
-        <div class="panel-body">
-            <input type="text" placeholder="Keyword Search" class="form-control">
-        </div>
-    </section> #}
-    <section class="panel">
-        <header class="panel-heading">
-            Categorie
-        </header>
-        <div class="panel-body">
-            <ul class="nav prod-cat">
+<div class="col-lg-3">
+    <div class="blog-side-item">
+        <div class="category">
+            <h3>Categories</h3>
+            <ul class="list-unstyled">
                 {% for category in category_list %}
                     <li>
                         <a href="{{ path('application_bde_breguet_shop_filter', {id: category.id}) }}">
                             <i class="fa fa-angle-right"></i> {{ category.name }}
                         </a>
                     </li>
+                {% else %}
+                    <li><i class="  fa fa-angle-right"></i> Aucune catégorie</li>
                 {% endfor %}
             </ul>
         </div>
-    </section>
+    </div>
 </div>

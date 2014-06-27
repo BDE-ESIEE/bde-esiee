@@ -1,8 +1,63 @@
-{% extends '::base.html.twig' %}
+{% extends 'ApplicationSonataNewsBundle:Post:layout.html.twig' %}
 
-{% block body %}
-    {% sonata_template_box 'This is the post template. Feel free to override it.' %}
-    <section class="panel">
+{% block title %}News - {{ post.title }}{% endblock %}
+
+{% block archive %}
+    {% sonata_template_box 'News template' %}
+    <div class="blog-item">
+        <div class="row">
+            <div class="col-lg-2 col-sm-2">
+                <div class="date-wrap">
+                    <span class="date">{{ post.publicationDateStart | format_date("dd") }}</span>
+                    <span class="month">{{ post.publicationDateStart | format_date("MMMM") | capitalize }}</span>
+                </div>
+            </div>
+            <div class="col-lg-10 col-sm-10">
+                {% if post.photo is not null %}
+                    <div class="blog-img">
+                        <img src="{% path post.photo, 'reference' %}" alt=""/>
+                    </div>
+                {% else %}
+                    <h1 style="margin-top:0px;"><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
+                    <p>{{ post.content|raw }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-sm-2 text-right">
+                <div class="author">
+                    {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}
+                    {# By <a href="#">Admin</a> #}
+                </div>
+                <ul class="list-unstyled">
+                    {% for tag in post.tags %}
+                        {% if tag.enabled %}
+                            <li><a href="{{ path('sonata_news_tag', { 'tag': tag.slug } ) }}"><em>{{ tag.name }}</em></a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-lg-10 col-sm-10">
+                {% if post.photo is not null %}
+                    <h1><a href="{{ path('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
+                    <p>{{ post.content|raw }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-sm-2 text-right">
+            </div>
+            <div class="col-lg-10 col-sm-10">
+                {% if post.iscommentable %}
+                    {{ sonata_block_render_event('sonata.comment', {'id': post.id ~ '-' ~ post.slug }) }}
+                {% else %}
+                    {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{#     <section class="panel">
         <header class="panel-heading">
             <h1>
                 <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a>
@@ -53,5 +108,5 @@
         <div>
             {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
         </div>
-    {% endif %}
+    {% endif %} #}
 {% endblock %}

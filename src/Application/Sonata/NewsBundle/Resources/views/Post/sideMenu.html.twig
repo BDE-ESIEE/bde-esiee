@@ -1,0 +1,22 @@
+<div class="blog-side-item">
+    <div class="category">
+        <h3>Categories</h3>
+        <ul class="list-unstyled">
+            {% for category in cat_list %}
+                <li><a href="{{ path('sonata_news_collection', { 'collection': category.slug } ) }}"><i class="  fa fa-angle-right"></i> {{ category.name }}</a></li>
+            {% else %}
+                <li><i class="  fa fa-angle-right"></i> Aucune catégorie</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="tags">
+        <h3>Tags</h3>
+        <ul class="list-unstyled tag">
+            {% for tag in tag_list %}
+                <li><a href="{{ path('sonata_news_tag', { 'tag': tag.slug } ) }}">{{ tag.name }}</a></li>
+            {% else %}
+                <li>Aucun tag</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

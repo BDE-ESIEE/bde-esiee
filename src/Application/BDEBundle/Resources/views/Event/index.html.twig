@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}Calendrier{% endblock %}
 
@@ -14,13 +14,13 @@
 {% endblock %}
 
 {% block body %}
-	<aside class="col-lg-12">
+	<div class="col-lg-12">
 		<section class="panel">
 			<div class="panel-body">
 				<div id="calendar" class="has-toolbar"></div>
 			</div>
 		</section>
-	</aside>
+	</div>
 {% endblock %}
 
 {% block javascripts %}
@@ -63,3 +63,5 @@
     	});
     </script>
 {% endblock %}
+
+{% block liCalendrier %}class='active'{% endblock %}

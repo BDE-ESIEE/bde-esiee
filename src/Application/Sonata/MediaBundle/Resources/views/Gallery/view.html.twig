@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}Media - {{ gallery.name }}{% endblock %}
 
@@ -14,13 +14,9 @@
     {% endstylesheets %}
 {% endblock %}
 
-{% block container %}
+{% block body %}
     {% sonata_template_box 'Gallery view template' %}
-    <section class="panel">
-        <header class="panel-heading">
-            {{ gallery.name }}
-        </header>
-        <div class="panel-body">
+        <div class="col-lg-12">
             <ul class="grid cs-style-3">
                 {% for galleryHasMedia in gallery.GalleryHasMedias %}
                     <li>
@@ -50,7 +46,6 @@
                 {% endfor %}
           </ul>
         </div>
-    </section>
 {% endblock %}
 
 {% block javascripts %}
@@ -73,3 +68,5 @@
         });
     </script>
 {% endblock %}
+
+{% block liMedia %}class='active'{% endblock %}

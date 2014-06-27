@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}Media{% endblock %}
 
@@ -14,13 +14,9 @@
     {% endstylesheets %}
 {% endblock %}
 
-{% block container %}
+{% block body %}
     {% sonata_template_box 'Gallery template' %}
-    <section class="panel">
-        <header class="panel-heading">
-            Media
-        </header>
-        <div class="panel-body">
+    <div class="col-lg-12">
             <ul class="grid cs-style-3">
 			    {% for gallery in galleries %}
 			        {# <li><a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid }) }}">{{ gallery.name }}</a></li> #}
@@ -36,8 +32,7 @@
 	                </li>
 			    {% endfor %}
             </ul>
-        </div>
-    </section>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
@@ -55,3 +50,5 @@
 		});
     </script>
 {% endblock %}
+
+{% block liMedia %}class='active'{% endblock %}

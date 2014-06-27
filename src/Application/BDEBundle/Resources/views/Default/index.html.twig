@@ -1,7 +1,33 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}Ferus{% endblock %}
 
-{% block body %}
-	On a oublié ce qu'on devait mettre là...
+{% block containerClass %} class="property gray-bg"{% endblock %}
+
+{% block breadcrumbs %}
+<!--breadcrumbs start-->
+<div class="container">
+    <div class="row">
+        <!--feature start-->
+        <div class="text-center feature-head">
+            <h1>{% block title2 %}Bienvenue sur le site de FERUS{% endblock %}</h1>
+            <p>Le plus beau BDE qui est et qui sera &lt;3</p>
+        </div>
+        <!--feature end-->
+    </div>
+</div>
+<!--breadcrumbs end-->
 {% endblock %}
+
+{% block body %}
+    <div class="col-lg-6 col-sm-6">
+        <img src="{{ asset('logoFerus_Transparent_Noir.png') }}" class="img-responsive" style="max-width:418px;margin-left:auto;margin-right:auto;">
+    </div>
+    <div class="col-lg-6 col-sm-6">
+        <h1>Qui sommes nous ?</h1>
+        <p>Un groupe d'amis qui ont su s'unir afin de proposer le meilleur pour les étudiants de l'ESIEE et qui s'assureront que ton année se passe toute en douceur, #OKALM</p>
+        <a href="javascript:;" class="btn btn-purchase">Découvre nous !</a>
+    </div>
+{% endblock %}
+
+{% block liAccueil %}class='active'{% endblock %}

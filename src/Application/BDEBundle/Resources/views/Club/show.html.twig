@@ -1,19 +1,17 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}{{ club.title }}{% endblock %}
 
-{% block body %}
-    {% sonata_template_box 'Détails du club' %}  
-    <div>
-        <div>
-            <h2>
-                <a>{{ club.title }}</a>
-            </h2>
+{% block containerClass %} class="property gray-bg"{% endblock %}
 
-            {% thumbnail club.logo, 'big' %}
-            <br />
-            {{ club.rawContent|raw }}
-            </div>
+{% block body %}
+    <div class="col-lg-12 col-sm-12">
+        <div style="float:left;">
+            <img src="{% path club.logo, 'reference' %}" class="logoClub" style="max-width: 418px;">
         </div>
+        <h1>{{ club.title }}</h1>
+        <p>{{ club.rawContent|raw }}</p>
     </div>
 {% endblock %}
+
+{% block liClubs %}class='active'{% endblock %}

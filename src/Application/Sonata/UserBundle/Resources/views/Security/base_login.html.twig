@@ -1,8 +1,6 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block body %}
-
-    <div class="row">
         <div class="col-md-6">
             <div class="panel panel-info">
 
@@ -66,5 +64,4 @@
         <div class="col-md-6">
             {% render controller("FOSUserBundle:Registration:register") %}
         </div>
-    </div>
 {% endblock %}

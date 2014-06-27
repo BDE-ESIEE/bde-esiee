@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}Breguet Shop - {{ product.name }}{% endblock %}
 
@@ -16,8 +16,7 @@
 
 {% block body %}
 	{{ form_errors(form) }}
-	{{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
-	<div class="col-md-9">
+	<div class="col-lg-9">
 		<section class="panel">
 			<div class="panel-body">
 				<div class="col-md-6">
@@ -58,6 +57,7 @@
 			</div>
 		</section>
 	</div>
+	{{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
 {% endblock %}
 
 {% block javascripts %}
@@ -90,3 +90,5 @@
 		})
 	</script>
 {% endblock %}
+
+{% block liShop %}class='active'{% endblock %}

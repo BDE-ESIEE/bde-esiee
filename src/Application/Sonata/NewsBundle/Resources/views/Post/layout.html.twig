@@ -1,0 +1,16 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block body %}
+    <!--blog start-->
+    <div class="col-lg-9 ">
+		{% block archive %}
+		{% endblock %}
+    </div>
+
+    <div class="col-lg-3">
+        {{ render(controller('ApplicationSonataNewsBundle:Archive:sideMenu')) }}
+    </div>
+    <!--blog end-->
+{% endblock %}
+
+{% block liNews %}class='active'{% endblock %}

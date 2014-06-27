@@ -1,13 +1,13 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.bis.html.twig' %}
 
 {% block title %}Liste des clubs{% endblock %}
 
 {% block body %}
     {% sonata_template_box 'Liste des clubs' %}  
     <section class="panel">
-        <header class="panel-heading">
+{#         <header class="panel-heading">
             Clubs
-        </header>
+        </header> #}
         <div class="panel-body">
             {% for club in club_list %}
                 <div>
@@ -32,3 +32,5 @@
         </div>
     </section>
 {% endblock %}
+
+{% block liClubs %}class='active'{% endblock %}
