@@ -33,6 +33,7 @@ twig:
         resources:
             - 'SonataAdminBundle:Form:silex_form_div_layout.html.twig'
             - 'SonataFormatterBundle:Form:formatter.html.twig'
+            - 'SonataCoreBundle:Form:datepicker.html.twig'
     globals:
         version: %application_version%
 

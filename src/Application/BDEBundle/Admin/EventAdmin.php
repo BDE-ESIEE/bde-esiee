@@ -15,13 +15,20 @@ class EventAdmin extends Admin
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $subject = $formMapper->getAdmin()->getSubject();
         $formMapper
             ->add('title')
-            ->add('dateStart', null, array(
-                'years' => array(2014, 2015, 2016),
+            ->add('dateStart', 'sonata_type_datetime_picker', array(
+                'dp_language'    => 'fr',
+                'date_format'    => "d.m.Y, H:i",
+                'dp_use_seconds' => false,
+                'dp_min_date'    => '1/1/'.(new \DateTime())->format("Y")
             ))
-            ->add('dateEnd', null, array(
-                'years' => array(2014, 2015, 2016),
+            ->add('dateEnd', 'sonata_type_datetime_picker', array(
+                'dp_language'    => 'fr',
+                'date_format'    => "d.m.Y, H:i",
+                'dp_use_seconds' => false,
+                'dp_min_date'    => '1/1/'.(new \DateTime())->format("Y")
             ))
             ->add('private', null, array('required' => false))
             ->add('place', null, array('required' => false))
