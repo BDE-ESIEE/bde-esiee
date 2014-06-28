@@ -26,6 +26,7 @@ class ClubAdmin extends Admin
             ->add('logo')
             ->add('abstract')
             ->add('content', null, array('safe' => true))
+            ->add('category')
         ;
     }
 
@@ -37,6 +38,7 @@ class ClubAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('shortcode')
+            ->add('category')
             ->add('logo', 'sonata_media_type', array(
                 'required'      => false,
                 'provider'      => 'sonata.media.provider.image',
@@ -79,6 +81,7 @@ class ClubAdmin extends Admin
         $datagridMapper
             ->add('title')
             ->add('shortcode')
+            ->add('category')
         ;
     }
 }

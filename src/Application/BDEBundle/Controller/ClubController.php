@@ -11,7 +11,7 @@ class ClubController extends FOSRestController
 {
     /**
      * @ApiDoc(
-     *  description="Retrieves the list of clubs",
+     *  description="Retrieves the list of clubs sorted by category",
      *  section="/clubs",
      *  output={"class"="Application\BDEBundle\Entity\Club"},
      *  statusCodes={
@@ -20,28 +20,39 @@ class ClubController extends FOSRestController
      * )
      * @Rest\View(statusCode=200)
      */
-    public function indexAction()
+    public function indexAction($_format)
     {
     	$em = $this->getDoctrine()->getManager();
-    	$repository = $em->getRepository('ApplicationBDEBundle:Club');
 
-    	$club_list = $repository->findBy(array(), array('title' => 'ASC'));
+    	$club_category_list = $em->getRepository('ApplicationBDEBundle:ClubCategory')->findAll();
+        
+
+        $club_list_by_category = array();
+
+        foreach ($club_category_list as $club_category) {
+            $club_list_by_category[$club_category->getName()] = $em->getRepository('ApplicationBDEBundle:Club')->findBy(array('category' => $club_category), array('title' => 'ASC'));
+        }
 
         $providers = array();
-        foreach ($club_list as $key => $club) {
-            if (!is_null($club->getLogo()))
-            {
-                $provider = $club->getLogo()->getProviderName();
-                if (!in_array($provider, $providers))
-                    $providers[$provider] = $this->get($provider);
+        foreach ($club_list_by_category as $club_list) {
+            foreach ($club_list as $key => $club) {
+                if (!is_null($club->getLogo()))
+                {
+                    $provider = $club->getLogo()->getProviderName();
+                    if (!in_array($provider, $providers))
+                        $providers[$provider] = $this->get($provider);
 
-                $club_list[$key]->logoUrl = $providers[$provider]->generatePublicUrl($club->getLogo(), 'default_big');
+                    $club_list[$key]->logoUrl = $providers[$provider]->generatePublicUrl($club->getLogo(), 'default_big');
+                }
             }
         }
 
-        $view = $this->view($club_list, 200)
+        if ($_format == 'html')
+            $club_list_by_category = array('club_list_by_category' => $club_list_by_category);
+
+        $view = $this->view($club_list_by_category, 200)
             ->setTemplate("ApplicationBDEBundle:Club:index.html.twig")
-            ->setTemplateVar('club_list')
+            ->setTemplateVar('club_list_by_category')
         ;
 
         return $this->handleView($view);

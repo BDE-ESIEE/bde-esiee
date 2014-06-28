@@ -31,6 +31,16 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]
+    bde.admin.club_category:
+        class: Application\BDEBundle\Admin\ClubCategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Catégorie", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\BDEBundle\Entity\ClubCategory
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]
     bde.admin.event:
         class: Application\BDEBundle\Admin\EventAdmin
         tags:

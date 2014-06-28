@@ -248,6 +248,7 @@ sonata_admin:
                 items:
                     - bde.admin.event
                     - bde.admin.club
+                    - bde.admin.club_category
             shop:
                 label: Breguet Shop
                 items:

@@ -5,6 +5,7 @@ namespace Application\BDEBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\VirtualProperty;
 
 /**
  * Club
@@ -76,6 +77,13 @@ class Club
     private $contentFormatter;
 
     public $logoUrl;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\ClubCategory", inversedBy="clubs")
+     * @ORM\JoinColumn(nullable=true)
+     * @Exclude
+     */
+    private $category;
 
 
     /**
@@ -252,5 +260,39 @@ class Club
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \Application\BDEBundle\Entity\ClubCategory $category
+     * @return Club
+     */
+    public function setCategory(\Application\BDEBundle\Entity\ClubCategory $category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Application\BDEBundle\Entity\ClubCategory 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Get category id
+     *
+     * @return integer
+     * @VirtualProperty
+     */
+    public function getCategoryId()
+    {
+        return $this->getCategory()->getId();
     }
 }

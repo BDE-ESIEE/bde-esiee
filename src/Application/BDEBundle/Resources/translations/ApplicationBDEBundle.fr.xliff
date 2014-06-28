@@ -22,6 +22,10 @@
                 <source>form.label_logo</source>
                 <target>Logo</target>
             </trans-unit>
+            <trans-unit id="form_label_category">
+                <source>form.label_category</source>
+                <target>Categorie</target>
+            </trans-unit>
 
             <trans-unit id="show_label_title">
                 <source>show.label_title</source>
@@ -43,6 +47,10 @@
                 <source>show.label_logo</source>
                 <target>Logo</target>
             </trans-unit>
+            <trans-unit id="show_label_category">
+                <source>show.label_category</source>
+                <target>Categorie</target>
+            </trans-unit>
 
             <trans-unit id="filter_label_title">
                 <source>filter.label_title</source>
@@ -63,6 +71,10 @@
             <trans-unit id="filter_label_logo">
                 <source>filter.label_logo</source>
                 <target>Logo</target>
+            </trans-unit>
+            <trans-unit id="filter_label_category">
+                <source>filter.label_category</source>
+                <target>Categorie</target>
             </trans-unit>
 
             <trans-unit id="list_label_title">
@@ -364,6 +376,20 @@
             <trans-unit id="filter_label_enabled">
                 <source>filter.label_enabled</source>
                 <target>Activé</target>
+            </trans-unit>
+
+            <trans-unit id="show_label_clubs">
+                <source>show.label_clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_club_category_list">
+                <source>breadcrumb.link_club_category_list</source>
+                <target>Liste des Catégories de Club</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_club_category_history">
+                <source>breadcrumb.link_club_category_history</source>
+                <target>Historique des modifications</target>
             </trans-unit>
         </body>
     </file>
