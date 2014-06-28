@@ -158,6 +158,14 @@
                 <source>form.label_news</source>
                 <target>News</target>
             </trans-unit>
+            <trans-unit id="form_label_background_color">
+                <source>form.label_background_color</source>
+                <target>Couleur d'arrière plan</target>
+            </trans-unit>
+            <trans-unit id="form_label_text_color">
+                <source>form.label_text_color</source>
+                <target>Couleur du texte</target>
+            </trans-unit>
 
             <trans-unit id="show_label_date_start">
                 <source>show.label_date_start</source>
@@ -178,6 +186,14 @@
             <trans-unit id="show_label_news">
                 <source>show.label_news</source>
                 <target>News</target>
+            </trans-unit>
+            <trans-unit id="show_label_background_color">
+                <source>show.label_background_color</source>
+                <target>Couleur d'arrière plan</target>
+            </trans-unit>
+            <trans-unit id="show_label_text_color">
+                <source>show.label_text_color</source>
+                <target>Couleur du texte</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb_link_product_list">

@@ -1834,9 +1834,9 @@ ul.dropdown-menu li a i {
 }
 
 .fc-event-skin {
-    background-color: #6883a3 !important;
-    border-color: #6883a3 !important;
-    color: #FFFFFF !important;
+    background-color: #6883a3;
+    border-color: #6883a3;
+    color: #FFFFFF;
 }
 
 .fc-grid th {

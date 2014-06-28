@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Shivas\VersioningBundle\ShivasVersioningBundle(),
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
 
             // Security
             new JMS\AopBundle\JMSAopBundle(),

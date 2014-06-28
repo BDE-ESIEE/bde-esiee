@@ -61,9 +61,23 @@ class Event
      */
     private $place;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="backgroundColor", type="string", length=255, nullable=true)
+     */
+    private $backgroundColor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="textColor", type="string", length=255, nullable=true)
+     */
+    private $textColor;
+
     public function __toString()
     {
-        return $this->title;
+        return (null !== $this->title) ? $this->title : '';
     }
 
     public function __construct()
@@ -222,5 +236,51 @@ class Event
     public function getNews()
     {
         return $this->news;
+    }
+
+    /**
+     * Set backgroundColor
+     *
+     * @param string $backgroundColor
+     * @return Event
+     */
+    public function setBackgroundColor($backgroundColor)
+    {
+        $this->backgroundColor = $backgroundColor;
+
+        return $this;
+    }
+
+    /**
+     * Get backgroundColor
+     *
+     * @return string 
+     */
+    public function getBackgroundColor()
+    {
+        return $this->backgroundColor;
+    }
+
+    /**
+     * Set textColor
+     *
+     * @param string $textColor
+     * @return Event
+     */
+    public function setTextColor($textColor)
+    {
+        $this->textColor = $textColor;
+
+        return $this;
+    }
+
+    /**
+     * Get textColor
+     *
+     * @return string 
+     */
+    public function getTextColor()
+    {
+        return $this->textColor;
     }
 }

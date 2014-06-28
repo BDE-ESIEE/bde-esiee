@@ -40,7 +40,8 @@
         "jms/serializer-bundle"                   : "dev-master",
         "jms/security-extra-bundle"               : "dev-master",
         "knplabs/knp-menu"                        : "dev-master as 1.1",
-        "knplabs/knp-menu-bundle"                 : "dev-master as 1.1"
+        "knplabs/knp-menu-bundle"                 : "dev-master as 1.1",
+        "genemu/form-bundle"                      : "dev-master as 2.2.2"
     },
     "scripts": {
         "post-install-cmd": [
@@ -70,5 +71,11 @@
         "branch-alias": {
             "dev-master": "2.4-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Claros/GenemuFormBundle"
+        }
+    ]
 }

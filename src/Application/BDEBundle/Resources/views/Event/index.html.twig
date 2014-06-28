@@ -55,7 +55,14 @@
 				},
 			    firstDay: 1,
 			    weekNumbers: true,
-			    axisFormat: 'H(:mm)',
+			    axisFormat: "H'h'(:mm)",
+			    timeFormat: {
+				    // for agendaWeek and agendaDay
+				    agenda: 'h:mm{ - h:mm}', // 5:00 - 6:30
+
+				    // for all other views
+				    '': "h'h'(:mm)"
+				},
 			    slotMinutes: 60,
 			    allDaySlot: false,
 			    events: {{ events|serialize('json')|raw }},
