@@ -58,7 +58,7 @@
                             <li {% block liClubs %}{% endblock %}>
                                 <a href="{{ path('application_bde_club') }}">
                                     <i class="fa fa-rocket"></i>
-                                    Clubs
+                                    Associatif
                                 </a>
                             </li>
                             <li {% block liCalendrier %}{% endblock %}>
@@ -79,14 +79,6 @@
                                     Media
                                 </a>
                             </li>
-                            {% if app.security and app.security.token and is_granted('ROLE_SONATA_ADMIN') %}
-                                <li>
-                                    <a href="{{ path('sonata_admin_dashboard') }}">
-                                        <i class="fa fa-tachometer"></i>
-                                        {# {{ "title_dashboard"|trans({}, 'SonataAdminBundle') }} #}
-                                    </a>
-                                </li>
-                            {% endif %}
                             <li class="dropdown">
                                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -96,9 +88,16 @@
                                     </a>
                                     <ul class="dropdown-menu extended logout">
                                         <div class="log-arrow-up"></div>
-                                        <li><a href="#">{{ app.user.username }}</li>
+                                        <li><a href="{{ path('sonata_user_profile_show') }}">{{ app.user.username }}</a></li>
                                         <li><a href="{{ path('sonata_user_profile_show') }}"><i class=" fa fa-suitcase"></i>Profile</a>
                                         </li>
+                                        {% if app.security and app.security.token and is_granted('ROLE_SONATA_ADMIN') %}
+                                            <li>
+                                                <a href="{{ path('sonata_admin_dashboard') }}">
+                                                    <i class="fa fa-tachometer"></i>{{ "title_dashboard"|trans({}, 'SonataAdminBundle') }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
                                         <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a>
                                         </li>
                                         <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a>
