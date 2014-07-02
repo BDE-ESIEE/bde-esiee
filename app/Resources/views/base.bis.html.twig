@@ -79,6 +79,12 @@
                                     Media
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://bde.esiee.fr/annales/">
+                                    <i class="fa fa-book"></i>
+                                    Annales
+                                </a>
+                            </li>
                             <li class="dropdown">
                                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -148,11 +154,10 @@
                     <div class="col-lg-3 col-sm-3">
                         <h1>Nous contacter</h1>
                         <address>
-                            <p>Adresse: 2 boulevard Blaise Pascal, 77420</p>
+                            <p>Adresse: 2 boulevard Blaise Pascal, 93162</p>
                             <p>Noisy le Grand, France</p>
 
                             <p>Téléphone : <a href="tel:+33145926660">(+33) 1 45 92 66 60</a></p>
-                            {# <p>Fax : (123) 456-7890</p> #}
                             <p>Email : <script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'&'+'#'+'1'+'0'+'5'+';'+'l'+'&'+'#'+'1'+'1'+'6'+';'+'&'+
 '#'+'1'+'1'+'1'+';'+'&'+'#'+'5'+'8'+';'+'b'+'d'+'e'+'&'+'#'+'3'+'7'+';'+'&'+'#'+'5'+'0'+';'+'&'+'#'+
 '6'+'9'+';'+'e'+'s'+'&'+'#'+'3'+'7'+';'+'6'+'9'+'&'+'#'+'1'+'0'+'1'+';'+'%'+'6'+'5'+'&'+'#'+'6'+'4'+
@@ -160,21 +165,29 @@
 ';'+'i'+'e'+'%'+'&'+'#'+'5'+'4'+';'+'5'+'&'+'#'+'4'+'6'+';'+'f'+'&'+'#'+'3'+'7'+';'+'7'+'&'+'#'+'5'+
 '0'+';'+"'"+'>'+'b'+'d'+'&'+'#'+'1'+'0'+'1'+';'+'&'+'#'+'4'+'6'+';'+'e'+'s'+'i'+'e'+'e'+'&'+'#'+'6'+
 '4'+';'+'e'+'d'+'&'+'#'+'1'+'1'+'7'+';'+'&'+'#'+'4'+'6'+';'+'&'+'#'+'1'+'0'+'1'+';'+'s'+'i'+'e'+'e'+
-'&'+'#'+'4'+'6'+';'+'&'+'#'+'1'+'0'+'2'+';'+'r'+'<'+'/'+'a'+'>');</script><noscript>[Turn on JavaScript to see the email address]</noscript></p>
+'&'+'#'+'4'+'6'+';'+'&'+'#'+'1'+'0'+'2'+';'+'r'+'<'+'/'+'a'+'>');</script><noscript>[Activer le Javascript]</noscript></p>
                         </address>
                     </div>
-                    <div class="col-lg-5 col-sm-5">
+                    <div class="col-lg-6 col-sm-6">
                         <h1 class="text-center">
-                            2014 &copy; BDE Ferus
+                            Sponsors
                         </h1>
+                        <div style="text-align:center;">
+                            <ul class="social-link-footer list-unstyled" style="display:inline-block;">
+                                <li><img src="{{ asset('bundles/applicationbde/img/sponsors/anacours.jpg') }}" /></li>
+                                <li><img src="{{ asset('bundles/applicationbde/img/sponsors/caisse-epargne.gif') }}" /></li>
+                                <li><img src="{{ asset('bundles/applicationbde/img/sponsors/foret.jpg') }}" /></li>
+                                <li><img src="{{ asset('bundles/applicationbde/img/sponsors/subway.jpg') }}" /></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-sm-3 col-lg-offset-1">
+                    <div class="col-lg-3 col-sm-3">
                         <h1>Restez connecté</h1>
                         <ul class="social-link-footer list-unstyled">
-                            <li><a href="https://www.facebook.com/bde.esieeparis"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://plus.google.com/112098996937770809252"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="https://vine.co/u/1091066051275403264"><i class="fa fa-vine"></i></a></li>
-                            <li><a href="https://www.youtube.com/channel/UCeq6kJ_jP0zJBUDCyLzFgsw"><i class="fa fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/bde.esieeparis"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/BDE_ESIEE_Paris"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://vine.co/u/1091066051275403264"><i class="fa fa-vine"></i></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCeq6kJ_jP0zJBUDCyLzFgsw"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>

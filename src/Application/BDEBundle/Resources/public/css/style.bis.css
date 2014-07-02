@@ -2028,3 +2028,7 @@ ul.dropdown-menu li a i {
     font-size: 18px;
     font-weight: 300;
 }
+
+.social-link-footer li img {
+    width: 50px;
+}
