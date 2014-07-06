@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('ApplicationBDEBundle:Default:index.html.twig');
     }
+
+    public function teamAction()
+    {
+    	return $this->render('ApplicationBDEBundle:Default:team.html.twig');
+    }
 }

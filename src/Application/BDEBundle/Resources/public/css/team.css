@@ -1,0 +1,74 @@
+.pic{
+	background: url('../img/tiles_pics.jpg');
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	border-radius: 50%;
+	border: 5px solid #E8E8E8;
+}
+
+.pic.mumu{background-position: -0px -0px;}
+.pic.wallet{background-position: -200px -0px;}
+.pic.wallet2{background-position: -400px -0px;}
+.pic.alie{background-position: -600px -0px;}
+.pic.gaillota{background-position: -800px -0px;}
+.pic.audrey{background-position: -1000px -0px;}
+.pic.baptou{background-position: -0px -200px;}
+.pic.camille{background-position: -200px -200px;}
+.pic.celine{background-position: -400px -200px;}
+.pic.celine2{background-position: -600px -200px;}
+.pic.chloe{background-position: -800px -200px;}
+.pic.clemi{background-position: -1000px -200px;}
+.pic.coralie{background-position: -0px -400px;}
+.pic.elie{background-position: -200px -400px;}
+.pic.elie2{background-position: -400px -400px;}
+.pic.eric{background-position: -600px -400px;}
+.pic.hugo{background-position: -800px -400px;}
+.pic.iris{background-position: -1000px -400px;}
+.pic.julie{background-position: -0px -600px;}
+.pic.kevin{background-position: -200px -600px;}
+.pic.kim{background-position: -400px -600px;}
+.pic.marc{background-position: -600px -600px;}
+.pic.marion{background-position: -800px -600px;}
+.pic.marion2{background-position: -1000px -600px;}
+.pic.maki{background-position: -0px -800px;}
+.pic.maxime{background-position: -200px -800px;}
+.pic.naji{background-position: -400px -800px;}
+.pic.prez{background-position: -600px -800px;}
+.pic.oceane{background-position: -800px -800px;}
+.pic.ombe{background-position: -1000px -800px;}
+.pic.poupou{background-position: -0px -1000px;}
+.pic.remi{background-position: -200px -1000px;}
+.pic.thomasB{background-position: -400px -1000px;}
+.pic.tomo{background-position: -600px -1000px;}
+.pic.thomasL{background-position: -800px -1000px;}
+.pic.thomasLeMeur{background-position: -1000px -1000px;}
+.pic.valoche{background-position: -0px -1200px;}
+.pic.vince{background-position: -200px -1200px;}
+.pic.yoyo{background-position: -400px -1200px;}
+.pic.dany{background-position: -600px -1200px;}
+.pic.dany2{background-position: -800px -1200px;}
+.pic.bite{background-position: -1000px -1200px;}
+
+@media (min-width: 750px) {
+	.bureau-top {
+		margin-top:-125px;
+	}
+	.bureau-bottom {
+		margin-bottom:-125px;
+	}
+	.bureau-top-center {
+		margin-top:-90px;
+	}
+	.bureau-bottom-center {
+		margin-bottom:-90px;
+	}
+}
+
+.pole {
+	text-transform:uppercase;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	height:233px;
+	line-height: 233px;
+}

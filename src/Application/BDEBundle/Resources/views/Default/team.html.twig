@@ -1,0 +1,192 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title %}Découvrez-nous{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets 
+		'bundles/applicationbde/css/team.css'
+		filter='cssrewrite,?yui_css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	<section id="bureau">
+		<!-- The title -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<h1>Bureau</h1>
+					<hr>
+					<p class="big thin">Au sommet de la pyramide, c’est le bureau. Il supporte l’ensemble de la liste, gère les finances, prend les décisions pour mener à bien le mandat tout au long de l'année. </p>
+				</div>
+			</div>
+		</div>
+		<div style="margin-top: 100px;" class="container text-center">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 bureau-bottom">Baptiste<br /><b>Vice-Président</b><br /><i class="pic baptou"></i></div>
+				<div class="col-xs-12 col-sm-4 bureau-top-center">Nicolas<br /><b>Président</b><br /><i class="pic prez"></i></div>
+				<div class="col-xs-12 col-sm-4 bureau-bottom">Mathieu<br /><b>Vice-Président</b><br /><i class="pic maki"></i></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-12"><img src="{{ asset('bundles/applicationbde/img/logoBureau.png') }}" style="width:300px;"/></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic marc"></i><br />Marc<br /><b>Vice-Trésorier</b></div>
+				<div class="col-xs-12 col-sm-4 bureau-bottom-center"><i class="pic ombe"></i><br /><div style="display:block;">Ombeline<b style="display:block;">Secrétaire</b></div><br /><br /></div>
+				<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic remi"></i><br />Rémi<br /><b>Trésorier</b></div>
+			</div>
+		</div>
+	</section>
+	<section id="crea" style="margin-top: 100px;">
+		<!-- The title -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<h1>Branche Créa</h1>
+					<hr>
+					<p class="big thin">Pour faire des affiches, écrire un magazine, retoucher une vidéo, ou même produire un site web il y a la branche Créa ! Adeptes d’Adobe, de la bière bien fraîche, et des plans bien cadrés. Frissons garantis.</p>
+				</div>
+			</div>
+		</div>
+		<div class="text-center container">
+			<div class="row">
+				<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logocrea.png') }}" style="width:200px;"/></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-xs-12 col-md-3 right"><i class="pic clemi"></i><br />Clément<br /><b>Respo'</b></div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">MULTI</div>
+				<div class="col-xs-12 col-md-3"><i class="pic kim"></i><br />Kimberley</div>
+				<div class="col-xs-12 col-md-3"><i class="pic alie"></i><br />Alizée</div>
+				<div class="col-xs-12 col-md-3"><i class="pic tomo"></i><br />Thomas</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">RÉDACTION</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic poupou"></i><br />Antoine</div>
+				<div class="col-xs-12 col-md-3"><i class="pic thomasB"></i><br />Thomas</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">WEB</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic naji"></i><br />Naji</div>
+			</div>
+		</div>
+	</section>
+	<section id="event">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<h1>Branche Event</h1>
+					<hr>
+					<p class="big thin">Toujours de la partie quand il s’agit de faire la fête, voici la branche Event’ ! Animations en tout genre et soirées folles seront au programme tout le long de l’année ! Si vous voulez voyager, vous trouverez aussi votre bonheur.</p>
+				</div>
+			</div>
+		</div>
+		<div class="text-center container">
+			<div class="row">
+				<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoevent.png') }}" style="width:200px;"/></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-xs-12 col-md-3 right"><i class="pic thomasL"></i><br />Thomas<br /><b>Respo'</b></div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Anim'</div>
+				<div class="col-xs-12 col-md-3"><i class="pic julie"></i><br />Julie</div>
+				<div class="col-xs-12 col-md-3"><i class="pic chloe"></i><br />Chloé</div>
+				<div class="col-xs-12 col-md-3"><i class="pic valoche"></i><br />Valentine</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Com'</div>
+				<div class="col-xs-12 col-md-3"><i class="pic coralie"></i><br />Coralie</div>
+				<div class="col-xs-12 col-md-3"><i class="pic camille"></i><br />Camille</div>
+				<div class="col-xs-12 col-md-3"><i class="pic marion2"></i><br />Marion</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Voyage</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic oceane"></i><br />Océane</div>
+				<div class="col-xs-12 col-md-3"><i class="pic hugo"></i><br />Hugo</div>
+			</div>
+		</div>
+	</section>
+	<section id="logistique">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<h1>Branche Logistique</h1>
+					<hr>
+					<p class="big thin">Prêt à porter les charges les plus lourdes, la branche logistique est là pour fournir le matériel adéquat pour les évènements, et ainsi profiter pleinement de ces moments !</p>
+				</div>
+			</div>
+		</div>
+		<div class="text-center container">
+			<div class="row">
+				<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoLog.png') }}" style="width:200px;"/></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-xs-12 col-md-3 right"><i class="pic eric"></i><br />Éric<br /><b>Respo'</b></div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Réserve'</div>
+				<div class="col-xs-12 col-md-3"><i class="pic mumu"></i><br />Adrien</div>
+				<div class="col-xs-12 col-md-3"><i class="pic maxime"></i><br />Maxime</div>
+				<div class="col-xs-12 col-md-3"><i class="pic gaillota"></i><br />Antoine</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Tac Tuc</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic dany2"></i><br />Dany</div>
+				<div class="col-xs-12 col-md-3"><i class="pic wallet2"></i><br />Alexandre</div>
+			</div>
+		</div>
+	</section>
+	<section id="vieetud">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<h1>Branche Vie Étudiante</h1>
+					<hr>
+					<p class="big thin">La branche vie étudiante gère tous les autres services indispensables pour les élèves. Besoin d’annales pour réviser ? Besoin de subventions pour les clubs ? Tout se passe ici.</p>
+				</div>
+			</div>
+		</div>
+		<div class="text-center container">
+			<div class="row">
+				<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoVieEtudiante.png') }}" style="width:200px;"/></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-xs-12 col-md-3 right"><i class="pic celine"></i><br />Céline<br /><b>Respo'</b></div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Annales</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic thomasLeMeur"></i><br />Thomas</div>
+				<div class="col-xs-12 col-md-3"><i class="pic vince"></i><br />Vincent</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Clubs</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic elie"></i><br />Élie</div>
+				<div class="col-xs-12 col-md-3"><i class="pic yoyo"></i><br />Yoann</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">Sponsors</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic audrey"></i><br />Audrey</div>
+				<div class="col-xs-12 col-md-3"><i class="pic kevin"></i><br />Kevin</div>
+			</div><br /><br />
+			<div class="row">
+				<div class="col-xs-12 col-md-3 pole">International</div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"></div>
+				<div class="col-xs-12 col-md-3"><i class="pic iris"></i><br />Iris</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
