@@ -94,7 +94,7 @@
         line-height: 98px;
     }
 
-    .social-link-footer li a {
+    .social-link-footer li a, .social-link-footer li img {
         font-size: 16px;
         height: 40px;
         width: 40px;
@@ -123,6 +123,10 @@
 
     .logoClub  {
         margin: 0px 43.5px 43.5px 43.5px;
+    }
+
+    .sponsors h1, .sponsors div {
+        text-align: left !important;
     }
 }
 
