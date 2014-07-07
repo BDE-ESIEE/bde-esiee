@@ -166,9 +166,10 @@ sonata_media:
             create:     false
 
 ivory_ck_editor:
-    default_config: default
+    default_config: main
     configs:
-        default:
+        main:
+            toolbar: "toolbar_basic"
             filebrowserBrowseRoute: admin_sonata_media_media_ckeditor_browser
             filebrowserImageBrowseRoute: admin_sonata_media_media_ckeditor_browser
             # Display images by default when clicking the image dialog browse button
@@ -181,7 +182,21 @@ ivory_ck_editor:
             filebrowserImageUploadRoute: admin_sonata_media_media_ckeditor_upload
             filebrowserImageUploadRouteParameters:
                 provider: sonata.media.provider.image
-            toolbar: full
+    toolbars:
+        configs:
+            toolbar_basic: ["@clipboard", "@editing", "/", "@basicstyles", "@links", "@paragraph", "/", '@styles', '@colors', '@tools', '@insert' ]
+        items:
+            clipboard : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo', '-', 'Preview' ]
+            editing : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ]
+
+            basicstyles : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ]
+            paragraph : [ 'NumberedList','BulletedList','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ]
+            links: [ 'Link','Unlink','Anchor' ]
+            insert : [ 'Image', 'Table','HorizontalRule','SpecialChar' ]
+
+            styles : [ 'Format','FontSize' ]
+            colors : [ 'TextColor','BGColor' ]
+            tools : [ 'Source', 'Maximize' ]
 
 sonata_formatter:
     formatters:

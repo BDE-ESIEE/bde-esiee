@@ -55,7 +55,7 @@ class ClubAdmin extends Admin
                 ),
                 'target_field'         => 'content',
                 'listener'             => true,
-                'ckeditor_context'     => 'default',
+                'ckeditor_context'     => 'main',
             ))
         ;
     }

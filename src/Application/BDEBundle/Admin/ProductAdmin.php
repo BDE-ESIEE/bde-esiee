@@ -18,14 +18,15 @@ class ProductAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('description', 'sonata_formatter_type', array(
-                'event_dispatcher' => $formMapper->getFormBuilder()->getEventDispatcher(),
-                'format_field'   => 'descriptionFormatter',
-                'source_field'   => 'rawDescription',
-                'source_field_options'      => array(
+                'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher(),
+                'format_field'         => 'descriptionFormatter',
+                'source_field'         => 'rawDescription',
+                'source_field_options' => array(
                     'attr' => array('class' => 'span10', 'rows' => 20)
                 ),
-                'target_field'   => 'description',
-                'listener'       => true,
+                'target_field'         => 'description',
+                'listener'             => true,
+                'ckeditor_context'     => 'main',
             ))
             ->add('hidden', null, array('required' => false))
             ->add('enableCounter', null, array('required' => false))

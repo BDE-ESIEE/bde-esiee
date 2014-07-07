@@ -14,8 +14,21 @@ class PostAdmin extends BaseAdmin
     {
         parent::configureFormFields($formMapper);
 
+        $formMapper->remove('content');
+
         $formMapper
             ->with('General')
+                ->add('content', 'sonata_formatter_type', array(
+                    'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher(),
+                    'format_field'         => 'contentFormatter',
+                    'source_field'         => 'rawContent',
+                    'source_field_options' => array(
+                        'attr' => array('class' => 'span10', 'rows' => 20)
+                    ),
+                    'target_field'         => 'content',
+                    'listener'             => true,
+                    'ckeditor_context'     => 'main',
+                ))
                 ->add('event', 'sonata_type_model_list', array(
                     'btn_delete' => false,
                     'required'   => false,
