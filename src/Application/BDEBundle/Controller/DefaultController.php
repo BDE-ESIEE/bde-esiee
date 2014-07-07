@@ -15,4 +15,14 @@ class DefaultController extends Controller
     {
     	return $this->render('ApplicationBDEBundle:Default:team.html.twig');
     }
+
+    public function historyAction()
+    {
+    	return $this->render('ApplicationBDEBundle:Default:history.html.twig');
+    }
+
+    public function partnershipAction()
+    {
+    	return $this->render('ApplicationBDEBundle:Default:partnership.html.twig');
+    }
 }

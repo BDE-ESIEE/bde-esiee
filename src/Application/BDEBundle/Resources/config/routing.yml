@@ -6,6 +6,14 @@ application_bde_team:
     pattern:  /team
     defaults: { _controller: ApplicationBDEBundle:Default:team }
 
+application_bde_history:
+    pattern:  /history
+    defaults: { _controller: ApplicationBDEBundle:Default:history }
+
+application_bde_partnership:
+    pattern:  /partnership
+    defaults: { _controller: ApplicationBDEBundle:Default:partnership }
+
 application_bde_breguet_shop:
     pattern:  /shop
     defaults: { _controller: ApplicationBDEBundle:Shop:index }
