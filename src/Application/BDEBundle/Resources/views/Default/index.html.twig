@@ -2,7 +2,7 @@
 
 {% block title %}Ferus{% endblock %}
 
-{% block containerClass %} class="property gray-bg"{% endblock %}
+{% block containerClass %} class="property"{% endblock %}
 
 {% block breadcrumbs %}
 <!--breadcrumbs start-->
@@ -11,7 +11,7 @@
         <!--feature start-->
         <div class="text-center feature-head">
             <h1>{% block title2 %}Bienvenue sur le site de FERUS{% endblock %}</h1>
-            <p>Le plus beau BDE qui est et qui sera &lt;3</p>
+            <p>Le plus beau BDE qui est et qui sera <i class="fa fa-heart"></i></p>
         </div>
         <!--feature end-->
     </div>
@@ -20,13 +20,37 @@
 {% endblock %}
 
 {% block body %}
-    <div class="col-lg-6 col-sm-6">
-        <img src="{{ asset('logoFerus_Transparent_Noir.png') }}" class="img-responsive" style="max-width:418px;margin-left:auto;margin-right:auto;">
+    <div class="col-lg-4 col-sm-4">
+        <section>
+            <div class="f-box">
+                <i class="fa fa-university"></i>
+                <h2>L'association</h2>
+            </div>
+            <p class="f-text">Le Bureau des Élèves (BDE) est l’association la plus importante de l'école et elle est au cœur de la vie étudiante. Elle fait le lien entre les étudiants, l'école et les entreprises.</p>
+            <a href="{{ path('application_bde_history') }}" class="btn btn-purchase" style="width:100%;">Un peu d’histoire</a>
+        </section>
     </div>
-    <div class="col-lg-6 col-sm-6">
-        <h1>L'équipe</h1>
-        <p>Ferus c'est avant tout un groupe d'amis qui ont su s'unir afin de proposer le meilleur pour les étudiants de l'ESIEE et qui s'assureront que ton année se passe toute en douceur.</p>
-        <a href="{{ path('application_bde_team') }}" class="btn btn-purchase">Découvre nous !</a>
+    <div class="col-lg-4 col-sm-4">
+        <section>
+            <div class="f-box">
+                <i style="max-height: 51px;">
+                    <img src="{{ asset('favicon.png') }}" style="max-height: 51px; vertical-align: top;max-width: 51px;">
+                </i>
+                <h2>L'équipe</h2>
+            </div>
+            <p class="f-text">Ferus c'est avant tout un groupe d'amis qui ont su s'unir afin de proposer le meilleur pour les étudiants de l'ESIEE et qui s'assureront que ton année se passe toute en douceur.</p>
+            <a href="{{ path('application_bde_team') }}" class="btn btn-purchase" style="width:100%;">Découvre nous !</a>
+        </section>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+        <section>
+            <div class="f-box">
+                <i class="fa fa-building"></i>
+                <h2>Entreprises</h2>
+            </div>
+            <p class="f-text">Ferus c'est avant tout un groupe d'amis qui ont su s'unir afin de proposer le meilleur pour les étudiants de l'ESIEE et qui s'assureront que ton année se passe toute en douceur.</p>
+            <a href="{{ path('application_bde_partnership') }}" class="btn btn-purchase" style="width:100%;">Devenir partenaire</a>
+        </section>
     </div>
 {% endblock %}
 
