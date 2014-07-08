@@ -391,6 +391,15 @@
                 <source>breadcrumb.link_club_category_history</source>
                 <target>Historique des modifications</target>
             </trans-unit>
+
+            <trans-unit id="breadcrumb_link_lost_property_list">
+                <source>breadcrumb.link_lost_property_list</source>
+                <target>Liste des Objets Trouvés</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_lost_property_history">
+                <source>breadcrumb.link_lost_property_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

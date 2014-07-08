@@ -1,0 +1,17 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title %}Objets trouvés{% endblock %}
+
+{% block body %}
+	<div class="col-lg-12 col-sm-12" style="margin:0 15px;">
+		<ul>
+		{% for lost_property in lost_property_list %}
+			<li>{{ lost_property.name }}</li>
+		{% else %}
+			<li>Aucun objets trouvés</li>
+		{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
+
+{% block liServices %} active{% endblock %}

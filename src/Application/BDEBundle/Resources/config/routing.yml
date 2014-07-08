@@ -14,6 +14,13 @@ application_bde_partnership:
     pattern:  /partnership
     defaults: { _controller: ApplicationBDEBundle:Default:partnership }
 
+application_bde_lost_property:
+    pattern:  /objets/trouves.{_format}
+    defaults: { _controller: ApplicationBDEBundle:LostProperty:index, _format:html }
+    requirements:
+        _format: html|json|xml
+        _method:  GET
+
 application_bde_breguet_shop:
     pattern:  /shop
     defaults: { _controller: ApplicationBDEBundle:Shop:index }

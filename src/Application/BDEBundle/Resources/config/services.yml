@@ -75,3 +75,13 @@ services:
             - [ setPoolFormatter, [@sonata.formatter.pool]]
             - [ addChild, [@sonata.news.admin.comment]]
             - [ setCommentManager, [@sonata.news.manager.comment]]
+    bde.admin.lost_property:
+        class: Application\BDEBundle\Admin\LostPropertyAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Objets Trouvés", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\BDEBundle\Entity\LostProperty
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]
