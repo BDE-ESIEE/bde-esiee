@@ -26,17 +26,17 @@
 		</div>
 		<div style="margin-top: 100px;" class="container text-center">
 			<div class="row">
-				<div class="col-xs-12 col-sm-4 bureau-bottom">Baptiste<br /><b>Vice-Président</b><br /><i class="pic baptou"></i></div>
-				<div class="col-xs-12 col-sm-4 bureau-top-center">Nicolas<br /><b>Président</b><br /><i class="pic prez"></i></div>
-				<div class="col-xs-12 col-sm-4 bureau-bottom">Mathieu<br /><b>Vice-Président</b><br /><i class="pic maki"></i></div>
+				<div class="col-xs-12 col-sm-4 bureau-bottom"><span class="name">Baptiste</span><br /><b>Vice-Président</b><br /><i class="pic baptou bureau"></i></div>
+				<div class="col-xs-12 col-sm-4 bureau-top-center"><span class="name">Nicolas</span><br /><b>Président</b><br /><i class="pic prez bureau"></i></div>
+				<div class="col-xs-12 col-sm-4 bureau-bottom"><span class="name">Mathieu</span><br /><b>Vice-Président</b><br /><i class="pic maki bureau"></i></div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-md-12"><img src="{{ asset('bundles/applicationbde/img/logoBureau.png') }}" style="width:300px;"/></div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic marc"></i><br />Marc<br /><b>Vice-Trésorier</b></div>
-				<div class="col-xs-12 col-sm-4 bureau-bottom-center"><i class="pic ombe"></i><br /><div style="display:block;">Ombeline<b style="display:block;">Secrétaire</b></div><br /><br /></div>
-				<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic remi"></i><br />Rémi<br /><b>Trésorier</b></div>
+				<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic marc bureau"></i><br /><span class="name">Marc</span><br /><b>Vice-Trésorier</b></div>
+				<div class="col-xs-12 col-sm-4 bureau-bottom-center"><i class="pic ombe bureau"></i><br /><div style="display:block;"><span class="name">Ombeline</span><b style="display:block;">Secrétaire</b></div><br /><br /></div>
+				<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic remi bureau"></i><br /><span class="name">Rémi</span><br /><b>Trésorier</b></div>
 			</div>
 		</div>
 	</section>
@@ -189,4 +189,25 @@
 			</div>
 		</div>
 	</section>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+			n = 0;
+		$(document).keydown(function (e) {
+		    if (e.keyCode === k[n++]) {
+		        if (n === k.length) {
+		        	$(".bureau").fadeOut('slow', function() {
+			        	$(".bureau").addClass('yelen');
+			        	$(".bureau").removeClass('prez baptou maki marc ombe remi');
+			        	$(".name").text("Ÿelen");
+			        	$(".yelen").fadeIn('slow');
+		        	});
+		        }
+		    } else 
+		    	n = 0;
+		});
+	</script>
 {% endblock %}
