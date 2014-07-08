@@ -67,12 +67,6 @@
                                     Calendrier
                                 </a>
                             </li>
-                            <li {% block liMedia %}{% endblock %}>
-                                <a href="{{ path('sonata_media_gallery_index') }}">
-                                    <i class="fa fa-camera-retro"></i>
-                                    Media
-                                </a>
-                            </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
                                     <i class="fa fa-cloud"></i>
@@ -110,6 +104,12 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li {% block liMedia %}{% endblock %}>
+                                <a href="{{ path('sonata_media_gallery_index') }}">
+                                    <i class="fa fa-camera-retro"></i>
+                                    Media
+                                </a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
