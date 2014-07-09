@@ -30,4 +30,9 @@ class DefaultController extends Controller
     {
         return $this->render('ApplicationBDEBundle:Default:eat_traffic.html.twig');
     }
+
+    public function goodPlanAction()
+    {
+        return $this->render('ApplicationBDEBundle:Default:good_plan.html.twig');
+    }
 }
