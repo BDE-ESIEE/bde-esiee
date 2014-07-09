@@ -12,7 +12,7 @@
                         <section class="panel">
                             <div class="pro-img-box">
                                 {% thumbnail product.photos.GalleryHasMedias[0].media, product.photos.defaultFormat with {'class': 'media-object'} %}
-                                <a href="#" class="adtocart">
+                                <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}" class="adtocart">
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </div>
