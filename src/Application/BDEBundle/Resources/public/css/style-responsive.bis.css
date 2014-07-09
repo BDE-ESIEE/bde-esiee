@@ -108,8 +108,8 @@
     }
 
     .navbar-brand {
-        float: none;
-
+        margin-top: 10px !important;
+        float: left !important;
     }
 
     .carousel-control {
@@ -143,11 +143,6 @@
 
     .header-frontend .nav li .dropdown-menu li a:hover {
         color: #f77b6f !important;
-    }
-
-    .navbar-brand {
-        margin-top: 10px !important;
-        float: left !important;
     }
 
     .col-4 .item {
