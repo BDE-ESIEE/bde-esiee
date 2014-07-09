@@ -25,4 +25,9 @@ class DefaultController extends Controller
     {
     	return $this->render('ApplicationBDEBundle:Default:partnership.html.twig');
     }
+
+    public function eatTrafficAction()
+    {
+        return $this->render('ApplicationBDEBundle:Default:eat_traffic.html.twig');
+    }
 }

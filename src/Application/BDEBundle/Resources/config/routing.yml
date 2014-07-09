@@ -21,6 +21,10 @@ application_bde_lost_property:
         _format: html|json|xml
         _method:  GET
 
+application_bde_eat_traffic:
+    pattern:  /eat/traffic
+    defaults: { _controller: ApplicationBDEBundle:Default:eatTraffic }
+
 application_bde_breguet_shop:
     pattern:  /shop
     defaults: { _controller: ApplicationBDEBundle:Shop:index }
