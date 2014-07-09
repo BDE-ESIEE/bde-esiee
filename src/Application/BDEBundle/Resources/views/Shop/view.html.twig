@@ -41,7 +41,12 @@
 						{{ product.rawDescription|raw }}
 					</p>
 					<div class="product_meta">
-						<span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span>
+						<span class="posted_in"> 
+							<strong>Categorie{% if product.categories|length > 1 %}s{% endif %} :</strong> 
+							{% for category in product.categories %}
+								<a rel="tag" href="{{ path('application_bde_breguet_shop_filter', {id: category.id}) }}">{{ category.name }}</a>{% if loop.last %}.{% else %},{% endif %}
+							{% endfor %}
+						</span>
 					</div>
 					{% if product.enableCounter %}
 						<div>
