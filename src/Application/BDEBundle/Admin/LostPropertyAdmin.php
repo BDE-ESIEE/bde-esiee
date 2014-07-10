@@ -17,6 +17,7 @@ class LostPropertyAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('date')
         ;
     }
 
@@ -25,6 +26,7 @@ class LostPropertyAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
+            ->add('date')
         ;
     }
 
@@ -33,6 +35,7 @@ class LostPropertyAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('date')
         ;
     }
     
@@ -40,6 +43,7 @@ class LostPropertyAdmin extends Admin
     {
         $showMapper
             ->add('name')
+            ->add('date')
         ;
     }
 }

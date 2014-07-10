@@ -6,7 +6,7 @@
 	<div class="col-lg-12 col-sm-12" style="margin:0 15px;">
 		<ul>
 		{% for lost_property in lost_property_list %}
-			<li>{{ lost_property.name }}</li>
+			<li>{{ lost_property.date|date('d/m/Y') }} : {{ lost_property.name }}</li>
 		{% else %}
 			<li>Aucun objets trouvés</li>
 		{% endfor %}

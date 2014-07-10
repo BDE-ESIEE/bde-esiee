@@ -20,7 +20,7 @@ class LostPropertyController extends FOSRestController
      */
     public function indexAction()
     {
-        $lost_property_list = $this->getDoctrine()->getManager()->getRepository('ApplicationBDEBundle:LostProperty')->findAll();
+        $lost_property_list = $this->getDoctrine()->getManager()->getRepository('ApplicationBDEBundle:LostProperty')->findBy(array(), array('date' => 'ASC'));
 
         $view = $this->view($lost_property_list, 200)
             ->setTemplate("ApplicationBDEBundle:LostProperty:index.html.twig")

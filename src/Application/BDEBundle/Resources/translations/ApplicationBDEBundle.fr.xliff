@@ -400,6 +400,26 @@
                 <source>breadcrumb.link_lost_property_history</source>
                 <target>Historique des modifications</target>
             </trans-unit>
+
+            <trans-unit id="show_label_date">
+                <source>show.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+
+            <trans-unit id="filter_label_date">
+                <source>filter.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+
+            <trans-unit id="form_label_date">
+                <source>form.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+
+            <trans-unit id="list_label_date">
+                <source>list.label_date</source>
+                <target>Date</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
