@@ -345,6 +345,7 @@ fos_rest:
     format_listener:        true
     view:
         view_response_listener: force
+        mime_types: {'ics': ['text/calendar']}
     body_converter:
         enabled: true
         validate: true
