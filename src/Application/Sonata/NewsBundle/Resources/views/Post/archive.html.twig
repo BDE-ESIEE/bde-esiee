@@ -4,142 +4,91 @@
 
 {% block archive %}
     {% sonata_template_box 'Liste des news' %}
-        {% for post in pager.getResults() %}
-            {% if post.publicationDateStart|date('U') < 'now'|date('U') %}
-                <div class="blog-item">
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-2">
-                            <div class="date-wrap">
-                                <span class="date">{{ post.publicationDateStart | format_date("dd") }}</span>
-                                <span class="month">{{ post.publicationDateStart | format_date("MMMM") | capitalize }}</span>
-                            </div>
+    {% for post in pager.getResults() %}
+        {% if post.publicationDateStart|date('U') < 'now'|date('U') %}
+            <div class="blog-item">
+                <div class="row">
+                    <div class="col-lg-2 col-sm-2">
+                        <div class="date-wrap">
+                            <span class="date">{{ post.publicationDateStart | format_date("dd") }}</span>
+                            <span class="month">{{ post.publicationDateStart | format_date("MMMM") | capitalize }}</span>
+                        </div>
 {#                             <div class="comnt-wrap">
-                                <span class="comnt-ico">
-                                    <i class="fa fa-comments"></i>
-                                </span>
-                                <span class="value">15</span>
-                            </div> #}
-                        </div>
-                        <div class="col-lg-10 col-sm-10">
-                            {% if post.photo is not null %}
-                                <div class="blog-img">
-                                    <img src="{% path post.photo, 'reference' %}" alt=""/>
-                                </div>
-                            {% else %}
-                                <h1 style="margin-top:0px;"><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
-                                <p style="text-align:justify;">{{ post.abstract }}</p>
-                                <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="btn btn-danger">Lire la suite</a>
-                            {% endif %}
-                        </div>
+                            <span class="comnt-ico">
+                                <i class="fa fa-comments"></i>
+                            </span>
+                            <span class="value">15</span>
+                        </div> #}
                     </div>
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-2 text-right">
-                            <div class="author">
-                                {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}
-                                {# By <a href="#">Admin</a> #}
+                    <div class="col-lg-10 col-sm-10">
+                        {% if post.photo is not null %}
+                            <div class="blog-img">
+                                <img src="{% path post.photo, 'reference' %}" alt=""/>
                             </div>
-                            <ul class="list-unstyled">
-                                {% for tag in post.tags %}
-                                    {% if tag.enabled %}
-                                        <li><a href="{{ path('sonata_news_tag', { 'tag': tag.slug } ) }}"><em>{{ tag.name }}</em></a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="col-lg-10 col-sm-10">
-                            {% if post.photo is not null %}
-                                <h1><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
-                                <p style="text-align:justify;">{{ post.abstract }}</p>
-                                <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="btn btn-danger">Lire la suite</a>
-                            {% endif %}
-                        </div>
+                        {% else %}
+                            <h1 style="margin-top:0px;"><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
+                            <p style="text-align:justify;">{{ post.abstract }}</p>
+                            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="btn btn-default">Lire la suite</a>
+                        {% endif %}
                     </div>
                 </div>
-            {% endif %}
-        {% else %}
-            {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
-        {% endfor %}
-{#     <div class="col-lg-12">
-        <section class="panel">
-            <header class="panel-heading">
-                News
-            </header>
-            <div class="panel-body profile-activity">
-                {% set alt = false %}
-                {% for post in pager.getResults() %}
-                    <div class="activity terques {% if alt %}alt{% endif %}">
-                        <span>
-                            {% if post.collection.cssClass %}
-                                <i class="{{ post.collection.cssClass }}"></i>
-                            {% else %}
-                                <i class="fa fa-bullhorn"></i>
-                            {% endif %}
-                        </span>
-                        <div class="activity-desk">
-                            <div class="panel">
-                                <div class="panel-body">
-                                    <div class="arrow{% if alt %}-alt{% endif %}"></div>
-                                    <h4><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h4>
-                                    <i class=" fa fa-clock-o"></i>
-                                    <h4>{{ post.publicationDateStart | format_date }}</h4>
-                                    <p>{{ post.abstract }}</p>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-lg-2 col-sm-2 text-right">
+                        <div class="author">
+                            {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}
+                            {# By <a href="#">Admin</a> #}
                         </div>
-                    </div>
-                    {% set alt = not alt %}
-                {% else %}
-                    {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
-                {% endfor %}
-            </div>
-        </section>
-    </div> #}
-
-    <div class="sonata-blog-post-list">
-{#         {% for post in pager.getResults() %}
-            <div class="sonata-blog-post-container">
-                <header>
-                    <h2 class="sonata-blog-post-title">
-                        <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a>
-                    </h2>
-
-                    <div class="sonata-blog-post-information">
-                        <span class="sonata-blog-post-author">{{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}</span> |
-
-                        <i class="icon-calendar"></i>
-                        {{ post.publicationDateStart | format_date }} |
-
-                        <i class="icon-comment"></i>
-                        <span class="sonata-blog-post-comments-count">{{ 'comments_count'|trans({'%comments_count%': post.commentsCount }, 'SonataNewsBundle') }}</span>
-
-                        <div class="sonata-blog-post-tags">
-                            {% if post.tags|length > 1 %}
-                                <i class="icon-tags"></i>
-                            {% else %}
-                                <i class="icon-tag"></i>
-                            {% endif %}
-                            {{ 'published_under'|transchoice(post.tags|length, {}, 'SonataNewsBundle') }}
-
+                        <ul class="list-unstyled">
                             {% for tag in post.tags %}
-                                <a href="{{ url('sonata_news_tag', { 'tag': tag.slug } ) }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+                                {% if tag.enabled %}
+                                    <li><a href="{{ path('sonata_news_tag', { 'tag': tag.slug } ) }}"><em>{{ tag.name }}</em></a></li>
+                                {% endif %}
                             {% endfor %}
-                        </div>
+                        </ul>
                     </div>
-                </header>
-
-                <div class="sonata-blog-post-abtract">
-                    {{ post.abstract }}
+                    <div class="col-lg-10 col-sm-10">
+                        {% if post.photo is not null %}
+                            <h1><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
+                            <p style="text-align:justify;">{{ post.abstract }}</p>
+                            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="btn btn-default">Lire la suite</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
+        {% endif %}
+    {% else %}
+        {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
+    {% endfor %}
 
-            <hr />
-        {% else %}
-            {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
-        {% endfor %} #}
+    <div class="text-center">
+        <ul class="pagination">
+            {% if pager.page > 2  %}
+                <li><a href="{{ url(route, route_parameters|merge({'page': 1})) }}" title="{{ 'link_first_pager'|trans({}, 'SonataAdminBundle') }}">&laquo;</a></li>
+            {% endif %}
 
-        <ul class="pager">
-            <li{% if pager.page == pager.lastPage %} class="disabled"{% endif %}><a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" title="{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}</a>
-            <li{% if pager.page == pager.firstPage %} class="disabled"{% endif %}><a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" title="{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}</a></li>
+            {% if pager.page != pager.previouspage %}
+                <li><a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" title="{{ 'link_previous_pager'|trans({}, 'SonataAdminBundle') }}">&lsaquo;</a></li>
+            {% endif %}
+
+            {# Set the number of pages to display in the pager #}
+            {% set links = pager.getLinks(4) %}
+            {%  if links|length > 1 %}
+                {% for page in links %}
+                    {% if page == pager.page %}
+                        <li class="active"><a href="{{ url(route, route_parameters|merge({'page': page})) }}">{{ page }}</a></li>
+                    {% else %}
+                        <li><a href="{{ url(route, route_parameters|merge({'page': page})) }}">{{ page }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {% if pager.page != pager.nextpage %}
+                <li><a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" title="{{ 'link_next_pager'|trans({}, 'SonataAdminBundle') }}">&rsaquo;</a></li>
+            {% endif %}
+
+            {% if pager.page != pager.lastpage and pager.lastpage != pager.nextpage %}
+                <li><a href="{{ url(route, route_parameters|merge({'page': pager.lastpage})) }}" title="{{ 'link_last_pager'|trans({}, 'SonataAdminBundle') }}">&raquo;</a></li>
+            {% endif %}
         </ul>
     </div>
 {% endblock %}
