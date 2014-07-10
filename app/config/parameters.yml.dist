@@ -15,3 +15,5 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     application_version: 1.0.0
     hostname: http://bde/
+    piwik_id: 0
+    piwik_url: domain.tld/piwik/

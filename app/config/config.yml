@@ -36,6 +36,8 @@ twig:
             - 'SonataCoreBundle:Form:datepicker.html.twig'
     globals:
         version: %application_version%
+        piwik_id: %piwik_id%
+        piwik_url: %piwik_url%
 
 # Assetic Configuration
 assetic:
