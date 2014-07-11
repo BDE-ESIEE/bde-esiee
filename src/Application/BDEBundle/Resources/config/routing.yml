@@ -2,9 +2,9 @@ application_bde_homepage:
     pattern:  /
     defaults: { _controller: ApplicationBDEBundle:Default:index }
 
-application_bde_team:
-    pattern:  /team
-    defaults: { _controller: ApplicationBDEBundle:Default:team }
+application_bde_aboutus:
+    pattern:  /about-us
+    defaults: { _controller: ApplicationBDEBundle:Default:aboutus }
 
 application_bde_history:
     pattern:  /history

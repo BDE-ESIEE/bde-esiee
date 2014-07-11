@@ -455,7 +455,7 @@ ul.about-flex-slides {
     width: 100%;
 }
 
-.about-testimonial a.about-testimonial-author {
+.about-testimonial span.about-testimonial-author {
     display: inline-block;
     font-size: 15px;
     text-transform: uppercase;
@@ -2031,4 +2031,36 @@ ul.dropdown-menu li a i {
 
 .social-link-footer li img {
     width: 50px;
+}
+
+.icon {
+    font-size: 56px;
+    width: 120px;
+    height: 120px;
+    line-height: 114px;
+    cursor: default;
+    background: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: auto 3px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.icon:hover {
+    text-decoration: none;
+    color: #3ec8b7;
+    border: 3px solid #3ec8b7;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }

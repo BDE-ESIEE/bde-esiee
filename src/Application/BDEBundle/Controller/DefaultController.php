@@ -11,11 +11,6 @@ class DefaultController extends Controller
         return $this->render('ApplicationBDEBundle:Default:index.html.twig');
     }
 
-    public function teamAction()
-    {
-    	return $this->render('ApplicationBDEBundle:Default:team.html.twig');
-    }
-
     public function historyAction()
     {
     	return $this->render('ApplicationBDEBundle:Default:history.html.twig');
@@ -34,5 +29,10 @@ class DefaultController extends Controller
     public function goodPlanAction()
     {
         return $this->render('ApplicationBDEBundle:Default:good_plan.html.twig');
+    }
+
+    public function aboutusAction()
+    {
+        return $this->render('ApplicationBDEBundle:Default:aboutus.html.twig');
     }
 }

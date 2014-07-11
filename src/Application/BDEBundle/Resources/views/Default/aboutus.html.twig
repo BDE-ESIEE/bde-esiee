@@ -1,0 +1,456 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title %}Découvrez-nous{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets 
+		'bundles/applicationbde/css/team.css'
+		filter='cssrewrite,?yui_css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	<div class="col-lg-12">
+        <!--testimonial start-->
+        <div class="about-testimonial boxed-style about-flexslider ">
+            <div class="flexslider">
+                <ul class="slides about-flex-slides" style="padding-left:0;">
+                    <li>
+                        <div class="about-testimonial-image">
+                            <i class="pic yelen" style="width: 100px;height: 100px;background-position: -1055px -1220px;"></i>
+                        </div>
+                        <span class="about-testimonial-author" href="#">Ÿelen</span>
+                        <span class="about-testimonial-company">Mascotte chez Ferus - BDE ESIEE Paris</span>
+                        <div class="about-testimonial-content">
+                            <p class="about-testimonial-quote">
+                            	<p>
+                                	Salut les jeunes Esieens, cette année Ferus est là pour te faire vivre les meilleurs moments de ta vie. Ferus c’est le BDE, celui qui est à la tête de l’associatif Esiee. Mais l’associatif à l’Esiee c’est quoi ? Toi qui ne connais que l’ambiance lycée, tu va apprécier ce qu’on te réserve.
+                                </p>
+                            	<p>
+									L’Esiee c’est plus que ce que tu penses. Amphi, TP, TD ce n’est qu’une petite partie de ce que te réserve tes études à l’Esiee. Le BDE et tous ses clubs forment une des plus belles choses que tu pourra découvrir à l’école. Les possibilités apportés par l’associatif sont infinies. En collaboration avec tous les clubs, Ferus te prépare une année que tu n’es pas prêt d’oublier : des voyages (WEI, Amsterdam, Ski …), des soirées aux thèmes variés, des bouffes entre potes, des évènement sportifs et même des compétition entre club de l’Esiee ! La seule limite de l’Esiee est ta propre imagination.
+                                </p>
+                            	<p>
+									Soyons sérieux un instant, Ferus c’est des élèves, proche des élèves et en même temps proche de l’administration, te servant d’intermédiaire. Avec nos partenaire, on te fait profiter des meilleurs bons plans et des meilleures offres pour te faire vibrer lors de ta vie étudiante. La vie étudiante te fera rencontrer de nombreuses personnes partageant ta passion et s’investissant dans ce qu’ils aiment. Profite bien des années qui vont suivre, c’est la plus belle partie de ta vie qui t’attend !
+                                </p>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--testimonial end-->
+		<section class="panel mtop30 tab" style="background:white;">
+	        <header class="panel-heading service-tab tab-bg-dark-navy-blue">
+	            <ul class="nav nav-tabs nav-justified ">
+	                <li class="active">
+	                    <a data-toggle="tab" href="#programme">
+	                        Programme
+	                    </a>
+	                </li>
+	                <li>
+	                    <a data-toggle="tab" href="#trombi">
+	                        Trombi
+	                    </a>
+	                </li>
+	            </ul>
+	        </header>
+	        <div class="panel-body">
+	            <div class="tab-content tasi-tab">
+	                <div id="programme" class="tab-pane active">
+						<div class="row">
+							<div class="col-lg-1">
+							</div>
+							<div class="col-lg-10 text-center">
+								<h2 class="text-color">Nos projets autour du BDE</h2>
+							</div>
+							<div class="col-lg-1">
+							</div>
+						</div>
+						<!-- 3 Columns -->
+						<div class="row">
+							<!-- Column 1 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-camera-retro icon fa-5x"></i>
+								</p>
+								<h4>Vos souvenirs conservés avec le Yearbook</h4>
+								<p style="text-align: justify;">Ce concept made in USA, est un livre regroupant des photos de tous les évènements de l’année et de toutes les personnes vivant et travaillant à l'école. Ce sera le plus beau souvenir de vos années à l’ESIEE.</p>
+							</div>
+							<!-- Column 2 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-shopping-cart icon fa-5x"></i>
+								</p>
+								<h4><i class="fa fa-check" style="color:#009900;"></i> Breguet Shop : de nouveaux produits</h4>
+								<p style="text-align: justify;">En plus des ventes habituelles (canettes, briquets etc.), nous vendrons des produits scolaires de dépannage (cartouche d’encre, stylos, crayons etc.) et proposerons une nouvelle gamme de vêtements ESIEE en partenariat avec l’ESF.  Cette boutique soutiendra aussi les créations artistiques des Esieens.</p>
+							</div>
+							<!-- Column 3 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-credit-card icon fa-5x"></i>
+								</p>
+								<h4>Simplifiez vos achats</h4>
+								<p style="text-align: justify;">Nous souhaitons que la carte ESIEE devienne aussi un moyen de paiement pour l’associatif (achat de canette, place de soirée etc). Cette idée vient du Club*Nix et nous la soutenons pleinement.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-smile-o icon fa-5x"></i>
+								</p>
+								<h4><i class="fa fa-check" style="color:#009900;"></i> Ÿelen mascotte BDE</h4>
+								<p style="text-align: justify;">C’est parce que  nous sommes très inspirés par la vie étudiante américaine, que nous avons souhaité le retour d’une mascotte : Ÿelen.</p>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-book icon fa-5x"></i>
+								</p>
+								<h4><i class="fa fa-check" style="color:#009900;"></i> Un site d’annales</h4>
+								<p style="text-align: justify;">Pour aider à la réussite de chacun, un nouveau site d’annales sera lancé. Il fonctionnera sur les mêmes principes que Dropbox et sera indépendant des mandats BDE. Celui-ci est déjà accessible à <a target="_blank" href="http://nicolas-keller.com/annales/www/">cette adresse</a>.</p>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-cutlery icon fa-5x"></i>
+								</p>
+								<h4>Snackyssime !</h4>
+								<p style="text-align: justify;">Nous souhaitons installer des distributeurs Easymeals (distributeur de plats snacks de qualité) pour donner une alternative locale à la cafet’ et la cantine.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1">
+							</div>
+							<div class="col-lg-10 text-center">
+								<h2 class="text-color">Une communication 2.0</h2>
+							</div>
+							<div class="col-lg-1">
+							</div>
+						</div>
+						<div class="row">
+							<!-- Column 1 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-cloud icon fa-5x"></i>
+								</p>
+								<h4><i class="fa fa-check" style="color:#009900;"></i> Un nouveau site</h4>
+								<p style="text-align: justify;">Pour répondre à vos besoins à tout instant, nous avons entièrement revu le design et la structure du site du BDE. Ce site sera open source pour que les BDE suivants n'aient pas besoin de repartir de zéro à chaque nouveau mandat.<br /> Vous aurez accès au système Eat’Traffic : une webcam placée dans la cantine et active de 12h à 13h vous permettra de voir l’affluence de la cantine sans se déplacer !</p>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-mobile icon fa-5x"></i>
+								</p>
+								<h4>Une application mobile</h4>
+								<p style="text-align: justify;">Le site web sera complété par une application que nous avons conçue. Celle-ci permettra de se tenir au courant des dernières nouvelles de l’associatif de l’école, des soutenances, des concours, des objets trouvés ou perdus juste en sélectionnant les rubriques qui vous intéressent.</p>
+							</div>
+							<!-- Column 2 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-comment icon fa-5x"></i>
+								</p>
+								<h4>Des modes de communications repensés</h4>
+								<p style="text-align: justify;">Nous souhaitons utiliser les écrans des épis pour faire passer les nouvelles les plus importantes. Le mail hebdomadaire du BDE est maintenant devenu traditionnel mais un aspect visuel, comme un article de magazine, lui donnera un nouveau souffle. Enfin, cette communication marchera dans les deux sens, les élèves auront la possibilité de noter et commenter (de manière constructive) les actions du BDE.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1">
+							</div>
+							<div class="col-lg-10 text-center">
+								<h2 class="text-color">Renouveler l’événementiel...</h2>
+								<h2 class="text-color">...Pour les soirées</h2>
+							</div>
+							<div class="col-lg-1">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-3">
+								<h4><i class="fa fa-check" style="color:#009900;"></i> Une organisation nouvelle</h4>
+								<p style="text-align: justify;">L’organisation du staff pour les soirées sera revue avec Fonzy en début de mandat. Nous créerons un CDS (Conseil des Soirées) composé des Clubs participants (Fonzy, Tech, Club DJ, ESF, Club Photo, Club Créa) et les BDE partenaires (ESO, ISBS, Archi) des grandes soirées.</p>
+							</div>
+							<div class="col-xs-12 col-md-3">
+								<h4>Un Gala de fin d'année</h4>
+								<p style="text-align: justify;">Le Gala se fera par le remplacement de l’Endless Night à partir de 2015. Nous garderons les mêmes plans officiels des soirées actuelles. Donc pas question de revenir à 3500 places, ceci étant impossible pour de multiples raisons. Les changements seront surtout sur la forme et les services proposés pour lesquels il y aura une grand différence, en bref, une soirée d’un plus haut standing.</p>
+							</div>
+							<div class="col-xs-12 col-md-3">
+								<h4>De nouveaux concepts</h4>
+								<p style="text-align: justify;">De nombreux concepts sont dans les cartons depuis un certain temps. En voici une liste non-exhaustive :<br />
+								• Pour les kFet : Silent Party by SilentNativ, boîte noire, généraliser des activités cool comme le Beer Pong.<br />
+								• Pour les Grandes Soirées : Carré VIP, Navette ESIEE-Châtelet, Valet Parking, vote du thème d’une salle laissé aux Esieens (dans la mesure de leur faisabilité).</p>
+							</div>
+							<div class="col-xs-12 col-md-3">
+								<h4>kFet : une solution face à l’augmentation de la population Esieenne</h4>
+								<p style="text-align: justify;">Tout le monde est conscient de l’augmentation de l’effectif des élèves dans l’école. Pour faire face à ce problème nous demanderons à l’administration une augmentation proportionnelle du nombre limite de participants pour les kFet.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1">
+							</div>
+							<div class="col-lg-10 text-center">
+								<h2 class="text-color">...En dehors des soirées</h2>
+							</div>
+							<div class="col-lg-1">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">
+								<p style="display:hidden;"></p>
+							</div>
+							<!-- Column 1 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-calendar icon fa-5x"></i>
+								</p>
+								<h4>Compléter le calendrier...</h4>
+								<p style="text-align: justify;">• La Semaine des Arts clôturée par un concert du même genre que la Fête de la Musique.<br />
+								• La Semaine des Clubs en Septembre clôturée par la soirée ESIEE’s GOT TALENT (une sorte de soirée cab’ où s’affrontent des artistes représentant chaque clubs).<br />
+								• D’avantages de journées thématiques comme Thanksgiving, Mardi gras ou Halloween.</p>
+							</div>
+							<!-- Column 2 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-globe icon fa-5x"></i>
+								</p>
+								<h4>...tout en gardant la base</h4>
+								<p style="text-align: justify;">Un quatrième voyage dans l’année avec des destinations culturelles comme Florence et Londres, est envisagé. Le concept des Grandes Bouffes est intéressant, on veut le reprendre en y associant d’autres clubs en plus du Club Musique comme par exemple le Club Wave et le Club Cinéma.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1">
+							</div>
+							<div class="col-lg-10 text-center">
+								<h2 class="text-color">Associatif</h2>
+							</div>
+							<div class="col-lg-1">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">
+								<p style="display:hidden;"></p>
+							</div>
+							<!-- Column 1 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-flag icon fa-5x"></i>
+								</p>
+								<h4>Un espace associatif mis en valeur</h4>
+								<p style="text-align: justify;">Cela passe tout d’abord par l’installation d’un décorum fort :<br />
+								• Installation d’une signalétique propre et moderne des cellules.<br />
+								• Création d’une allée de drapeaux des clubs sur le fronton de la zone associative.<br />
+
+								Un tel projet permettra d’embellir l’espace et de mettre en valeur la diversité et l’unité de notre associatif aussi bien auprès des internes que des externes. Enfin, nous proposerons aux clubs de renouveler leur charte graphique et leur communication par la création d’un nouveau logo et d’une page personnelle sur le site du BDE.
+								</p>
+							</div>
+							<!-- Column 2 -->
+							<div class="col-xs-12 col-md-4">
+								<p class="text-center"><i class="fa fa-gamepad icon fa-5x"></i>
+								</p>
+								<h4>Baby, Billard, déco... les petites choses qui font les grand plus</h4>
+								<p style="text-align: justify;">Nous souhaitons faire faire une remise à niveau du billard par des professionnels et le co-financement d’un nouveau babyfoot. Nous voulons aussi rénover le mobilier et la décoration de la cellule du BDE et proposer une nouvelle organisation de l’espace.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1">
+							</div>
+							<div class="col-lg-10 text-center">
+								<h2 class="text-color">Pour les élèves étrangers</h2>
+								<p style="text-align: justify;">Notre but est de mieux intégrer les élèves étrangers dans l’école plutôt que de créer uniquement des évènements privés au Foyer. On pense organiser une semaine d’intégration avec plaquette de Bienvenue bilingue pour les MOTIS complétée par un mail mensuel bilingue.</p>
+							</div>
+							<div class="col-lg-1">
+							</div>
+						</div>
+	                </div>
+	                <div id="trombi" class="tab-pane">
+						<section id="bureau">
+							<!-- The title -->
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Bureau</h1>
+										<hr>
+										<p class="big thin">Au sommet de la pyramide, c’est le bureau. Il supporte l’ensemble du BDE, gère les finances, prend les décisions pour mener à bien le mandat tout au long de l'année. </p>
+									</div>
+								</div>
+							</div>
+							<div style="margin-top: 100px;" class=" text-center">
+								<div class="row">
+									<div class="col-xs-12 col-sm-4 bureau-bottom"><span class="name">Baptiste</span><br /><b>Vice-Président</b><br /><i class="pic baptou bureau"></i></div>
+									<div class="col-xs-12 col-sm-4 bureau-top-center"><span class="name">Nicolas</span><br /><b>Président</b><br /><i class="pic prez bureau"></i></div>
+									<div class="col-xs-12 col-sm-4 bureau-bottom"><span class="name">Mathieu</span><br /><b>Vice-Président</b><br /><i class="pic maki bureau"></i></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-md-12"><img src="{{ asset('bundles/applicationbde/img/logoBureau.png') }}" style="width:300px;"/></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic marc bureau"></i><br /><span class="name">Marc</span><br /><b>Vice-Trésorier</b></div>
+									<div class="col-xs-12 col-sm-4 bureau-bottom-center"><i class="pic ombe bureau"></i><br /><div style="display:block;"><span class="name">Ombeline</span><b style="display:block;">Secrétaire</b></div><br /><br /></div>
+									<div class="col-xs-12 col-sm-4 bureau-top"><i class="pic remi bureau"></i><br /><span class="name">Rémi</span><br /><b>Trésorier</b></div>
+								</div>
+							</div>
+						</section>
+						<section id="crea" style="margin-top: 100px;">
+							<!-- The title -->
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Branche Créa</h1>
+										<hr>
+										<p class="big thin">Pour faire des affiches, écrire un magazine, retoucher une vidéo, ou même produire un site web il y a la branche Créa ! Adeptes d’Adobe, de la bière bien fraîche, et des plans bien cadrés. Frissons garantis.</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logocrea.png') }}" style="width:200px;"/></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic clemi"></i><br />Clément<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">MULTI</div>
+									<div class="col-xs-12 col-md-3"><i class="pic kim"></i><br />Kimberley</div>
+									<div class="col-xs-12 col-md-3"><i class="pic alie"></i><br />Alizée</div>
+									<div class="col-xs-12 col-md-3"><i class="pic tomo"></i><br />Thomas</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">RÉDACTION</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic poupou"></i><br />Antoine</div>
+									<div class="col-xs-12 col-md-3"><i class="pic thomasB"></i><br />Thomas</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">WEB</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic naji"></i><br />Naji</div>
+								</div>
+							</div>
+						</section>
+						<section id="event">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Branche Event</h1>
+										<hr>
+										<p class="big thin">Toujours de la partie quand il s’agit de faire la fête, voici la branche Event’ ! Animations en tout genre et soirées folles seront au programme tout le long de l’année ! Si vous voulez voyager, vous trouverez aussi votre bonheur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoevent.png') }}" style="width:200px;"/></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic thomasL"></i><br />Thomas<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Anim'</div>
+									<div class="col-xs-12 col-md-3"><i class="pic julie"></i><br />Julie</div>
+									<div class="col-xs-12 col-md-3"><i class="pic chloe"></i><br />Chloé</div>
+									<div class="col-xs-12 col-md-3"><i class="pic valoche"></i><br />Valentine</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Com'</div>
+									<div class="col-xs-12 col-md-3"><i class="pic coralie"></i><br />Coralie</div>
+									<div class="col-xs-12 col-md-3"><i class="pic camille"></i><br />Camille</div>
+									<div class="col-xs-12 col-md-3"><i class="pic marion2"></i><br />Marion</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Voyage</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic oceane"></i><br />Océane</div>
+									<div class="col-xs-12 col-md-3"><i class="pic hugo"></i><br />Hugo</div>
+								</div>
+							</div>
+						</section>
+						<section id="logistique">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Branche Logistique</h1>
+										<hr>
+										<p class="big thin">Prêt à porter les charges les plus lourdes, la branche logistique est là pour fournir le matériel adéquat pour les évènements, et ainsi profiter pleinement de ces moments !</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoLog.png') }}" style="width:200px;"/></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic eric"></i><br />Éric<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Réserve'</div>
+									<div class="col-xs-12 col-md-3"><i class="pic mumu"></i><br />Adrien</div>
+									<div class="col-xs-12 col-md-3"><i class="pic maxime"></i><br />Maxime</div>
+									<div class="col-xs-12 col-md-3"><i class="pic gaillota"></i><br />Antoine</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Tac Tuc</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic dany2"></i><br />Dany</div>
+									<div class="col-xs-12 col-md-3"><i class="pic wallet2"></i><br />Alexandre</div>
+								</div>
+							</div>
+						</section>
+						<section id="vieetud">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Branche Vie Étudiante</h1>
+										<hr>
+										<p class="big thin">La branche vie étudiante gère tous les autres services indispensables pour les élèves. Besoin d’annales pour réviser ? Besoin de subventions pour les clubs ? Tout se passe ici.</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoVieEtudiante.png') }}" style="width:200px;"/></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic celine"></i><br />Céline<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Annales</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic thomasLeMeur"></i><br />Thomas</div>
+									<div class="col-xs-12 col-md-3"><i class="pic vince"></i><br />Vincent</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Clubs</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic elie"></i><br />Élie</div>
+									<div class="col-xs-12 col-md-3"><i class="pic yoyo"></i><br />Yoann</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Sponsors</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic audrey"></i><br />Audrey</div>
+									<div class="col-xs-12 col-md-3"><i class="pic kevin"></i><br />Kevin</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">International</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic iris"></i><br />Iris</div>
+								</div>
+							</div>
+						</section>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+			n = 0;
+		$(document).keydown(function (e) {
+			if ($('#trombi').is(':visible')) {
+			    if (e.keyCode === k[n++]) {
+			        if (n === k.length) {
+			        	$(".bureau").fadeOut('slow', function() {
+				        	$(".bureau").addClass('yelen');
+				        	$(".bureau").removeClass('prez baptou maki marc ombe remi');
+				        	$(".name").text("Ÿelen");
+				        	$(".yelen").fadeIn('slow');
+			        	});
+			        }
+			    } else 
+			    	n = 0;
+			}
+		});
+	</script>
+{% endblock %}
