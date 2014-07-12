@@ -36,7 +36,7 @@ class User extends BaseUser
     /**
      * @var integer $week_before_exam
      */
-    protected $week_before_exam;
+    protected $week_before_exam = 1;
 
     /**
      * Get id
