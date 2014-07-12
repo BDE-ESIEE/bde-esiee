@@ -31,6 +31,7 @@ class MailController extends Controller
 		$request = $this->get('request');
 		$posts = null;
 		$message = null;
+		$mail = null;
 		$bind = false;
 
 		if ($request->getMethod() == 'POST') {
@@ -42,6 +43,7 @@ class MailController extends Controller
 				{
 					$posts = $form->get('news')->getData();
 					$message = $form->get('intro')->getData();
+					$mail = $form->get('email')->getData();
 				} elseif ($form->get('envoyer')->isClicked()) {
 			        $message = \Swift_Message::newInstance()
 			            ->setSubject('N\'OUBLIE PAS DE MODIFIER LE SUJET :p (et d\'enlever le TR)')
@@ -81,6 +83,7 @@ class MailController extends Controller
 			'form'       => $form->createView(),
 			'posts'      => $posts,
 			'message'    => $message,
+			'mail'		 => $mail,
         ));
     }
 }

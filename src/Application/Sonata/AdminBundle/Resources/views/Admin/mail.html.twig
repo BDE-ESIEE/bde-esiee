@@ -32,7 +32,7 @@
 						</div>
 					</div>
 				</div>
-				{% if posts is not null and message is not null %}
+				{% if posts is not null and mail is not null %}
 					<div class="col-md-12">
 						<div class="box box-success">
 							<div class="box-header">
@@ -54,7 +54,7 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	{% if posts is not null and message is not null %}
+	{% if posts is not null and mail is not null %}
 		<script>
 			$(function() {
 				var doc = $("iframe#apercu")[0].contentWindow.document;
