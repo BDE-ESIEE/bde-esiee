@@ -34,6 +34,7 @@ twig:
             - 'SonataAdminBundle:Form:silex_form_div_layout.html.twig'
             - 'SonataFormatterBundle:Form:formatter.html.twig'
             - 'SonataCoreBundle:Form:datepicker.html.twig'
+            - 'SonataMediaBundle:Form:media_widgets.html.twig'
     globals:
         version: %application_version%
         piwik_id: %piwik_id%
