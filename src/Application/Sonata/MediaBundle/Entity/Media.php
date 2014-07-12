@@ -37,4 +37,16 @@ class Media extends BaseMedia
     {
         return $this->id;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setBinaryContent($binaryContent)
+    {
+        if ($this->providerReference) {
+            $this->previousProviderReference = $this->providerReference;
+        }
+        $this->providerReference = null;
+        $this->binaryContent = $binaryContent;
+    }
 }
