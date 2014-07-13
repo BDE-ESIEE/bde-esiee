@@ -39,7 +39,7 @@ class PostAdmin extends BaseAdmin
                 ->add('photo', 'sonata_media_type', array(
                     'required'      => false,
                     'provider'      => 'sonata.media.provider.image',
-                    'context'       => 'default',
+                    'context'       => 'news',
                     'new_on_update' => false,
                     'label'         => 'Photo',
                 ))

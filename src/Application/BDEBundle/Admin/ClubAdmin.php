@@ -42,7 +42,7 @@ class ClubAdmin extends Admin
             ->add('logo', 'sonata_media_type', array(
                 'required'      => false,
                 'provider'      => 'sonata.media.provider.image',
-                'context'       => 'default',
+                'context'       => 'club',
                 'new_on_update' => false,
             ))
             ->add('abstract', null, array('attr' => array('class' => 'span6', 'rows' => 5)))

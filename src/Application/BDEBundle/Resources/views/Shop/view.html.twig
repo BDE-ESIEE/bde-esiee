@@ -21,8 +21,8 @@
 			<div class="panel-body">
 				<div class="col-md-6">
 					<ul id="etalage">
-						{% for galleryHasMedia in product.photos.GalleryHasMedias %}
-							<li><img class="etalage_source_image" src="{% path galleryHasMedia.media, 'big' %}"/> </li>
+						{% for galleryHasMedia in product.photos if galleryHasMedia.media is not null %}
+							<li><img class="etalage_source_image" src="{% path galleryHasMedia.media, 'reference' %}"/> </li>
 						{% endfor %}
 					</ul>
 {# 					<div class="pro-img-details">

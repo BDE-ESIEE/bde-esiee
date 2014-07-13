@@ -78,8 +78,8 @@ class Product
     private $categories;
 
     /**
-     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToMany(targetEntity="Application\Sonata\MediaBundle\Entity\GalleryHasMedia", cascade={"all"})
+     * @ORM\JoinTable(name="shop__product_media")
      */
     private $photos;
 
@@ -130,22 +130,32 @@ class Product
     }
 
     /**
-     * Set photos
+     * Add photos
      *
-     * @param Application\Sonata\MediaBundle\Entity\Gallery $photos
+     * @param \Application\Sonata\MediaBundle\Entity\GalleryHasMedia $photos
      * @return Product
      */
-    public function setPhotos(\Application\Sonata\MediaBundle\Entity\Gallery $photos)
+    public function addPhoto(\Application\Sonata\MediaBundle\Entity\GalleryHasMedia $photos)
     {
-        $this->photos = $photos;
+        $this->photos[] = $photos;
 
         return $this;
     }
 
     /**
+     * Remove photos
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\GalleryHasMedia $photos
+     */
+    public function removePhoto(\Application\Sonata\MediaBundle\Entity\GalleryHasMedia $photos)
+    {
+        $this->photos->removeElement($photos);
+    }
+
+    /**
      * Get photos
      *
-     * @return Application\Sonata\MediaBundle\Entity\Gallery
+     * @return Doctrine\Common\Collections\ArrayCollection
      */
     public function getPhotos()
     {
@@ -158,6 +168,7 @@ class Product
     public function __construct()
     {
         $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->photos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

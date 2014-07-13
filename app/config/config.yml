@@ -145,10 +145,10 @@ sonata_media:
         media:             Application\Sonata\MediaBundle\Entity\Media
         gallery:           Application\Sonata\MediaBundle\Entity\Gallery
         gallery_has_media: Application\Sonata\MediaBundle\Entity\GalleryHasMedia
-    default_context: default
+    default_context: gallery
     db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
     contexts:
-        default:  # the default context is mandatory
+        gallery:
             providers:
                 - sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
@@ -156,8 +156,29 @@ sonata_media:
                 - sonata.media.provider.file
 
             formats:
-                small: { width: 90 , quality: 95}
                 big:   { width: 500 , quality: 90}
+                small: { width: 90 , quality: 95}
+        club:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                big:   { width: 418 , quality: 90}
+                small: { width: 90 , quality: 95}
+        shop:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                big:   { width: 500 , quality: 90}
+                small: { width: 260 , quality: 95}
+        news:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                big:   { width: 700 , quality: 90}
+                small: { width: 90 , quality: 95}
 
     cdn:
         server:

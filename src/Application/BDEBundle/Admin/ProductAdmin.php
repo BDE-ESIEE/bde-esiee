@@ -38,10 +38,16 @@ class ProductAdmin extends Admin
                 'required'     => false,
                 'multiple'     => true,
             ))
-            ->add('photos', 'sonata_type_model_list', array(
-                'btn_delete' => false,
-                'required'   => false,
-            ))
+            ->add('photos', 'sonata_type_collection', array(
+                    'cascade_validation' => true,
+                    'required'   => false,
+                ), array(
+                    'edit'              => 'inline',
+                    'inline'            => 'table',
+                    'link_parameters'   => array('context' => 'shop'),
+                    'admin_code'        => 'sonata.media.admin.gallery_has_media'
+                )
+            )
         ;
     }
 
@@ -67,7 +73,6 @@ class ProductAdmin extends Admin
             ->add('enableCounter')
             ->add('categories')
             ->add('counter')
-            ->addIdentifier('photos')
         ;
     }
     

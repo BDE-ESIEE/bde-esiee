@@ -40,7 +40,7 @@ class Club
     private $shortcode;
 
     /**
-     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
      * @ORM\JoinColumn(nullable=true)
      * @Exclude
      */
@@ -148,7 +148,7 @@ class Club
      * @param Application\Sonata\MediaBundle\Entity\Media $logo
      * @return Club
      */
-    public function setLogo(\Application\Sonata\MediaBundle\Entity\Media $logo)
+    public function setLogo(\Application\Sonata\MediaBundle\Entity\Media $logo = null)
     {
         $this->logo = $logo;
 
