@@ -6,6 +6,7 @@
     {{ parent() }}
     {% stylesheets 
         'bundles/applicationbde/css/jquery.fancybox.css'
+        'bundles/applicationbde/css/jquery.fancybox-buttons.css'
         'bundles/applicationbde/css/gallery.css'
 
         filter='cssrewrite,?yui_css' 
@@ -16,36 +17,40 @@
 
 {% block body %}
     {% sonata_template_box 'Gallery view template' %}
-        <div class="col-lg-12">
-            <ul class="grid cs-style-3">
-                {% for galleryHasMedia in gallery.GalleryHasMedias %}
-                    <li>
-                        <figure>
-                            <img src="{% path galleryHasMedia.media, 'big' %}">
-                            <figcaption>
-                                <h3>{{ galleryHasMedia.media.name }}</h3>
-                                {% if galleryHasMedia.media.description is not null %}
-                                    <span>{{ galleryHasMedia.media.description|raw }}</span>
-                                {% endif %}
-                                {% if galleryHasMedia.media.providerName=="sonata.media.provider.youtube" %}
-                                    <a class="fancybox" rel="media-gallery" href="http://www.youtube.com/watch?v={{ galleryHasMedia.media.providerReference }}" title="{{ galleryHasMedia.media.name }}">
-                                        Regarder
-                                    </a>
-                                {% else %}
-                                    <a class="fancybox" rel="group" href="{% path galleryHasMedia.media, 'reference' %}" title="{{ galleryHasMedia.media.name }}">
-                                        {% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}
-                                            Télécharger
-                                        {% else %}
-                                            Zoom
-                                        {% endif %}
-                                    </a>
-                                {% endif %}
-                            </figcaption>
-                        </figure>
-                    </li>
-                {% endfor %}
-          </ul>
-        </div>
+    <div class="col-lg-12">
+        <ul class="grid cs-style-3">
+            {% for galleryHasMedia in gallery.GalleryHasMedias %}
+                <li>
+                    <figure>
+                        <img src="{% path galleryHasMedia.media, 'big' %}">
+                        <figcaption>
+                            <h3>{{ galleryHasMedia.media.name }}</h3>
+                            {% if galleryHasMedia.media.description is not null %}
+                                <span>{{ galleryHasMedia.media.description|raw }}</span>
+                            {% endif %}
+                            {% if galleryHasMedia.media.providerName == "sonata.media.provider.youtube" %}
+                                <a class="fancybox" rel="media-gallery" href="https://www.youtube.com/watch?v={{ galleryHasMedia.media.providerReference }}" title="{{ galleryHasMedia.media.name }}">
+                                    Regarder
+                                </a>
+                            {% elseif galleryHasMedia.media.providerName == "sonata.media.provider.dailymotion" %}
+                                <a class="fancybox" rel="media-gallery" href="https://www.dailymotion.com/video/{{ galleryHasMedia.media.providerReference }}" title="{{ galleryHasMedia.media.name }}">
+                                    Regarder
+                                </a>
+                            {% else %}
+                                <a class="fancybox" rel="group" href="{% path galleryHasMedia.media, 'reference' %}" title="{{ galleryHasMedia.media.name }}">
+                                    {% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}
+                                        Télécharger
+                                    {% else %}
+                                        Zoom
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        </figcaption>
+                    </figure>
+                </li>
+            {% endfor %}
+      </ul>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
@@ -54,6 +59,7 @@
         'bundles/applicationbde/js/jquery.fancybox.js'
         'bundles/applicationbde/js/toucheffects.js' 
         'bundles/applicationbde/js/jquery.fancybox-media.js'
+        'bundles/applicationbde/js/jquery.fancybox-buttons.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %} 
@@ -61,10 +67,16 @@
         $(function() {
             //    fancybox
             jQuery(".fancybox").fancybox({
-                    helpers : {
-                        media : {}
-                    }
-                });
+                {% if youtube %}
+                arrows : false,
+                {% endif %}
+                helpers : {
+                    media : {},
+                {% if youtube %}
+                    buttons : {}
+                {% endif %}
+                }
+            });
         });
     </script>
 {% endblock %}
