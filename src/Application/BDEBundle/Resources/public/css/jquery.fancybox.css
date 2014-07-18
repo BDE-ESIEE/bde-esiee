@@ -105,6 +105,7 @@
 	height: 36px;
 	cursor: pointer;
 	z-index: 8040;
+	background-position: 0px 0px;
 }
 
 .fancybox-nav {
