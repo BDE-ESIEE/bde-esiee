@@ -27,7 +27,7 @@
                             </div>
                         {% else %}
                             <h1 style="margin-top:0px;"><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
-                            <p style="text-align:justify;">{{ post.abstract }}</p>
+                            <p class="text-justify">{{ post.abstract }}</p>
                             <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="btn btn-default">Lire la suite</a>
                         {% endif %}
                     </div>
@@ -49,7 +49,7 @@
                     <div class="col-lg-10 col-sm-10">
                         {% if post.photo is not null %}
                             <h1><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
-                            <p style="text-align:justify;">{{ post.abstract }}</p>
+                            <p class="text-justify">{{ post.abstract }}</p>
                             <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="btn btn-default">Lire la suite</a>
                         {% endif %}
                     </div>
