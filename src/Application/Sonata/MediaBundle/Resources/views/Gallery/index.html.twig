@@ -17,7 +17,7 @@
 {% block body %}
     {% sonata_template_box 'Gallery template' %}
     <div class="col-lg-12">
-            <ul class="grid cs-style-3">
+            <ul class="grid cs-style-3" style="padding-left: 0px;">
 			    {% for gallery in galleries %}
 			        {# <li><a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid }) }}">{{ gallery.name }}</a></li> #}
 	                <li>
