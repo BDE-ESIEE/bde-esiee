@@ -1,5 +1,5 @@
 {
-    "name": "claros/bde-esiee",
+    "name": "na-ji/bde-esiee",
     "license": "MIT",
     "type": "project",
     "description": "Site web du BDE ESIEE Paris",
@@ -75,7 +75,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Claros/GenemuFormBundle"
+            "url": "https://github.com/na-ji/GenemuFormBundle"
         }
     ]
 }
