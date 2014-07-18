@@ -1,5 +1,9 @@
 {% extends "SonataUserBundle:Profile:action.html.twig" %}
 
+{% block sonata_profile_title %}
+    Informations de connexion - {{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}
+{% endblock %}
+
 {% block sonata_profile_content %}
     {% sonata_template_box 'This is the user authentication edition template. Feel free to override it.' %}
 

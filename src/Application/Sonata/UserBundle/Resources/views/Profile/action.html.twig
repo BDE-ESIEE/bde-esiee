@@ -1,22 +1,23 @@
 {% extends '::base.bis.html.twig' %}
 
 {% block body %}
+    <div class="col-lg-12">
+        <h2>{% block sonata_profile_title %}{% trans from 'SonataUserBundle' %}sonata_profile_title{% endtrans %}{% endblock %}</h2>
+    </div>
 
-    <h2>{% block sonata_profile_title %}{% trans from 'SonataUserBundle' %}sonata_profile_title{% endtrans %}{% endblock %}</h2>
+    <div class="col-lg-2">
+        {% block sonata_profile_menu %}
+            <div class="list-group">
+                <a href="{{ path('fos_user_profile_show') }}" class="list-group-item">{{ "title_dashboard"|trans({}, 'SonataAdminBundle') }}</a>
+                <a href="{{ path('fos_user_profile_edit') }}" class="list-group-item">Mon profil</a>
+                <a href="{{ path('fos_user_profile_edit_authentication') }}" class="list-group-item">Informations de connexion</a>
+            </div>
+        {% endblock %}
+    </div>
 
-    <div class="sonata-user-show row row-fluid">
+    <div class="col-lg-10">
+        {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
 
-        <div class="span2 col-lg-2" style="padding: 8px 0;">
-            {% block sonata_profile_menu %}
-                {{ sonata_block_render({'type': 'sonata.user.block.menu'}, {'current_uri': app.request.requestUri}) }}
-            {% endblock %}
-        </div>
-
-        <div class="span10 col-lg-10">
-            {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
-
-            {% block sonata_profile_content '' %}
-        </div>
-
+        {% block sonata_profile_content '' %}
     </div>
 {% endblock %}
