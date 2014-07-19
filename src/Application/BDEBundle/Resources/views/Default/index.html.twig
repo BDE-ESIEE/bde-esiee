@@ -34,7 +34,8 @@
         <section>
             <div class="f-box">
                 <i style="max-height: 51px;">
-                    <img src="{{ asset('favicon.png') }}" style="max-height: 51px; vertical-align: top;max-width: 51px;">
+                    {% include 'ApplicationBDEBundle:Default:logo.svg.twig' %}
+                    <img id="fallback" class="logoFerus" src="{{ asset('bundles/applicationbde/img/logo.svg') }}" style="display:none;">
                 </i>
                 <h2>L'équipe</h2>
             </div>
@@ -52,6 +53,17 @@
             <a href="{{ path('application_bde_partnership') }}" class="btn btn-purchase" style="width:100%;">Devenir partenaire</a>
         </section>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            if (!Modernizr.svg) {
+                $("img.logoFerus").show();
+            }
+        })
+    </script>
 {% endblock %}
 
 {% block liAccueil %}class='active'{% endblock %}

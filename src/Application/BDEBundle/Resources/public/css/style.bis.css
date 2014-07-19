@@ -2064,3 +2064,17 @@ ul.dropdown-menu li a i {
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+
+#logosvg, .logoFerus {
+    max-height: 51px; 
+    vertical-align: top;
+    max-width: 51px;
+}
+
+#logosvg path {
+    fill: #3EC8B7;
+}
+
+.f-box:hover #logosvg path {
+    fill: white;
+}
