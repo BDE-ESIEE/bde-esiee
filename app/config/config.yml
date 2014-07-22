@@ -206,6 +206,9 @@ ivory_ck_editor:
             filebrowserImageUploadRoute: admin_sonata_media_media_ckeditor_upload
             filebrowserImageUploadRouteParameters:
                 provider: sonata.media.provider.image
+            allowedContent: true
+            # protectedSource: ['/<i[^>]*><\/i>/g']
+            contentsCss: ['/bundles/ivoryckeditor/contents.css', '/bundles/applicationbde/css/font-awesome.css']
     toolbars:
         configs:
             toolbar_basic: ["@clipboard", "@editing", "/", "@basicstyles", "@links", "@paragraph", "/", '@styles', '@colors', '@tools', '@insert' ]
