@@ -1,0 +1,11 @@
+{% extends sonata_block.templates.block_base %}
+
+{% block block %}
+	{% if is_granted('ROLE_EDITOR') %}
+		<div class="editable_block" blockTitle="{{ editableTextBlock.title }}">
+	{% endif %}
+    {{ editableTextBlock.rawContent|raw }}
+	{% if is_granted('ROLE_EDITOR') %}
+    	</div>
+	{% endif %}
+{% endblock %}

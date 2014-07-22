@@ -1,0 +1,18 @@
+parameters:
+
+services:
+    application.sonata.block.service.editable_text:
+        class: Application\Sonata\BlockBundle\Block\EditableTextBlockService
+        tags:
+            - { name : sonata.block }
+        arguments: [sonata.block.service.classement, @templating, @doctrine.orm.entity_manager, @logger]
+    bde.admin.editable_text_block:
+        class: Application\Sonata\BlockBundle\Admin\EditableBlockAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Blog", label: "EditableTextBlock" }
+        arguments:
+            - ~
+            - Application\Sonata\BlockBundle\Entity\EditableTextBlock
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]

@@ -1,0 +1,5 @@
+application_sonata_block_ajax_update:
+    pattern:  /ajax/block/update
+    defaults: { _controller: ApplicationSonataBlockBundle:EditableTextBlock:ajaxUpdate }
+    requirements:
+        _method: POST

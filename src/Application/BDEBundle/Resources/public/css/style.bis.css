@@ -2078,3 +2078,10 @@ ul.dropdown-menu li a i {
 .f-box:hover #logosvg path {
     fill: white;
 }
+
+.editable_block[contenteditable="true"] {
+    border: dashed 1px #8a8b8b;
+}
+.editable_block[contenteditable="true"]:focus {
+    border: none;
+}

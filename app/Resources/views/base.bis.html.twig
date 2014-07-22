@@ -19,8 +19,11 @@
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
             {% endstylesheets %} 
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" type='text/css' />
+            {% if is_granted('ROLE_EDITOR') %}
+                <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/bootstrap-dialog.css') }}" type='text/css' />
+            {% endif %}
         {% endblock %}
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" type='text/css' />
         
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
@@ -132,6 +135,9 @@
                                         </li>
                                         {# <li><a href="#"><i class="fa fa-bell-o fa-fw"></i> Notification</a>
                                         </li> #}
+                                        {% if is_granted('ROLE_EDITOR') %}
+                                            <li><a id="toggleEditor" href="#"><i class="fa fa-pencil fa-fw"></i>Editer</a></li>
+                                        {% endif %}
                                         <li><a href="{{ path('sonata_user_security_logout') }}"><i class="fa fa-key fa-fw"></i>Déconnexion</a>
                                         </li>
                                     {% else %}
@@ -248,6 +254,91 @@
             </script>
             <noscript><p><img src="http://{{ piwik_url }}piwik.php?idsite={{ piwik_id }}" style="border:0;" alt="" /></p></noscript>
             <!-- End Piwik Code -->
+            {% if is_granted('ROLE_EDITOR') %}
+                <script src="{{ asset('bundles/applicationbde/js/bootstrap-dialog.js') }}"></script>
+                <script>
+                    var edit_mode = false;
+                    var counter = 0;
+                    var config = {
+                        "toolbar": [
+                            ["Cut", "Copy", "Paste", "PasteText", "PasteFromWord", "-", "Undo", "Redo", "-", "Preview"],
+                            ["Find", "Replace", "-", "SelectAll", "-", "SpellChecker", "Scayt"], "\/", ["Bold", "Italic", "Underline", "Strike", "Subscript", "Superscript", "-", "RemoveFormat"],
+                            ["Link", "Unlink", "Anchor"],
+                            ["NumberedList", "BulletedList", "-", "Blockquote", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock"], "\/", ["Format", "FontSize"],
+                            ["TextColor", "BGColor"],
+                            ["Source", "Maximize"],
+                            ["Image", "Table", "HorizontalRule", "SpecialChar"]
+                        ],
+                        "allowedContent": true,
+                        "filebrowserBrowseUrl": "{{ path('admin_sonata_media_media_ckeditor_browser') }}",
+                        "filebrowserImageBrowseUrl": "{{ path('admin_sonata_media_media_ckeditor_browser') }}?provider=sonata.media.provider.image",
+                        "filebrowserUploadUrl": "{{ path('admin_sonata_media_media_ckeditor_upload') }}?provider=sonata.media.provider.file",
+                        "filebrowserImageUploadUrl": "{{ path('admin_sonata_media_media_ckeditor_upload') }}?provider=sonata.media.provider.image",
+                        "readOnly": false
+                    };
+                    $(function() { 
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+                        script.async = true;
+                        script.onload = function(){
+                            CKEDITOR.dtd.$removeEmpty['i'] = false;
+                            CKEDITOR.disableAutoInline = true;
+                        };
+                        script.src = "{{ asset('bundles/ivoryckeditor/ckeditor.js') }}";
+                        $('body:last-child').append(script);
+
+                        $('div.editable_block').each(function() {
+                            $(this).attr('id', 'editor' + counter);
+                            counter++;
+                        });
+
+                        $('a#toggleEditor').click(function(e) {
+                            CKEDITOR.dtd.$removeEmpty['i'] = false;
+                            $('div.editable_block').each(function() {
+                                if (!edit_mode) {
+                                    $(this).attr('contenteditable', 'true');
+                                    CKEDITOR.inline($(this).attr('id'), config);
+                                }
+                                else { 
+                                    $(this).attr('contenteditable', 'false');
+                                    var title = $(this).attr('blockTitle');
+                                    $.ajax({
+                                        method: 'POST',
+                                        url: "{{ path('application_sonata_block_ajax_update') }}",
+                                        async: false,
+                                        data: {title: title, html: $(this).html()},
+                                        complete: function(request) {
+                                            console.log(request);
+                                            if (request.responseText == 'Perfect') {
+                                                BootstrapDialog.alert({
+                                                    type: BootstrapDialog.TYPE_SUCCESS,
+                                                    title: 'Oh Yeah ! <i class="fa fa-smile-o"></i>',
+                                                    message: 'Le bloc ' + title + ' a été mis à jour.'
+                                                });
+                                            } else {
+                                                BootstrapDialog.alert({
+                                                    type: BootstrapDialog.TYPE_DANGER,
+                                                    title: 'Oh No ! <i class="fa fa-frown-o"></i>',
+                                                    message: 'Une erreur est survenue lors de l\'édition du bloc ' + title + '.'
+                                                });
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                            if (!edit_mode) {
+                                $('a#toggleEditor').html('<i class="fa fa-pencil fa-fw"></i>Enregistrer');
+                            } else {
+                                for(k in CKEDITOR.instances) {
+                                    CKEDITOR.instances[k].destroy();
+                                }
+                                $('a#toggleEditor').html('<i class="fa fa-pencil fa-fw"></i>Editer');
+                            }
+                            edit_mode = !edit_mode;
+                        });
+                    });
+                </script>
+            {% endif %}
         {% endblock %}
     </body>
 </html>

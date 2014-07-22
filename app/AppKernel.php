@@ -64,6 +64,7 @@ class AppKernel extends Kernel
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(),
+            new Application\Sonata\BlockBundle\ApplicationSonataBlockBundle(),
             new Application\BDEBundle\ApplicationBDEBundle(),
         );
 

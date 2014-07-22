@@ -60,3 +60,7 @@ fos_comment_api:
     resource: "@FOSCommentBundle/Resources/config/routing.yml"
     prefix: /api
     defaults: { _format: html }
+
+application_sonata_block:
+    resource: "@ApplicationSonataBlockBundle/Resources/config/routing.yml"
+    prefix:   /

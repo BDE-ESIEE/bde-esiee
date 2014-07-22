@@ -126,6 +126,7 @@ sonata_block:
         sonata.admin.block.search_result:
         sonata.news.block.recent_posts:
         sonata.news.block.recent_comments:
+        application.sonata.block.service.editable_text:
 
 sonata_news:
     title:        BDE ESIEE Paris
@@ -208,7 +209,7 @@ ivory_ck_editor:
                 provider: sonata.media.provider.image
             allowedContent: true
             # protectedSource: ['/<i[^>]*><\/i>/g']
-            contentsCss: ['/bundles/ivoryckeditor/contents.css', '/bundles/applicationbde/css/font-awesome.css']
+            contentsCss: ['/bundles/ivoryckeditor/contents.css', '/bundles/applicationbde/css/font-awesome.css', '/bundles/applicationbde/css/bootstrap.min.css']
     toolbars:
         configs:
             toolbar_basic: ["@clipboard", "@editing", "/", "@basicstyles", "@links", "@paragraph", "/", '@styles', '@colors', '@tools', '@insert' ]
@@ -286,6 +287,7 @@ sonata_admin:
                     - sonata.comment.admin.thread
                     - sonata.classification.admin.collection
                     - sonata.classification.admin.tag
+                    - bde.admin.editable_text_block
             bde:
                 label: Associatif
                 items:
