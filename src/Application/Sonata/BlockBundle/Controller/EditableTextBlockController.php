@@ -26,6 +26,9 @@ class EditableTextBlockController extends Controller
 
         $block = $em->getRepository('ApplicationSonataBlockBundle:EditableTextBlock')->findOneByTitle($title);
 
+        if (null === $block)
+            return new Response('Fail');
+
         $block->setContent($html);
         $block->setRawContent($html);
 
