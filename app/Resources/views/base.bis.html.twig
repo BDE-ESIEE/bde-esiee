@@ -135,7 +135,7 @@
                                         </li>
                                         {# <li><a href="#"><i class="fa fa-bell-o fa-fw"></i> Notification</a>
                                         </li> #}
-                                        {% if is_granted('ROLE_EDITOR') %}
+                                        {% if is_granted('ROLE_EDITOR') and contains_editable_block is defined %}
                                             <li><a id="toggleEditor" href="#"><i class="fa fa-pencil fa-fw"></i>Editer</a></li>
                                         {% endif %}
                                         <li><a href="{{ path('sonata_user_security_logout') }}"><i class="fa fa-key fa-fw"></i>Déconnexion</a>
@@ -254,7 +254,7 @@
             </script>
             <noscript><p><img src="http://{{ piwik_url }}piwik.php?idsite={{ piwik_id }}" style="border:0;" alt="" /></p></noscript>
             <!-- End Piwik Code -->
-            {% if is_granted('ROLE_EDITOR') %}
+            {% if is_granted('ROLE_EDITOR') and contains_editable_block is defined %}
                 <script src="{{ asset('bundles/applicationbde/js/bootstrap-dialog.js') }}"></script>
                 <script>
                     var edit_mode = false;
@@ -294,6 +294,7 @@
 
                         $('a#toggleEditor').click(function(e) {
                             CKEDITOR.dtd.$removeEmpty['i'] = false;
+                            var html = [], title = [];
                             $('div.editable_block').each(function() {
                                 if (!edit_mode) {
                                     $(this).attr('contenteditable', 'true');
@@ -301,29 +302,8 @@
                                 }
                                 else { 
                                     $(this).attr('contenteditable', 'false');
-                                    var title = $(this).attr('blockTitle');
-                                    $.ajax({
-                                        method: 'POST',
-                                        url: "{{ path('application_sonata_block_ajax_update') }}",
-                                        async: false,
-                                        data: {title: title, html: $(this).html()},
-                                        complete: function(request) {
-                                            console.log(request);
-                                            if (request.responseText == 'Perfect') {
-                                                BootstrapDialog.alert({
-                                                    type: BootstrapDialog.TYPE_SUCCESS,
-                                                    title: 'Oh Yeah ! <i class="fa fa-smile-o"></i>',
-                                                    message: 'Le bloc ' + title + ' a été mis à jour.'
-                                                });
-                                            } else {
-                                                BootstrapDialog.alert({
-                                                    type: BootstrapDialog.TYPE_DANGER,
-                                                    title: 'Oh No ! <i class="fa fa-frown-o"></i>',
-                                                    message: 'Une erreur est survenue lors de l\'édition du bloc ' + title + '.'
-                                                });
-                                            }
-                                        }
-                                    });
+                                    html.push($(this).html());
+                                    title.push($(this).attr('blockTitle'));
                                 }
                             });
                             if (!edit_mode) {
@@ -333,6 +313,46 @@
                                     CKEDITOR.instances[k].destroy();
                                 }
                                 $('a#toggleEditor').html('<i class="fa fa-pencil fa-fw"></i>Editer');
+                                $.ajax({
+                                    method: 'POST',
+                                    url: "{{ path('application_sonata_block_ajax_update') }}",
+                                    async: false,
+                                    data: {'title[]': title, 'html[]': html},
+                                    complete: function(request) {
+                                        console.log(request);
+                                        var error = true, message = 'Une erreur est survenue.', type = BootstrapDialog.TYPE_SUCCESS, windows_title = 'Oh Yeah ! <i class="fa fa-smile-o"></i>';
+                                        if (Array.isArray(request.responseJSON))
+                                        {
+                                            error = false;
+                                            message = '';
+                                            for (var i = 0, c = request.responseJSON.length; i < c; i++)
+                                            {
+                                                if (request.responseJSON[i])
+                                                {
+                                                    message += title[i] + ' : OK<br />';
+                                                }
+                                                else {
+                                                    message += title[i] + ' : PAS OK -_-<br />';
+                                                    type = BootstrapDialog.TYPE_WARNING;
+                                                    windows_title = 'Attention ! <i class="fa fa-exclamation-triangle"></i>';
+                                                }
+                                            }
+                                        }
+                                        if (!error) {
+                                            BootstrapDialog.alert({
+                                                type: type,
+                                                title: windows_title,
+                                                message: message
+                                            });
+                                        } else {
+                                            BootstrapDialog.alert({
+                                                type: BootstrapDialog.TYPE_DANGER,
+                                                title: 'Oh No ! <i class="fa fa-frown-o"></i>',
+                                                message: message
+                                            });
+                                        }
+                                    }
+                                });
                             }
                             edit_mode = !edit_mode;
                         });

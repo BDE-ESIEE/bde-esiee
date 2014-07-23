@@ -17,24 +17,36 @@ class EditableTextBlockController extends Controller
         $title = $request->request->get('title', null);
         $html = $request->request->get('html', null);
 
-        if (null === $title || null === $html)
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
+
+        if (empty($title) || empty($html))
         {
-            return new Response('Fail');
+            $response->setContent(json_encode(false));
         } 
 
         $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository('ApplicationSonataBlockBundle:EditableTextBlock');
+        $errors = array();
 
-        $block = $em->getRepository('ApplicationSonataBlockBundle:EditableTextBlock')->findOneByTitle($title);
+        for ($i = 0; $i < count($title); $i++)
+        {
+            $block = $repo->findOneByTitle($title[$i]);
 
-        if (null === $block)
-            return new Response('Fail');
+            $errors[$i] = !(null === $block);
+            if (null === $block)
+                continue;
 
-        $block->setContent($html);
-        $block->setRawContent($html);
+            $block->setContent($html[$i]);
+            $block->setRawContent($html[$i]);
 
-        $em->persist($block);
+            $em->persist($block);
+        }
+
         $em->flush();
 
-        return new Response('Perfect');
+        $response->setContent(json_encode($errors));
+
+        return $response;
     }
 }
