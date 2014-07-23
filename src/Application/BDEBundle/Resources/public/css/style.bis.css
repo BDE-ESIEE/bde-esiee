@@ -1771,8 +1771,10 @@ ul#filters > .active > span {
 /*parallax*/
 
 .parallax1 {
-    background: url("../img/flat_parallax.jpg") no-repeat fixed 0 0 rgb(62, 200, 183);
-    background-size:cover;
+    background: url("../img/Ferus Cerva Est.jpg") no-repeat 0 0 #fff;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    /*background-size:cover;*/
     width: 100%;
     min-height: 400px;
     font-style: italic;
