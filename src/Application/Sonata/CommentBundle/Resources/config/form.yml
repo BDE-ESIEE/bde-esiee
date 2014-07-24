@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    application.sonata.comment.form.comment_type:
+        class: Application\Sonata\CommentBundle\Form\CommentType
+        arguments: [@sonata.comment.note.provider, @security.context]
+        tags:
+            - { name: form.type, alias: application_sonata_comment_comment }
+        calls:
+            - [ setIsSignedInterface, [%sonata.comment.class.comment.signed%]]

@@ -50,6 +50,7 @@ assetic:
         - SonataMediaBundle
         - FOSCommentBundle
         - MopaBootstrapBundle
+        - SonataNewsBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -394,7 +395,7 @@ fos_comment:
             thread: Application\Sonata\CommentBundle\Entity\Thread
     form:
         comment:
-            type: sonata_comment_comment
+            type: application_sonata_comment_comment
     acl: true
     service:
         manager:

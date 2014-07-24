@@ -1032,14 +1032,14 @@ ul.about-flex-slides {
 }
 
 
-.content h3, .media h3 {
+.content h3, .media > h3 {
     margin-top: 0;
     color: #475168;
     font-size: 20px;
     font-family: 'Fjalla One', sans-serif;
 }
 
-.media h3 {
+.media > h3 {
     margin-top:20px;
 }
 
@@ -2082,4 +2082,14 @@ ul.dropdown-menu li a i {
 }
 .editable_block[contenteditable="true"]:focus {
     border: none;
+}
+
+.panel-ferus {
+    border-color: #3EC8B7;
+}
+
+.panel-ferus > .panel-heading {
+    color: #fff;
+    background-color: #3EC8B7;
+    border-color: #3EC8B7;
 }
