@@ -27,7 +27,7 @@ application_bde_eat_traffic:
 
 application_bde_good_plan:
     pattern:  /bons/plans
-    defaults: { _controller: ApplicationBDEBundle:Default:goodPlan }
+    defaults: { _controller: ApplicationBDEBundle:Bargain:index }
 
 application_bde_breguet_shop:
     pattern:  /shop

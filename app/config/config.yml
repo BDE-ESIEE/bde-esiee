@@ -296,6 +296,7 @@ sonata_admin:
                     - bde.admin.club
                     - bde.admin.club_category
                     - bde.admin.lost_property
+                    - bde.admin.bargain
             shop:
                 label: Breguet Shop
                 items:

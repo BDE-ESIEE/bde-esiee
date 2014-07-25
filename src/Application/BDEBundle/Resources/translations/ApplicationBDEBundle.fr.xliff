@@ -420,6 +420,15 @@
                 <source>list.label_date</source>
                 <target>Date</target>
             </trans-unit>
+
+            <trans-unit id="breadcrumb_link_bargain_list">
+                <source>breadcrumb.link_bargain_list</source>
+                <target>Liste des Bons Plans</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_bargain_history">
+                <source>breadcrumb.link_bargain_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

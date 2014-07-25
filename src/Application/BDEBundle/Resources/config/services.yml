@@ -78,10 +78,20 @@ services:
     bde.admin.lost_property:
         class: Application\BDEBundle\Admin\LostPropertyAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Objets Trouvés", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            - { name: sonata.admin, manager_type: orm, group: "Vie Étudiante", label: "Objets Trouvés", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\LostProperty
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]
+    bde.admin.bargain:
+        class: Application\BDEBundle\Admin\BargainAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Vie Étudiante", label: "Bons Plans", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\BDEBundle\Entity\Bargain
             - ~
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]

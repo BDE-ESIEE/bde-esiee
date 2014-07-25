@@ -1,0 +1,30 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title %}Bons plans{% endblock %}
+
+{% block body %}
+    {% sonata_template_box 'Liste des Bons Plans' %}  
+    <section class="panel">
+        <div class="panel-body">
+            <h1>{{ block('title') }}</h1>
+            {% for bargain in bargain_list %}
+        		<div class="col-lg-6 col-sm-12">
+                    <h2>{{ bargain.title }}</h2>
+
+                    <div style="min-height:90px;">
+                        <div style="float: left;">
+                            {% thumbnail bargain.logo, 'small'  %}
+                        </div>
+                        <div style="margin-left:110px;text-align:justify;">
+                            {{ bargain.content|raw }}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                Aucun Bons Plans
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block liServices " active" %}
