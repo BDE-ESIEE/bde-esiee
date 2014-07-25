@@ -2,7 +2,7 @@
 
 {% block block %}
 	{% if is_granted('ROLE_EDITOR') %}
-		<div class="editable_block" blockTitle="{{ editableTextBlock.title }}">
+		<div class="editable_block" blockTitle="{{ settings.title }}">
 	{% endif %}
     {{ editableTextBlock.content|raw }}
 	{% if is_granted('ROLE_EDITOR') %}

@@ -76,8 +76,8 @@ class EditableTextBlockService extends BaseBlockService
 
 		$this->logger->info(print_r($editableTextBlock, true));
 
-		if (null === $editableTextBlock)
-			$editableTextBlock['rawContent'] = 'Le block '.$settings['title'].' n\'existe pas';
+		if (null === $editableTextBlock) 
+			$editableTextBlock['content'] = 'Le block '.$settings['title'].' n\'existe pas';
 
 		return $this->renderResponse($blockContext->getTemplate(), array(
 			'editableTextBlock' => $editableTextBlock,
