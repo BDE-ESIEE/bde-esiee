@@ -10,7 +10,7 @@
             <img src="{% path club.logo, 'reference' %}" class="logoClub" style="max-width: 418px;">
         </div>
         <h1>{{ club.title }}</h1>
-        <p>{{ club.rawContent|raw }}</p>
+        <p>{{ club.content|raw }}</p>
     </div>
 {% endblock %}
 

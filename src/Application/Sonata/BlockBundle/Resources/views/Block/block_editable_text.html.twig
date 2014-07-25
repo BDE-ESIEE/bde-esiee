@@ -4,7 +4,7 @@
 	{% if is_granted('ROLE_EDITOR') %}
 		<div class="editable_block" blockTitle="{{ editableTextBlock.title }}">
 	{% endif %}
-    {{ editableTextBlock.rawContent|raw }}
+    {{ editableTextBlock.content|raw }}
 	{% if is_granted('ROLE_EDITOR') %}
     	</div>
 	{% endif %}
