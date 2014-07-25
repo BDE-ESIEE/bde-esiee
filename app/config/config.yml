@@ -266,14 +266,26 @@ sonata_admin:
         blocks:
             -
                 position: left
-                type: sonata.admin.block.admin_list
+                type: application.sonata.block.service.editable_text
+                settings:
+                    title : 'dashboard_welcome_message'
             -
                 position: right
                 type: sonata.block.service.text
                 settings:
                     content: >
-                        <h2>Coucou</h2>
-                        <p>Bienvenue je vous accueille</p>
+                        <h2></h2>
+                        <p></p>
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [blog, bde]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [shop, media, user, services]
             # -
             #     position: right
             #     type: sonata.timeline.block.timeline
@@ -288,15 +300,12 @@ sonata_admin:
                     - sonata.comment.admin.thread
                     - sonata.classification.admin.collection
                     - sonata.classification.admin.tag
-                    - bde.admin.editable_text_block
             bde:
                 label: Associatif
                 items:
                     - bde.admin.event
                     - bde.admin.club
                     - bde.admin.club_category
-                    - bde.admin.lost_property
-                    - bde.admin.bargain
             shop:
                 label: Breguet Shop
                 items:
@@ -314,6 +323,12 @@ sonata_admin:
                 items: 
                     - sonata.user.admin.user
                     - sonata.user.admin.group
+            services:
+                label: Services
+                items:
+                    - bde.admin.lost_property
+                    - bde.admin.bargain
+                    - bde.admin.editable_text_block
     security:
         handler: sonata.admin.security.handler.acl
         # acl security information
