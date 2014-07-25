@@ -15,6 +15,20 @@ use Knp\Menu\ItemInterface as MenuItemInterface;
 
 class ClubAdmin extends Admin
 {
+    public $supportsPreviewMode = true;
+
+    public function getTemplate($name)
+    {
+        switch ($name) {
+            case 'preview':
+                return 'ApplicationBDEBundle:Club:preview.html.twig';
+                break;
+            default:
+                return parent::getTemplate($name);
+                break;
+        }
+    }
+
     /**
      * {@inheritdoc}
      */

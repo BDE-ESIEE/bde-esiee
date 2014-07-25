@@ -1,0 +1,21 @@
+{% extends 'SonataNewsBundle:Post:view.html.twig' %}
+
+{% use 'SonataAdminBundle:CRUD:base_edit_form.html.twig' with form as parentForm %}
+
+{% set post = object %}
+
+{% block body %}
+    {{ parent() }}
+
+    <div class="sonata-preview-form">
+        {{ block('parentForm') }}
+    </div>
+{% endblock %}
+                
+{% block comments %}
+{% endblock %}
+
+{% block formactions %}
+    <input class="btn btn-success" type="submit" name="btn_preview_approve" value="{{ 'btn_preview_approve'|trans({}, 'SonataAdminBundle') }}"/>
+    <input class="btn btn-danger" type="submit" name="btn_preview_decline" value="{{ 'btn_preview_decline'|trans({}, 'SonataAdminBundle') }}"/>
+{% endblock %}

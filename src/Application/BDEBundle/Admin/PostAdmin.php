@@ -7,6 +7,20 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class PostAdmin extends BaseAdmin
 {
+    public $supportsPreviewMode = true;
+
+    public function getTemplate($name)
+    {
+        switch ($name) {
+            case 'preview':
+                return 'ApplicationSonataNewsBundle:Post:preview.html.twig';
+                break;
+            default:
+                return parent::getTemplate($name);
+                break;
+        }
+    }
+
     /**
      * {@inheritdoc}
      */

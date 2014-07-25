@@ -2093,3 +2093,7 @@ ul.dropdown-menu li a i {
     background-color: #3EC8B7;
     border-color: #3EC8B7;
 }
+
+div.sonata-preview-form .row {
+    display: none;
+}

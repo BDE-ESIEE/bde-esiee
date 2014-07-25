@@ -12,6 +12,20 @@ use Sonata\MediaBundle\Provider\Pool;
 
 class ProductAdmin extends Admin
 {	
+    public $supportsPreviewMode = true;
+
+    public function getTemplate($name)
+    {
+        switch ($name) {
+            case 'preview':
+                return 'ApplicationBDEBundle:Shop:preview.html.twig';
+                break;
+            default:
+                return parent::getTemplate($name);
+                break;
+        }
+    }
+
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {

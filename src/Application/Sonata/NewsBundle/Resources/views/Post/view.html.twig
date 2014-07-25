@@ -55,11 +55,13 @@
             <div class="col-lg-2 col-sm-2 text-right">
             </div>
             <div class="col-lg-10 col-sm-10">
+                {% block comments %}
                 {% if post.iscommentable %}
                     {{ render(controller('ApplicationSonataCommentBundle:Comment:renderThread', { 'id': post.id ~ '-' ~ post.slug, 'url': url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) })) }}
                 {% else %}
                     {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
                 {% endif %}
+                {% endblock comments %}
             </div>
         </div>
     </div>
