@@ -57,7 +57,6 @@ class Club
      * @var string
      *
      * @ORM\Column(name="content", type="text")
-     * @Exclude
      */
     private $content;
 
@@ -65,6 +64,7 @@ class Club
      * @var string
      *
      * @ORM\Column(name="rawContent", type="text")
+     * @Exclude
      */
     private $rawContent;
 
