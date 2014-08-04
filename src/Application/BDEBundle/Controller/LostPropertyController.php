@@ -11,6 +11,7 @@ class LostPropertyController extends FOSRestController
     /**
      * @ApiDoc(
      *  description="Retrieves the list of lost properties",
+     *  resource=true,
      *  output={"class"="Application\BDEBundle\Entity\LostProperty"},
      *  statusCodes={
      *      200="Returned when successful"

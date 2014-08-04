@@ -12,7 +12,7 @@ class ClubController extends FOSRestController
     /**
      * @ApiDoc(
      *  description="Retrieves the list of clubs sorted by category",
-     *  section="/clubs",
+     *  resource=true,
      *  output={"class"="Application\BDEBundle\Entity\Club"},
      *  statusCodes={
      *      200="Returned when successful"
@@ -76,7 +76,6 @@ class ClubController extends FOSRestController
      *      {"name"="id", "dataType"="integer", "requirement"="\d+", "description"="club id"}
      *  },
      *  description="Retrieves a specific club",
-     *  section="/clubs",
      *  output={"class"="Application\BDEBundle\Entity\Club"},
      *  statusCodes={
      *      200="Returned when successful",

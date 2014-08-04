@@ -20,7 +20,7 @@
         "sensio/generator-bundle"                 : "~2.3",
         "incenteev/composer-parameter-handler"    : "~2.0",
         "friendsofsymfony/rest-bundle"            : "1.3.*",
-        "nelmio/api-doc-bundle"                   : "@stable",
+        "nelmio/api-doc-bundle"                   : "2.6.0",
         "sonata-project/admin-bundle"             : "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/easy-extends-bundle"      : "dev-master",

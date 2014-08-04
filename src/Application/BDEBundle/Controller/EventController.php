@@ -11,7 +11,7 @@ class EventController extends FOSRestController
     /**
      * @ApiDoc(
      *  description="Retrieves the list of events",
-     *  section="/events",
+     *  resource=true,
      *  output={"class"="Application\BDEBundle\Entity\Event"},
      *  statusCodes={
      *      200="Returned when successful"

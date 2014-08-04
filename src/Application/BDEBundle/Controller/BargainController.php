@@ -11,6 +11,7 @@ class BargainController extends FOSRestController
     /**
      * @ApiDoc(
      *  description="Retrieves the list of bargains",
+     *  resource=true,
      *  output={"class"="Application\BDEBundle\Entity\Bargain"},
      *  statusCodes={
      *      200="Returned when successful"
