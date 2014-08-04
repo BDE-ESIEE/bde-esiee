@@ -64,3 +64,8 @@ fos_comment_api:
 application_sonata_block:
     resource: "@ApplicationSonataBlockBundle/Resources/config/routing.yml"
     prefix:   /
+
+sonata_api_user:
+    type:         rest
+    prefix:       /api/user
+    resource:     "@SonataUserBundle/Resources/config/routing/api.xml"
