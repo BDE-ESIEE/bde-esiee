@@ -3,6 +3,7 @@
 namespace Application\BDEBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Event
@@ -51,6 +52,7 @@ class Event
 
     /**
      * @ORM\OneToMany(targetEntity="Application\Sonata\NewsBundle\Entity\Post", mappedBy="event")
+     * @Exclude
      */
     private $news;
 
