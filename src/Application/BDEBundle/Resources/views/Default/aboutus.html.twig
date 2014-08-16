@@ -195,7 +195,7 @@
 								<div class="row">
 									<div class="col-xs-12 col-md-3 pole">Tac Tuc</div>
 									<div class="col-xs-12 col-md-3"></div>
-									<div class="col-xs-12 col-md-3"><i class="pic dany2"></i><br />Dany</div>
+									<div class="col-xs-12 col-md-3"><i id="dany" class="pic dany2"></i><br />Dany <i class="flag flag-usa"></i></div>
 									<div class="col-xs-12 col-md-3"><i class="pic wallet2"></i><br />Alexandre</div>
 								</div>
 							</div>
@@ -214,14 +214,14 @@
 								<div class="row">
 									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoVieEtudiante.png') }}" style="width:200px;"/></div>
 									<div class="col-md-3"></div>
-									<div class="col-md-3"></div>
-									<div class="col-xs-12 col-md-3 right"><i class="pic celine"></i><br />Céline<br /><b>Respo'</b></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic celine"></i><br />Céline<i class="flag flag-usa"></i><br /><b>Respo'</b></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic vince"></i><br />Vincent <br /><b>Respo''</b></div>
 								</div><br /><br />
 								<div class="row">
 									<div class="col-xs-12 col-md-3 pole">Annales</div>
 									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
 									<div class="col-xs-12 col-md-3"><i class="pic thomasLeMeur"></i><br />Thomas</div>
-									<div class="col-xs-12 col-md-3"><i class="pic vince"></i><br />Vincent</div>
 								</div><br /><br />
 								<div class="row">
 									<div class="col-xs-12 col-md-3 pole">Clubs</div>
@@ -264,6 +264,11 @@
 				        	$(".bureau").removeClass('prez baptou maki marc ombe remi');
 				        	$(".name").text("Ÿelen");
 				        	$(".yelen").fadeIn('slow');
+			        	});
+			        	$("#dany").fadeOut('slow', function() {
+				        	$("#dany").removeClass('dany2');
+				        	$("#dany").addClass('dany');
+				        	$("#dany").fadeIn('slow');
 			        	});
 			        }
 			    } else 
