@@ -3,9 +3,20 @@
 {% block title %}Objets trouvés{% endblock %}
 
 {% block body %}
-	<div class="col-lg-12 col-sm-12" style="margin:0 15px;">
+	<div class="col-xs-12 col-sm-6">
+		<h1>Objets trouvés</h1>
 		<ul>
-		{% for lost_property in lost_property_list %}
+		{% for lost_property in lost_property_list if lost_property.found %}
+			<li>{{ lost_property.date|date('d/m/Y') }} - {{ lost_property.name }}</li>
+		{% else %}
+			<li>Aucun objets trouvés</li>
+		{% endfor %}
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<h1>Objets perdus</h1>
+		<ul>
+		{% for lost_property in lost_property_list if not lost_property.found %}
 			<li>{{ lost_property.date|date('d/m/Y') }} - {{ lost_property.name }}</li>
 		{% else %}
 			<li>Aucun objets trouvés</li>

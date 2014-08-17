@@ -35,6 +35,13 @@ class LostProperty
      */
     private $date;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="found", type="boolean")
+     */
+    private $found;
+
 
     /**
      * Get id
@@ -99,5 +106,28 @@ class LostProperty
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set found
+     *
+     * @param boolean $found
+     * @return LostProperty
+     */
+    public function setFound($found)
+    {
+        $this->found = $found;
+
+        return $this;
+    }
+
+    /**
+     * Get found
+     *
+     * @return boolean 
+     */
+    public function getFound()
+    {
+        return $this->found;
     }
 }

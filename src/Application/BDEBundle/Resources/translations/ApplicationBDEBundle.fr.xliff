@@ -405,20 +405,36 @@
                 <source>show.label_date</source>
                 <target>Date</target>
             </trans-unit>
+            <trans-unit id="show_label_found">
+                <source>show.label_found</source>
+                <target>Trouvé ?</target>
+            </trans-unit>
 
             <trans-unit id="filter_label_date">
                 <source>filter.label_date</source>
                 <target>Date</target>
+            </trans-unit>
+            <trans-unit id="filter_label_found">
+                <source>filter.label_found</source>
+                <target>Trouvé ?</target>
             </trans-unit>
 
             <trans-unit id="form_label_date">
                 <source>form.label_date</source>
                 <target>Date</target>
             </trans-unit>
+            <trans-unit id="form_label_found">
+                <source>form.label_found</source>
+                <target>Trouvé ?</target>
+            </trans-unit>
 
             <trans-unit id="list_label_date">
                 <source>list.label_date</source>
                 <target>Date</target>
+            </trans-unit>
+            <trans-unit id="list_label_found">
+                <source>list.label_found</source>
+                <target>Trouvé ?</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb_link_bargain_list">
