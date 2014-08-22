@@ -7,6 +7,10 @@
 	border: 5px solid #E8E8E8;
 }
 
+.pic2 {
+	background: url('../img/tiles_pics2.jpg');
+}
+
 .pic.mumu{background-position: -0px -0px;}
 .pic.wallet{background-position: -200px -0px;}
 .pic.wallet2{background-position: -400px -0px;}
