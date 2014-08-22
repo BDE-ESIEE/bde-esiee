@@ -28,7 +28,7 @@ services:
         arguments:
             - ~
             - Application\BDEBundle\Entity\Club
-            - ~
+            - ApplicationSonataAdminBundle:CRUD
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]
     bde.admin.club_category:

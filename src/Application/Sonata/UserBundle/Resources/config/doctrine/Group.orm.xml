@@ -10,6 +10,8 @@
             <generator strategy="AUTO" />
         </id>
 
+        <many-to-many field="users" target-entity="Application\Sonata\UserBundle\Entity\User" mapped-by="groups" />
+
     </entity>
 
 </doctrine-mapping>
