@@ -39,6 +39,13 @@ class CategoryAdmin extends Admin
             ->addIdentifier('name')
             ->add('description')
             ->add('enabled')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
     

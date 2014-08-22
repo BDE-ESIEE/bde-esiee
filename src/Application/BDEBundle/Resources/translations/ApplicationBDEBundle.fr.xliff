@@ -97,6 +97,10 @@
                 <source>list.label_logo</source>
                 <target>Logo</target>
             </trans-unit>
+            <trans-unit id="list_label__action">
+                <source>list.label__action</source>
+                <target>Actions</target>
+            </trans-unit>
 
             <trans-unit id="breadcrumb_link_club_list">
                 <source>breadcrumb.link_club_list</source>

@@ -43,6 +43,13 @@ class ClubCategoryAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 

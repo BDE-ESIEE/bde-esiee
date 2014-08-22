@@ -68,6 +68,13 @@ class CollectionAdmin extends Admin
             ->add('slug')
             ->add('description')
             ->add('enabled', null, array('editable' => true))
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 }

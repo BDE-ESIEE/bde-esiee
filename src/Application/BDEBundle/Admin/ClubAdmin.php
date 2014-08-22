@@ -82,6 +82,13 @@ class ClubAdmin extends Admin
         $listMapper
             ->addIdentifier('title')
             ->add('shortcode')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 

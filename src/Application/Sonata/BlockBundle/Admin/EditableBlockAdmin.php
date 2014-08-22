@@ -57,6 +57,13 @@ class EditableBlockAdmin extends Admin
         $listMapper
             ->addIdentifier('title')
             ->add('description')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 
