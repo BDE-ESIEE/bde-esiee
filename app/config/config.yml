@@ -321,7 +321,7 @@ sonata_admin:
                 label: sonata_user
                 label_catalogue: SonataUserBundle
                 items: 
-                    - sonata.user.admin.user
+                    - application_sonata_user.admin.user
                     - sonata.user.admin.group
             services:
                 label: Services

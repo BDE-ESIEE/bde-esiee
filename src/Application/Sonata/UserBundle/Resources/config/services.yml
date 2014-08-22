@@ -4,3 +4,11 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: sonata_user_registration }
+
+    application_sonata_user.admin.user:
+        class: Application\Sonata\UserBundle\Admin\UserAdmin
+        arguments: [~, Application\Sonata\UserBundle\Entity\User, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Utilisateurs, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        calls:
+            - [ setTranslationDomain, [SonataUserBundle]]
