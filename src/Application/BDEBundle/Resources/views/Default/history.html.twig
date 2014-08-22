@@ -2,41 +2,13 @@
 
 {% block title %}Un peu d'histoire{% endblock %}
 
+{% set contains_editable_block = 'yes' %}
+
 {% block body %}
-    	<div class="row">
-	        <div class="text-center feature-head">
-	            <h1>UN PEU D’HISTOIRE</h1>
-	        </div>
-        </div>
-        <div class="col-lg-12" style="font-size: 18px;font-weight: 300;">
-            <p>Le BDE ESIEE Paris est élu tous les ans par les élèves de l’école et est le principal organe de représentation des étudiants dans l’école.</p>
-            <p>Sa mission est triple : 
-            	<ul style="list-style-type:none;">
-            		<li><i class="fa fa-check"></i> Porter l’associatif en renforçant et en gérant la vingtaine de clubs et associations de l’école.</li>
-					<li><i class="fa fa-check"></i> Faire vivre l’école en organisant des activités extra-scolaires (soirées, WEI, sorties culturelles et sportives).</li>
-					<li><i class="fa fa-check"></i> Être le principal interlocuteur entre l’administration et les élèves.</li>
-				</ul>
-			</p>
-			<p>
-				L’ESIEE Paris, anciennement école Bréguet, forme depuis plus d’un siècle des ingénieurs accomplis dans le domaine des nouvelles technologies et accueille actuellement près de 1800 élèves dans ses locaux. 
-			</p>
-			<p>
-				Elle fait partie intégrante de la Chambre de Commerce et d'Industrie de Paris Île-de-France et est située en plein cœur de la cité Descartes qui accueille plus de 24000 étudiants. 
-			</p>
-        	<ul style="list-style-type:none;">
-        		<li><i class="fa fa-plus"></i> <a target="_blank" href="http://www.esiee.fr/">Site de l'ESIEE</a></li>
-				<li><i class="fa fa-plus"></i> <a target="_blank" href="http://www.cci-paris-idf.fr/">Site de la CCI Paris IDF</a></li>
-			</ul>
-			<p>
-				Les mandats précédents 
-			</p>
-				<ul>
-					<li>BDE ESIEE Paris : 
-						<ul>
-							<li>Mandat II - Huguette (2012-2013)</li>
-							<li>Mandat I - Osmoz (2011-2012)</li>
-						</ul>
-					</li>
-				</ul>
-         </div>
+    {{ sonata_block_render({ 
+        'type': 'application.sonata.block.service.editable_text', 
+        'settings' : {
+            'title' : 'history'
+        }
+    }) }}
 {% endblock %}

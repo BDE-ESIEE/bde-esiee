@@ -9,7 +9,7 @@ services:
     bde.admin.editable_text_block:
         class: Application\Sonata\BlockBundle\Admin\EditableBlockAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Blog", label: "EditableTextBlock" }
+            - { name: sonata.admin, manager_type: orm, group: "Blog", label: "Bloc de Texte" }
         arguments:
             - ~
             - Application\Sonata\BlockBundle\Entity\EditableTextBlock

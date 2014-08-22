@@ -2,5 +2,13 @@
 
 {% block title %}Devenir partenaire{% endblock %}
 
+{% set contains_editable_block = 'yes' %}
+
 {% block body %}
+    {{ sonata_block_render({ 
+        'type': 'application.sonata.block.service.editable_text', 
+        'settings' : {
+            'title' : 'devenir_partenaire'
+        }
+    }) }}
 {% endblock %}
