@@ -159,7 +159,7 @@
 
         <!--container start-->
         {% block container %}
-        <div{% block containerClass %}{% endblock %}>
+        <div{% block containerClass '' %}>
             <div class="container">
                 <div class="row">
                     {% for type, flashMessages in app.session.flashbag.all() %}

@@ -5,12 +5,46 @@ Author: Mosaddek Hossain
 Website: http://thevectorlab.net/
 */
 
+html{
+    height:100%;
+}
+
+html, body{
+    padding: 0px;
+    margin: 0px !important;
+}
+
 body {
     color: #797979;
     font-family: 'Open Sans', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
     font-size:13px;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 478px; /* .footer height */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    body {
+        padding-bottom: 346px; /* .footer height */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    body {
+        padding-bottom: 302px; /* .footer height */
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding-bottom: 280px; /* .footer height */
+    }
 }
 
 
@@ -1335,6 +1369,10 @@ ul.tag li a {
     display: inline-block;
     width: 100%;
     font-weight: 300;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer h1 {
@@ -1796,7 +1834,7 @@ ul.dropdown-menu li a i {
     margin-right: 10px;
 }
 
-.logoclub {
+.logoClub {
     border-radius: 50%;
 }
 
