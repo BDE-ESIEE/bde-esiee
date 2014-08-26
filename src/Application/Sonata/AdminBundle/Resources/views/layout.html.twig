@@ -34,27 +34,34 @@
 {% block sonata_top_nav_menu %}
     <div class="navbar-right">
         <ul class="nav navbar-nav">
+            {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+                <li>
+                    <a href="{{ path('sonata_admin_dashboard', {'_switch_user': '_exit'}) }}">
+                        <i class="fa fa-reply"></i> Retour
+                    </a>
+                </li>
+            {% endif %}
             {% if is_granted('ROLE_COMMUNICATION') %}
                 <li>
                     <a href="{{ path('application_sonata_admin_send_mail') }}">
-                        <i class="fa fa-envelope fa-fw"></i> Mail hebdo
+                        <i class="fa fa-envelope"></i> Mail hebdo
                     </a>
                 </li>
             {% endif %}
             <li>
                 <a href="{{ path('application_bde_homepage') }}">
-                    <i class="fa fa-home fa-fw"></i> Retourner sur le site
+                    <i class="fa fa-home"></i> Retourner sur le site
                 </a>
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-plus-square fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-plus-square"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 {% include admin_pool.getTemplate('add_block') %}
             </li>
             <li class="dropdown user-menu">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     {% include admin_pool.getTemplate('user_block') %}
