@@ -21,8 +21,7 @@
         <ul class="grid cs-style-3" style="padding-left: 0px;">
             {% for galleryHasMedia in gallery.GalleryHasMedias %}
                 <li>
-                    <figure>
-                        <img src="{% path galleryHasMedia.media, 'big' %}">
+                    <figure class="galleryFigure" style="background-image: url({% path galleryHasMedia.media, 'big' %});">
                         <figcaption>
                             <h3>{{ galleryHasMedia.media.name }}</h3>
                             {% if galleryHasMedia.media.description is not null %}
