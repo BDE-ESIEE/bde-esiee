@@ -11,9 +11,11 @@
                     <div class="col-md-4">
                         <section class="panel">
                             <div class="pro-img-box">
-                                {% thumbnail product.photos[0].media, 'shop_small' with {'class': 'media-object'} %}
-                                <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}" class="adtocart">
-                                    <i class="fa fa-shopping-cart"></i>
+                                <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}">
+                                    {% thumbnail product.photos[0].media, 'shop_small' with {'class': 'media-object'} %}
+                                    <span class="adtocart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </span>
                                 </a>
                             </div>
 
