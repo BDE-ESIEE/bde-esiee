@@ -21,8 +21,7 @@
 			    {% for gallery in galleries %}
 			        {# <li><a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid }) }}">{{ gallery.name }}</a></li> #}
 	                <li>
-	                    <figure>
-	                        <img src="{% path gallery.GalleryHasMedias[0].media, 'big' %}">
+	                    <figure class="galleryFigure" style="background-image: url({% path gallery.GalleryHasMedias[0].media, 'big' %});">
 	                        <figcaption>
 	                            <h3>{{ gallery.name }}</h3>
 	                            {# <span>lorem ipsume </span> #}

@@ -123,7 +123,9 @@
 /* Caption Style 3 */
 .cs-style-3 figure {
 	overflow: hidden;
-	max-height: 274px;
+	height: 274px;
+    background-size: cover;
+    background-position:center center;
 }
 
 .cs-style-3 figure img {
