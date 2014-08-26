@@ -12,3 +12,4 @@ services:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Utilisateurs, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
         calls:
             - [ setTranslationDomain, [SonataUserBundle]]
+            - [ setUserManager, [@fos_user.user_manager]]
