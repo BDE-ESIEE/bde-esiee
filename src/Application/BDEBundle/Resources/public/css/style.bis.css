@@ -132,6 +132,15 @@ p {line-height: 22px}
     transition: all .3s ease;
 }
 
+.header-frontend .nav ul > :last-child a:hover {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.header-frontend .nav ul > :first-child a:hover {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
 
 .header-frontend .navbar-default .navbar-nav > .open > a,
 .header-frontend .navbar-default .navbar-nav > .open > a:hover,
@@ -151,7 +160,7 @@ p {line-height: 22px}
 }
 
 .header-frontend .navbar-nav > li  {
-    padding-bottom: 30px;
+    padding-bottom: 3px;
     padding-top: 30px;
 }
 
@@ -181,12 +190,12 @@ p {line-height: 22px}
 }
 
 .dropdown-menu  {
-    box-shadow: none;
     border-radius: 0;
 }
 
 .header-frontend .nav li .dropdown-menu  {
-   padding: 0;
+    padding: 0;
+    border-radius: 5px;
 }
 
 .header-frontend .nav li .dropdown-menu li a {

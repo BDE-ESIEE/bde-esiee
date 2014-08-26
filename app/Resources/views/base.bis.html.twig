@@ -126,8 +126,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                        <li><a href="{{ path('sonata_user_profile_show') }}">{{ app.user.username }}</a></li>
-                                        <li><a href="{{ path('sonata_user_profile_show') }}"><i class="fa fa-suitcase fa-fw"></i>Profil</a></li>
+                                        <li><a href="{{ path('sonata_user_profile_show') }}"><i class="fa fa-suitcase fa-fw"></i>{{ app.user.username }}</a></li>
                                         {% if app.security and app.security.token and is_granted('ROLE_SONATA_ADMIN') %}
                                             <li>
                                                 <a href="{{ path('sonata_admin_dashboard') }}">
