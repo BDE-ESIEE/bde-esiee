@@ -4,6 +4,7 @@ namespace Application\BDEBundle\Admin;
 
 use Sonata\NewsBundle\Admin\PostAdmin as BaseAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class PostAdmin extends BaseAdmin
 {
@@ -30,12 +31,14 @@ class PostAdmin extends BaseAdmin
 
         $formMapper->remove('content');
         $formMapper->remove('author');
+        $formMapper->remove('enabled');
 
         if ($this->isGranted('EDITOR'))
         {
             $formMapper
                 ->with('General')
                     ->add('author', 'sonata_type_model_list')
+                    ->add('enabled', null, array('required' => false))
                 ->end()
             ;
         }
@@ -83,5 +86,25 @@ class PostAdmin extends BaseAdmin
             $user = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
             $object->setAuthor($user);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        parent::configureListFields($listMapper);
+        $listMapper->remove('commentsCount');
+
+        $listMapper
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                ),
+                'label' => 'Actions'
+            ))
+        ;
     }
 }
