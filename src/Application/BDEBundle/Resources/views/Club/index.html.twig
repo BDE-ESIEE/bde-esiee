@@ -16,16 +16,18 @@
 
                 <h1>{{ category }}</h1>
                 {% for club in club_list %}
-                    <div>
+                    <div class="blocClub">
                         <h2>
                             <a href="{{ path('application_bde_club_show', { 'id': club.id, 'shortcode': club.shortcode }) }}">{{ club.title }}</a>
                         </h2>
 
                         <div style="min-height:90px;">
                             <div style="float: left;">
-                                {% thumbnail club.logo, 'small' with {'class': 'logoClub'} %}
+                                <a href="{{ path('application_bde_club_show', { 'id': club.id, 'shortcode': club.shortcode }) }}">
+                                    {% thumbnail club.logo, 'small' with {'class': 'logoClub'} %}
+                                </a>
                             </div>
-                            <div style="margin-left:110px;text-align:justify;">
+                            <div style="text-align:justify;">
                                 {{ club.abstract }}
                             </div>
                         </div>

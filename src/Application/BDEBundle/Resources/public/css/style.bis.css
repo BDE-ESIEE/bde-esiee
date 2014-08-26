@@ -1836,6 +1836,16 @@ ul.dropdown-menu li a i {
 
 .logoClub {
     border-radius: 50%;
+    transition: box-shadow .3s;
+}
+
+.logoClub:hover {
+    box-shadow: 0 0 0 10px #3EC8B7;
+    transition: box-shadow .3s;
+}
+
+.blocClub {
+    overflow: hidden;
 }
 
 /*calender*/
