@@ -29,6 +29,16 @@ class PostAdmin extends BaseAdmin
         parent::configureFormFields($formMapper);
 
         $formMapper->remove('content');
+        $formMapper->remove('author');
+
+        if ($this->isGranted('EDITOR'))
+        {
+            $formMapper
+                ->with('General')
+                    ->add('author', 'sonata_type_model_list')
+                ->end()
+            ;
+        }
 
         $formMapper
             ->with('General')
@@ -59,5 +69,19 @@ class PostAdmin extends BaseAdmin
                 ))
             ->end()
         ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function prePersist($object)
+    {
+        parent::prePersist($object);
+
+        if (!$this->isGranted('EDITOR'))
+        {
+            $user = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
+            $object->setAuthor($user);
+        }
     }
 }
