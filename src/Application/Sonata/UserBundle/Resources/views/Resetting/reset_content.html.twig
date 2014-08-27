@@ -1,0 +1,7 @@
+{% form_theme form "MopaBootstrapBundle:Form:fields.html.twig" %}
+<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset" style="max-width:250px;">
+    {{ form_widget(form) }}
+    <div class="form-group">
+        <input type="submit" value="{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}" class="btn" />
+    </div>
+</form>
