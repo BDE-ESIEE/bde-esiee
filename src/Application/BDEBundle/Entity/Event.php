@@ -80,6 +80,7 @@ class Event
     /**
      * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\EventCategory", inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
+     * @Exclude
      */
     private $category;
 
