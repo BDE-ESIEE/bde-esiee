@@ -6,9 +6,10 @@
     <div class="col-lg-9">
         <div class="row product-list">
             {% set i = 1 %}
+            {% spaceless %}
             {% for product in product_list %}
                 {% if not product.hidden %}
-                    {% if not loop.first %}-->{% endif %}<div class="col-md-4 vAlignBaseLine">
+                    <div class="col-md-4 vAlignBaseLine">
                         <section class="panel">
                             <div class="pro-img-box">
                                 <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}">
@@ -27,11 +28,12 @@
                                 </h4>
                             </div>
                         </section>
-                    </div>{% if not loop.last %}<!--{% endif %}
+                    </div>
                 {% endif %}
             {% else %}
                 Aucun produit
             {% endfor %}
+            {% endspaceless %}
         </div>
     </div>
     {{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
