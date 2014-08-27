@@ -8,7 +8,7 @@
             {% set i = 1 %}
             {% for product in product_list %}
                 {% if not product.hidden %}
-                    <div class="col-md-4">
+                    {% if not loop.first %}-->{% endif %}<div class="col-md-4 vAlignBaseLine">
                         <section class="panel">
                             <div class="pro-img-box">
                                 <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}">
@@ -27,7 +27,7 @@
                                 </h4>
                             </div>
                         </section>
-                    </div>
+                    </div>{% if not loop.last %}<!--{% endif %}
                 {% endif %}
             {% else %}
                 Aucun produit

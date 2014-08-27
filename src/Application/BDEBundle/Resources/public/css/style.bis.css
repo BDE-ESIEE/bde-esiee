@@ -2167,3 +2167,9 @@ div.sonata-preview-form .row {
 .flag.flag-usa {
     background-image: url(../img/flag_usa.png)
 }
+
+.vAlignBaseLine {
+    display: inline-block;
+    vertical-align: baseline;
+    float: none;
+}
