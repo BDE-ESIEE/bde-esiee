@@ -1394,7 +1394,7 @@ ul.tag li a {
 }
 
 
-.footer address a {
+.footer address a, .footer .quick-links a {
     color: rgb(62, 200, 183);
 }
 
