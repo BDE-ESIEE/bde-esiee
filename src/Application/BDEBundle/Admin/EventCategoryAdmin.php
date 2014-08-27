@@ -65,7 +65,6 @@ class EventCategoryAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
             ->add('name')
             ->add('backgroundColor')
             ->add('textColor')
