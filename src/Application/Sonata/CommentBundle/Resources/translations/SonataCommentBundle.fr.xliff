@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="conversation">
                 <source>conversation</source>
-                <target>Conversation</target>
+                <target>Commentaires</target>
             </trans-unit>
             <trans-unit id="form_label_body">
                 <source>form_label_body</source>
@@ -124,7 +124,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_thread_list">
                 <source>breadcrumb.link_thread_list</source>
-                <target>Conversation</target>
+                <target>Commentiares</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_comment_list">
                 <source>breadcrumb.link_comment_list</source>

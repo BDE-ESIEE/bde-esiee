@@ -30,21 +30,7 @@ class CollectionAdmin extends Admin
         $formMapper
             ->add('enabled', null, array('required' => false))
             ->add('name')
-            ->add('description', 'textarea', array('required' => false))
-            ->add('cssClass', 'textarea', array('required' => false))
         ;
-
-        if (interface_exists('Sonata\MediaBundle\Model\MediaInterface')) {
-            $formMapper->add('media', 'sonata_type_model_list',
-                array('required' => false),
-                array(
-                    'link_parameters' => array(
-                        'provider' => 'sonata.media.provider.image',
-                        'context'  => 'sonata_collection'
-                    )
-                )
-            );
-        }
     }
 
     /**
