@@ -466,6 +466,10 @@
                 <source>list.label_text_color</source>
                 <target>Couleur du texte</target>
             </trans-unit>
+            <trans-unit id="filter_label_id">
+                <source>filter.label_id</source>
+                <target>ID</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

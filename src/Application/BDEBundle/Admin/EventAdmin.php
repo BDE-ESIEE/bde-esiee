@@ -32,7 +32,9 @@ class EventAdmin extends Admin
             ))
             ->add('private', null, array('required' => false))
             ->add('place', null, array('required' => false))
-            ->add('category')
+            ->add('category', null, array(
+                'expanded' => true,
+            ))
         ;
     }
 

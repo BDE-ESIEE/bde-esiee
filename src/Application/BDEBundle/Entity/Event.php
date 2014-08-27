@@ -79,7 +79,7 @@ class Event
 
     /**
      * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\EventCategory", inversedBy="events")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
