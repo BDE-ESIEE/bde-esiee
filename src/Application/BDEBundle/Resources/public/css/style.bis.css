@@ -25,25 +25,25 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding-bottom: 478px; /* .footer height */
+        padding-bottom: 676px; /* .footer height */
     }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
     body {
-        padding-bottom: 346px; /* .footer height */
+        padding-bottom: 456px; /* .footer height */
     }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
     body {
-        padding-bottom: 302px; /* .footer height */
+        padding-bottom: 396px; /* .footer height */
     }
 }
 
 @media (min-width: 1200px) {
     body {
-        padding-bottom: 280px; /* .footer height */
+        padding-bottom: 340px; /* .footer height */
     }
 }
 
