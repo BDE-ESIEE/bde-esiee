@@ -29,7 +29,7 @@ class Category
      * 
      * @Assert\NotBlank()
      * @Assert\NotNull()
-     * @Assert\Regex("/^[a-zA-Z_]+$/")
+     * @Assert\Type(type="string")
      * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
