@@ -458,6 +458,14 @@
                 <source>breadcrumb.link_event_category_history</source>
                 <target>Historique des modifications</target>
             </trans-unit>
+            <trans-unit id="list_label_background_color">
+                <source>list.label_background_color</source>
+                <target>Couleur d'arrière plan</target>
+            </trans-unit>
+            <trans-unit id="list_label_text_color">
+                <source>list.label_text_color</source>
+                <target>Couleur du texte</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -32,14 +32,7 @@ class EventAdmin extends Admin
             ))
             ->add('private', null, array('required' => false))
             ->add('place', null, array('required' => false))
-            ->add('backgroundColor', 'genemu_jquerycolor', array(
-                'widget' => 'image',
-                'data' => ($subject->getBackgroundColor() !== null) ? $subject->getBackgroundColor() : '#3EC8B7',
-            ))
-            ->add('textColor', 'genemu_jquerycolor', array(
-                'widget' => 'image',
-                'data' => ($subject->getTextColor() !== null) ? $subject->getTextColor() : '#FFFFFF',
-            ))
+            ->add('category')
         ;
     }
 

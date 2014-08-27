@@ -27,7 +27,6 @@ class EventCategoryAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('name')
             ->add('backgroundColor')
             ->add('textColor')
