@@ -34,7 +34,7 @@ services:
     bde.admin.club_category:
         class: Application\BDEBundle\Admin\ClubCategoryAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Catégorie", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            - { name: sonata.admin, manager_type: orm, group: "Associatif", label: "Catégorie de Club", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Application\BDEBundle\Entity\ClubCategory
@@ -93,5 +93,13 @@ services:
             - ~
             - Application\BDEBundle\Entity\Bargain
             - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]
+
+    application_bde.admin.event_category:
+        class: Application\BDEBundle\Admin\EventCategoryAdmin
+        arguments: [~, Application\BDEBundle\Entity\EventCategory, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Catégorie d'Événement, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
         calls:
             - [ setTranslationDomain, [ApplicationBDEBundle]]

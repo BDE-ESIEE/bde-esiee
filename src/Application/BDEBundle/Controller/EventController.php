@@ -35,8 +35,8 @@ class EventController extends FOSRestController
                 'end'       => $event->getDateEnd()->format('Y-m-d H:i:s'),
                 'allDay'    => /*$event->getDateEnd()->diff($event->getDateStart())->h > 4*/ false,
                 'place'     => $event->getPlace(),
-                'color'     => $event->getBackgroundColor(),
-                'textColor' => $event->getTextColor(),
+                'color'     => $event->getCategory()->getBackgroundColor(),
+                'textColor' => $event->getCategory()->getTextColor(),
     		);
     	}
 

@@ -79,7 +79,7 @@ class Club
     public $logoUrl;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\ClubCategory", inversedBy="clubs")
+     * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\EventCategory", inversedBy="clubs")
      * @ORM\JoinColumn(nullable=true)
      * @Exclude
      */

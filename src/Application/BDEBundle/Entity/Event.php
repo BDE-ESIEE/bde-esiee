@@ -77,6 +77,12 @@ class Event
      */
     private $textColor;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\EventCategory", inversedBy="events")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $category;
+
     public function __toString()
     {
         return (null !== $this->title) ? $this->title : '';
@@ -284,5 +290,28 @@ class Event
     public function getTextColor()
     {
         return $this->textColor;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \Application\BDEBundle\Entity\EventCategory $category
+     * @return Event
+     */
+    public function setCategory(\Application\BDEBundle\Entity\EventCategory $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Application\BDEBundle\Entity\EventCategory 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

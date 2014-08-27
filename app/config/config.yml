@@ -304,6 +304,7 @@ sonata_admin:
                 label: Associatif
                 items:
                     - bde.admin.event
+                    - application_bde.admin.event_category
                     - bde.admin.club
                     - bde.admin.club_category
             shop:

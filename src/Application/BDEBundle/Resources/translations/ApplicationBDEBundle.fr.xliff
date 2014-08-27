@@ -449,6 +449,15 @@
                 <source>breadcrumb.link_bargain_history</source>
                 <target>Historique des modifications</target>
             </trans-unit>
+
+            <trans-unit id="breadcrumb_link_event_category_list">
+                <source>breadcrumb.link_event_category_list</source>
+                <target>Liste des catégories d'événements</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_event_category_history">
+                <source>breadcrumb.link_event_category_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
