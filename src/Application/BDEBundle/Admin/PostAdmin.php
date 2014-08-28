@@ -85,6 +85,7 @@ class PostAdmin extends BaseAdmin
         {
             $user = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
             $object->setAuthor($user);
+            $object->setEnabled(false);
         }
     }
 
