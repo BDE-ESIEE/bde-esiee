@@ -4,6 +4,7 @@ namespace Application\Sonata\UserBundle\Admin;
 
 use Sonata\UserBundle\Admin\Model\UserAdmin as BaseAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class UserAdmin extends BaseAdmin
 {
@@ -70,5 +71,26 @@ class UserAdmin extends BaseAdmin
                 ->add('twoStepVerificationCode', null, array('required' => false))
             ->end()
         ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->addIdentifier('username')
+            ->add('email')
+            ->add('groups')
+            ->add('enabled'/*, null, array('editable' => true)*/)
+            ->add('locked'/*, null, array('editable' => true)*/)
+            ->add('last_login', 'datetime')
+        ;
+
+        if ($this->isGranted('ROLE_ALLOWED_TO_SWITCH')) {
+            $listMapper
+                ->add('impersonating', 'string', array('template' => 'SonataUserBundle:Admin:Field/impersonating.html.twig'))
+            ;
+        }
     }
 }
