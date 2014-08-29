@@ -36,11 +36,11 @@
         <default key="_controller">SonataAdminBundle:Core:search</default>
     </route>
 
-    <route id="application_sonata_admin_send_mail" pattern="/send/mail">
+    <route id="application_sonata_admin_send_mail" pattern="/send-mail">
         <default key="_controller">ApplicationSonataAdminBundle:Mail:sendMail</default>
     </route>
 
-    <route id="application_sonata_admin_preview_mail" pattern="/send/mail/preview">
+    <route id="application_sonata_admin_preview_mail" pattern="/send-mail/preview">
         <default key="_controller">ApplicationSonataAdminBundle:Mail:previewMail</default>
     </route>
 </routes>
