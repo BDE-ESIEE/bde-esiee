@@ -33,7 +33,7 @@ class PostAdmin extends BaseAdmin
         $formMapper->remove('author');
         $formMapper->remove('enabled');
 
-        if ($this->isGranted('EDITOR'))
+        if ($this->isGranted('OPERATOR'))
         {
             $formMapper
                 ->with('General')
@@ -81,7 +81,7 @@ class PostAdmin extends BaseAdmin
     {
         parent::prePersist($object);
 
-        if (!$this->isGranted('EDITOR'))
+        if (!$this->isGranted('OPERATOR'))
         {
             $user = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
             $object->setAuthor($user);
