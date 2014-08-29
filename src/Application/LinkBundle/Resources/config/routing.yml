@@ -1,0 +1,3 @@
+application_link_redirect:
+    path:     /link/{token}
+    defaults: { _controller: ApplicationLinkBundle:Link:redirect }

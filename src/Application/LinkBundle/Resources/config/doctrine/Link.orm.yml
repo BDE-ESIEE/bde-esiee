@@ -1,0 +1,18 @@
+Application\LinkBundle\Entity\Link:
+    type: entity
+    table: bde__link
+    repositoryClass: Application\LinkBundle\Repository\LinkRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        token:
+            type: string
+            length: '10'
+        url:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

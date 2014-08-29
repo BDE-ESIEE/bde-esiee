@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    application_link.admin.link:
+        class: Application\LinkBundle\Admin\LinkAdmin
+        arguments: [~, Application\LinkBundle\Entity\Link, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Lien Temporaire}
+        calls:
+            - [ setRouter, [@router]]

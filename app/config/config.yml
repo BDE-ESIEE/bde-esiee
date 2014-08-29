@@ -330,6 +330,7 @@ sonata_admin:
                     - bde.admin.lost_property
                     - bde.admin.bargain
                     - bde.admin.editable_text_block
+                    - application_link.admin.link
     security:
         handler: sonata.admin.security.handler.acl
         # acl security information

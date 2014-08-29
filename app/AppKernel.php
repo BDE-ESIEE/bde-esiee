@@ -66,6 +66,7 @@ class AppKernel extends Kernel
             new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(),
             new Application\Sonata\BlockBundle\ApplicationSonataBlockBundle(),
             new Application\BDEBundle\ApplicationBDEBundle(),
+            new Application\LinkBundle\ApplicationLinkBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
