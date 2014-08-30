@@ -2268,21 +2268,22 @@ ul.inbox-pagination li {
 /*404 page*/
 
 .body-404 {
-    background: #18d4cb;
+    background: #3EC8B7;
     color: #fff;
 }
 
 .error-wrapper {
     text-align: center;
     margin-top: 10%;
+    text-shadow: 1px 1px 12px #444;
 }
 
 .error-wrapper .icon-404{
-    background: url("../img/404_icon.png") no-repeat;
+    background: url("../img/omg.png") no-repeat;
     width: 289px;
     height: 274px;
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 77px;
 }
 
 
@@ -2303,10 +2304,6 @@ ul.inbox-pagination li {
     font-weight: 300;
 }
 
-.error-wrapper p.page-404  {
-    color: #7dfff7;
-}
-
 .error-wrapper p.page-404 a, .error-wrapper p.page-500 a,  .error-wrapper p.page-404 a:hover, .error-wrapper p.page-500 a:hover {
     color: #fff;
 }
@@ -2319,16 +2316,12 @@ ul.inbox-pagination li {
     color: #fff;
 }
 
-.error-wrapper p.page-500 {
-    color: #afa5f1;
-}
-
 .error-wrapper .icon-500{
-    background: url("../img/500_icon.png") no-repeat;
+    background: url("../img/omg.png") no-repeat;
     width: 289px;
     height: 274px;
     display: inline-block;
-    margin-left: 55px;
+    margin-left: 77px;
 }
 
 /*profile*/

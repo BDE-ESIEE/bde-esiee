@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>An Error Occurred: {{ status_text }}</title>
+
+        <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/bootstrap.min.css') }}" type='text/css' />
+        <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/bootstrap-reset.css') }}" type='text/css' />
+        <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/font-awesome.css') }}" type='text/css' />
+        <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/style.css') }}" type='text/css' />
+        <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/style-responsive.css') }}" type='text/css' />
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" type='text/css' />
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+        <!--[if lt IE 9]>
+          <script src="{{ asset('bundles/applicationbde/js/html5shiv.js') }}"></script>
+          <script src="{{ asset('bundles/applicationbde/js/respond.min.js') }}"></script>
+        <![endif]-->
+        <link rel="icon" type="image/vnd.microsoft.icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    {% set code = status_code in [404, 500] ? status_code : 404 %}
+
+	<body class="body-{{ code }}">
+		<div class="container">
+			<section class="error-wrapper">
+				<i class="icon-{{ code }}"></i>
+				<h1>Oh mince !</h1>
+				<h2>{{ status_code }}{% if status_code in [404, 500] %} Page{% endif %} {{ status_text }}</h2>
+				<p class="page-{{ code }}">Quelque chose chose d'imprévu s'est produit ! <a href="{{ path('application_bde_homepage') }}">Retour à l'accueil</a>
+				</p>
+			</section>
+		</div>
+	</body>
+</html>
