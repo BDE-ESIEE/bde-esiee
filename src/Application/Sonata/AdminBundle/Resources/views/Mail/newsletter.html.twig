@@ -36,7 +36,7 @@
 								{% if alternate and post.photo is not null %}
 								<td class="small" style="vertical-align: top;">
 									<div style="width: 75px; vertical-align: top; margin-right: 10px; height: 75px; overflow: hidden; border-radius: 50%; text-align: center; display: block;">
-										<img class="circular" src="{% path post.photo, 'big' %}" style="left: 100%;margin-left: -81%;width: 200px;"/>
+										<img class="circular" src="{% path post.photo, 'big' %}" style="margin-left: -81%;width: 200px;"/>
 									</div>
 								</td>
 								{% endif %}
@@ -45,8 +45,10 @@
 									<p style="font-family:\'Helvetica Neue\', Helvetica, Helvetica, Arial, sans-serif;margin:0;padding:0;margin-bottom:10px;font-weight:400;font-size:14px;line-height:1.6">{{ post.abstract }}</p>
 								</td>
 								{% if not alternate and post.photo is not null %}
-								<td class="small" style="min-width: 75px;width:20%;vertical-align: top; padding-right:10px;">
-									<img class="circular" src="{% path post.photo, 'small' %}" style="border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;width:75px;height:75px;"/>
+								<td class="small" style="vertical-align: top;">
+									<div style="width: 75px; vertical-align: top; margin-right: 10px; height: 75px; overflow: hidden; border-radius: 50%; text-align: center; display: block;">
+										<img class="circular" src="{% path post.photo, 'big' %}" style="margin-left: -81%;width: 200px;"/>
+									</div>
 								</td>
 								{% endif %}
 							</tr>
