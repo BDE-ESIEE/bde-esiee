@@ -38,6 +38,11 @@ security:
                 path:           /admin/logout
             anonymous:          true
             switch_user:        true
+            remember_me:
+                key:      "%secret%"
+                lifetime: 31536000
+                path:     /
+                domain:   ~
 
         # -> end custom configuration
 
