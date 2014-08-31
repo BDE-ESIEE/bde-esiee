@@ -36,18 +36,18 @@
 								{% if alternate and post.photo is not null %}
 								<td class="small" style="vertical-align: top;">
 									<div style="width: 75px; vertical-align: top; margin-right: 10px; height: 75px; overflow: hidden; border-radius: 50%; text-align: center; display: block;">
-										<img class="circular" src="{% path post.photo, 'big' %}" style="margin-left: -81%;width: 200px;"/>
+										<img class="circular" src="{% path post.photo, 'big' %}" style="width: 200px;display:block;"/>
 									</div>
 								</td>
 								{% endif %}
 								<td>
-									<h4 style="margin:0;padding:0;font-family:HelveticaNeue-Light, \'Helvetica Neue Light\', \'Helvetica Neue\', Helvetica, Arial, \'Lucida Grande\', sans-serif;line-height:1.1;margin-bottom:15px;font-weight:500;font-size:23px;color:#3EC8B7;text-decoration:none;"><a target="_blank" href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="color:#3EC8B7;text-decoration:none;">{{ post.title }}</a><small style="font-size:60%;color:#6f6f6f;line-height:0;text-transform:none">&nbsp;&nbsp;{{ post.publicationDateStart | format_date }}</small></h4>
-									<p style="font-family:\'Helvetica Neue\', Helvetica, Helvetica, Arial, sans-serif;margin:0;padding:0;margin-bottom:10px;font-weight:400;font-size:14px;line-height:1.6">{{ post.abstract }}</p>
+									<h4 style=""><a target="_blank" href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="margin:0;padding:0;font-family:HelveticaNeue-Light, \'Helvetica Neue Light\', \'Helvetica Neue\', Helvetica, Arial, \'Lucida Grande\', sans-serif;line-height:1.1;margin-bottom:15px;font-weight:500;font-size:23px;color:#3EC8B7;text-decoration:none;">{{ post.title }}</a><small style="font-size:60%;color:#6f6f6f;line-height:0;text-transform:none">&nbsp;&nbsp;{{ post.publicationDateStart | format_date }}</small></h4>
+									<p style="font-family:\'Helvetica Neue\', Helvetica, Helvetica, Arial, sans-serif;margin:0;padding:0;margin-bottom:10px;font-weight:500;font-size:14px;line-height:1.6">{{ post.abstract }}</p>
 								</td>
 								{% if not alternate and post.photo is not null %}
 								<td class="small" style="vertical-align: top;">
 									<div style="width: 75px; vertical-align: top; margin-right: 10px; height: 75px; overflow: hidden; border-radius: 50%; text-align: center; display: block;">
-										<img class="circular" src="{% path post.photo, 'big' %}" style="margin-left: -81%;width: 200px;"/>
+										<img class="circular" src="{% path post.photo, 'big' %}" style="width: 200px;display:block;"/>
 									</div>
 								</td>
 								{% endif %}
