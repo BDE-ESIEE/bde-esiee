@@ -27,7 +27,7 @@
 			<section class="error-wrapper">
 				<i class="icon-{{ code }}"></i>
 				<h1>Oh mince !</h1>
-				<h2>{{ status_code }}{% if status_code in [404, 500] %} Page{% endif %} {{ status_text }}</h2>
+				<h2>{{ status_code }}{% if status_code == 404 %} Page{% endif %} {{ status_text }}</h2>
 				<p class="page-{{ code }}">Quelque chose chose d'imprévu s'est produit ! <a href="{{ path('application_bde_homepage') }}">Retour à l'accueil</a>
 				</p>
 			</section>
