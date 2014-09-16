@@ -79,4 +79,9 @@ class User extends BaseUser
     {
         return $this->weekBeforeExam;
     }
+
+    public function __toString()
+    {
+        return ''.(($this->lastname !== null) ? $this->lastname : (($this->firstname !== null) ? $this->firstname : $this->username));
+    }
 }
