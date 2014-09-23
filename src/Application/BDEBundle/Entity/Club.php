@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\VirtualProperty;
+use JMS\Serializer\Annotation\Since;
 
 /**
  * Club
@@ -84,6 +85,14 @@ class Club
      * @Exclude
      */
     private $category;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     * @Since("1.1")
+     */
+    private $email;
 
 
     /**
@@ -294,5 +303,28 @@ class Club
     public function getCategoryId()
     {
         return $this->getCategory()->getId();
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Club
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }
