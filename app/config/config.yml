@@ -210,7 +210,7 @@ ivory_ck_editor:
                 provider: sonata.media.provider.image
             allowedContent: true
             # protectedSource: ['/<i[^>]*><\/i>/g']
-            contentsCss: ['/bundles/ivoryckeditor/contents.css', '/bundles/applicationbde/css/font-awesome.css', '/bundles/applicationbde/css/bootstrap.min.css']
+            contentsCss: ['/bundles/ivoryckeditor/contents.css', '/bundles/applicationbde/css/font-awesome.css', '/bundles/applicationbde/css/bootstrap.min.css', '/bundles/applicationbde/css/style.bis.css', '/bundles/applicationbde/css/style-responsive.bis.css']
     toolbars:
         configs:
             toolbar_basic: ["@clipboard", "@editing", "/", "@basicstyles", "@links", "@paragraph", "/", '@styles', '@colors', '@tools', '@insert' ]
