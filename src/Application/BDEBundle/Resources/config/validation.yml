@@ -1,0 +1,10 @@
+Application\BDEBundle\Entity\Club:
+    properties:
+        email:
+            - Email: ~
+        shortcode:
+            - Length:
+                min: 2
+        title:
+            - Length:
+                min: 3
