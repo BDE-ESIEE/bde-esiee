@@ -1,0 +1,23 @@
+parameters:
+
+services:
+    bde.admin.product:
+        class: Application\ShopBundle\Admin\ProductAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Article", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\ShopBundle\Entity\Product
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationShopBundle]]
+    bde.admin.product_category:
+        class: Application\ShopBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Breguet Shop", label: "Catégorie", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\ShopBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationShopBundle]]

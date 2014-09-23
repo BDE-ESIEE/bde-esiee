@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\BDEBundle\Entity;
+namespace Application\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Category
  *
  * @ORM\Table(name="shop__category")
- * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="Application\ShopBundle\Repository\CategoryRepository")
  * @UniqueEntity("name")
  */
 class Category
@@ -49,7 +49,7 @@ class Category
     private $enabled;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Application\BDEBundle\Entity\Product", cascade={"persist"}, mappedBy="categories")
+     * @ORM\ManyToMany(targetEntity="Application\ShopBundle\Entity\Product", cascade={"persist"}, mappedBy="categories")
      * @ORM\JoinTable(name="shop__product_category")
      */
     private $products;
@@ -149,10 +149,10 @@ class Category
     /**
      * Add products
      *
-     * @param \Application\BDEBundle\Entity\Product $products
+     * @param \Application\ShopBundle\Entity\Product $products
      * @return Category
      */
-    public function addProduct(\Application\BDEBundle\Entity\Product $products)
+    public function addProduct(\Application\ShopBundle\Entity\Product $products)
     {
         $this->products[] = $products;
 
@@ -162,9 +162,9 @@ class Category
     /**
      * Remove products
      *
-     * @param \Application\BDEBundle\Entity\Product $products
+     * @param \Application\ShopBundle\Entity\Product $products
      */
-    public function removeProduct(\Application\BDEBundle\Entity\Product $products)
+    public function removeProduct(\Application\ShopBundle\Entity\Product $products)
     {
         $this->products->removeElement($products);
     }

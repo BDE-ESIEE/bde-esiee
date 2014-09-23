@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\BDEBundle\Entity;
+namespace Application\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Product
  *
  * @ORM\Table(name="shop__product")
- * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\ProductRepository")
+ * @ORM\Entity(repositoryClass="Application\ShopBundle\Repository\ProductRepository")
  */
 class Product
 {
@@ -71,7 +71,7 @@ class Product
     private $counter = 0;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Application\BDEBundle\Entity\Category", cascade={"persist"}, inversedBy="products")
+     * @ORM\ManyToMany(targetEntity="Application\ShopBundle\Entity\Category", cascade={"persist"}, inversedBy="products")
      * @ORM\JoinColumn(nullable=true)
      * @ORM\JoinTable(name="shop__product_category")
      */
@@ -174,10 +174,10 @@ class Product
     /**
      * Add categories
      *
-     * @param \Application\BDEBundle\Entity\Category $categories
+     * @param \Application\ShopBundle\Entity\Category $categories
      * @return Product
      */
-    public function addCategory(\Application\BDEBundle\Entity\Category $categories)
+    public function addCategory(\Application\ShopBundle\Entity\Category $categories)
     {
         $this->categories[] = $categories;
 
@@ -187,9 +187,9 @@ class Product
     /**
      * Remove categories
      *
-     * @param \Application\BDEBundle\Entity\Category $categories
+     * @param \Application\ShopBundle\Entity\Category $categories
      */
-    public function removeCategory(\Application\BDEBundle\Entity\Category $categories)
+    public function removeCategory(\Application\ShopBundle\Entity\Category $categories)
     {
         $this->categories->removeElement($categories);
     }
@@ -282,6 +282,18 @@ class Product
     public function setCounter($counter)
     {
         $this->counter = $counter;
+
+        return $this;
+    }
+
+    /**
+     * Increment counter
+     *
+     * @return Product
+     */
+    public function incrementCounter()
+    {
+        $this->counter++;
 
         return $this;
     }

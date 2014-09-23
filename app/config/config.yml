@@ -51,6 +51,7 @@ assetic:
         - FOSCommentBundle
         - MopaBootstrapBundle
         - SonataNewsBundle
+        - ApplicationShopBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

@@ -1,11 +1,11 @@
 <?php
 
-namespace Application\BDEBundle\Form;
+namespace Application\ShopBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Application\BDEBundle\Entity\Product;
+use Application\ShopBundle\Entity\Product;
 
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormEvents;
@@ -53,7 +53,7 @@ class ProductType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Application\BDEBundle\Entity\Product'
+            'data_class' => 'Application\ShopBundle\Entity\Product'
         ));
     }
 

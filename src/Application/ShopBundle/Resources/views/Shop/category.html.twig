@@ -5,7 +5,7 @@
             <ul class="list-unstyled">
                 {% for category in category_list %}
                     <li>
-                        <a href="{{ path('application_bde_breguet_shop_filter', {id: category.id}) }}">
+                        <a href="{{ path('application_shop_breguet_shop_filter', {id: category.id}) }}">
                             <i class="fa fa-angle-right"></i> {{ category.name }}
                         </a>
                     </li>

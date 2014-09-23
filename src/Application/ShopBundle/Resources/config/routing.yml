@@ -1,0 +1,15 @@
+application_shop_breguet_shop:
+    pattern:  /shop
+    defaults: { _controller: ApplicationShopBundle:Shop:index }
+
+application_shop_breguet_shop_filter:
+    pattern:  /shop/filter/{id}
+    defaults: { _controller: ApplicationShopBundle:Shop:index }
+    requirements:
+        id: \w+
+
+application_shop_breguet_shop_show:
+    pattern:  /shop/view/{id}
+    defaults: { _controller: ApplicationShopBundle:Shop:view }
+    requirements:
+        id: \d+

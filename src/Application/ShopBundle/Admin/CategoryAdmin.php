@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\BDEBundle\Admin;
+namespace Application\ShopBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;

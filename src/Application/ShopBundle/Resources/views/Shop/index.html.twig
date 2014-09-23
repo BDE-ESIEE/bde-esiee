@@ -12,7 +12,7 @@
                     <div class="col-md-4 vAlignBaseLine">
                         <section class="panel">
                             <div class="pro-img-box">
-                                <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}">
+                                <a href="{{ path('application_shop_breguet_shop_show', {'id': product.id}) }}">
                                     {% thumbnail product.photos[0].media, 'shop_small' with {'class': 'media-object'} %}
                                     <span class="adtocart">
                                         <i class="fa fa-shopping-cart"></i>
@@ -22,7 +22,7 @@
 
                             <div class="panel-body text-center">
                                 <h4>
-                                    <a href="{{ path('application_bde_breguet_shop_show', {'id': product.id}) }}" class="pro-title">
+                                    <a href="{{ path('application_shop_breguet_shop_show', {'id': product.id}) }}" class="pro-title">
                                         {{ product.name }}
                                     </a>
                                 </h4>
@@ -36,7 +36,7 @@
             {% endspaceless %}
         </div>
     </div>
-    {{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
+    {{ render(controller('ApplicationShopBundle:Shop:listCategory')) }}
 {% endblock %}
 
 {% block liServices %} active{% endblock %}

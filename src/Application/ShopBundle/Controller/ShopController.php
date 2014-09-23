@@ -1,18 +1,18 @@
 <?php
 
-namespace Application\BDEBundle\Controller;
+namespace Application\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Application\BDEBundle\Entity\Product;
-use Application\BDEBundle\Entity\Category;
-use Application\BDEBundle\Form\ProductType;
+use Application\ShopBundle\Entity\Product;
+use Application\ShopBundle\Entity\Category;
+use Application\ShopBundle\Form\ProductType;
 
 class ShopController extends Controller
 {
     public function indexAction(Category $category = null)
     {
     	$em = $this->getDoctrine()->getManager();
-    	$repository = $em->getRepository('ApplicationBDEBundle:Product');
+    	$repository = $em->getRepository('ApplicationShopBundle:Product');
 
         if ($category === null)
     	   $product_list = $repository->findAll();
@@ -20,7 +20,7 @@ class ShopController extends Controller
             $product_list = $category->getProducts();
         }
 
-        return $this->render('ApplicationBDEBundle:Shop:index.html.twig', array(
+        return $this->render('ApplicationShopBundle:Shop:index.html.twig', array(
             'product_list' => $product_list,
         ));
     }
@@ -41,6 +41,7 @@ class ShopController extends Controller
                 $interestedPerson = $product->getInterestedPerson();
                 $interestedPerson[] = $form->get('email')->getData();
                 $product->setInterestedPerson($interestedPerson);
+                $product->incrementCounter();
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($product);
@@ -55,7 +56,7 @@ class ShopController extends Controller
             }
         }
 
-        return $this->render('ApplicationBDEBundle:Shop:view.html.twig', array(
+        return $this->render('ApplicationShopBundle:Shop:view.html.twig', array(
         	'product'	=> $product,
             'form'      => $form->createView(),
         ));
@@ -64,11 +65,11 @@ class ShopController extends Controller
     public function listCategoryAction()
     {
     	$em = $this->getDoctrine()->getManager();
-    	$repository = $em->getRepository('ApplicationBDEBundle:Category');
+    	$repository = $em->getRepository('ApplicationShopBundle:Category');
 
     	$category_list = $repository->findAll();
 
-        return $this->render('ApplicationBDEBundle:Shop:category.html.twig', array(
+        return $this->render('ApplicationShopBundle:Shop:category.html.twig', array(
         	'category_list'	=> $category_list,
         ));
     }

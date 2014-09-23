@@ -6,9 +6,10 @@
 	{{ parent() }}
 
     {% stylesheets 
-        'bundles/applicationbde/css/etalage.css'
+        'bundles/applicationshop/css/etalage.css'
 
         filter='cssrewrite,?yui_css' 
+        output='css/shop.min.css'
     %}
         <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
     {% endstylesheets %} 
@@ -38,7 +39,7 @@
 					<span class="posted_in"> 
 						<strong>Categorie{% if product.categories|length > 1 %}s{% endif %} :</strong> 
 						{% for category in product.categories %}
-							<a rel="tag" href="{{ path('application_bde_breguet_shop_filter', {id: category.id}) }}">{{ category.name }}</a>{% if loop.last %}.{% else %},{% endif %}
+							<a rel="tag" href="{{ path('application_shop_breguet_shop_filter', {id: category.id}) }}">{{ category.name }}</a>{% if loop.last %}.{% else %},{% endif %}
 						{% endfor %}
 					</span>
 				</div>
@@ -55,16 +56,17 @@
 			</div>
 		</div>
 	</div>
-	{{ render(controller('ApplicationBDEBundle:Shop:listCategory')) }}
+	{{ render(controller('ApplicationShopBundle:Shop:listCategory')) }}
 {% endblock %}
 
 {% block javascripts %}
 	{{ parent() }}
 
     {% javascripts 
-        'bundles/applicationbde/js/jquery.etalage.js' 
+        'bundles/applicationshop/js/jquery.etalage.js' 
 
         filter='?yui_js' 
+        output='js/shop.min.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %} 
