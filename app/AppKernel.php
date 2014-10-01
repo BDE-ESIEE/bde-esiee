@@ -47,7 +47,6 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
             new Sonata\NewsBundle\SonataNewsBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
