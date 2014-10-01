@@ -20,11 +20,12 @@ class SendMailType extends AbstractType
 				'query_builder' => function(EntityRepository $er) {
 			        return $er->createQueryBuilder('p')
 			        	->where('p.publicationDateStart >= :date_from')
-			        	->setParameter('date_from', (new \DateTime())->modify('-1 month'))
+			        	->setParameter('date_from', (new \DateTime())->modify('-2 week'))
 			            ->orderBy('p.publicationDateStart', 'ASC');
 			    },
 			))
 			->add('intro', 'textarea', array('required' => false))
+			->add('important', 'textarea', array('required' => false))
 			->add('email', 'email')
 			->add('aperçu', 'submit')
 			->add('envoyer', 'submit')

@@ -1,0 +1,18 @@
+{% if alternate and post.thumbnail is not null %}
+<td class="small" style="vertical-align: top;">
+	<div style="width: 75px; vertical-align: top; margin-right: 10px; height: 75px;max-height: 75px; overflow: hidden; border-radius: 50%; text-align: center; display: block;">
+		<img src="{% path post.thumbnail, 'big' %}" style="width: 80px;display:block;vertical-align: top;"/>
+	</div>
+</td>
+{% endif %}
+<td>
+	<h4 style="margin:0;padding:0;"><a target="_blank" href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="text-decoration:none !important; text-decoration: none;line-height:1.1;margin-bottom:15px;font-weight:500;font-size:23px;color:#3EC8B7;color:#3EC8B7!important;">{{ post.title }}</a><small style="color:#6f6f6f;color:#6f6f6f!important;line-height:0;text-transform:none;font-size: 14px; font-weight: 500;">&nbsp;&nbsp;par {{ post.author }}</small></h4>
+	<p style="padding:0;margin-bottom:10px;font-weight:400;font-size:14px;line-height:1.6;text-align: justify;">{{ post.abstract }}<br /><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="color:#3EC8B7;color:#3EC8B7!important;">Lire la suite</a></p>
+</td>
+{% if not alternate and post.thumbnail is not null %}
+<td class="small" style="vertical-align: top;">
+	<div style="width: 75px; vertical-align: top; margin-right: 10px; height: 75px;max-height: 75px; overflow: hidden; border-radius: 50%; text-align: center; display: block;">
+		<img class="circular" src="{% path post.thumbnail, 'big' %}" style="width: 80px;display:block;"/>
+	</div>
+</td>
+{% endif %}

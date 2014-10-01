@@ -39,6 +39,7 @@ twig:
         version: %application_version%
         piwik_id: %piwik_id%
         piwik_url: %piwik_url%
+        hostname: %hostname%
 
 # Assetic Configuration
 assetic:

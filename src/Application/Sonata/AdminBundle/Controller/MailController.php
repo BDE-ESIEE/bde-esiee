@@ -9,6 +9,14 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class MailController extends Controller
 {
+	public function sortDate($a, $b)
+	{
+		$dateA = new \DateTime($a);
+		$dateB = new \DateTime($b);
+		$diff = $dateB->diff($dateA);
+		return intval($diff->format('%R%a'));
+	}
+
     /**
      * @Secure(roles="ROLE_COMMUNICATION")
      */
@@ -30,34 +38,78 @@ class MailController extends Controller
 
 		$request = $this->get('request');
 		$posts = null;
-		$message = null;
+		$intro = null;
+		$important = null;
 		$mail = null;
 		$bind = false;
+		$week = array();
+		$afterWeek = array();
+		$other = array();
+		$mailName = null;
+		$now = new \DateTime();
+		$oneWeek = (new \DateTime())->modify('+1 week');
 
 		if ($request->getMethod() == 'POST') {
 			$form->bind($request);
+			$bind = true;
 
 			if ($form->isValid()) {
-				$bind = true;
+				$posts = $form->get('news')->getData();
+				$intro = $form->get('intro')->getData();
+				$important = $form->get('important')->getData();
+				$mail = $form->get('email')->getData();
+				$mailName = 'mail/mail-hebdo-'.(new \DateTime())->format('d-m-Y-H:i:s').'.html';
+
+				foreach ($posts as $post) {
+					if (null !== $post->getEvent()) {
+						if ($post->getEvent()->getDateStart() < $oneWeek)
+							$week[$post->getEvent()->getDateStart()->format('Y-m-d')][] = $post;
+						else
+							$afterWeek[$post->getEvent()->getDateStart()->format('Y-m-d')][] = $post;
+					}
+					else {
+						$other[] = $post;
+					}
+				}
+
+				uksort($week, array($this, "sortDate"));
+				uksort($afterWeek, array($this, "sortDate"));
+
 				if ($form->get('aperçu')->isClicked())
 				{
 					$posts = $form->get('news')->getData();
-					$message = $form->get('intro')->getData();
+					$intro = $form->get('intro')->getData();
 					$mail = $form->get('email')->getData();
 				} elseif ($form->get('envoyer')->isClicked()) {
-			        $message = \Swift_Message::newInstance()
+					file_put_contents($mailName, $this->renderView(
+		                'ApplicationSonataAdminBundle:Mail:newsletter.html.twig', array(
+							'posts'     => $posts,
+							'intro'     => $intro,
+							'important' => $important,
+							'week'      => $week,
+							'afterWeek' => $afterWeek,
+							'other'     => $other,
+							'mailName'  => $mailName,
+		                )));
+
+			        $swiftMessage = \Swift_Message::newInstance()
 			            ->setSubject('N\'OUBLIE PAS DE MODIFIER LE SUJET :p (et d\'enlever le TR)')
-			            ->setFrom('annales.esiee@gmail.com')
-			            ->setTo($form->get('email')->getData())
+			            ->setFrom('bde@edu.esiee.fr')
+			            ->setTo($mail)
 			            ->setBody($this->renderView(
 			                'ApplicationSonataAdminBundle:Mail:newsletter.html.twig', array(
-								'posts'   => $form->get('news')->getData(),
-								'message' => $form->get('intro')->getData(),
+								'posts'     => $posts,
+								'intro'     => $intro,
+								'important' => $important,
+								'week'      => $week,
+								'afterWeek' => $afterWeek,
+								'other'     => $other,
+								'mailName'  => $mailName,
 			                )),
 			                'text/html'
 			            )
 			        ;
-			        $this->get('mailer')->send($message);
+			        $this->get('mailer')->send($swiftMessage);
 
 					$this->get('session')
 		            	 ->getFlashBag()
@@ -68,11 +120,10 @@ class MailController extends Controller
 
 		if (!$bind && $post_list !== null)
 		{
-    		$now = new \DateTime();
-    		$oneWeek = (new \DateTime())->modify('+1 week');
+			// On préselectionne les news
 			$checked = array();
 			foreach($post_list as $post) {
-				if ($post->getPublicationDateStart() >= $now && $post->getPublicationDateStart() <= $oneWeek)
+				if ((null !== $post->getEvent() && $post->getEvent()->getDateStart() >= $now && $post->getEvent()->getDateStart() <= $oneWeek) || ($post->getPublicationDateStart() >= $now && $post->getPublicationDateStart() <= $oneWeek))
 					$checked[] = $post;
 			}
 			$form->get('news')->setData($checked);
@@ -82,8 +133,13 @@ class MailController extends Controller
 			'admin_pool' => $this->container->get('sonata.admin.pool'),
 			'form'       => $form->createView(),
 			'posts'      => $posts,
-			'message'    => $message,
-			'mail'		 => $mail,
+			'intro'      => $intro,
+			'important'  => $important,
+			'mail'       => $mail,
+			'week'       => $week,
+			'afterWeek'  => $afterWeek,
+			'other'      => $other,
+			'mailName'   => $mailName,
         ));
     }
 }

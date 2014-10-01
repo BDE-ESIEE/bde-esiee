@@ -59,7 +59,7 @@
 			$(function() {
 				var doc = $("iframe#apercu")[0].contentWindow.document;
 				doc.open();
-				doc.write('{% filter replace({"\r": "", "\n": ""})|raw %}{% include "ApplicationSonataAdminBundle:Mail:newsletter.html.twig" with {"posts": posts, "message" : message} %}{% endfilter %}');
+				doc.write('{% filter replace({"\r": "", "\n": "", "\'":"&apos;"})|raw %}{% include "ApplicationSonataAdminBundle:Mail:newsletter.html.twig" with {"week": week, "other": other, "intro": intro, "important": important} %}{% endfilter %}');
 				doc.close();
 				$("#frame-wrapper").resizable({
 				    alsoResize : '#apercu',

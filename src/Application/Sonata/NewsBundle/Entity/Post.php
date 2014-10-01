@@ -33,6 +33,8 @@ class Post extends BasePost
 
     private $photo;
 
+    private $thumbnail;
+
     /**
      * Get id
      *
@@ -89,8 +91,31 @@ class Post extends BasePost
         return $this->photo;
     }
 
+    /**
+     * Set thumbnail
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $thumbnail
+     * @return Post
+     */
+    public function setThumbnail(\Application\Sonata\MediaBundle\Entity\Media $thumbnail = null)
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    /**
+     * Get thumbnail
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
     public function __toString()
     {
-        return $this->publicationDateStart->format('d/m/Y').' - '.$this->title.' ('.$this->author.')';
+        return $this->publicationDateStart->format('d/m/Y').' - '.$this->title.' (par '.$this->author.') '.(isset($this->event) ? '(le '.$this->event->getDateStart()->format('d/m/Y').')' : '');
     }
 }

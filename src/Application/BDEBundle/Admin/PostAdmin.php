@@ -9,6 +9,13 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 class PostAdmin extends BaseAdmin
 {
     public $supportsPreviewMode = true;
+    protected $baseRouteName = 'admin_application_sonata_news_post';
+    protected $baseRoutePattern = 'application/sonata/news/post';
+    protected $datagridValues = array(
+        '_page' => 1,
+        '_sort_order' => 'DESC', 
+        '_sort_by' => 'id'
+    );
 
     public function getTemplate($name)
     {
@@ -30,17 +37,13 @@ class PostAdmin extends BaseAdmin
         parent::configureFormFields($formMapper);
 
         $formMapper->remove('content');
-        $formMapper->remove('author');
-        $formMapper->remove('enabled');
+        $formMapper->remove('commentsCloseAt');
+        $formMapper->remove('commentsDefaultStatus');
 
-        if ($this->isGranted('OPERATOR'))
+        if (!$this->isGranted('OPERATOR'))
         {
-            $formMapper
-                ->with('General')
-                    ->add('author', 'sonata_type_model_list')
-                    ->add('enabled', null, array('required' => false))
-                ->end()
-            ;
+            $formMapper->remove('author');
+            $formMapper->remove('enabled');
         }
 
         $formMapper
@@ -68,7 +71,14 @@ class PostAdmin extends BaseAdmin
                     'provider'      => 'sonata.media.provider.image',
                     'context'       => 'news',
                     'new_on_update' => false,
-                    'label'         => 'Photo',
+                    'label'         => 'Photo au format rectangle',
+                ))
+                ->add('thumbnail', 'sonata_media_type', array(
+                    'required'      => false,
+                    'provider'      => 'sonata.media.provider.image',
+                    'context'       => 'news',
+                    'new_on_update' => false,
+                    'label'         => 'Photo au format carré',
                 ))
             ->end()
         ;
@@ -81,11 +91,13 @@ class PostAdmin extends BaseAdmin
     {
         parent::prePersist($object);
 
+        $object->setCommentsDefaultStatus(1);
+
         if (!$this->isGranted('OPERATOR'))
         {
             $user = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
             $object->setAuthor($user);
-            $object->setEnabled(false);
+            $object->setEnabled(true);
         }
     }
 
@@ -96,6 +108,7 @@ class PostAdmin extends BaseAdmin
     {
         parent::configureListFields($listMapper);
         $listMapper->remove('commentsCount');
+        $listMapper->remove('tags');
 
         $listMapper
             ->add('_action', 'actions', array(
