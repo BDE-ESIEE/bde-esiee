@@ -77,6 +77,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/na-ji/GenemuFormBundle"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/na-ji/SonataCoreBundle"
         }
     ]
 }
