@@ -60,7 +60,7 @@ class PostAdmin extends BaseAdmin
                     'ckeditor_context'     => 'main',
                 ))
                 ->add('event', 'sonata_type_model_list', array(
-                    'btn_delete' => false,
+                    'btn_delete' => true,
                     'required'   => false,
                     'label'      => 'Événement',
                 ))
@@ -91,8 +91,6 @@ class PostAdmin extends BaseAdmin
     {
         parent::prePersist($object);
 
-        $object->setCommentsDefaultStatus(1);
-
         if (!$this->isGranted('OPERATOR'))
         {
             $user = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
@@ -120,5 +118,13 @@ class PostAdmin extends BaseAdmin
                 'label' => 'Actions'
             ))
         ;
+    }
+
+    public function getNewInstance()
+    {
+        $instance = parent::getNewInstance();
+        $instance->setCommentsDefaultStatus(1);
+
+        return $instance;
     }
 }
