@@ -18,7 +18,7 @@ class ICSDecoder implements DecoderInterface
 
     public function decode($data)
     {
-        $ics = "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//BDE ESIEE Paris//FR\r\nX-WR-CALNAME:Evénements du BDE\r\nX-WR-TIMEZONE:Europe/Berlin\r\nCALSCALE:GREGORIAN\r\n";
+        $ics = "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//BDE ESIEE Paris//FR\r\nX-WR-CALNAME:Evénements du BDE\r\nX-WR-TIMEZONE:Europe/Paris\r\nCALSCALE:GREGORIAN\r\n";
 
 		foreach ($data as $event) {
 			$ics .= "BEGIN:VEVENT\r\nUID:".$event['id']."\r\nLOCATION:".$this->escapeString($event['place'])."\r\nSUMMARY:".$this->escapeString($event['title'])."\r\nDTSTART:".$this->dateToCal($event['start'])."\r\nDTEND:".$this->dateToCal($event['end'])."\r\nEND:VEVENT\r\n";
