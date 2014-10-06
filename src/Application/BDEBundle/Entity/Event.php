@@ -92,6 +92,8 @@ class Event
     public function __construct()
     {
         $this->news = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateStart = new \DateTime();
+        $this->dateEnd = new \DateTime();
     }
 
     /**

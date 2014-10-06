@@ -2,12 +2,15 @@
 
 {% block title %}Calendrier{% endblock %}
 
+{% set contains_editable_block = 'yes' %}
+
 {% block stylesheets %}
 	{{ parent() }}
     {% stylesheets 
         'bundles/applicationbde/css/bootstrap-fullcalendar.css'
 
         filter='cssrewrite,?yui_css' 
+        output='css/events.min.css'
     %}
         <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
     {% endstylesheets %} 
@@ -16,6 +19,14 @@
 {% block body %}
 	<div class="col-lg-12">
 		<section class="panel">
+			<div class="panel-body">
+		        {{ sonata_block_render({ 
+		            'type': 'application.sonata.block.service.editable_text', 
+		            'settings' : {
+		                'title' : 'events_tuto'
+		            }
+		        }) }}
+			</div>
 			<div class="panel-body">
 				<div id="calendar" class="has-toolbar"></div>
 			</div>
@@ -28,6 +39,9 @@
     {% javascripts 
         'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js' 
         'bundles/applicationbde/js/fullcalendar.js' 
+
+        filter='?yui_js'
+        output='js/events.min.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %} 

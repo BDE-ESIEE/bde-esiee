@@ -24,7 +24,9 @@ class EventController extends FOSRestController
     	$em = $this->getDoctrine()->getManager();
     	$repository = $em->getRepository('ApplicationBDEBundle:Event');
 
-    	$event_list = $repository->findBy(array(), array('dateStart' => 'ASC'));
+        $all = ($_format != 'html' || $this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED'));
+
+    	$event_list = $repository->findBy(($all) ? array() : array('private' => false), array('dateStart' => 'ASC'));
     	$event_json = array();
 
     	foreach ($event_list as $event) {
