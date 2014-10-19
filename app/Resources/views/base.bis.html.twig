@@ -20,6 +20,7 @@
                 'bundles/applicationbde/css/style-responsive.bis.css'
 
                 filter='cssrewrite,?yui_css' 
+                output='css/base.min.css'
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
             {% endstylesheets %} 
@@ -250,6 +251,7 @@
                 'bundles/applicationbde/js/modernizr.custom.js'
 
                 filter='?yui_js' 
+                output='js/base.min.js'
             %}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %} 
