@@ -67,6 +67,7 @@ class AppKernel extends Kernel
             new Application\BDEBundle\ApplicationBDEBundle(),
             new Application\LinkBundle\ApplicationLinkBundle(),
             new Application\ShopBundle\ApplicationShopBundle(),
+            new Application\PoudlardBundle\ApplicationPoudlardBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

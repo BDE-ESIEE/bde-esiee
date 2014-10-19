@@ -1,3 +1,7 @@
+application_poudlard:
+    resource: "@ApplicationPoudlardBundle/Resources/config/routing.yml"
+    prefix:   /
+
 application_shop:
     resource: "@ApplicationShopBundle/Resources/config/routing.yml"
     prefix:   /

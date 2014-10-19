@@ -1,0 +1,24 @@
+Application\PoudlardBundle\Entity\ClubHasPoints:
+    type: entity
+    table: poudlard__club_has_points
+    repositoryClass: Application\PoudlardBundle\Repository\ClubHasPointsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        amount:
+            type: integer
+        bonusMalus:
+            type: integer
+    manyToOne:
+        club:
+            targetEntity: Application\BDEBundle\Entity\Club
+            joinColumn:
+                name: club_id
+                referencedColumnName: id
+            nullable: false
+            inversedBy: points
+    lifecycleCallbacks: {  }

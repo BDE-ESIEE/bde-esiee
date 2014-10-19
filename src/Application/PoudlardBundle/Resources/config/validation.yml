@@ -1,0 +1,10 @@
+Application\PoudlardBundle\Entity\ClubHasPoints:
+    properties:
+        amount:
+            - Type:
+                type: integer
+                message: "La quantité de point n'est pas valide."
+        bonusMalus:
+            - Type:
+                type: integer
+                message: "Le bonus/malus n'est pas valide."

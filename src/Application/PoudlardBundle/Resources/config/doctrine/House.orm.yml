@@ -1,0 +1,29 @@
+Application\PoudlardBundle\Entity\House:
+    type: entity
+    table: poudlard__house
+    repositoryClass: Application\PoudlardBundle\Repository\HouseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        score:
+            type: integer
+    manyToMany:
+        clubs:
+            targetEntity: Application\BDEBundle\Entity\Club
+            joinTable:
+                name: poudlard__house_clubs
+                joinColumns:
+                    house_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    club_id:
+                        referencedColumnName: id
+                        unique: true
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+services:
+    application_poudlard.admin.house:
+        class: Application\PoudlardBundle\Admin\HouseAdmin
+        arguments: [~, Application\PoudlardBundle\Entity\House, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Maisons, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        calls:
+            - [ setTranslationDomain, [ApplicationPoudlardBundle]]
+
+    application_poudlard.admin.club_has_points:
+        class: Application\PoudlardBundle\Admin\ClubHasPointsAdmin
+        arguments: [~, Application\PoudlardBundle\Entity\ClubHasPoints, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ClubHasPoints, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        calls:
+            - [ setTranslationDomain, [ApplicationPoudlardBundle]]
+
+    application_poudlard.admin.points:
+        class: Application\PoudlardBundle\Admin\PointsAdmin
+        arguments: [~, Application\PoudlardBundle\Entity\Points, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Scores, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        calls:
+            - [ setTranslationDomain, [ApplicationPoudlardBundle]]

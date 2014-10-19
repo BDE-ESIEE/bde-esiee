@@ -94,6 +94,24 @@ class Club
      */
     private $email;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Application\PoudlardBundle\Entity\ClubHasPoints", mappedBy="club")
+     * @Exclude
+     */
+    private $points;
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->points = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 
     /**
      * Get id
@@ -266,11 +284,6 @@ class Club
         return $this->abstract;
     }
 
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     /**
      * Set category
      *
@@ -326,5 +339,50 @@ class Club
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Add points
+     *
+     * @param \Application\PoudlardBundle\Entity\ClubHasPoints $points
+     * @return Club
+     */
+    public function addPoint(\Application\PoudlardBundle\Entity\ClubHasPoints $points)
+    {
+        $this->points[] = $points;
+
+        return $this;
+    }
+
+    /**
+     * Remove points
+     *
+     * @param \Application\PoudlardBundle\Entity\ClubHasPoints $points
+     */
+    public function removePoint(\Application\PoudlardBundle\Entity\ClubHasPoints $points)
+    {
+        $this->points->removeElement($points);
+    }
+
+    /**
+     * Get points
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPoints()
+    {
+        return $this->points;
+    }
+
+    public function getScore()
+    {
+        $total = 0;
+
+        foreach($this->points as $clubHasPoints)
+        {
+            $total += $clubHasPoints->getAmount() + $clubHasPoints->getBonusMalus();
+        }
+
+        return $total;
     }
 }

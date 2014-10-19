@@ -1,0 +1,31 @@
+Application\PoudlardBundle\Entity\Points:
+    type: entity
+    table: poudlard__points
+    repositoryClass: Application\PoudlardBundle\Repository\PointsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        total:
+            type: integer
+    manyToMany:
+        distribution:
+            targetEntity: Application\PoudlardBundle\Entity\ClubHasPoints
+            joinTable:
+                name: poudlard__points_club
+                joinColumns:
+                    points_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    clubhaspoints_id:
+                        referencedColumnName: id
+            cascade: ["all"]
+    lifecycleCallbacks: {  }

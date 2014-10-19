@@ -1,0 +1,16 @@
+<?php
+
+namespace Application\PoudlardBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ClubHasPoints
+ */
+class ClubHasPoints
+{
+    /**
+     * @var integer
+     */
+    private $id;
+}

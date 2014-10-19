@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="show_label_id">
+                <source>show.label_id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="show_label_name">
+                <source>show.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="show_label_date">
+                <source>show.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="show_label_total">
+                <source>show.label_total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="show_label_distribution">
+                <source>show.label_distribution</source>
+                <target>Répartion</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_points_list">
+                <source>breadcrumb.link_points_list</source>
+                <target>Liste des Scores</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_points_history">
+                <source>breadcrumb.link_points_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+
+            <trans-unit id="form_label_name">
+                <source>form.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="form_label_date">
+                <source>form.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="form_label_total">
+                <source>form.label_total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="form_label_distribution">
+                <source>form.label_distribution</source>
+                <target>Répartion</target>
+            </trans-unit>
+            
+            <trans-unit id="filter_label_id">
+                <source>filter.label_id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="filter_label_name">
+                <source>filter.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="filter_label_date">
+                <source>filter.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="filter_label_total">
+                <source>filter.label_total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="filter_label_distribution">
+                <source>filter.label_distribution</source>
+                <target>Répartion</target>
+            </trans-unit>
+            
+            <trans-unit id="list_label_name">
+                <source>list.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="list_label_date">
+                <source>list.label_date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="list_label_total">
+                <source>list.label_total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="list_label__action">
+                <source>list.label__action</source>
+                <target>Actions</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_club_has_points_list">
+                <source>breadcrumb.link_club_has_points_list</source>
+                <target>Liste des points par clubs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_club_has_points_history">
+                <source>breadcrumb.link_club_has_points_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+            
+            <trans-unit id="list_label_club">
+                <source>list.label_club</source>
+                <target>Club</target>
+            </trans-unit>
+            <trans-unit id="list_label_amount">
+                <source>list.label_amount</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="list_label_bonus_malus">
+                <source>list.label_bonus_malus</source>
+                <target>Bonus/Malus</target>
+            </trans-unit>
+            
+            <trans-unit id="show_label_club">
+                <source>show.label_club</source>
+                <target>Club</target>
+            </trans-unit>
+            <trans-unit id="show_label_amount">
+                <source>show.label_amount</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="show_label_bonus_malus">
+                <source>show.label_bonus_malus</source>
+                <target>Bonus/Malus</target>
+            </trans-unit>
+            
+            <trans-unit id="filter_label_club">
+                <source>filter.label_club</source>
+                <target>Club</target>
+            </trans-unit>
+            <trans-unit id="filter_label_amount">
+                <source>filter.label_amount</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="filter_label_bonus_malus">
+                <source>filter.label_bonus_malus</source>
+                <target>Bonus/Malus</target>
+            </trans-unit>
+            
+            <trans-unit id="form_label_club">
+                <source>form.label_club</source>
+                <target>Club</target>
+            </trans-unit>
+            <trans-unit id="form_label_amount">
+                <source>form.label_amount</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="form_label_bonus_malus">
+                <source>form.label_bonus_malus</source>
+                <target>Bonus/Malus</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_house_list">
+                <source>breadcrumb.link_house_list</source>
+                <target>Liste des points par clubs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_house_history">
+                <source>breadcrumb.link_house_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+            
+            <trans-unit id="form_label_clubs">
+                <source>form.label_clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+            
+            <trans-unit id="show_label_clubs">
+                <source>show.label_clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+            <trans-unit id="show_label_score">
+                <source>show.label_score</source>
+                <target>Score</target>
+            </trans-unit>
+            
+            <trans-unit id="filter_label_clubs">
+                <source>filter.label_clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+            <trans-unit id="filter_label_score">
+                <source>filter.label_score</source>
+                <target>Score</target>
+            </trans-unit>
+            
+            <trans-unit id="list_label_clubs">
+                <source>list.label_clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+            <trans-unit id="list_label_score">
+                <source>list.label_score</source>
+                <target>Score</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

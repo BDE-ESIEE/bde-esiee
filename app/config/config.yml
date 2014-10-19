@@ -261,7 +261,7 @@ sonata_admin:
                 position: left
                 type: sonata.admin.block.admin_list
                 settings:
-                    groups: [blog, bde]
+                    groups: [blog, bde, poudlard]
             -
                 position: right
                 type: sonata.admin.block.admin_list
@@ -288,6 +288,11 @@ sonata_admin:
                     - application_bde.admin.event_category
                     - bde.admin.club
                     - bde.admin.club_category
+            poudlard:
+                label: Poudlard 2.0
+                items:
+                    - application_poudlard.admin.house
+                    - application_poudlard.admin.points
             shop:
                 label: Breguet Shop
                 items:
