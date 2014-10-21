@@ -1,0 +1,16 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title %}Cotisation{% endblock %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block body %}
+	<div class="col-sm-12">
+	    {{ sonata_block_render({ 
+	        'type': 'application.sonata.block.service.editable_text', 
+	        'settings' : {
+	            'title' : 'cotisation'
+	        }
+	    }) }}
+	</div>
+{% endblock %}

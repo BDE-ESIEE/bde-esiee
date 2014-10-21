@@ -10,6 +10,14 @@ application_bde_history:
     pattern:  /history
     defaults: { _controller: ApplicationBDEBundle:Default:history }
 
+application_bde_cotisation:
+    pattern:  /cotisation
+    defaults: { _controller: ApplicationBDEBundle:Default:cotisation }
+
+application_bde_association:
+    pattern:  /association
+    defaults: { _controller: ApplicationBDEBundle:Default:association }
+
 application_bde_partnership:
     pattern:  /partnership
     defaults: { _controller: ApplicationBDEBundle:Default:partnership }

@@ -3,22 +3,48 @@
 namespace Application\BDEBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class DefaultController extends Controller
 {
+    /**
+     * @Template
+     */
     public function indexAction()
     {
-        return $this->render('ApplicationBDEBundle:Default:index.html.twig');
+        return array();
     }
 
+    /**
+     * @Template
+     */
     public function historyAction()
     {
-    	return $this->render('ApplicationBDEBundle:Default:history.html.twig');
+        return array();
     }
 
+    /**
+     * @Template
+     */
+    public function associationAction()
+    {
+        return array();
+    }
+
+    /**
+     * @Template
+     */
+    public function cotisationAction()
+    {
+        return array();
+    }
+
+    /**
+     * @Template
+     */
     public function partnershipAction()
     {
-    	return $this->render('ApplicationBDEBundle:Default:partnership.html.twig');
+        return array();
     }
 
     public function eatTrafficAction()
@@ -31,8 +57,11 @@ class DefaultController extends Controller
         return $this->render('ApplicationBDEBundle:Default:good_plan.html.twig');
     }
 
+    /**
+     * @Template
+     */
     public function aboutusAction()
     {
-        return $this->render('ApplicationBDEBundle:Default:aboutus.html.twig');
+        return array();
     }
 }

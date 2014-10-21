@@ -1,0 +1,16 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title %}Association{% endblock %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block body %}
+	<div class="col-sm-12">
+	    {{ sonata_block_render({ 
+	        'type': 'application.sonata.block.service.editable_text', 
+	        'settings' : {
+	            'title' : 'association'
+	        }
+	    }) }}
+    </div>
+{% endblock %}

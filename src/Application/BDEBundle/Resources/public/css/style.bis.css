@@ -1833,6 +1833,26 @@ ul#filters > .active > span {
     margin-top: 160px;
 }
 
+/*parallax*/
+
+.parallax2 {
+    background: url("../img/background.jpg") no-repeat fixed 0 0 #3EC8B7;
+    background-size:cover;
+    width: 100%;
+    min-height: 400px;
+    font-style: italic;
+}
+
+
+.parallax2 h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 40px;
+    margin-top: 160px;
+}
+
 /*----*/
 
 .mbot50 {
