@@ -72,6 +72,10 @@
                 <source>filter.label_description</source>
                 <target>Description</target>
             </trans-unit>
+            <trans-unit id="filter_price">
+                <source>filter.label_price</source>
+                <target>Prix</target>
+            </trans-unit>
 
             <trans-unit id="show_label_name">
                 <source>show.label_name</source>
@@ -105,6 +109,10 @@
                 <source>show.label_description</source>
                 <target>Description</target>
             </trans-unit>
+            <trans-unit id="show_price">
+                <source>show.label_price</source>
+                <target>Prix</target>
+            </trans-unit>
 
             <trans-unit id="form_label_name">
                 <source>form.label_name</source>
@@ -137,6 +145,10 @@
             <trans-unit id="form_description">
                 <source>form.label_description</source>
                 <target>Description</target>
+            </trans-unit>
+            <trans-unit id="form_price">
+                <source>form.label_price</source>
+                <target>Prix</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb_link_category_list">
