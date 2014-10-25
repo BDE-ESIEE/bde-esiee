@@ -13,7 +13,9 @@
                         <section class="panel">
                             <div class="pro-img-box">
                                 <a href="{{ path('application_shop_breguet_shop_show', {'id': product.id}) }}">
-                                    {% thumbnail product.photos[0].media, 'shop_small' with {'class': 'media-object'} %}
+                                    {% if product.photos|length > 0 %}
+                                        {% thumbnail product.photos[0].media, 'shop_small' with {'class': 'media-object'} %}
+                                    {% endif %}
                                     <span class="adtocart">
                                         <i class="fa fa-shopping-cart"></i>
                                     </span>

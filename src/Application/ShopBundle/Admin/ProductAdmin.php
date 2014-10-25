@@ -45,6 +45,7 @@ class ProductAdmin extends Admin
             ->add('hidden', null, array('required' => false))
             ->add('enableCounter', null, array('required' => false))
             ->add('counter', null, array('required' => false))
+            ->add('price', null, array('required' => false))
             ->add('interestedPerson', 'collection', array('required' => false, 'allow_delete' => true))
             ->add('categories', 'sonata_type_model', array(
                 'by_reference' => false,
@@ -70,6 +71,7 @@ class ProductAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
+            ->add('price')
             ->add('hidden')
             ->add('enableCounter')
             ->add('counter')
@@ -95,6 +97,7 @@ class ProductAdmin extends Admin
         $showMapper
             ->add('name')
             ->add('description', null, array('safe' => true))
+            ->add('price')
             ->add('hidden')
             ->add('enableCounter')
             ->add('counter')

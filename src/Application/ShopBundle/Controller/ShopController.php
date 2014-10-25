@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Application\ShopBundle\Entity\Product;
 use Application\ShopBundle\Entity\Category;
 use Application\ShopBundle\Form\ProductType;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class ShopController extends Controller
 {
@@ -25,6 +26,9 @@ class ShopController extends Controller
         ));
     }
     
+    /**
+     * @Secure(roles="ROLE_USER")
+     */
     public function viewAction(Product $product)
     {
         $form = $this->createForm(new ProductType, $product, array(
