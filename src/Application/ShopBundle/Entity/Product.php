@@ -91,9 +91,9 @@ class Product
     private $interestedPerson;
 
     /**
-     * @var integer
+     * @var float
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="float")
      */
     private $price = 0;
 
@@ -387,7 +387,7 @@ class Product
     /**
      * Set price
      *
-     * @param integer $price
+     * @param float $price
      * @return Product
      */
     public function setPrice($price)
@@ -400,7 +400,7 @@ class Product
     /**
      * Get price
      *
-     * @return integer 
+     * @return float 
      */
     public function getPrice()
     {
