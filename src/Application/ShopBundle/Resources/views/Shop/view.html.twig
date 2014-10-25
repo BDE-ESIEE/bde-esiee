@@ -43,8 +43,13 @@
 						{% endfor %}
 					</span>
 				</div>
+				{% if product.price >= 0 %}
+	              	<div class="m-bot15">
+	              		<strong>Prix : </strong> <span class="pro-price"> {{ product.price|number_format_currency('EUR') }}</span>
+	              	</div>
+				{% endif %}
 				{% if product.enableCounter %}
-					<div>
+					<div style="margin-top: 15px;">
 						<button id="showForm" class="btn btn-round btn-danger" type="button">
 							<i class="fa fa-shopping-cart"></i> Cet article m'intéresse
 						</button>

@@ -90,6 +90,13 @@ class Product
      */
     private $interestedPerson;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer")
+     */
+    private $price = 0;
+
     public function __toString()
     {
         return ''.$this->name;
@@ -375,5 +382,28 @@ class Product
     public function getDescriptionFormatter()
     {
         return $this->descriptionFormatter;
+    }
+
+    /**
+     * Set price
+     *
+     * @param integer $price
+     * @return Product
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer 
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }
