@@ -52,9 +52,38 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-2 col-sm-2 text-right">
+            {% if post.event %}
+            <div class="col-lg-offset-2 col-sm-offset-2 col-lg-10 col-sm-10">
+                <div class="panel panel-ferus">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ post.event.title }}</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="row">
+                            {% if post.event.dateStart|date('z') != post.event.dateEnd|date('z') %}
+                                <div class="col-sm-4">
+                                    Du {{ post.event.dateStart| format_datetime(null, 'fr', 'Europe/Paris', constant('IntlDateFormatter::LONG'), constant('IntlDateFormatter::SHORT')) }}
+                                </div>
+                                <div class="col-sm-4">
+                                    Au {{ post.event.dateEnd| format_datetime(null, 'fr', 'Europe/Paris', constant('IntlDateFormatter::LONG'), constant('IntlDateFormatter::SHORT')) }}
+                                </div>
+                            {% else %}
+                                <div class="col-sm-8">
+                                    Le {{ post.event.dateStart| format_datetime("dd MMMM Y 'de' HH'h'mm", 'fr', 'Europe/Paris') }} à {{ post.event.dateEnd| format_datetime("HH'h'mm", 'fr', 'Europe/Paris') }}
+                                </div>
+                            {% endif %}
+                            {% if post.event.place %}
+                            <div class="col-sm-4">
+                                Lieu : {{ post.event.place }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-10 col-sm-10">
+            {% endif %}
+            <div class="col-lg-offset-2 col-sm-offset-2 col-lg-10 col-sm-10">
                 {% block comments %}
                 {% if post.iscommentable %}
                     {{ render(controller('ApplicationSonataCommentBundle:Comment:renderThread', { 'id': post.id ~ '-' ~ post.slug, 'url': url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) })) }}
