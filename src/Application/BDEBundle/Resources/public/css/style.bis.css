@@ -2188,8 +2188,22 @@ div.sonata-preview-form .row {
     background-image: url(../img/flag_usa.png)
 }
 
+.flag.flag-uk {
+    background-image: url(../img/flag_uk.png)
+}
+
 .vAlignBaseLine {
     display: inline-block;
     vertical-align: baseline;
     float: none;
+}
+
+.row.equals-height {
+    display: table;
+}
+
+.row.equals-height > [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
 }

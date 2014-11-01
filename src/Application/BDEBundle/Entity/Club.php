@@ -99,6 +99,13 @@ class Club
      * @Exclude
      */
     private $points;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\PoudlardBundle\Entity\House", inversedBy="clubs", cascade="persist")
+     * @ORM\JoinColumn(name="house_id", referencedColumnName="id")
+     * @Exclude
+     **/
+    private $house;
     
     /**
      * Constructor
@@ -384,5 +391,28 @@ class Club
         }
 
         return $total;
+    }
+
+    /**
+     * Set house
+     *
+     * @param \Application\PoudlardBundle\Entity\House $house
+     * @return Club
+     */
+    public function setHouse(\Application\PoudlardBundle\Entity\House $house = null)
+    {
+        $this->house = $house;
+
+        return $this;
+    }
+
+    /**
+     * Get house
+     *
+     * @return \Application\PoudlardBundle\Entity\House 
+     */
+    public function getHouse()
+    {
+        return $this->house;
     }
 }

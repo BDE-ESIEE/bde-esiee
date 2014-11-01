@@ -84,6 +84,7 @@ class House
     public function addClub(\Application\BDEBundle\Entity\Club $clubs)
     {
         $this->clubs[] = $clubs;
+        $clubs->setHouse($this);
 
         return $this;
     }
@@ -96,6 +97,7 @@ class House
     public function removeClub(\Application\BDEBundle\Entity\Club $clubs)
     {
         $this->clubs->removeElement($clubs);
+        $clubs->setHouse(null);
     }
 
     /**

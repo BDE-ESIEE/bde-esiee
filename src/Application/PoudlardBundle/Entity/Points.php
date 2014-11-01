@@ -152,4 +152,34 @@ class Points
 
         return $total;
     }
+
+    /**
+     * Get total by house
+     *
+     * @return array
+     */    
+    public function getTotalByHouse()
+    {
+        $total = array();
+
+        foreach($this->distribution as $clubHasPoints)
+        {
+            if (!array_key_exists($clubHasPoints->getClub()->getHouse()->getId(), $total))
+                $total[$clubHasPoints->getClub()->getHouse()->getId()] = array(0, $clubHasPoints->getClub()->getHouse());
+            $total[$clubHasPoints->getClub()->getHouse()->getId()][0] += $clubHasPoints->getAmount() + $clubHasPoints->getBonusMalus();
+        }
+
+        return $total;
+    }
+
+    public function getDistributionByHouse()
+    {
+        $distribution = $this->getTotalByHouse();
+        $response = '<ul>';
+        foreach ($distribution as $id => $value) {
+            $response .= '<li>'.$value[0].' points pour '.$value[1]."</li>";
+        }
+
+        return $response.'</ul>';
+    }
 }

@@ -30,7 +30,7 @@ class PointsAdmin extends Admin
     {
         $listMapper
             ->add('name')
-            ->add('date')
+            ->add('date', 'date')
             ->add('total', 'integer', array(
                 'code' => 'getTotal',
                 'mapped'    => false,
@@ -78,9 +78,10 @@ class PointsAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('name')
-            ->add('date')
+            ->add('date', 'date')
             ->add('total')
             ->add('distribution')
+            ->add('distributionByHouse', null, array('safe' => true))
         ;
     }
 }

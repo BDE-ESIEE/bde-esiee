@@ -30,7 +30,7 @@ class ClubHasPoints
 
     public function __toString()
     {
-        return ''.$this->amount.' points pour '.$this->club;
+        return ''.($this->amount + $this->bonusMalus).' points pour '.$this->club;
     }
 
     /**

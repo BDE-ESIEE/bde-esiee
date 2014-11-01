@@ -14,16 +14,9 @@ Application\PoudlardBundle\Entity\House:
             length: 255
         score:
             type: integer
-    manyToMany:
+    oneToMany:
         clubs:
             targetEntity: Application\BDEBundle\Entity\Club
-            joinTable:
-                name: poudlard__house_clubs
-                joinColumns:
-                    house_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    club_id:
-                        referencedColumnName: id
-                        unique: true
+            mappedBy: house
+            cascade: ["all"]
     lifecycleCallbacks: {  }

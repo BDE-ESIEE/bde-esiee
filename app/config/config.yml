@@ -53,6 +53,7 @@ assetic:
         - MopaBootstrapBundle
         - SonataNewsBundle
         - ApplicationShopBundle
+        - ApplicationPoudlardBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

@@ -1,0 +1,83 @@
+.fiole {
+    height: 270px;
+    width: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.fiole:before {
+    position: absolute;
+    content: '';
+    background: url(../img/flat-flask.png);
+    height: 270px;
+    width: 200px;
+    pointer-events: none;
+    left: 0;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.fiole .liquide {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    transition: width 0.6s ease 0s;
+}
+
+.fiole .liquide span {
+    display:block;
+    width:100%;
+    height:100%;
+
+    /*Gère les bulles*/
+
+    background:url("../img/bulle.png") 0 0;
+
+    -webkit-animation: sparkle 1500ms linear infinite;
+    -moz-animation: sparkle 1500ms linear infinite;
+    -o-animation: sparkle 1500ms linear infinite;
+    animation: sparkle 1500ms linear infinite;
+    opacity:0.2;
+
+    /* fin des bulles */
+}
+
+.fiole .liquide.Gryffondor {
+    background-color: #c82127;
+}
+
+.fiole .liquide.Serpentard {
+    background-color: #2eb14b;
+}
+
+.fiole .liquide.Serdaigle {
+    background-color: #02a5d0;
+}
+
+.fiole .liquide.Poufsouffle {
+    background-color: #E6C816;
+}
+
+/* animation des bulles */
+@-webkit-keyframes sparkle {
+    from {background-position: 0 0;}
+    to {background-position: 0 -64px;}
+}
+@-moz-keyframes sparkle {
+    from {background-position: 0 0;}
+    to {background-position: 0 -64px;}
+}
+@-o-keyframes sparkle {
+    from {background-position: 0 0;}
+    to {background-position: 0 -64px;}
+}
+@keyframes sparkle {
+    from {background-position: 0 0;}
+    to {background-position: 0 -64px;}
+}
+
+/* fin animation des bulles */

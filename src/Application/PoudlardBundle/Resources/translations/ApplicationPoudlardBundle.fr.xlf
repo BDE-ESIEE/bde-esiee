@@ -22,6 +22,10 @@
                 <source>show.label_distribution</source>
                 <target>Répartion</target>
             </trans-unit>
+            <trans-unit id="show_label_distribution_by_house">
+                <source>show.label_distribution_by_house</source>
+                <target>Répartion par Maison</target>
+            </trans-unit>
 
             <trans-unit id="breadcrumb_link_points_list">
                 <source>breadcrumb.link_points_list</source>

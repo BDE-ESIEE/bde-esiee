@@ -10,9 +10,9 @@ Application\PoudlardBundle\Entity\ClubHasPoints:
                 strategy: AUTO
     fields:
         amount:
-            type: integer
+            type: float
         bonusMalus:
-            type: integer
+            type: float
     manyToOne:
         club:
             targetEntity: Application\BDEBundle\Entity\Club

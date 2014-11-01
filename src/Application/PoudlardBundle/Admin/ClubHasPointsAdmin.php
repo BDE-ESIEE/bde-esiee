@@ -65,8 +65,8 @@ class ClubHasPointsAdmin extends Admin
             ->add('club', 'sonata_type_model_list', array('required' => false), array(
                 'link_parameters' => $link_parameters
             ))
-            ->add('amount')
-            ->add('bonusMalus')
+            ->add('amount', 'number')
+            ->add('bonusMalus', 'number')
         ;
     }
 

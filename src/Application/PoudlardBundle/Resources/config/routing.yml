@@ -1,0 +1,12 @@
+application_poudlard_index:
+    path:     /poudlard.{_format}
+    defaults: { _controller: ApplicationPoudlardBundle:House:index, _format: html }
+    requirements:
+        _format: html|json|xml
+        _method:  GET
+
+application_poudlard_generate:
+    path: /poudlard/create-points
+    defaults: { _controller: ApplicationPoudlardBundle:House:createPoints }
+    requirements:
+        _method:  GET
