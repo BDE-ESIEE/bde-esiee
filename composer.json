@@ -42,7 +42,8 @@
         "jms/security-extra-bundle"               : "dev-master",
         "knplabs/knp-menu"                        : "dev-master as 1.1",
         "knplabs/knp-menu-bundle"                 : "dev-master as 1.1",
-        "genemu/form-bundle"                      : "dev-master as 2.2.2"
+        "genemu/form-bundle"                      : "dev-master as 2.2.2",
+        "ferus/fairpay-php-sdk"                   : "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -8,3 +8,10 @@ Application\BDEBundle\Entity\Club:
         title:
             - Length:
                 min: 3
+        president:
+            - Range:
+                min: 1000000
+                max: 9999999
+                minMessage: Ce n'est pas un numéro de carte valide
+                maxMessage: Ce n'est pas un numéro de carte valide
+                invalidMessage: Ce n'est pas un numéro de carte valide

@@ -38,6 +38,10 @@ class ClubAdmin extends Admin
             ->add('title')
             ->add('shortcode')
             ->add('email')
+            ->add('president', 'student')
+            ->add('vice_president', 'student')
+            ->add('secretary', 'student')
+            ->add('treasurer', 'student')
             ->add('logo')
             ->add('abstract')
             ->add('content', null, array('safe' => true))
@@ -53,7 +57,21 @@ class ClubAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('shortcode')
-            ->add('email')
+            ->add('email', null, array(
+                'required'      => false,
+            ))
+            ->add('president', 'student', array(
+                'required'      => false,
+            ))
+            ->add('vice_president', 'student', array(
+                'required'      => false,
+            ))
+            ->add('secretary', 'student', array(
+                'required'      => false,
+            ))
+            ->add('treasurer', 'student', array(
+                'required'      => false,
+            ))
             ->add('category')
             ->add('logo', 'sonata_media_type', array(
                 'required'      => false,

@@ -1,0 +1,3 @@
+application_student_search:
+    path:     /api/fairpay/{query}
+    defaults: { _controller: ApplicationStudentBundle:Student:search }

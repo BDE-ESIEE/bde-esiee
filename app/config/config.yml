@@ -35,6 +35,7 @@ twig:
             - 'SonataFormatterBundle:Form:formatter.html.twig'
             - 'SonataCoreBundle:Form:datepicker.html.twig'
             - 'SonataMediaBundle:Form:media_widgets.html.twig'
+            - 'ApplicationStudentBundle:Form:student_widget.html.twig'
     globals:
         version: %application_version%
         piwik_id: %piwik_id%
@@ -54,6 +55,7 @@ assetic:
         - SonataNewsBundle
         - ApplicationShopBundle
         - ApplicationPoudlardBundle
+        - ApplicationStudentBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -332,6 +334,12 @@ sonata_admin:
         # permission related to the objects
         object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER]
 
+sonata_doctrine_orm_admin:
+    templates:
+        types:
+            show:
+                student: ApplicationStudentBundle:CRUD:show_student.html.twig
+
 spy_timeline:
     drivers:
         orm:
@@ -439,6 +447,23 @@ sonata_classification:
 
 shivas_versioning:
     version_parameter:  application_version
+
+jms_di_extra:
+    locations:
+        all_bundles: false
+        bundles: [ApplicationStudentBundle]
+        directories: ["%kernel.root_dir%/../src"]
+    automatic_controller_injections:
+        properties:
+            request: @request
+            em: @doctrine.orm.entity_manager
+            um: @fos_user.user_manager
+            gm: @fos_user.group_manager
+            paginator: @knp_paginator
+            mailer: @mailer
+            session: @session
+            dispatcher: @event_dispatcher
+            formFactory: @form.factory
 
 jms_security_extra:
     expressions: true

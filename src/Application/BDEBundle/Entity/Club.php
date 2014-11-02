@@ -106,6 +106,38 @@ class Club
      * @Exclude
      **/
     private $house;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="president", type="integer", nullable=true)
+     * @Since("1.3")
+     */
+    private $president;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="vice_president", type="integer", nullable=true)
+     * @Since("1.3")
+     */
+    private $vice_president;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="secretary", type="integer", nullable=true)
+     * @Since("1.3")
+     */
+    private $secretary;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="treasurer", type="integer", nullable=true)
+     * @Since("1.3")
+     */
+    private $treasurer;
     
     /**
      * Constructor
@@ -414,5 +446,97 @@ class Club
     public function getHouse()
     {
         return $this->house;
+    }
+
+    /**
+     * Set president
+     *
+     * @param integer $president
+     * @return Club
+     */
+    public function setPresident($president)
+    {
+        $this->president = $president;
+
+        return $this;
+    }
+
+    /**
+     * Get president
+     *
+     * @return integer 
+     */
+    public function getPresident()
+    {
+        return $this->president;
+    }
+
+    /**
+     * Set vice_president
+     *
+     * @param integer $vicePresident
+     * @return Club
+     */
+    public function setVicePresident($vicePresident)
+    {
+        $this->vice_president = $vicePresident;
+
+        return $this;
+    }
+
+    /**
+     * Get vice_president
+     *
+     * @return integer 
+     */
+    public function getVicePresident()
+    {
+        return $this->vice_president;
+    }
+
+    /**
+     * Set secretary
+     *
+     * @param integer $secretary
+     * @return Club
+     */
+    public function setSecretary($secretary)
+    {
+        $this->secretary = $secretary;
+
+        return $this;
+    }
+
+    /**
+     * Get secretary
+     *
+     * @return integer 
+     */
+    public function getSecretary()
+    {
+        return $this->secretary;
+    }
+
+    /**
+     * Set treasurer
+     *
+     * @param integer $treasurer
+     * @return Club
+     */
+    public function setTreasurer($treasurer)
+    {
+        $this->treasurer = $treasurer;
+
+        return $this;
+    }
+
+    /**
+     * Get treasurer
+     *
+     * @return integer 
+     */
+    public function getTreasurer()
+    {
+        return $this->treasurer;
     }
 }

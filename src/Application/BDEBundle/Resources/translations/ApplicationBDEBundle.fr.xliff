@@ -26,6 +26,26 @@
                 <source>form.label_category</source>
                 <target>Categorie</target>
             </trans-unit>
+            <trans-unit id="form_label_email">
+                <source>form.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="form_label_president">
+                <source>form.label_president</source>
+                <target>Président</target>
+            </trans-unit>
+            <trans-unit id="form_label_vice_president">
+                <source>form.label_vice_president</source>
+                <target>Vice-Président</target>
+            </trans-unit>
+            <trans-unit id="form_label_secretary">
+                <source>form.label_secretary</source>
+                <target>Secrétaire</target>
+            </trans-unit>
+            <trans-unit id="form_label_treasurer">
+                <source>form.label_treasurer</source>
+                <target>Trésorier</target>
+            </trans-unit>
 
             <trans-unit id="show_label_title">
                 <source>show.label_title</source>
@@ -50,6 +70,26 @@
             <trans-unit id="show_label_category">
                 <source>show.label_category</source>
                 <target>Categorie</target>
+            </trans-unit>
+            <trans-unit id="show_label_email">
+                <source>show.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="show_label_president">
+                <source>show.label_president</source>
+                <target>Président</target>
+            </trans-unit>
+            <trans-unit id="show_label_vice_president">
+                <source>show.label_vice_president</source>
+                <target>Vice-Président</target>
+            </trans-unit>
+            <trans-unit id="show_label_secretary">
+                <source>show.label_secretary</source>
+                <target>Secrétaire</target>
+            </trans-unit>
+            <trans-unit id="show_label_treasurer">
+                <source>show.label_treasurer</source>
+                <target>Trésorier</target>
             </trans-unit>
 
             <trans-unit id="filter_label_title">
