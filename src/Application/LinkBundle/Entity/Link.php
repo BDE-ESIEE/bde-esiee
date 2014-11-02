@@ -34,7 +34,7 @@ class Link
 
     public function __toString()
     {
-        return ''.$this->getUrl();
+        return ''.$this->getToken();
     }
 
     /**
