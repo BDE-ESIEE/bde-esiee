@@ -2,6 +2,8 @@
 
 {% block title 'Poudlard 2.0' %}
 
+{% block containerClass ' class="backgroundPoudlard"' %}
+
 {% block stylesheets %}
 	{{ parent() }}
 	{% stylesheets 
@@ -16,26 +18,37 @@
 	<div class="col-sm-12">
 		<h1 id="title">{{ block('title') }}</h1>
 		<div class="row">
+			{% set colors = {
+				'Gryffondor': '#ff6c60',
+				'Serpentard': '#78CD51',
+				'Serdaigle': '#58c9f3',
+				'Poufsouffle': '#f1c500',
+			} %}
 			{% for item in finalScore %}
 				<div class="col-sm-3 house-column" style="text-align:center;" house="{{ item.house.name }}">
-					<div class="fiole">
+{# 					<div class="fiole">
 						<div class="liquide {{ item.house.name }}" data-transitiongoal-backup="{{ item.score }}" role="progressbar" data-transitiongoal="{{ item.score }}" aria-valuenow="{{ item.score }}" style="height:{{ item.score }}%;">
 			            	<span></span>
 						</div>
-					</div>
+					</div> #}
+                	{% include 'ApplicationPoudlardBundle:House:flat_flask.svg.twig' with {
+						'percent': 100-item.score,
+						'house': item.house.name,
+						'color': colors[item.house.name],
+                	} %}
 					<h3>{{ item.house }}</h3>
 					<img class="img-responsive" src="{{ asset('bundles/applicationbde/img/logo' ~ item.house.name ~ '.png') }}" style="margin: 0 auto;"/><br />
 					Score : {{ item.house.score }}<br />
 					<a href="#" target-house="{{ item.house.name }}" class="showFullTable"><i class="fa fa-eye"></i> Afficher tableau complet</a>
-					<ul style="text-align: left">
+{# 					<ul style="text-align: left">
 						{% for event in item.history|slice(0, 3) %}
 							<li>{{ event[1].date | format_date }} : {{ event[0] }} : {{ event[1].name }}</li>
 						{% endfor %}
-					</ul>
+					</ul> #}
 				</div>
 				<div class="col-sm-9 house-table" style="display:none;" table-house="{{ item.house.name }}">
 					<a href="#" class="hideFullTable"><i class="fa fa-eye-slash"></i> Masquer Tableau complet</a>
-					<table class="table table-bordered">
+					<table class="table">
 					<thead>
 						<tr>
 							<td>Date</td>
@@ -69,6 +82,27 @@
 {% block javascripts %}
 	{{ parent() }}
 	<script>
+		var y = 0, animate = 0, bubble = '', timer;
+		function anim() {
+			$(bubble).attr('y', y);
+			y -= 2;
+			if (y < -64)
+				y = 0;
+		}
+		function startAnim(bub, anim)
+		{
+			animate = anim;
+			bubble = bub;
+			if (animate) {
+				y = 0;
+				if (!timer) {
+			    	timer = setInterval('anim()', 50);
+			    }
+			} else {
+				clearInterval(timer);
+      			timer = null;
+			}
+		}
 		$(function() {
 			$('.showFullTable').click(function (e) {
 				e.preventDefault();
@@ -83,6 +117,12 @@
 				e.preventDefault();
 				$('div.house-column').show('slow');
 				$('div.house-table').hide('slow');
+			});
+			$('div.house-column').mouseenter(function (e) {
+				if (!animate)
+					startAnim('.bubbles' + $(this).attr('house'), true);
+			}).mouseleave(function (e) {
+				startAnim('.bubbles' + $(this).attr('house'), false);
 			});
 		});
 	</script>

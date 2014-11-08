@@ -5,7 +5,7 @@
     position: relative;
 }
 
-.fiole:before {
+/*.fiole:before {
     position: absolute;
     content: '';
     background: url(../img/flat-flask.png);
@@ -15,7 +15,7 @@
     left: 0;
     margin: 0 auto;
     z-index: 10;
-}
+}*/
 
 .fiole .liquide {
     bottom: 0;
@@ -81,3 +81,18 @@
 }
 
 /* fin animation des bulles */
+.backgroundPoudlard {
+    background: url("../img/wallpaper.jpg") no-repeat 0 0 #fff;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    text-shadow: 0 0 10px #404040;
+}
+.backgroundPoudlard a {
+    color: #3EC8B7;
+    text-shadow: 0 0 10px #404040;
+}
+
+.house-table table {
+    background-color: rgba(20,20,20,0.5);
+}
