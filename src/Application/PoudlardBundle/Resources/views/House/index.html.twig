@@ -32,7 +32,7 @@
 						</div>
 					</div> #}
                 	{% include 'ApplicationPoudlardBundle:House:flat_flask.svg.twig' with {
-						'percent': 100-item.score,
+						'percent': item.score,
 						'house': item.house.name,
 						'color': colors[item.house.name],
                 	} %}
