@@ -22,6 +22,7 @@ class HouseController extends Controller
 		$house_list  = $em->getRepository('ApplicationPoudlardBundle:House')->findAll();
 		$points_list = $em->getRepository('ApplicationPoudlardBundle:Points')->findBy(array(), array('date' => 'desc'));
 		$finalScore  = array();
+        $max = 0;
 
         foreach ($house_list as $house) {
         	$finalScore[$house->getId()] = array(
@@ -29,6 +30,13 @@ class HouseController extends Controller
                 'score'   => $house->getScore(),
 				'history' => array(),
         	);
+            if ($house->getScore() > $max)
+                $max = $house->getScore();
+        }
+
+        $max = max($max + 30, 200);
+        foreach ($finalScore as $key => $value) {
+            $finalScore[$key]['percent'] = round($finalScore[$key]['score'] / $max * 100);
         }
 
         foreach ($points_list as $point) {
@@ -65,7 +73,7 @@ class HouseController extends Controller
 			}
 		}
         $em->persist($points);
-        $em->flush();
+        // $em->flush();
 
         return new Response('<html><body></body></html>');
     }

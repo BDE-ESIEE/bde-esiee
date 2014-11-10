@@ -9,6 +9,7 @@
 	{% stylesheets 
 		'bundles/applicationpoudlard/css/poudlard.css'
 		filter='cssrewrite,?yui_css'
+        output='css/poudlard.min.css'
 	 %}
 		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
 	{% endstylesheets %}
@@ -26,25 +27,16 @@
 			} %}
 			{% for item in finalScore %}
 				<div class="col-sm-3 house-column" style="text-align:center;" house="{{ item.house.name }}">
-{# 					<div class="fiole">
-						<div class="liquide {{ item.house.name }}" data-transitiongoal-backup="{{ item.score }}" role="progressbar" data-transitiongoal="{{ item.score }}" aria-valuenow="{{ item.score }}" style="height:{{ item.score }}%;">
-			            	<span></span>
-						</div>
-					</div> #}
                 	{% include 'ApplicationPoudlardBundle:House:flat_flask.svg.twig' with {
-						'percent': item.score,
+						'percent': item.percent,
 						'house': item.house.name,
 						'color': colors[item.house.name],
+						'first': loop.first,
                 	} %}
 					<h3>{{ item.house }}</h3>
 					<img class="img-responsive" src="{{ asset('bundles/applicationbde/img/logo' ~ item.house.name ~ '.png') }}" style="margin: 0 auto;"/><br />
 					Score : {{ item.house.score }}<br />
 					<a href="#" target-house="{{ item.house.name }}" class="showFullTable"><i class="fa fa-eye"></i> Afficher tableau complet</a>
-{# 					<ul style="text-align: left">
-						{% for event in item.history|slice(0, 3) %}
-							<li>{{ event[1].date | format_date }} : {{ event[0] }} : {{ event[1].name }}</li>
-						{% endfor %}
-					</ul> #}
 				</div>
 				<div class="col-sm-9 house-table" style="display:none;" table-house="{{ item.house.name }}">
 					<a href="#" class="hideFullTable"><i class="fa fa-eye-slash"></i> Masquer Tableau complet</a>
@@ -75,55 +67,35 @@
 				</div>
 			{% endfor %}
 		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Règlement</h1>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:20px;">
+			<div class="col-sm-4 text-justify">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices libero non metus lacinia, quis auctor erat vehicula. Mauris non consectetur augue. Suspendisse nec pulvinar enim, vitae faucibus lectus. Etiam feugiat condimentum nunc at sollicitudin. Aenean ac est est. Pellentesque efficitur, nunc in posuere venenatis, urna ipsum vulputate mauris, quis tristique mauris felis ac quam. Maecenas in purus fermentum, ornare diam nec, faucibus ipsum. Etiam quis felis velit. Nam non est a ante finibus facilisis vel non erat. Pellentesque rutrum volutpat laoreet. Proin ultricies justo egestas, mollis nibh sed, fringilla sapien. Pellentesque a condimentum lorem. Morbi hendrerit ipsum at urna pellentesque, ac tincidunt velit feugiat. Ut pellentesque ex a nisi elementum vestibulum.
+			</div>
+			<div class="col-sm-4 text-justify">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices libero non metus lacinia, quis auctor erat vehicula. Mauris non consectetur augue. Suspendisse nec pulvinar enim, vitae faucibus lectus. Etiam feugiat condimentum nunc at sollicitudin. Aenean ac est est. Pellentesque efficitur, nunc in posuere venenatis, urna ipsum vulputate mauris, quis tristique mauris felis ac quam. Maecenas in purus fermentum, ornare diam nec, faucibus ipsum. Etiam quis felis velit. Nam non est a ante finibus facilisis vel non erat. Pellentesque rutrum volutpat laoreet. Proin ultricies justo egestas, mollis nibh sed, fringilla sapien. Pellentesque a condimentum lorem. Morbi hendrerit ipsum at urna pellentesque, ac tincidunt velit feugiat. Ut pellentesque ex a nisi elementum vestibulum.
+			</div>
+			<div class="col-sm-4 text-justify">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices libero non metus lacinia, quis auctor erat vehicula. Mauris non consectetur augue. Suspendisse nec pulvinar enim, vitae faucibus lectus. Etiam feugiat condimentum nunc at sollicitudin. Aenean ac est est. Pellentesque efficitur, nunc in posuere venenatis, urna ipsum vulputate mauris, quis tristique mauris felis ac quam. Maecenas in purus fermentum, ornare diam nec, faucibus ipsum. Etiam quis felis velit. Nam non est a ante finibus facilisis vel non erat. Pellentesque rutrum volutpat laoreet. Proin ultricies justo egestas, mollis nibh sed, fringilla sapien. Pellentesque a condimentum lorem. Morbi hendrerit ipsum at urna pellentesque, ac tincidunt velit feugiat. Ut pellentesque ex a nisi elementum vestibulum.
+			</div>
+		</div>
 		{# {{ dump(finalScore[1].history[0][1]) }} #}
 	</div>
 {% endblock %}
 
 {% block javascripts %}
 	{{ parent() }}
-	<script>
-		var y = 0, animate = 0, bubble = '', timer;
-		function anim() {
-			$(bubble).attr('y', y);
-			y -= 2;
-			if (y < -64)
-				y = 0;
-		}
-		function startAnim(bub, anim)
-		{
-			animate = anim;
-			bubble = bub;
-			if (animate) {
-				y = 0;
-				if (!timer) {
-			    	timer = setInterval('anim()', 50);
-			    }
-			} else {
-				clearInterval(timer);
-      			timer = null;
-			}
-		}
-		$(function() {
-			$('.showFullTable').click(function (e) {
-				e.preventDefault();
-				var house = $(this).attr('target-house');
-				$('div.house-column[house!="' + house + '"]').hide('slow');
-				$('div.house-table[table-house="' + house + '"]').show('slow');
-				$('html, body').animate({
-			        scrollTop: $("#title").offset().top
-			    }, 1000);
-			});
-			$('.hideFullTable').click(function (e) {
-				e.preventDefault();
-				$('div.house-column').show('slow');
-				$('div.house-table').hide('slow');
-			});
-			$('div.house-column').mouseenter(function (e) {
-				if (!animate)
-					startAnim('.bubbles' + $(this).attr('house'), true);
-			}).mouseleave(function (e) {
-				startAnim('.bubbles' + $(this).attr('house'), false);
-			});
-		});
-	</script>
+    {% javascripts 
+        'bundles/applicationbde/js/detectmobilebrowser.js' 
+        'bundles/applicationpoudlard/js/poudlard.js'
+
+        filter='?yui_js' 
+        output='js/poudlard.min.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} 
 {% endblock %}
