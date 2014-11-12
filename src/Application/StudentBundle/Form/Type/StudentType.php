@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\StudentBundle\Form;
+namespace Application\StudentBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

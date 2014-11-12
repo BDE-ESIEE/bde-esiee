@@ -2207,3 +2207,24 @@ div.sonata-preview-form .row {
     display: table-cell;
     vertical-align: top;
 }
+
+.amIContributor label {
+    display: none;
+}
+
+.amIContributor div.col-lg-9.col-sm-9 {
+    margin: 0 auto;
+    float: none;
+}
+
+.amIContributor .student-informations {
+    font-size: 20px;
+}
+
+.amIContributor .student-informations span[state="Cotisant"] {
+    color: green;
+}
+
+.amIContributor .student-informations span[state^="Non"] {
+    color: red;
+}

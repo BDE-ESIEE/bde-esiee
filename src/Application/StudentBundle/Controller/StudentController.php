@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ferus\FairPayApi\Exception\ApiErrorException;
 use Ferus\FairPayApi\FairPay;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class StudentController extends Controller
 {
@@ -23,5 +24,19 @@ class StudentController extends Controller
             return new Response(json_encode($e->returned_value), $e->returned_value->code);
         }
         return new Response(json_encode($student), 200);
+    }
+
+    /**
+     * @Template
+     */
+    public function amIContributorAction() 
+    {
+        $form = $this->createFormBuilder()
+            ->add('name', 'student')
+            ->getForm();
+
+        return array(
+            'form' => $form->createView(),
+        );
     }
 }

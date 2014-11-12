@@ -1,3 +1,7 @@
 application_student_search:
     path:     /api/fairpay/{query}
     defaults: { _controller: ApplicationStudentBundle:Student:search }
+
+application_student_am_i_contributor:
+    path:     /suis-je-cotisant
+    defaults: { _controller: ApplicationStudentBundle:Student:amIContributor }

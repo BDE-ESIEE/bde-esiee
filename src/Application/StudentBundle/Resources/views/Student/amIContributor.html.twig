@@ -1,0 +1,19 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title 'Suis-je cotisant ?' %}
+
+{% block body %}
+	<div class="col-lg-12 col-sm-12 amIContributor text-center">
+		<h1>{{ block('title') }}</h1>
+		{% form_theme form 'ApplicationStudentBundle:Form:student_widget.html.twig' %}
+		{{ form(form) }}
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        var api_road = "{{ url('application_student_search', {query: "1"}) }}";
+    </script>
+    <script src="{{ asset('bundles/applicationstudent/js/student_type.js') }}" type="text/javascript"></script>
+{% endblock %}
