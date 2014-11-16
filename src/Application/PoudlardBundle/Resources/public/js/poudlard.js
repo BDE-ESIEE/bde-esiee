@@ -5,7 +5,7 @@ $(function() {
 		$('div.house-column[house!="' + house + '"]').hide('slow');
 		$('div.house-table[table-house="' + house + '"]').show('slow');
 		$('html, body').animate({
-	        scrollTop: $("#title").offset().top
+	        scrollTop: $('div.house-table[table-house="' + house + '"]').offset().top
 	    }, 1000);
 	});
 	$('.hideFullTable').click(function (e) {
