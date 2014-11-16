@@ -27,7 +27,7 @@ class ProductType extends AbstractType
                 'constraints' => array(
                     new NotBlank(),
                     new Regex(array(
-                        'pattern' => '/^[a-z0-9]+@[edu\.]*esiee\.fr$/',
+                        'pattern' => '/^[a-z\.-]+@edu\.esiee\.fr$/',
                         'match'   => 'true',
                         'message' => 'Vous devez entrer votre mail ESIEE',
                     )),
