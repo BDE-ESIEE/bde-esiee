@@ -37,7 +37,6 @@ class LinkAdmin extends Admin
     {
         $listMapper
             ->add('token')
-            ->add('url')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
