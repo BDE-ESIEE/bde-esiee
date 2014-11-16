@@ -67,23 +67,12 @@
 				</div>
 			{% endfor %}
 		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<h1>Règlement</h1>
-			</div>
-		</div>
-		<div class="row" style="margin-bottom:20px;">
-			<div class="col-sm-4 text-justify">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices libero non metus lacinia, quis auctor erat vehicula. Mauris non consectetur augue. Suspendisse nec pulvinar enim, vitae faucibus lectus. Etiam feugiat condimentum nunc at sollicitudin. Aenean ac est est. Pellentesque efficitur, nunc in posuere venenatis, urna ipsum vulputate mauris, quis tristique mauris felis ac quam. Maecenas in purus fermentum, ornare diam nec, faucibus ipsum. Etiam quis felis velit. Nam non est a ante finibus facilisis vel non erat. Pellentesque rutrum volutpat laoreet. Proin ultricies justo egestas, mollis nibh sed, fringilla sapien. Pellentesque a condimentum lorem. Morbi hendrerit ipsum at urna pellentesque, ac tincidunt velit feugiat. Ut pellentesque ex a nisi elementum vestibulum.
-			</div>
-			<div class="col-sm-4 text-justify">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices libero non metus lacinia, quis auctor erat vehicula. Mauris non consectetur augue. Suspendisse nec pulvinar enim, vitae faucibus lectus. Etiam feugiat condimentum nunc at sollicitudin. Aenean ac est est. Pellentesque efficitur, nunc in posuere venenatis, urna ipsum vulputate mauris, quis tristique mauris felis ac quam. Maecenas in purus fermentum, ornare diam nec, faucibus ipsum. Etiam quis felis velit. Nam non est a ante finibus facilisis vel non erat. Pellentesque rutrum volutpat laoreet. Proin ultricies justo egestas, mollis nibh sed, fringilla sapien. Pellentesque a condimentum lorem. Morbi hendrerit ipsum at urna pellentesque, ac tincidunt velit feugiat. Ut pellentesque ex a nisi elementum vestibulum.
-			</div>
-			<div class="col-sm-4 text-justify">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices libero non metus lacinia, quis auctor erat vehicula. Mauris non consectetur augue. Suspendisse nec pulvinar enim, vitae faucibus lectus. Etiam feugiat condimentum nunc at sollicitudin. Aenean ac est est. Pellentesque efficitur, nunc in posuere venenatis, urna ipsum vulputate mauris, quis tristique mauris felis ac quam. Maecenas in purus fermentum, ornare diam nec, faucibus ipsum. Etiam quis felis velit. Nam non est a ante finibus facilisis vel non erat. Pellentesque rutrum volutpat laoreet. Proin ultricies justo egestas, mollis nibh sed, fringilla sapien. Pellentesque a condimentum lorem. Morbi hendrerit ipsum at urna pellentesque, ac tincidunt velit feugiat. Ut pellentesque ex a nisi elementum vestibulum.
-			</div>
-		</div>
-		{# {{ dump(finalScore[1].history[0][1]) }} #}
+        {{ sonata_block_render({ 
+            'type': 'application.sonata.block.service.editable_text', 
+            'settings' : {
+                'title' : 'poudlard_rules'
+            }
+        }) }}
 	</div>
 {% endblock %}
 
