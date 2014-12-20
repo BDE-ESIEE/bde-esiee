@@ -56,7 +56,7 @@ class ShopController extends Controller
                     'Votre mail a bien été enregistré ! Vous serez contacté si le produit est mis en vente.'
                 );
 
-                return $this->redirect($this->generateUrl('application_bde_breguet_shop_show', array('id' => $product->getId())));
+                return $this->redirect($this->generateUrl('application_shop_breguet_shop_show', array('id' => $product->getId())));
             }
         }
 
