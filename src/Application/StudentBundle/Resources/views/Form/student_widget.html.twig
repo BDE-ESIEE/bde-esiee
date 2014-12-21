@@ -4,6 +4,54 @@
     		{{ form_widget(form) }}
     		<i class="fa fa-2x fa-spinner fa-spin" style="float: right;margin: -31px 5px 0 0;display: none"></i>
     		<span class="student-informations"></span>
+            <script>
+                $(function() {
+                    $('.student_type > input').on('keyup', function() {
+                        searchStudent($(this));
+                    });
+                });
+            </script>
+    	</div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block student_array_widget %}
+    {% spaceless %}
+    	<div class="student_array_type">
+    		{# {{ dump(form) }} #}
+	    	<div class="student_type">
+    			<input id="{{ form.vars.id }}" type="text" name="{{ form.vars.full_name }}[]" {% if form.vars.required %}required="required"{% endif %} class="{{ form.vars.widget_form_control_class }}" />
+	    		<i class="fa fa-2x fa-spinner fa-spin" style="float: right;margin: -31px 5px 0 0;display: none"></i>
+	    		<span class="student-informations"></span>
+	    	</div>
+    		<span id="field_actions_{{ form.vars.id }}">
+    			<a href="#" class="btn btn-success btn-sm btn-outline sonata-ba-action" title="Ajouter" style="margin: 10px 0;">
+                    <i class="fa fa-plus-circle"></i>
+                    Ajouter
+                </a>
+    		</span>
+    		<table class="table table-bordered student-list">
+    			<thead>
+    				<tr>
+    					<td>Supprimer</td>
+    					<td>ID</td>
+    					<td>Nom</td>
+    					<td>Prénom</td>
+    				</tr>
+    			</thead>
+    			<tbody>
+	    			{% for child in form %}
+	    				{% set name = child.vars.label|split(' ') %}
+	    				<tr>
+	    					<td><input type="checkbox" name="{{ child.parent.vars.full_name }}[_delete][]" value="{{ child.vars.value }}" /></td>
+	    					<td><a href="{{ path('admin_application_student_student_show', {id: child.vars.name}) }}">{{ child.vars.name }}</a></td>
+	    					<td>{{ name[1] }}</td>
+	    					<td>{{ name[0] }}</td>
+	    				</tr>
+	    				{# {{ dump(child.parent) }} #}
+	    			{% endfor %}
+    			</tbody>
+    		</table>
     	</div>
     {% endspaceless %}
 {% endblock %}

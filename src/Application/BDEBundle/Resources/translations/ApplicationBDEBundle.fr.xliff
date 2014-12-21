@@ -46,6 +46,14 @@
                 <source>form.label_treasurer</source>
                 <target>Trésorier</target>
             </trans-unit>
+            <trans-unit id="form_label_members">
+                <source>form.label_members</source>
+                <target>Membres</target>
+            </trans-unit>
+            <trans-unit id="form_label_directors">
+                <source>form.label_directors</source>
+                <target>Bureau</target>
+            </trans-unit>
 
             <trans-unit id="show_label_title">
                 <source>show.label_title</source>
@@ -91,6 +99,14 @@
                 <source>show.label_treasurer</source>
                 <target>Trésorier</target>
             </trans-unit>
+            <trans-unit id="show_label_members">
+                <source>show.label_members</source>
+                <target>Membres</target>
+            </trans-unit>
+            <trans-unit id="show_label_directors">
+                <source>show.label_directors</source>
+                <target>Bureau</target>
+            </trans-unit>
 
             <trans-unit id="filter_label_title">
                 <source>filter.label_title</source>
@@ -115,6 +131,14 @@
             <trans-unit id="filter_label_category">
                 <source>filter.label_category</source>
                 <target>Categorie</target>
+            </trans-unit>
+            <trans-unit id="filter_label_members">
+                <source>filter.label_members</source>
+                <target>Membres</target>
+            </trans-unit>
+            <trans-unit id="filter_label_directors">
+                <source>filter.label_directors</source>
+                <target>Bureau</target>
             </trans-unit>
 
             <trans-unit id="list_label_title">
@@ -149,6 +173,10 @@
             <trans-unit id="breadcrumb_link_club_history">
                 <source>breadcrumb.link_club_history</source>
                 <target>Historique des modifications</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_club_trombi">
+                <source>breadcrumb.link_club_trombi</source>
+                <target>Trombinoscope</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb_link_event_list">

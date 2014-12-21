@@ -1,0 +1,39 @@
+Application\StudentBundle\Entity\StudentHasClub:
+    type: entity
+    table: bde__student_has_club
+    repositoryClass: Application\StudentBundle\Repository\StudentHasClubRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        job:
+            type: string
+            length: 50
+            nullable: true
+        phone:
+            type: string
+            length: 15
+            nullable: true
+        position:
+            type: integer
+            nullable: true
+    manyToOne:
+        student:
+            targetEntity: Application\StudentBundle\Entity\Student
+            joinColumn:
+                name: student_id
+                referencedColumnName: id
+            nullable: false
+            inversedBy: clubs
+        club_director:
+            targetEntity: Application\BDEBundle\Entity\Club
+            nullable: true
+            inversedBy: directors
+        club_member:
+            targetEntity: Application\BDEBundle\Entity\Club
+            nullable: true
+            inversedBy: members
+    lifecycleCallbacks: {  }

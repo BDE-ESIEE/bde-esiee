@@ -1,0 +1,9 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/applicationbde/css/bootstrap.min.css') }}" type='text/css' />
+    <meta charset="UTF-8" />
+</head>
+<body>
+	{% include 'ApplicationBDEBundle:Club:trombi_content.html.twig' with {'club': club, 'generator': true} %}
+</body>
+</html>

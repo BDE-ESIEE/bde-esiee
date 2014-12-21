@@ -1,0 +1,21 @@
+{% extends 'SonataAdminBundle:CRUD:show.html.twig' %}
+
+{% block actions %}
+    <li>{% include 'SonataAdminBundle:Button:show_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:edit_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:history_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:list_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:create_button.html.twig' %}</li>
+{% endblock %}
+
+{% block tab_menu %}
+    <ul class="nav navbar-nav">
+        <li class="first last"><a href="{{ path('application_bde_club_trombi', {id: object.id}) }}"><i class="fa fa-download"></i> Générer & Télécharger le trombi pdf</a></li>
+    </ul>
+{% endblock %}
+
+{% block sonata_admin_content %}
+    <div class="sonata-ba-view">
+        {% include 'ApplicationBDEBundle:Club:trombi_content.html.twig' with {'club': object, 'generator': false} %}
+    </div>
+{% endblock %}

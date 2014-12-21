@@ -1,0 +1,11 @@
+Application\StudentBundle\Entity\Student:
+    properties:
+        email:
+            - Email: ~
+        id:
+            - Range:
+                min: 1000000
+                max: 9999999
+                minMessage: Ce n'est pas un numéro de carte valide
+                maxMessage: Ce n'est pas un numéro de carte valide
+                invalidMessage: Ce n'est pas un numéro de carte valide

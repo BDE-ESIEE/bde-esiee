@@ -12,6 +12,7 @@ use Sonata\FormatterBundle\Formatter\Pool as FormatterPool;
 use Sonata\CoreBundle\Model\ManagerInterface;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class ClubAdmin extends Admin
 {
@@ -22,6 +23,9 @@ class ClubAdmin extends Admin
         switch ($name) {
             case 'preview':
                 return 'ApplicationBDEBundle:Club:preview.html.twig';
+                break;
+            case 'trombi':
+                return 'ApplicationBDEBundle:Club:trombi.html.twig';
                 break;
             default:
                 return parent::getTemplate($name);
@@ -38,14 +42,12 @@ class ClubAdmin extends Admin
             ->add('title')
             ->add('shortcode')
             ->add('email')
-            ->add('president', 'student')
-            ->add('vice_president', 'student')
-            ->add('secretary', 'student')
-            ->add('treasurer', 'student')
             ->add('logo')
             ->add('abstract')
             ->add('content', null, array('safe' => true))
             ->add('category')
+            ->add('directors')
+            ->add('members')
         ;
     }
 
@@ -55,42 +57,55 @@ class ClubAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title')
-            ->add('shortcode')
-            ->add('email', null, array(
-                'required'      => false,
-            ))
-            ->add('president', 'student', array(
-                'required'      => false,
-            ))
-            ->add('vice_president', 'student', array(
-                'required'      => false,
-            ))
-            ->add('secretary', 'student', array(
-                'required'      => false,
-            ))
-            ->add('treasurer', 'student', array(
-                'required'      => false,
-            ))
-            ->add('category')
-            ->add('logo', 'sonata_media_type', array(
-                'required'      => false,
-                'provider'      => 'sonata.media.provider.image',
-                'context'       => 'club',
-                'new_on_update' => false,
-            ))
-            ->add('abstract', null, array('attr' => array('class' => 'span6', 'rows' => 5)))
-            ->add('content', 'sonata_formatter_type', array(
-                'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher(),
-                'format_field'         => 'contentFormatter',
-                'source_field'         => 'rawContent',
-                'source_field_options' => array(
-                    'attr' => array('class' => 'span10', 'rows' => 20)
-                ),
-                'target_field'         => 'content',
-                'listener'             => true,
-                'ckeditor_context'     => 'main',
-            ))
+            ->with('Informations')
+                ->add('title')
+                ->add('shortcode')
+                ->add('email', null, array(
+                    'required'      => false,
+                ))
+                ->add('category')
+                ->add('logo', 'sonata_media_type', array(
+                    'required'      => false,
+                    'provider'      => 'sonata.media.provider.image',
+                    'context'       => 'club',
+                    'new_on_update' => false,
+                ))
+                ->add('abstract', null, array('attr' => array('class' => 'span6', 'rows' => 5)))
+                ->add('content', 'sonata_formatter_type', array(
+                    'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher(),
+                    'format_field'         => 'contentFormatter',
+                    'source_field'         => 'rawContent',
+                    'source_field_options' => array(
+                        'attr' => array('class' => 'span10', 'rows' => 20)
+                    ),
+                    'target_field'         => 'content',
+                    'listener'             => true,
+                    'ckeditor_context'     => 'main',
+                ))
+            ->end()
+            ->with('Membres')
+                ->add('directors', 'sonata_type_collection', array(
+                        'cascade_validation' => true,
+                        'required'           => false,
+                    ), array(
+                        'edit'       => 'inline',
+                        'inline'     => 'table',
+                        'sortable'   => 'position',
+                        'admin_code' => 'application_student.admin.student_has_club',
+                        'has_job'    => true,
+                    )
+                )
+                ->add('members', 'sonata_type_collection', array(
+                        'cascade_validation' => true,
+                        'required'           => false,
+                    ), array(
+                        'edit'       => 'inline',
+                        'inline'     => 'table',
+                        'admin_code' => 'application_student.admin.student_has_club',
+                        'has_job'    => false,
+                    )
+                )
+            ->end()
         ;
     }
 
@@ -125,5 +140,46 @@ class ClubAdmin extends Admin
             ->add('shortcode')
             ->add('category')
         ;
+    }
+
+    public function prePersist($object)
+    {
+        foreach ($object->getMembers() as $member) {
+            $member->setClubMember($object);
+        }
+        foreach ($object->getDirectors() as $director) {
+            $director->setClubDirector($object);
+        }
+    }
+
+    public function preUpdate($object)
+    {
+        foreach ($object->getMembers() as $member) {
+            $member->setClubMember($object);
+        }
+        foreach ($object->getDirectors() as $director) {
+            $director->setClubDirector($object);
+        }
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->add('trombi', $this->getRouterIdParameter().'/trombi');
+    }
+
+    protected function configureSideMenu(MenuItemInterface $menu, $action, AdminInterface $childAdmin = null)
+    {
+        if (!$childAdmin && !in_array($action, array('edit', 'show', 'history'))) {
+            return;
+        }
+
+        $admin = $this->isChild() ? $this->getParent() : $this;
+
+        $id = $admin->getRequest()->get('id');
+
+        $menu->addChild(
+            'Trombi',
+            array('uri' => $admin->generateUrl('trombi', array('id' => $id)))
+        );
     }
 }

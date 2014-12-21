@@ -6,6 +6,7 @@ use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Application\BDEBundle\Entity\Club;
+use Symfony\Component\HttpFoundation\Response;
 
 class ClubController extends FOSRestController
 {
@@ -92,5 +93,34 @@ class ClubController extends FOSRestController
         ;
 
         return $this->handleView($view);
+    }
+
+    public function getClubTrombiAction(Club $club, $_format)
+    {
+        $mimetypes = array(
+            'jpg' => 'image/jpg',
+            'pdf' => 'application/pdf',
+        );
+        $renderer = array(
+            'jpg' => 'knp_snappy.image',
+            'pdf' => 'knp_snappy.pdf',
+        );
+
+        // return $this->render('ApplicationBDEBundle:Club:trombi_exporter.html.twig', array(
+        //     'club' => $club,
+        // ));
+
+        $html = $this->renderView('ApplicationBDEBundle:Club:trombi_exporter.html.twig', array(
+            'club'  => $club
+        ));
+
+        return new Response(
+            $this->get($renderer[$_format])->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'        => $mimetypes[$_format],
+                'Content-Disposition' => 'attachment; filename="trombi-'.$club->getTitle().'-'.(new \DateTime())->format('M Y').'.'.$_format.'"',
+            )
+        );
     }
 }

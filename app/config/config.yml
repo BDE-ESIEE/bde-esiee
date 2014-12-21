@@ -291,6 +291,7 @@ sonata_admin:
                     - application_bde.admin.event_category
                     - bde.admin.club
                     - bde.admin.club_category
+                    - application_student.admin.student
             poudlard:
                 label: Poudlard 2.0
                 items:
@@ -339,6 +340,7 @@ sonata_doctrine_orm_admin:
         types:
             show:
                 student: ApplicationStudentBundle:CRUD:show_student.html.twig
+                member:  ApplicationStudentBundle:CRUD:show_member.html.twig
 
 spy_timeline:
     drivers:

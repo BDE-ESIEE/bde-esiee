@@ -1,4 +1,16 @@
 services:
-#    application_student.example:
-#        class: Application\StudentBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    application_student.admin.student:
+        class: Application\StudentBundle\Admin\StudentAdmin
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Membres, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        arguments: [~, Application\StudentBundle\Entity\Student, SonataAdminBundle:CRUD]
+        calls:
+            - [ setTranslationDomain, [ApplicationStudentBundle]]
+
+    application_student.admin.student_has_club:
+        class: Application\StudentBundle\Admin\StudentHasClubAdmin
+        arguments: [~, Application\StudentBundle\Entity\StudentHasClub, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: StudentHasClub, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        calls:
+            - [ setTranslationDomain, [ApplicationStudentBundle]]

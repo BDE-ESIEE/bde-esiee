@@ -1,0 +1,23 @@
+Application\StudentBundle\Entity\Student:
+    type: entity
+    table: bde__student
+    repositoryClass: Application\StudentBundle\Repository\StudentRepository
+    id:
+        id:
+            type: integer
+            id: true
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+    oneToMany:
+        clubs:
+            targetEntity:  Application\StudentBundle\Entity\StudentHasClub
+            mappedBy: student
+    lifecycleCallbacks: {  }

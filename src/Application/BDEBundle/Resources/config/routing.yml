@@ -40,6 +40,14 @@ application_bde_good_plan:
         _format: html|json|xml
         _method:  GET
 
+application_bde_club_trombi:
+    pattern:  /clubs/trombi/{id}.{_format}
+    defaults: { _controller: ApplicationBDEBundle:Club:getClubTrombi, _format:pdf }
+    requirements:
+        id: \d+
+        _format: jpg|pdf
+        _method:  GET
+
 application_bde_club:
     pattern:  /clubs.{_format}
     defaults: { _controller: ApplicationBDEBundle:Club:index, _format:html }

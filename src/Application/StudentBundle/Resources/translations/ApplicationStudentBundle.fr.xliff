@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="filter_label_id">
+                <source>filter.label_id</source>
+                <target>Numéro de carte étudiante</target>
+            </trans-unit>
+            <trans-unit id="filter_label_first_name">
+                <source>filter.label_first_name</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="filter_label_last_name">
+                <source>filter.label_last_name</source>
+                <target>Nom de famille</target>
+            </trans-unit>
+            <trans-unit id="filter_label_email">
+                <source>filter.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+
+            <trans-unit id="list_label_id">
+                <source>list.label_id</source>
+                <target>Numéro de carte étudiante</target>
+            </trans-unit>
+            <trans-unit id="list_label_first_name">
+                <source>list.label_first_name</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="list_label_last_name">
+                <source>list.label_last_name</source>
+                <target>Nom de famille</target>
+            </trans-unit>
+            <trans-unit id="list_label_email">
+                <source>list.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="list_label__action">
+                <source>list.label__action</source>
+                <target>Actions</target>
+            </trans-unit>
+
+            <trans-unit id="show_label_id">
+                <source>show.label_id</source>
+                <target>Numéro de carte étudiante</target>
+            </trans-unit>
+            <trans-unit id="show_label_first_name">
+                <source>show.label_first_name</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="show_label_last_name">
+                <source>show.label_last_name</source>
+                <target>Nom de famille</target>
+            </trans-unit>
+            <trans-unit id="show_label_email">
+                <source>show.label_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="show_label_clubs">
+                <source>show.label_clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+
+            <trans-unit id="form_label_id">
+                <source>form.label_id</source>
+                <target>Numéro de carte étudiante (entrez nom et prénom)</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb_link_student_list">
+                <source>breadcrumb.link_student_list</source>
+                <target>Liste des Membres de Club</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_link_student_history">
+                <source>breadcrumb.link_student_history</source>
+                <target>Historique des modifications</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_student">
+                <source>form.label_student</source>
+                <target>Etudiant</target>
+            </trans-unit>
+            <trans-unit id="form.label_job">
+                <source>form.label_job</source>
+                <target>Poste</target>
+            </trans-unit>
+            <trans-unit id="form.label_phone">
+                <source>form.label_phone</source>
+                <target>Téléphone</target>
+            </trans-unit>
+            <trans-unit id="form.label_position">
+                <source>form.label_position</source>
+                <target>Position</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

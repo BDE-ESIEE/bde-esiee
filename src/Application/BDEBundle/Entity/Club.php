@@ -138,13 +138,29 @@ class Club
      * @Since("1.3")
      */
     private $treasurer;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_member")
+     * @Exclude
+     * @Since("1.4")
+     */
+    private $members;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_director")
+     * @Exclude
+     * @Since("1.4")
+     */
+    private $directors;
     
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->points = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->points    = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->members   = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->directors = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function __toString()
@@ -538,5 +554,71 @@ class Club
     public function getTreasurer()
     {
         return $this->treasurer;
+    }
+
+    /**
+     * Add members
+     *
+     * @param \Application\StudentBundle\Entity\StudentHasClub $members
+     * @return Club
+     */
+    public function addMember(\Application\StudentBundle\Entity\StudentHasClub $members)
+    {
+        $this->members[] = $members;
+
+        return $this;
+    }
+
+    /**
+     * Remove members
+     *
+     * @param \Application\StudentBundle\Entity\StudentHasClub $members
+     */
+    public function removeMember(\Application\StudentBundle\Entity\StudentHasClub $members)
+    {
+        $this->members->removeElement($members);
+    }
+
+    /**
+     * Get members
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMembers()
+    {
+        return $this->members;
+    }
+
+    /**
+     * Add directors
+     *
+     * @param \Application\StudentBundle\Entity\StudentHasClub $directors
+     * @return Club
+     */
+    public function addDirector(\Application\StudentBundle\Entity\StudentHasClub $directors)
+    {
+        $this->directors[] = $directors;
+
+        return $this;
+    }
+
+    /**
+     * Remove directors
+     *
+     * @param \Application\StudentBundle\Entity\StudentHasClub $directors
+     */
+    public function removeDirector(\Application\StudentBundle\Entity\StudentHasClub $directors)
+    {
+        $this->directors->removeElement($directors);
+    }
+
+    /**
+     * Get directors
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDirectors()
+    {
+        return $this->directors;
     }
 }

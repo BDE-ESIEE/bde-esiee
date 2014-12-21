@@ -2221,7 +2221,7 @@ div.sonata-preview-form .row {
     font-size: 20px;
 }
 
-.amIContributor .student-informations span[state="Cotisant"] {
+.amIContributor .student-informations span[state^="Cotisant"] {
     color: green;
 }
 

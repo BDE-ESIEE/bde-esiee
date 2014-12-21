@@ -10,6 +10,14 @@
         <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/colorpicker.css') }}" type="text/css" media="all" />
         {{ form_stylesheet(form) }}
     {% endif %}
+    <style type="text/css">
+        span[state^="Cotisant"] {
+            color: green;
+        }
+        span[state^="Non"] {
+            color: red;
+        }
+    </style>
 {% endblock %}
 
 {% block javascripts %}
