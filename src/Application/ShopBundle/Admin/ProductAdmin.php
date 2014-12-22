@@ -18,7 +18,7 @@ class ProductAdmin extends Admin
     {
         switch ($name) {
             case 'preview':
-                return 'ApplicationBDEBundle:Shop:preview.html.twig';
+                return 'ApplicationShopBundle:Shop:preview.html.twig';
                 break;
             default:
                 return parent::getTemplate($name);
