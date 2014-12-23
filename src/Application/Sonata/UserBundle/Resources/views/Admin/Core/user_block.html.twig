@@ -1,11 +1,25 @@
 {% block user_block %}
     {% if app.user %}
-        {{ app.user }}
-
-        {% if is_granted('ROLE_PREVIOUS_ADMIN') and sonata_user.impersonating %}
-            <a href="{{ url(sonata_user.impersonating.route, sonata_user.impersonating.parameters| merge({'_switch_user': '_exit'})) }}">(exit)</a>
-        {% endif %}
-
-        - <a href="{{ url('sonata_user_admin_security_logout') }}"> <i class="fa fa-power-off"></i>{{ 'user_block_logout'|trans({}, 'SonataUserBundle') }}</a>
+        <li class="user-header bg-light-blue">
+            <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y&d=mm" class="img-circle" alt="User Image">
+            <p>
+                {{ app.user }}
+            </p>
+        </li>
+        <li class="user-footer">
+            <div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="...">
+                <a href="{{ path('application_bde_homepage') }}" class="btn btn-default btn-flat">
+                    <i class="glyphicon glyphicon-log-out"></i> Sortir
+                </a>
+                {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+                    <a href="{{ path('sonata_admin_dashboard', {'_switch_user': '_exit'}) }}" class="btn btn-default btn-flat">
+                        <i class="fa fa-reply"></i> Retour
+                    </a>
+                {% endif %}
+                <a href="{{ url('sonata_user_admin_security_logout') }}" class="btn btn-default btn-flat">
+                    <i class="fa fa-power-off"></i> {{ 'user_block_logout'|trans({}, 'SonataUserBundle') }}
+                </a>
+            </div>
+        </li>
     {% endif %}
 {% endblock %}
