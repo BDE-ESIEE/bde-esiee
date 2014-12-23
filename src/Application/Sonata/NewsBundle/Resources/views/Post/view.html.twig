@@ -1,6 +1,15 @@
 {% extends 'ApplicationSonataNewsBundle:Post:layout.html.twig' %}
 
-{% block title %}News - {{ post.title }}{% endblock %}
+{% block title post.title %}
+{% block og_url %}{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}{% endblock %}
+{% block og_image %}{% if post.photo is not null %}{% path post.photo, 'reference' %}{% endif %}{% endblock %}
+{% block description post.abstract %}
+{% block og_type 'article' %}
+{% block opengraph %}
+    {{ parent() }}
+    <meta property="article:published_time"        content="{{ post.publicationDateStart | format_date("Y-MM-dd") }}" />
+    <meta property="article:author"                content="{{ post.author }}" />
+{% endblock %}
 
 {% block javascripts %}
     {{ parent() }}

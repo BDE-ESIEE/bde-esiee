@@ -1,6 +1,8 @@
 {% extends '::base.bis.html.twig' %}
 
-{% block title %}Media - {{ gallery.name }}{% endblock %}
+{% block title gallery.name %}
+{% block og_image %}{% if gallery.GalleryHasMedias|length > 0 %}{% path gallery.GalleryHasMedias[0].media, 'reference' %}{% endif %}{% endblock %}
+{% block description gallery.name %}
 
 {% block stylesheets %}
     {{ parent() }}

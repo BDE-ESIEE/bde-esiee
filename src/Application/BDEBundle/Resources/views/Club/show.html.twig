@@ -1,6 +1,8 @@
 {% extends '::base.bis.html.twig' %}
 
-{% block title %}{{ club.title }}{% endblock %}
+{% block title club.title %}
+{% block og_image %}{% if club.logo is not null %}{% path club.logo, 'reference' %}{% endif %}{% endblock %}
+{% block description club.abstract %}
 
 {% block containerClass %} class="property gray-bg"{% endblock %}
 

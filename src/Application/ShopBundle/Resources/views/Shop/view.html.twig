@@ -1,6 +1,8 @@
 {% extends '::base.bis.html.twig' %}
 
-{% block title %}Breguet Shop - {{ product.name }}{% endblock %}
+{% block title product.name %}
+{% block og_image %}{% if product.photos|length > 0 %}{% path product.photos[0].media, 'reference' %}{% endif %}{% endblock %}
+{% block description product.description|striptags %}
 
 {% block stylesheets %}
 	{{ parent() }}
