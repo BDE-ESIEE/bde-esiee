@@ -8,7 +8,6 @@
 {% block opengraph %}
     {{ parent() }}
     <meta property="article:published_time"        content="{{ post.publicationDateStart | format_date("Y-MM-dd") }}" />
-    <meta property="article:author"                content="{{ post.author }}" />
 {% endblock %}
 
 {% block javascripts %}
