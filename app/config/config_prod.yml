@@ -5,11 +5,12 @@ imports:
 #    validation:
 #        cache: apc
 
-#doctrine:
-#    orm:
-#        metadata_cache_driver: apc
+doctrine:
+    orm:
+        auto_mapping: true
+        metadata_cache_driver: apc
+        query_cache_driver: apc
 #        result_cache_driver: apc
-#        query_cache_driver: apc
 
 monolog:
     handlers:
@@ -23,3 +24,8 @@ monolog:
             level: debug
         console:
             type:  console
+        login:
+            type:     stream
+            path:     "%kernel.logs_dir%/auth.log"
+            level:    info
+            channels: security
