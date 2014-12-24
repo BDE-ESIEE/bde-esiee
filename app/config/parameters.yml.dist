@@ -18,3 +18,5 @@ parameters:
     piwik_id: 0
     piwik_url: domain.tld/piwik/
     use_proxy: false
+
+    wkhtmltopdf_binary: /usr/local/bin/wkhtmltopdf.sh

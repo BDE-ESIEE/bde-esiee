@@ -469,3 +469,8 @@ jms_di_extra:
 
 jms_security_extra:
     expressions: true
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     %wkhtmltopdf_binary%
