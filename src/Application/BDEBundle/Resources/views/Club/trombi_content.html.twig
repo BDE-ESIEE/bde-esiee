@@ -5,7 +5,7 @@
         <div class="row text-center">
     {% endif %}
             <div class="{{ generator ? 'col-xs-3' : 'col-sm-2' }}">
-                <img src="https://cloud.votix.net/upic/by-mail/{{ director.student.email }}" style="width:111px;height:148px;background-color:grey;" /><br />
+                <img src="https://bde.esiee.fr/fairpay/api/students/photo/by-id/{{ director.student.id }}.jpg" style="width:111px;height:148px;background-color:grey;" /><br />
                 {{ director.student.lastName }} {{ director.student.firstName }}<br />
                 {% if director.phone is not null %}{{ director.phone }}<br />{% endif %}
                 {% if director.job   is not null %}<b style="margin-bottom:6px;display:block;">{{ director.job }}</b>{% endif %}
@@ -24,7 +24,7 @@
         <div class="row text-center">
     {% endif %}
             <div class="{{ generator ? 'col-xs-3' : 'col-sm-2' }}" {% if not generator and loop.index > 6 or generator and loop.index > 4 %}style="margin-top:6px;"{% endif %}>
-                <img src="https://cloud.votix.net/upic/by-mail/{{ member.student.email }}" style="width:111px;height:148px;background-color:grey;" /><br />
+                <img src="https://bde.esiee.fr/fairpay/api/students/photo/by-id/{{ member.student.id }}.jpg" style="width:111px;height:148px;background-color:grey;" /><br />
                 <div>{{ member.student.lastName }} {{ member.student.firstName }}</div>
                 {% if not generator %}<span student-id-contributor="{{ member.student.id }}"><i class="fa fa-spinner fa-spin"></i></span>{% endif %}
             </div>
