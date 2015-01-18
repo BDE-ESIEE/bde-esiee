@@ -38,7 +38,7 @@
                                     Regarder
                                 </a>
                             {% else %}
-                                <a class="fancybox" rel="group" href="{% path galleryHasMedia.media, 'reference' %}" title="{{ galleryHasMedia.media.name }}">
+                                <a class="fancybox" rel="group" href="{% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}{{ path('sonata_media_download', {'id': galleryHasMedia.media|sonata_urlsafeid }) }}{% else %}{% path galleryHasMedia.media, 'reference' %}{% endif %}" title="{{ galleryHasMedia.media.name }}">
                                     {% if galleryHasMedia.media.providerName=="sonata.media.provider.file" %}
                                         Télécharger
                                     {% else %}
