@@ -156,6 +156,8 @@ sonata_media:
     db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
     contexts:
         gallery:
+            download:
+                strategy: sonata.media.security.public_strategy
             providers:
                 - sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
@@ -166,6 +168,8 @@ sonata_media:
                 big:   { width: 500 , quality: 90}
                 small: { width: 90 , quality: 95}
         club:
+            download:
+                strategy: sonata.media.security.public_strategy
             providers:
                 - sonata.media.provider.image
 
