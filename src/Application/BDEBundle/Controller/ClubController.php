@@ -43,7 +43,7 @@ class ClubController extends FOSRestController
                     if (!in_array($provider, $providers))
                         $providers[$provider] = $this->get($provider);
 
-                    $club_list[$key]->logoUrl = $providers[$provider]->generatePublicUrl($club->getLogo(), 'default_big');
+                    $club_list[$key]->logoUrl = $providers[$provider]->generatePublicUrl($club->getLogo(), 'club_big');
                 }
             }
         }

@@ -11,8 +11,13 @@ use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\MediaBundle\Provider\Pool;
 
 class EventAdmin extends Admin
-{	
-    // Fields to be shown on create/edit forms
+{
+    protected $datagridValues = array(
+        '_page' => 1,
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'id'
+    );
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $subject = $formMapper->getAdmin()->getSubject();

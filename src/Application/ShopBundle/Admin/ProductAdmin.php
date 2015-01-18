@@ -7,8 +7,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\MediaBundle\Provider\Pool;
+use Sonata\CoreBundle\Model\Metadata;
 
 class ProductAdmin extends Admin
 {	
@@ -105,5 +104,18 @@ class ProductAdmin extends Admin
             ->add('categories')
             ->add('photos')
         ;
+    }
+
+    public function getObjectMetadata($object)
+    {
+        $url = null;
+        if ($object->getPhotos()->count() > 0)
+        {
+            $media = $object->getPhotos()->first()->getMedia();
+            $provider = $this->getConfigurationPool()->getContainer()->get($media->getProviderName());
+
+            $url = $provider->generatePublicUrl($media, 'shop_big');
+        }
+        return new Metadata($this->toString($object), null, $url);
     }
 }

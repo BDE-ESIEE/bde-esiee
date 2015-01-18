@@ -8,8 +8,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\FormatterBundle\Formatter\Pool as FormatterPool;
-use Sonata\CoreBundle\Model\ManagerInterface;
+use Sonata\CoreBundle\Model\Metadata;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 use Sonata\AdminBundle\Route\RouteCollection;
@@ -181,5 +180,18 @@ class ClubAdmin extends Admin
             'Trombi',
             array('uri' => $admin->generateUrl('trombi', array('id' => $id)))
         );
+    }
+
+    public function getObjectMetadata($object)
+    {
+        $url = null;
+        if (!is_null($object->getLogo()))
+        {
+            $media = $object->getLogo();
+            $provider = $this->getConfigurationPool()->getContainer()->get($media->getProviderName());
+
+            $url = $provider->generatePublicUrl($media, 'club_big');
+        }
+        return new Metadata($this->toString($object), null, $url);
     }
 }

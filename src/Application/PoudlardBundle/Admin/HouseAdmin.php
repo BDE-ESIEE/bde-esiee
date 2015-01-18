@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Model\Metadata;
 
 class HouseAdmin extends Admin
 {
@@ -67,5 +68,11 @@ class HouseAdmin extends Admin
             ->add('clubs')
             ->add('score')
         ;
+    }
+
+    public function getObjectMetadata($object)
+    {
+        $url = $this->getConfigurationPool()->getContainer()->get('templating.helper.assets')->getUrl('bundles/applicationbde/img/logo'.$object->getName().'.png');
+        return new Metadata($this->toString($object), null, $url);
     }
 }
