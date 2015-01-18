@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class UserAdmin extends BaseAdmin
 {
+    protected $listModes = array();
 
     /**
      * {@inheritdoc}

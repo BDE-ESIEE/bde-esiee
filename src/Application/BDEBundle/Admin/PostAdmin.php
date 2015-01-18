@@ -16,6 +16,7 @@ class PostAdmin extends BaseAdmin
         '_sort_order' => 'DESC', 
         '_sort_by' => 'id'
     );
+    protected $listModes = array();
 
     public function getTemplate($name)
     {
