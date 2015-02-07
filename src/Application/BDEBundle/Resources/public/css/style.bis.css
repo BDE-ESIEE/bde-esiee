@@ -2192,6 +2192,10 @@ div.sonata-preview-form .row {
     background-image: url(../img/flag_uk.png)
 }
 
+.flag.flag-czr {
+    background-image: url(../img/flag_czr.png)
+}
+
 .vAlignBaseLine {
     display: inline-block;
     vertical-align: baseline;
