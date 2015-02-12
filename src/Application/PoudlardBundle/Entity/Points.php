@@ -164,9 +164,11 @@ class Points
 
         foreach($this->distribution as $clubHasPoints)
         {
-            if (!array_key_exists($clubHasPoints->getClub()->getHouse()->getId(), $total))
-                $total[$clubHasPoints->getClub()->getHouse()->getId()] = array(0, $clubHasPoints->getClub()->getHouse());
-            $total[$clubHasPoints->getClub()->getHouse()->getId()][0] += $clubHasPoints->getAmount() + $clubHasPoints->getBonusMalus();
+            if (null !== $clubHasPoints->getClub()->getHouse()) {
+                if (!array_key_exists($clubHasPoints->getClub()->getHouse()->getId(), $total))
+                    $total[$clubHasPoints->getClub()->getHouse()->getId()] = array(0, $clubHasPoints->getClub()->getHouse());
+                $total[$clubHasPoints->getClub()->getHouse()->getId()][0] += $clubHasPoints->getAmount() + $clubHasPoints->getBonusMalus();
+            }
         }
 
         return $total;
