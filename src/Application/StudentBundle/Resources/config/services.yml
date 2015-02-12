@@ -3,7 +3,7 @@ services:
         class: Application\StudentBundle\Admin\StudentAdmin
         tags:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Membres, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
-        arguments: [~, Application\StudentBundle\Entity\Student, SonataAdminBundle:CRUD]
+        arguments: [~, Application\StudentBundle\Entity\Student, ApplicationSonataAdminBundle:CRUD]
         calls:
             - [ setTranslationDomain, [ApplicationStudentBundle]]
 

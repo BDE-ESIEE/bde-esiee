@@ -6,6 +6,8 @@ Application\StudentBundle\Entity\Student:
         id:
             type: integer
             id: true
+            generator:
+                strategy: NONE
     fields:
         firstName:
             type: string
