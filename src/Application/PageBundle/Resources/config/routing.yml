@@ -1,0 +1,27 @@
+application_bde_homepage:
+    pattern:  /
+    defaults: { _controller: ApplicationPageBundle:Page:index }
+
+application_bde_aboutus:
+    pattern:  /about-us
+    defaults: { _controller: ApplicationPageBundle:Page:aboutus }
+
+application_bde_history:
+    pattern:  /history
+    defaults: { _controller: ApplicationPageBundle:Page:history }
+
+application_bde_cotisation:
+    pattern:  /cotisation
+    defaults: { _controller: ApplicationPageBundle:Page:cotisation }
+
+application_bde_association:
+    pattern:  /association
+    defaults: { _controller: ApplicationPageBundle:Page:association }
+
+application_bde_partnership:
+    pattern:  /partnership
+    defaults: { _controller: ApplicationPageBundle:Page:partnership }
+
+application_bde_eat_traffic:
+    pattern:  /eat-traffic
+    defaults: { _controller: ApplicationPageBundle:Page:eatTraffic }

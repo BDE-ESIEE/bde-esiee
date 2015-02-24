@@ -1,11 +1,11 @@
 <?php
 
-namespace Application\BDEBundle\Controller;
+namespace Application\PageBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class PageController extends Controller
 {
     /**
      * @Template
@@ -49,12 +49,7 @@ class DefaultController extends Controller
 
     public function eatTrafficAction()
     {
-        return $this->render('ApplicationBDEBundle:Default:eat_traffic.html.twig');
-    }
-
-    public function goodPlanAction()
-    {
-        return $this->render('ApplicationBDEBundle:Default:good_plan.html.twig');
+        return $this->render('ApplicationPageBundle:Page:eat_traffic.html.twig');
     }
 
     /**

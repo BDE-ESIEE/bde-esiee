@@ -1,31 +1,3 @@
-application_bde_homepage:
-    pattern:  /
-    defaults: { _controller: ApplicationBDEBundle:Default:index }
-
-application_bde_aboutus:
-    pattern:  /about-us
-    defaults: { _controller: ApplicationBDEBundle:Default:aboutus }
-
-application_bde_history:
-    pattern:  /history
-    defaults: { _controller: ApplicationBDEBundle:Default:history }
-
-application_bde_cotisation:
-    pattern:  /cotisation
-    defaults: { _controller: ApplicationBDEBundle:Default:cotisation }
-
-application_bde_association:
-    pattern:  /association
-    defaults: { _controller: ApplicationBDEBundle:Default:association }
-
-application_bde_partnership:
-    pattern:  /partnership
-    defaults: { _controller: ApplicationBDEBundle:Default:partnership }
-
-application_bde_eat_traffic:
-    pattern:  /eat-traffic
-    defaults: { _controller: ApplicationBDEBundle:Default:eatTraffic }
-
 application_bde_club_trombi:
     pattern:  /clubs/trombi/{id}.{_format}
     defaults: { _controller: ApplicationBDEBundle:Club:getClubTrombi, _format:pdf }
