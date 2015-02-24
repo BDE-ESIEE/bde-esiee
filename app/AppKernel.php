@@ -23,7 +23,6 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-            new Spy\TimelineBundle\SpyTimelineBundle(),
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
 
             // Others 
@@ -53,7 +52,6 @@ class AppKernel extends Kernel
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\FormatterBundle\SonataFormatterBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
-            new Sonata\TimelineBundle\SonataTimelineBundle(),
             new Sonata\CommentBundle\SonataCommentBundle(),
 
             // Application
@@ -63,7 +61,6 @@ class AppKernel extends Kernel
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
-            new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(),
             new Application\Sonata\BlockBundle\ApplicationSonataBlockBundle(),
             new Application\BDEBundle\ApplicationBDEBundle(),
             new Application\LinkBundle\ApplicationLinkBundle(),

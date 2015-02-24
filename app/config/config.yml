@@ -115,7 +115,6 @@ sonata_user:
         dashboard:
             blocks:
                 - { position: left, type: sonata.block.service.text, settings: { content: "<h2>Coucou!</h2> Caca"} }
-                #- { position: right, type: sonata.timeline.block.timeline, settings: { max_per_page: 5 }}
                 - { position: left, type: sonata.news.block.recent_posts, settings: { title: Dernières News, number: 5, mode: public }}
                 - { position: right, type: sonata.news.block.recent_comments, settings: { title: Derniers Commentaires, number: 5, mode: public }}
 
@@ -127,7 +126,6 @@ sonata_block:
         sonata.user.block.menu:
         sonata.user.block.account:
         sonata.formatter.block.formatter:
-        sonata.timeline.block.timeline:
         sonata.block.service.text:
         sonata.admin.block.search_result:
         sonata.news.block.recent_posts:
@@ -274,12 +272,6 @@ sonata_admin:
                 type: sonata.admin.block.admin_list
                 settings:
                     groups: [shop, media, user, services]
-            # -
-            #     position: right
-            #     type: sonata.timeline.block.timeline
-            #     settings:
-            #         context: ROLE_SUPER_ADMIN
-            #         max_per_page: 10
         groups:
             blog:
                 label: Blog
@@ -343,28 +335,6 @@ sonata_doctrine_orm_admin:
             show:
                 student: ApplicationStudentBundle:CRUD:show_student.html.twig
                 member:  ApplicationStudentBundle:CRUD:show_member.html.twig
-
-spy_timeline:
-    drivers:
-        orm:
-            object_manager: doctrine.orm.entity_manager
-            classes:
-                query_builder: ~ # Spy\TimelineBundle\Driver\ORM\QueryBuilder\QueryBuilder
-                timeline:         Application\Sonata\TimelineBundle\Entity\Timeline
-                action:           Application\Sonata\TimelineBundle\Entity\Action
-                component:        Application\Sonata\TimelineBundle\Entity\Component
-                action_component: Application\Sonata\TimelineBundle\Entity\ActionComponent
-
-    filters:
-        data_hydrator:
-            priority:             20
-            service:              spy_timeline.filter.data_hydrator
-            filter_unresolved:    false
-            locators:
-                - spy_timeline.filter.data_hydrator.locator.doctrine_orm
-
-sonata_timeline:
-    manager_type: orm
 
 mopa_bootstrap:
     form:

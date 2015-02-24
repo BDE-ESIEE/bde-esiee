@@ -1,6 +1,6 @@
 {
     "name": "na-ji/bde-esiee",
-    "license": "MIT",
+    "license": "WTFPL",
     "type": "project",
     "description": "Site web du BDE ESIEE Paris",
     "autoload": {
@@ -28,10 +28,7 @@
         "sonata-project/user-bundle"              : "~2.2",
         "sonata-project/news-bundle"              : "~2.3",
         "sonata-project/media-bundle"             : "~2.2",
-        "sonata-project/timeline-bundle"          : "~2.2@dev",
         "simplethings/entity-audit-bundle"        : "~0.5",
-        "stephpy/TimelineBundle"                  : "~2.0@dev",
-        "stephpy/timeline"                        : "~1.0@dev",
         "mopa/bootstrap-bundle"                   : "dev-master",
         "twbs/bootstrap"                          : "dev-master",
         "shivas/versioning-bundle"                : "dev-master",
@@ -68,6 +65,7 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "www",
+        "symfony-assets-install": "symlink",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         },
