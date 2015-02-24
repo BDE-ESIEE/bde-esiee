@@ -22,23 +22,9 @@ application_bde_partnership:
     pattern:  /partnership
     defaults: { _controller: ApplicationBDEBundle:Default:partnership }
 
-application_bde_lost_property:
-    pattern:  /objets-trouves.{_format}
-    defaults: { _controller: ApplicationBDEBundle:LostProperty:index, _format:html }
-    requirements:
-        _format: html|json|xml
-        _method:  GET
-
 application_bde_eat_traffic:
     pattern:  /eat-traffic
     defaults: { _controller: ApplicationBDEBundle:Default:eatTraffic }
-
-application_bde_good_plan:
-    pattern:  /bons-plans.{_format}
-    defaults: { _controller: ApplicationBDEBundle:Bargain:index, _format:html }
-    requirements:
-        _format: html|json|xml
-        _method:  GET
 
 application_bde_club_trombi:
     pattern:  /clubs/trombi/{id}.{_format}

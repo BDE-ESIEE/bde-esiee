@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\BDEBundle\Entity;
+namespace Application\ServiceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * LostProperty
  *
  * @ORM\Table(name="bde__lost_property")
- * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\LostPropertyRepository")
+ * @ORM\Entity(repositoryClass="Application\ServiceBundle\Repository\LostPropertyRepository")
  */
 class LostProperty
 {

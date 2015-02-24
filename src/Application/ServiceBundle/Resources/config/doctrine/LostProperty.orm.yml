@@ -1,0 +1,19 @@
+Application\ServiceBundle\Entity\LostProperty:
+    type: entity
+    table: bde__lost_property
+    repositoryClass: Application\ServiceBundle\Repository\LostPropertyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        found:
+            type: boolean
+    lifecycleCallbacks: {  }

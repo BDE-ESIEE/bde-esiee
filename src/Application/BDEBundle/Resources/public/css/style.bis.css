@@ -2232,3 +2232,8 @@ div.sonata-preview-form .row {
 .amIContributor .student-informations span[state^="Non"] {
     color: red;
 }
+
+.fix-date-align + div > div.form-group {
+    max-width: 409px;
+    margin-left: 0;
+}

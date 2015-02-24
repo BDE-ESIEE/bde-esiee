@@ -1,14 +1,12 @@
 <?php
 
-namespace Application\BDEBundle\Admin;
+namespace Application\ServiceBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\MediaBundle\Provider\Pool;
 
 class LostPropertyAdmin extends Admin
 {	
@@ -18,8 +16,10 @@ class LostPropertyAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('date')
-            ->add('found', null, array(
-                'required' => false,
+            ->add('found', 'choice', array(
+                'choices' => array('1' => 'Trouvé', '0' => 'Perdu'),
+                'expanded' => true,
+                'empty_value' => false,
             ))
         ;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\BDEBundle\Entity;
+namespace Application\ServiceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Bargain
  *
  * @ORM\Table(name="bde__bargain")
- * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\BargainRepository")
+ * @ORM\Entity(repositoryClass="Application\ServiceBundle\Repository\BargainRepository")
  */
 class Bargain
 {

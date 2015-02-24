@@ -29,7 +29,6 @@
         "sonata-project/news-bundle"              : "~2.3",
         "sonata-project/media-bundle"             : "~2.2",
         "sonata-project/timeline-bundle"          : "~2.2@dev",
-        "sonata-project/formatter-bundle"         : "dev-master",
         "simplethings/entity-audit-bundle"        : "~0.5",
         "stephpy/TimelineBundle"                  : "~2.0@dev",
         "stephpy/timeline"                        : "~1.0@dev",
@@ -44,7 +43,8 @@
         "knplabs/knp-menu-bundle"                 : "dev-master as 1.1",
         "genemu/form-bundle"                      : "dev-master as 2.2.2",
         "ferus/fairpay-php-sdk"                   : "dev-master",
-        "knplabs/knp-snappy-bundle"               : "dev-master"
+        "knplabs/knp-snappy-bundle"               : "dev-master",
+        "raulfraile/ladybug-bundle"               : "~1.0"
     },
     "scripts": {
         "post-install-cmd": [

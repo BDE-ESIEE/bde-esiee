@@ -1,0 +1,31 @@
+{% extends '::base.bis.html.twig' %}
+
+{% block title 'Objets trouvés' %}
+{% block description 'Objets trouvés ou perdus dans les locaux de l\'école.' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/applicationbde/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/bundles/sonatacore/vendor/moment/min/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/bundles/sonatacore/vendor/moment/locale/fr.js') }}"></script>
+    <script src="{{ asset('bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js') }}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ asset('/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="col-xs-12 col-sm-6">
+        <h1>Ajouter un objet trouvé/perdu</h1>
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.date) }}
+            {{ form_row(form.found) }}
+
+            <a class="btn btn-default" href="{{ path('application_service_lost_property') }}" role="button">Annuler</a>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block liServices %} active{% endblock %}

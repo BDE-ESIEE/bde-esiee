@@ -1,0 +1,21 @@
+services:
+    application_service.admin.lost_property:
+        class: Application\ServiceBundle\Admin\LostPropertyAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Vie Étudiante", label: "Objets Trouvés", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\ServiceBundle\Entity\LostProperty
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]
+    application_service.admin.bargain:
+        class: Application\ServiceBundle\Admin\BargainAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Vie Étudiante", label: "Bons Plans", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Application\ServiceBundle\Entity\Bargain
+            - ~
+        calls:
+            - [ setTranslationDomain, [ApplicationBDEBundle]]

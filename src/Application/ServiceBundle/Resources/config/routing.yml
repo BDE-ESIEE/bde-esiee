@@ -1,0 +1,17 @@
+application_service_lost_property:
+    pattern:  /objets-trouves.{_format}
+    defaults: { _controller: ApplicationServiceBundle:LostProperty:index, _format:html }
+    requirements:
+        _format: html|json|xml
+        _method: GET
+
+application_service_bargain:
+    pattern:  /bons-plans.{_format}
+    defaults: { _controller: ApplicationServiceBundle:Bargain:index, _format:html }
+    requirements:
+        _format: html|json|xml
+        _method: GET
+
+application_service_lost_property_add:
+    pattern:  /objets-trouves/ajouter
+    defaults: { _controller: ApplicationServiceBundle:LostProperty:add }

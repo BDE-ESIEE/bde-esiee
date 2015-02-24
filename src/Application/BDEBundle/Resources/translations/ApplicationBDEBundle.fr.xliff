@@ -497,7 +497,7 @@
             </trans-unit>
             <trans-unit id="form_label_found">
                 <source>form.label_found</source>
-                <target>Trouvé ?</target>
+                <target>Objet...</target>
             </trans-unit>
 
             <trans-unit id="list_label_date">

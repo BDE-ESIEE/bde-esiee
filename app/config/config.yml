@@ -319,8 +319,8 @@ sonata_admin:
             services:
                 label: Services
                 items:
-                    - bde.admin.lost_property
-                    - bde.admin.bargain
+                    - application_service.admin.lost_property
+                    - application_service.admin.bargain
                     - bde.admin.editable_text_block
                     - application_link.admin.link
     security:
@@ -455,7 +455,7 @@ shivas_versioning:
 jms_di_extra:
     locations:
         all_bundles: false
-        bundles: [ApplicationStudentBundle]
+        bundles: [ApplicationStudentBundle, ApplicationServiceBundle]
         directories: ["%kernel.root_dir%/../src"]
     automatic_controller_injections:
         properties:
@@ -468,6 +468,7 @@ jms_di_extra:
             session: @session
             dispatcher: @event_dispatcher
             formFactory: @form.factory
+            security: @security.context
 
 jms_security_extra:
     expressions: true

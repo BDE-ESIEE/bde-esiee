@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\BDEBundle\Controller;
+namespace Application\ServiceBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
@@ -12,7 +12,7 @@ class BargainController extends FOSRestController
      * @ApiDoc(
      *  description="Retrieves the list of bargains",
      *  resource=true,
-     *  output={"class"="Application\BDEBundle\Entity\Bargain"},
+     *  output={"class"="Application\ServiceBundle\Entity\Bargain"},
      *  statusCodes={
      *      200="Returned when successful"
      *  }
@@ -21,10 +21,10 @@ class BargainController extends FOSRestController
      */
     public function indexAction()
     {
-        $bargain_list = $this->getDoctrine()->getManager()->getRepository('ApplicationBDEBundle:Bargain')->findAll();
+        $bargain_list = $this->getDoctrine()->getManager()->getRepository('ApplicationServiceBundle:Bargain')->findAll();
 
         $view = $this->view($bargain_list, 200)
-            ->setTemplate('ApplicationBDEBundle:Bargain:index.html.twig')
+            ->setTemplate('ApplicationServiceBundle:Bargain:index.html.twig')
             ->setTemplateVar('bargain_list')
         ;
 

@@ -1,0 +1,32 @@
+Application\ServiceBundle\Entity\Bargain:
+    type: entity
+    table: bde__bargain
+    repositoryClass: Application\ServiceBundle\Repository\BargainRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+            length: 255
+        content:
+            type: text
+        rawContent:
+            type: text
+        contentFormatter:
+            type: text
+    oneToOne:
+        logo:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            cascade:
+                - all
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                logo_id:
+                    referencedColumnName: id
+            orphanRemoval: true
+    lifecycleCallbacks: {  }
