@@ -46,7 +46,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    read_from:            "%kernel.root_dir%/../www"
+    read_from:            "%kernel.root_dir%/../web"
     bundles:
         - ApplicationBDEBundle
         - SonataMediaBundle
@@ -195,7 +195,7 @@ sonata_media:
 
     filesystem:
         local:
-            directory:  %kernel.root_dir%/../www/uploads/media
+            directory:  %kernel.root_dir%/../web/uploads/media
             create:     false
 
 ivory_ck_editor:

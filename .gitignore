@@ -1,4 +1,4 @@
-/www/bundles/
+/web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
@@ -12,11 +12,11 @@
 /composer.lock
 /*.sublime-workspace
 /*.sublime-project
-/www/uploads/media/news/
-/www/uploads/media/shop/
-/www/uploads/media/club/
-/www/uploads/media/gallery/
-/www/css/
-/www/js/
-/www/mail/
+/web/uploads/media/news/
+/web/uploads/media/shop/
+/web/uploads/media/club/
+/web/uploads/media/gallery/
+/web/css/
+/web/js/
+/web/mail/
 /.idea/
