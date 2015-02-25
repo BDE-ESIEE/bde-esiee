@@ -248,6 +248,7 @@ sonata_admin:
     title_logo: logoFerus.png
     templates:
         layout:  ApplicationSonataAdminBundle::layout.html.twig
+        layout:  ApplicationSonataAdminBundle:CRUD:acl.html.twig
     dashboard:
         blocks:
             -
