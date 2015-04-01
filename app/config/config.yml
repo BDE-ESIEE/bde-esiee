@@ -57,6 +57,7 @@ assetic:
         - ApplicationPoudlardBundle
         - ApplicationStudentBundle
         - ApplicationSonataAdminBundle
+        - ApplicationPageBundle 
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
