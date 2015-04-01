@@ -5,6 +5,9 @@ namespace Application\BDEBundle\Admin;
 use Sonata\NewsBundle\Admin\PostAdmin as BaseAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Knp\Menu\ItemInterface as MenuItemInterface;
+use Sonata\AdminBundle\Route\RouteCollection;
+use Sonata\AdminBundle\Admin\AdminInterface;
 
 class PostAdmin extends BaseAdmin
 {
@@ -23,6 +26,9 @@ class PostAdmin extends BaseAdmin
         switch ($name) {
             case 'preview':
                 return 'ApplicationSonataNewsBundle:Post:preview.html.twig';
+                break;
+            case 'stats':
+                return 'ApplicationSonataAdminBundle:Stats:show.html.twig';
                 break;
             default:
                 return parent::getTemplate($name);
@@ -127,5 +133,32 @@ class PostAdmin extends BaseAdmin
         $instance->setCommentsDefaultStatus(1);
 
         return $instance;
+    }
+
+    // protected function configureRoutes(RouteCollection $collection)
+    // {
+    //     $collection->add('stats', $this->getRouterIdParameter().'/stats');
+    // }
+
+    // protected function configureSideMenu(MenuItemInterface $menu, $action, AdminInterface $childAdmin = null)
+    // {
+    //     parent::configureSideMenu($menu, $action, $childAdmin);
+    //     if (!$childAdmin && !in_array($action, array('edit', 'show', 'history'))) {
+    //         return;
+    //     }
+
+    //     $admin = $this->isChild() ? $this->getParent() : $this;
+
+    //     $id = $admin->getRequest()->get('id');
+
+    //     $menu->addChild(
+    //         'Stats',
+    //         array('uri' => $admin->generateUrl('stats', array('id' => $id)))
+    //     );
+    // }
+
+    public function setCommentManager($commentManager)
+    {
+        return;
     }
 }

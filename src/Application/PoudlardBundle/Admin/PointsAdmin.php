@@ -54,7 +54,7 @@ class PointsAdmin extends Admin
             ->add('name')
             ->add('date', 'sonata_type_datetime_picker', array(
                 'dp_language'    => 'fr',
-                'date_format'    => "d.m.Y, H:i",
+                'date_format'    => "d MMM YYYY H:mm:ss",
                 'dp_use_seconds' => false,
                 'dp_min_date'    => '1/1/'.(new \DateTime())->format("Y")
             ))
