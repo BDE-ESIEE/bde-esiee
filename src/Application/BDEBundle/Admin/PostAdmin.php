@@ -113,10 +113,13 @@ class PostAdmin extends BaseAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         parent::configureListFields($listMapper);
-        $listMapper->remove('commentsCount');
-        $listMapper->remove('tags');
 
         $listMapper
+            ->remove('custom')
+            ->remove('publicationDateStart')
+            ->remove('commentsEnabled')
+            ->add('custom', 'string', array('template' => 'ApplicationSonataNewsBundle:Admin:list_post_custom.html.twig', 'label' => 'Post'))
+            ->add('publicationDateStart')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
