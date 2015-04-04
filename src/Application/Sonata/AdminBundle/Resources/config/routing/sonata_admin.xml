@@ -36,6 +36,10 @@
         <default key="_controller">SonataAdminBundle:Core:search</default>
     </route>
 
+    <route id="sonata_admin_retrieve_autocomplete_items" pattern="/core/get-autocomplete-items">
+        <default key="_controller">sonata.admin.controller.admin:retrieveAutocompleteItemsAction</default>
+    </route>
+
     <route id="application_sonata_admin_send_mail" pattern="/send-mail">
         <default key="_controller">ApplicationSonataAdminBundle:Mail:sendMail</default>
     </route>

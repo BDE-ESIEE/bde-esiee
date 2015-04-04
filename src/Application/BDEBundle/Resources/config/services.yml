@@ -48,13 +48,13 @@ services:
         arguments:
             - ~
             - %sonata.news.admin.post.entity%
-            - %sonata.news.admin.post.controller%
+            - ApplicationSonataAdminBundle:CRUD
         calls:
             - [ setTranslationDomain, [%sonata.news.admin.post.translation_domain%]]
             - [ setUserManager, [@fos_user.user_manager]]
             - [ setPoolFormatter, [@sonata.formatter.pool]]
             - [ addChild, [@sonata.news.admin.comment]]
-            - [ setCommentManager, [@sonata.news.manager.comment]]
+            - [ setPermalinkGenerator, [@sonata.news.permalink.generator]]
     application_bde.admin.event_category:
         class: Application\BDEBundle\Admin\EventCategoryAdmin
         arguments: [~, Application\BDEBundle\Entity\EventCategory, SonataAdminBundle:CRUD]

@@ -46,6 +46,7 @@ class PostAdmin extends BaseAdmin
         $formMapper->remove('content');
         $formMapper->remove('commentsCloseAt');
         $formMapper->remove('commentsDefaultStatus');
+        $formMapper->remove('image');
 
         if (!$this->isGranted('OPERATOR'))
         {
@@ -137,6 +138,7 @@ class PostAdmin extends BaseAdmin
 
     // protected function configureRoutes(RouteCollection $collection)
     // {
+    //     parent::configureRoutes($collection);
     //     $collection->add('stats', $this->getRouterIdParameter().'/stats');
     // }
 
@@ -156,9 +158,4 @@ class PostAdmin extends BaseAdmin
     //         array('uri' => $admin->generateUrl('stats', array('id' => $id)))
     //     );
     // }
-
-    public function setCommentManager($commentManager)
-    {
-        return;
-    }
 }
