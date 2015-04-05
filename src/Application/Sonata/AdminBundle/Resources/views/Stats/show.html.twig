@@ -1,0 +1,85 @@
+{% extends 'SonataAdminBundle:CRUD:show.html.twig' %}
+
+{% block actions %}
+    <li>{% include 'SonataAdminBundle:Button:show_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:edit_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:history_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:list_button.html.twig' %}</li>
+    <li>{% include 'SonataAdminBundle:Button:create_button.html.twig' %}</li>
+{% endblock %}
+
+{% block sonata_admin_content %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="graph" style="height: 400px; min-width: 310px;margin-left:5px;"></div>
+        </div>
+    </div>
+    {% set yAxisLabel = yAxisLabel|default('Nombre de vues') %}
+    <script type="text/javascript">
+        google.load('visualization', '1.1', {
+            packages: ['line']
+        });
+        //google.setOnLoadCallback(drawChart);
+
+        jQuery(function() {
+            var rows = [], stats = [];
+            jQuery.getJSON("{{ piwikUrl|raw }}", function(response) {
+                var first = false;
+                for (var date in response) {
+                    stats = response[date];
+                    if (stats.length > 0) {
+                        first = true;
+                        rows.push([new Date(date), stats[0]['nb_hits']]);
+                    } else {
+                        rows.push([new Date(date), 0]);
+                    }
+                }
+                console.log(rows);
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('date', 'Date');
+                data.addColumn('number', '{{ yAxisLabel }}');
+
+                data.addRows(rows);
+
+                var options = {
+                    chart: {
+                        title: "{{ title|raw|replace({'\"':'\''})|raw }}",
+                        subtitle: "{{ subtitle|raw|replace({'\"':'\''})|raw }}"
+                    },
+                    legend: {
+                        position: 'none',
+                    },
+                    curveType: 'function',
+                    width: 900,
+                    height: 500,
+                    axisTitlesPosition: 'out',
+                    series: {
+                        // Gives each series an axis name that matches the Y-axis below.
+                        0: {axis: '{{ yAxisLabel|replace({" ": ""}) }}'}
+                    },
+                    axes: {
+                        // Adds labels to each axis; they don't have to match the axis names.
+                        y: {
+                            {{ yAxisLabel|replace({" ": ""}) }}: {label: '{{ yAxisLabel }}'}
+                        }
+                    },
+                    vAxis: {
+                        viewWindow: {
+                            min: 0,
+                        }
+                    }
+                };
+
+                var chart = new google.charts.Line(document.getElementById('graph'));
+
+                chart.draw(data, google.charts.Line.convertOptions(options));
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+{% endblock %}

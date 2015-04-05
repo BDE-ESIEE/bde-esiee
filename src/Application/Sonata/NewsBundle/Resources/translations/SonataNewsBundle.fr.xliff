@@ -68,6 +68,10 @@
                 <source>breadcrumb.link_tag_edit</source>
                 <target>Editer</target>
             </trans-unit>
+            <trans-unit id="breadcrumb.link_post_stats">
+                <source>breadcrumb.link_post_stats</source>
+                <target>Statistiques</target>
+            </trans-unit>
 
             <trans-unit id="comments">
                 <source>comments</source>

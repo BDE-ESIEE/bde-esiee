@@ -1,0 +1,7 @@
+{% extends 'ApplicationSonataAdminBundle:Stats:show.html.twig' %}
+
+{% set leftDays = 365 %}
+{% set piwikUrl = 'https://bde.esiee.fr/statistiques/index.php?module=API&method=Actions.getPageUrl&idSite=2&period=day&date=last' ~ leftDays ~ '&format=JSON&token_auth=c98ef9fcc4f2e50669e874ba2040be58&pageUrl=' ~ url('application_bde_club_show', { 'id': object.id, 'shortcode': object.shortcode }) %}
+{% set title = 'Nombre de vues sur les ' ~ leftDays ~ ' derniers jours' %}
+{% set subtitle = object.title %}
+	

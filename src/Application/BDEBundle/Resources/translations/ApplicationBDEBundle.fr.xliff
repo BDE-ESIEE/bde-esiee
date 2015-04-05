@@ -538,6 +538,11 @@
                 <source>filter.label_id</source>
                 <target>ID</target>
             </trans-unit>
+            
+            <trans-unit id="breadcrumb.link_club_stats">
+                <source>breadcrumb.link_club_stats</source>
+                <target>Statistiques</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

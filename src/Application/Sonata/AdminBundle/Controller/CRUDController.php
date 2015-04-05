@@ -42,6 +42,25 @@ class CRUDController extends BaseController
         ));
 	}
 
+	public function statsAction()
+	{
+        if (!$this->admin->isGranted('MASTER')) {
+			throw new AccessDeniedException();
+        }
+        $id = $this->get('request')->get($this->admin->getIdParameter());
+
+        $object = $this->admin->getObject($id);
+
+        if (!$object) {
+            throw new NotFoundHttpException(sprintf('unable to find the object with id : %s', $id));
+        }
+
+        return $this->render($this->admin->getTemplate('stats'), array(
+			'action' => 'stats',
+			'object' => $object,
+        ));
+	}
+
 	/**
 	 * Create action
 	 *

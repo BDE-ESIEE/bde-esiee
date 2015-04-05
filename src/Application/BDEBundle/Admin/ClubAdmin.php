@@ -26,6 +26,9 @@ class ClubAdmin extends Admin
             case 'trombi':
                 return 'ApplicationBDEBundle:Club:trombi.html.twig';
                 break;
+            case 'stats':
+                return 'ApplicationBDEBundle:Admin:show_stats.html.twig';
+                break;
             default:
                 return parent::getTemplate($name);
                 break;
@@ -164,6 +167,7 @@ class ClubAdmin extends Admin
     protected function configureRoutes(RouteCollection $collection)
     {
         $collection->add('trombi', $this->getRouterIdParameter().'/trombi');
+        $collection->add('stats', $this->getRouterIdParameter().'/stats');
     }
 
     protected function configureSideMenu(MenuItemInterface $menu, $action, AdminInterface $childAdmin = null)
@@ -180,6 +184,13 @@ class ClubAdmin extends Admin
             'Trombi',
             array('uri' => $admin->generateUrl('trombi', array('id' => $id)))
         );
+
+        if ($this->isGranted('MASTER')) {
+            $menu->addChild(
+                'Stats',
+                array('uri' => $admin->generateUrl('stats', array('id' => $id)))
+            );
+        }
     }
 
     public function getObjectMetadata($object)
