@@ -1,4 +1,4 @@
-{% extends '::base.bis.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block title gallery.name %}
 {% block og_image %}{% if gallery.GalleryHasMedias|length > 0 %}{% path gallery.GalleryHasMedias[0].media, 'reference' %}{% endif %}{% endblock %}

@@ -1,4 +1,4 @@
-{% extends '::base.bis.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block title product.name %}
 {% block og_image %}{% if product.photos|length > 0 %}{% path product.photos[0].media, 'reference' %}{% endif %}{% endblock %}
