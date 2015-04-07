@@ -1,7 +1,7 @@
 {% block user_block %}
     {% if app.user %}
         <li class="user-header bg-light-blue">
-            <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y&d=mm" class="img-circle" alt="User Image">
+            <img src="//www.gravatar.com/avatar/{{ app.user.email|md5 }}?d=retro" class="img-circle" alt="User Image">
             <p>
                 {{ app.user }}
             </p>
