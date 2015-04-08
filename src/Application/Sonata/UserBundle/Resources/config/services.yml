@@ -13,3 +13,7 @@ services:
         calls:
             - [ setTranslationDomain, [SonataUserBundle]]
             - [ setUserManager, [@fos_user.user_manager]]
+    application_sonata_user.twig.user_helper:
+        class: Application\Sonata\UserBundle\Services\UserHelper
+        tags :
+            - { name: twig.extension }
