@@ -1,0 +1,200 @@
+{% extends '::base.html.twig' %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block title 'Découvrez-nous' %}
+{% block description 'Découvrez qui sont les membres du BDE.' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets 
+		'bundles/applicationbde/css/team.css'
+		filter='cssrewrite,?yui_css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+        <!--testimonial end-->
+		<section class="panel mtop30 tab" style="background:white;">
+	        <div class="panel-body">
+	                <div id="trombi" class="tab-pane">
+						<section id="bureau">
+							<!-- The title -->
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Bureau</h1>
+										<hr>
+										<p class="big thin">Au sommet de la pyramide, c’est le bureau. Il supporte l’ensemble du BDE, gère les finances, prend les décisions pour mener à bien le mandat tout au long de l'année. </p>
+									</div>
+								</div>
+							</div>
+							<div style="margin-top: 100px;" class=" text-center">
+								<div class="row">
+									<div class="col-xs-12 col-sm-4 bureau-bottom"><span class="name">Sylvain</span><br /><b>Vice-Président</b><br /><i class="pic sylvain bureau"></i></div>
+									<div class="col-xs-12 col-sm-4 bureau-top-center"><span class="name">Guillaume</span><br /><b>Président</b><br /><i class="pic guillaume bureau"></i></div>
+									<div class="col-xs-12 col-sm-4 bureau-bottom"><span class="name">Kimberley</span><br /><b>Vice-Présidente</b><br /><i class="pic kimberley bureau"></i></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-md-12"><img src="{{ asset('bundles/applicationbde/img/logoBureau.png') }}" style="width:300px;margin-bottom:20px;" class="logoBranche" id="logoBureau"/></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-6 bureau-top"><i class="pic pauline bureau"></i><br /><span class="name">Pauline</span><br /><b>Trésorière</b></div>
+									<div class="col-xs-12 col-sm-6 bureau-top"><i class="pic adrian bureau"></i><br /><span class="name">Adrian</span><br /><b>Secrétaire</b></div>
+								</div>
+							</div>
+						</section>
+							<section id="event" style="margin-top: 100px;">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Event</h1>
+										<hr>
+										<p class="big thin">Toujours de la partie quand il s’agit de faire la fête, voici la branche Event’ ! Animations en tout genre et soirées folles seront au programme tout le long de l’année ! Si vous voulez voyager, vous trouverez aussi votre bonheur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoevent.png') }}" style="width:200px;" class="logoBranche" id="logoEvent" /></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic david"></i><br />David<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Animation</div>
+									<div class="col-xs-12 col-md-3"><i class="pic michael"></i><br />Michaël</div>
+									<div class="col-xs-12 col-md-3"><i class="pic julian"></i><br />Julian</div>
+									<div class="col-xs-12 col-md-3"><i class="pic quentin"></i><br />Quentin</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Voyage</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic lucie"></i><br />Lucie</div>
+									<div class="col-xs-12 col-md-3"><i class="pic olivia"></i><br />Olivia</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Sponsor</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic benoit"></i><br />Benoit</div>
+									<div class="col-xs-12 col-md-3"><i class="pic siham"></i><br />Siham</div>
+								</div>
+							</div>
+						</section>
+						<section id="vieetud">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Vie Étudiante</h1>
+										<hr>
+										<p class="big thin">La branche vie étudiante gère tous les autres services indispensables pour les élèves. Besoin d’annales pour réviser ? Besoin de subventions pour les clubs ? Tout se passe ici.</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoVieEtudiante.png') }}" style="width:200px;" class="logoBranche" id="logoVieEtudiante" /></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic maximelains"></i><br />Maxime<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Clubs</div>
+									<div class="col-xs-12 col-md-3"><i class="pic philippine"></i><br />Philippine</div>
+									<div class="col-xs-12 col-md-3"><i class="pic matteo"></i><br />Mattéo</div>
+									<div class="col-xs-12 col-md-3"><i class="pic dephne"></i><br />Daphné</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Jobs</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic alizee"></i><br />Alizée</div>
+									<div class="col-xs-12 col-md-3"><i class="pic sarahardenos"></i><br />Sarah</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">International</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic romain"></i><br />Romain</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Annales</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic quentindevilleneuve"></i><br />Quentin</div>
+								</div>
+							</div>
+						</section>
+						<section id="logistique">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Log'</h1>
+										<hr>
+										<p class="big thin">Prêt à porter les charges les plus lourdes, la branche logistique est là pour fournir le matériel adéquat pour les évènements, et ainsi profiter pleinement de ces moments !</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logoLog.png') }}" style="width:200px;" class="logoBranche" id="logoLog" /></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic maximeghermaoui"></i><br />Maxime<br /><b>Respo'</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Réserve</div>
+									<div class="col-xs-12 col-md-3"><i class="pic adrien"></i><br />Adrien</div>
+									<div class="col-xs-12 col-md-3"><i class="pic moussa"></i><br />Moussa</div>
+									<div class="col-xs-12 col-md-3"><i class="pic amaury"></i><br />Amaury</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Tac Tuc</div>
+									<div class="col-xs-12 col-md-3 col-md-offset-6"><i class="pic arnaudpantostier"></i><br />Arnaud</div>
+								</div>
+							</div>
+						</section>
+						<section id="crea">
+							<!-- The title -->
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Com</h1>
+										<hr>
+										<p class="big thin">Pour faire des affiches, écrire un magazine, retoucher une vidéo, ou même produire un site web il y a la branche Créa ! Adeptes d’Adobe, de la bière bien fraîche, et des plans bien cadrés. Frissons garantis.</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-xs-12 col-md-3"><img src="{{ asset('bundles/applicationbde/img/logocrea.png') }}" style="width:200px;" class="logoBranche" id="logoCrea" /></div>
+									<div class="col-md-3"></div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3 right"><i class="pic pierreantoine"></i><br />Pierre-Antoine<br /><b>Respo' Com</b></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole" style="vertical-align: middle;">Information</div>
+										<div class="col-xs-12 col-md-3"><i class="pic estelle"></i><br />Estelle</div>
+										<div class="col-xs-12 col-md-3"><i class="pic thibault"></i><br />Thibault</div>
+										<div class="col-xs-12 col-md-3"><i class="pic sarah"></i><br />Sarah</div>
+									</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole" style="vertical-align: middle;">Design</div>
+										<div class="col-xs-12 col-md-3"><i class="pic anhminh"></i><br />Anh-Minh</div>
+										<div class="col-xs-12 col-md-3"><i class="pic eva"></i><br />Eva</div>
+										<div class="col-xs-12 col-md-3"><i class="pic arnaudle"></i><br />Arnaud</div>
+										<div class="col-xs-12 col-md-3"><i class="pic rayann"></i><br />Rayann</div>
+									</div>
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">WEB</div>
+									<div class="col-md-3"></div>
+									<div class="ol-xs-12 col-md-3"><i class="pic kevin"></i><br />Kevin</div>
+									<div class="col-xs-12 col-md-3"><i class="pic maxence"></i><br />Maxence</div>
+								</div>
+							</div><br /><br />
+						</section>
+	                </div>
+	        </div>
+	    </section>
+{% endblock %}

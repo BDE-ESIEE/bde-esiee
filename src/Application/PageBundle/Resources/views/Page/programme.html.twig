@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block title 'Découvrez-nous' %}
+{% block description 'Découvrez notre programme.' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets 
+		'bundles/applicationbde/css/team.css'
+		filter='cssrewrite,?yui_css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+        <!--testimonial end-->
+		<section class="panel mtop30 tab" style="background:white;">
+	        <div class="panel-body">
+	            <div class="tab-content tasi-tab">
+	                <div id="programme" class="tab-pane active">
+		                {{ sonata_block_render({ 
+		                    'type': 'application.sonata.block.service.editable_text', 
+		                    'settings' : {
+		                        'title' : 'decouvre_nous_programme'
+		                    }
+		                }) }}
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+{% endblock %}
