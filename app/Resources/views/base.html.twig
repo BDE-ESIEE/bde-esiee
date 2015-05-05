@@ -70,38 +70,32 @@
                                     News
                                 </a>
                             </li>
-
                             <li class="dropdown{% block liAssociation %}{% endblock %}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
-                                    <i class="fa fa-rocket"></i>
+                                    <i class="fa fa-institution"></i>
                                     Association <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{ path('application_bde_team') }}">
-                                            <i class="fa fa-book fa-fw"></i>
+                                            <i class="fa fa-users fa-fw"></i>
                                             Equipe
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ path('application_bde_programme') }}">
-                                            <i class="fa fa-credit-card fa-fw"></i>
+                                            <i class="fa fa-briefcase fa-fw"></i>
                                             Programme
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ path('application_bde_club') }}">
-                                            <i class="fa fa-picture-o fa-fw"></i>
+                                            <i class="fa fa-rocket fa-fw"></i>
                                             Clubs
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-
-
-
-
-
                             <li {% block liCalendrier %}{% endblock %}>
                                 <a href="{{ path('application_bde_events') }}">
                                     <i class="fa fa-calendar"></i>
