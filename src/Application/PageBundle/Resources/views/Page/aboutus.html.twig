@@ -16,31 +16,6 @@
 {% endblock %}
 
 {% block body %}
-	<div class="col-lg-12">
-        <!--testimonial start-->
-        <div class="about-testimonial boxed-style about-flexslider ">
-            <div class="flexslider">
-                <ul class="slides about-flex-slides" style="padding-left:0;">
-                    <li>
-                        <div class="about-testimonial-image">
-                            <i class="pic yelen" style="width: 100px;height: 100px;background-position: -780px -920px;background-size: 900px;"></i>
-                        </div>
-                        <span class="about-testimonial-author" href="#">Ÿelen</span>
-                        <span class="about-testimonial-company">Mascotte chez Ferus - BDE ESIEE Paris</span>
-                        <div class="about-testimonial-content">
-                            <p class="about-testimonial-quote">
-				                {{ sonata_block_render({ 
-				                    'type': 'application.sonata.block.service.editable_text', 
-				                    'settings' : {
-				                        'title' : 'decouvre_nous_citation'
-				                    }
-				                }) }}
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <!--testimonial end-->
 		<section class="panel mtop30 tab" style="background:white;">
 	        <header class="panel-heading service-tab tab-bg-dark-navy-blue">
@@ -250,51 +225,4 @@
 	        </div>
 	    </section>
     </div>
-{% endblock %}
-
-{% block javascripts %}
-	{{ parent() }}
-	<script>
-		var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-			n = 0,
-			potter = false;
-		$(document).keydown(function (e) {
-			if ($('#trombi').is(':visible')) {
-			    if (e.keyCode === k[n++]) {
-			        if (n === k.length) {
-						if (potter) {
-				        	$(".pic").fadeOut('slow', function() {
-					        	$(".pic").removeClass('pic2');
-					        	$(".pic").fadeIn('slow');
-				        	});
-				        	$(".logoBranche").fadeOut('slow', function() {
-					        	$("#logoVieEtudiante").attr('src', "{{ asset('bundles/applicationbde/img/logoVieEtudiante.png') }}");
-					        	$("#logoLog").attr('src', "{{ asset('bundles/applicationbde/img/logoLog.png') }}");
-					        	$("#logoEvent").attr('src', "{{ asset('bundles/applicationbde/img/logoevent.png') }}");
-					        	$("#logoCrea").attr('src', "{{ asset('bundles/applicationbde/img/logocrea.png') }}");
-					        	$("#logoBureau").attr('src', "{{ asset('bundles/applicationbde/img/logoBureau.png') }}");
-					        	$(".logoBranche").fadeIn('slow');
-				        	});
-						} else {
-				        	$(".pic").fadeOut('slow', function() {
-					        	$(".pic").addClass('pic2');
-					        	$(".pic").fadeIn('slow');
-				        	});
-				        	$(".logoBranche").fadeOut('slow', function() {
-					        	$("#logoVieEtudiante").attr('src', "{{ asset('bundles/applicationbde/img/logoPoufsouffle.png') }}");
-					        	$("#logoLog").attr('src', "{{ asset('bundles/applicationbde/img/logoSerdaigle.png') }}");
-					        	$("#logoEvent").attr('src', "{{ asset('bundles/applicationbde/img/logoGryffondor.png') }}");
-					        	$("#logoCrea").attr('src', "{{ asset('bundles/applicationbde/img/logoSerpentard.png') }}");
-					        	$("#logoBureau").attr('src', "{{ asset('bundles/applicationbde/img/logoPoudlard.png') }}");
-					        	$(".logoBranche").fadeIn('slow');
-				        	});
-			        	}
-			    		n = 0;
-			    		potter = !potter;
-			        }
-			    } else 
-			    	n = 0;
-			}
-		});
-	</script>
 {% endblock %}
