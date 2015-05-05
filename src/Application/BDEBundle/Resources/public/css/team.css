@@ -4,7 +4,26 @@
 	height: 200px;
 	display: inline-block;
 	border-radius: 50%;
-	border: 5px solid #E8E8E8;
+}
+
+.color_bureau{
+	border: 5px solid #006D8C;
+}
+
+.color_event{
+	border: 5px solid #DF262E;
+}
+
+.color_ve{
+	border: 5px solid #578233;
+}
+
+.color_log{
+	border: 5px solid #F19F3F;
+}
+
+.color_com{
+	border: 5px solid #007B7F;
 }
 
 .pic.daphne{background-position: -0px -0px;}
