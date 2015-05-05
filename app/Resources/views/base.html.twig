@@ -70,12 +70,38 @@
                                     News
                                 </a>
                             </li>
-                            <li {% block liClubs %}{% endblock %}>
-                                <a href="{{ path('application_bde_club') }}">
+
+                            <li class="dropdown{% block liAssociation %}{% endblock %}">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
                                     <i class="fa fa-rocket"></i>
-                                    Associatif
+                                    Association <i class="fa fa-angle-down"></i>
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ path('application_bde_team') }}">
+                                            <i class="fa fa-book fa-fw"></i>
+                                            Equipe
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('application_bde_programme') }}">
+                                            <i class="fa fa-credit-card fa-fw"></i>
+                                            Programme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('application_bde_club') }}">
+                                            <i class="fa fa-picture-o fa-fw"></i>
+                                            Clubs
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
+
+
+
+
+
                             <li {% block liCalendrier %}{% endblock %}>
                                 <a href="{{ path('application_bde_events') }}">
                                     <i class="fa fa-calendar"></i>
@@ -129,7 +155,7 @@
                             <li {% block liMedia %}{% endblock %}>
                                 <a href="{{ path('sonata_media_gallery_index') }}">
                                     <i class="fa fa-camera-retro"></i>
-                                    Fond d'écran
+                                    Média
                                 </a>
                             </li>
                             <li class="dropdown">
@@ -211,7 +237,7 @@
                     <div class="col-lg-3 col-sm-3 quick-links">
                         <h1>BDE ESIEE Paris</h1>
                         <p><a href="{{ path('application_bde_association') }}"><i class="fa fa-fw fa-university" style="color:white;"></i> L'association</a></p>
-                        <p><a href="{{ path('application_bde_aboutus') }}"><i class="fa fa-fw fa-users" style="color:white;"></i> L'équipe</a></p>
+                        <p><a href="{{ path('application_bde_team') }}"><i class="fa fa-fw fa-users" style="color:white;"></i> L'équipe</a></p>
                         <p><a href="{{ path('application_bde_partnership') }}"><i class="fa fa-fw fa-building" style="color:white;"></i> Devenir partenaire</a></p>
                         <p><a href="{{ path('nelmio_api_doc_index') }}"><i class="fa fa-fw fa-code" style="color:white;"></i> Développeurs</a></p>
                     </div>
