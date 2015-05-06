@@ -7,6 +7,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Application\BDEBundle\Entity\Club;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class ClubController extends FOSRestController
 {
@@ -95,7 +96,7 @@ class ClubController extends FOSRestController
         return $this->handleView($view);
     }
 
-    public function getClubTrombiAction(Club $club, $_format)
+    public function getClubTrombiAction(Club $club, $_format, Request $request)
     {
         $mimetypes = array(
             'jpg' => 'image/jpg',
@@ -110,8 +111,11 @@ class ClubController extends FOSRestController
         //     'club' => $club,
         // ));
 
+        $club->sortMembers();
+
         $html = $this->renderView('ApplicationBDEBundle:Club:trombi_exporter.html.twig', array(
-            'club'  => $club
+            'club'            => $club,
+            'contributorOnly' => (bool) $request->query->get('contributorOnly', false),
         ));
 
         return new Response(

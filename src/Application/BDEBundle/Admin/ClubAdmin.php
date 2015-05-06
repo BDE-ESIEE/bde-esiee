@@ -58,6 +58,8 @@ class ClubAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $this->getSubject()->sortMembers();
+        
         $formMapper
             ->with('Informations')
                 ->add('title')

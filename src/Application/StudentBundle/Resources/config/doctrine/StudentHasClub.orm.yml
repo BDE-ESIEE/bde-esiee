@@ -28,6 +28,7 @@ Application\StudentBundle\Entity\StudentHasClub:
                 referencedColumnName: id
             nullable: false
             inversedBy: clubs
+            fetch: EAGER
         club_director:
             targetEntity: Application\BDEBundle\Entity\Club
             nullable: true
