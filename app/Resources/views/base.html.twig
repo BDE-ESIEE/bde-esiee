@@ -9,7 +9,7 @@
         {% block opengraph %}
         <meta property="og:site_name"   content="{% block og_site_name 'Zéphyr - BDE ESIEE Paris' %}"/>
         <meta property="og:url"         content="{% block og_url %}{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}{% endblock %}" />
-        <meta property="og:image"       content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('logoFerus_Transparent_Noir.png') }}{% endblock %}"/>
+        <meta property="og:image"       content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('logoZephyr_Transparant_Noir.png') }}{% endblock %}"/>
         <meta property="og:locale"      content="fr_FR"/>
         <meta property="og:title"       content="{{ block('title') }}"/>
         <meta property="og:description" content="{{ block('description') }}" />
