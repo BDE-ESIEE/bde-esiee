@@ -47,9 +47,20 @@ class PageController extends Controller
         return array();
     }
 
-    public function eatTrafficAction()
+    /**
+     * @Template
+     */
+    public function teamAction()
     {
-        return $this->render('ApplicationPageBundle:Page:eat_traffic.html.twig');
+        return array();
+    }
+
+    /**
+     * @Template
+     */
+    public function programmeAction()
+    {
+        return array();
     }
 
     /**

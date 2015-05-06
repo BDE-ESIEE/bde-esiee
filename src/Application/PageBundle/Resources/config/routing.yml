@@ -2,10 +2,6 @@ application_bde_homepage:
     pattern:  /
     defaults: { _controller: ApplicationPageBundle:Page:index }
 
-application_bde_aboutus:
-    pattern:  /about-us
-    defaults: { _controller: ApplicationPageBundle:Page:aboutus }
-
 application_bde_history:
     pattern:  /history
     defaults: { _controller: ApplicationPageBundle:Page:history }
@@ -22,6 +18,10 @@ application_bde_partnership:
     pattern:  /partnership
     defaults: { _controller: ApplicationPageBundle:Page:partnership }
 
-application_bde_eat_traffic:
-    pattern:  /eat-traffic
-    defaults: { _controller: ApplicationPageBundle:Page:eatTraffic }
+application_bde_team:
+    pattern:  /team
+    defaults: { _controller: ApplicationPageBundle:Page:team }
+
+application_bde_programme:
+    pattern:  /programme
+    defaults: { _controller: ApplicationPageBundle:Page:programme }
