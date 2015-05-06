@@ -10,7 +10,15 @@
 
 {% block tab_menu %}
     <ul class="nav navbar-nav">
-        <li class="first last"><a href="{{ path('application_bde_club_trombi', {id: object.id}) }}"><i class="fa fa-download"></i> Générer & Télécharger le trombi pdf</a></li>
+        <li class="first last dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-download"></i> Générer & Télécharger le trombi pdf <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="{{ path('application_bde_club_trombi', {id: object.id}) }}?contributorOnly=1">Avec cotisants uniquement</a></li>
+                <li><a href="{{ path('application_bde_club_trombi', {id: object.id}) }}?contributorOnly=0">Avec tout le monde</a></li>
+            </ul>
+        </li>
     </ul>
 {% endblock %}
 

@@ -36,6 +36,8 @@ class CRUDController extends BaseController
             throw new NotFoundHttpException(sprintf('unable to find the object with id : %s', $id));
         }
 
+        $object->sortMembers();
+
         return $this->render($this->admin->getTemplate('trombi'), array(
 			'action' => 'trombi',
 			'object' => $object,
