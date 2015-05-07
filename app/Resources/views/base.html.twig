@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/vnd.microsoft.icon" href="{{ asset('favicon.ico') }}" />
-        <title>{% block title 'Ferus' %}</title>
-        <meta name="description" content="{% block description 'Site web de Ferus, BDE ESIEE Paris.' %}">
+        <title>{% block title 'Zéphyr' %}</title>
+        <meta name="description" content="{% block description 'Site web de Zéphyr, BDE ESIEE Paris.' %}">
         {% block opengraph %}
-        <meta property="og:site_name"   content="{% block og_site_name 'Ferus - BDE ESIEE Paris' %}"/>
+        <meta property="og:site_name"   content="{% block og_site_name 'Zéphyr - BDE ESIEE Paris' %}"/>
         <meta property="og:url"         content="{% block og_url %}{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}{% endblock %}" />
-        <meta property="og:image"       content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('logoFerus_Transparent_Noir.png') }}{% endblock %}"/>
+        <meta property="og:image"       content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('logoZephyr_Transparant_Noir.png') }}{% endblock %}"/>
         <meta property="og:locale"      content="fr_FR"/>
         <meta property="og:title"       content="{{ block('title') }}"/>
         <meta property="og:description" content="{{ block('description') }}" />
@@ -51,7 +51,7 @@
             <div class="navbar navbar-default navbar-static-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="{{ url('application_bde_homepage') }}"><span>FERUS</span> - BDE ESIEE PARIS</a>
+                        <a class="navbar-brand" href="{{ url('application_bde_homepage') }}"><span>Zéphyr</span> - BDE ESIEE PARIS</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="fa fa-bars"></span>
                         </button>
@@ -70,11 +70,31 @@
                                     News
                                 </a>
                             </li>
-                            <li {% block liClubs %}{% endblock %}>
-                                <a href="{{ path('application_bde_club') }}">
-                                    <i class="fa fa-rocket"></i>
-                                    Associatif
+                            <li class="dropdown{% block liAssociation %}{% endblock %}">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
+                                    <i class="fa fa-institution"></i>
+                                    Association <i class="fa fa-angle-down"></i>
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ path('application_bde_team') }}">
+                                            <i class="fa fa-users fa-fw"></i>
+                                            Equipe
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('application_bde_programme') }}">
+                                            <i class="fa fa-briefcase fa-fw"></i>
+                                            Programme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('application_bde_club') }}">
+                                            <i class="fa fa-rocket fa-fw"></i>
+                                            Clubs
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li {% block liCalendrier %}{% endblock %}>
                                 <a href="{{ path('application_bde_events') }}">
@@ -107,18 +127,6 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ path('application_poudlard_index') }}">
-                                            <i class="fa fa-bolt fa-fw"></i>
-                                            Poudlard 2.0
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('application_bde_eat_traffic') }}">
-                                            <i class="fa fa-cutlery fa-fw"></i>
-                                            Eat'Traffic
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="{{ path('application_shop_breguet_shop') }}">
                                             <i class="fa fa-shopping-cart fa-fw"></i>
                                             Breguet Shop
@@ -141,7 +149,7 @@
                             <li {% block liMedia %}{% endblock %}>
                                 <a href="{{ path('sonata_media_gallery_index') }}">
                                     <i class="fa fa-camera-retro"></i>
-                                    Media
+                                    Média
                                 </a>
                             </li>
                             <li class="dropdown">
@@ -223,7 +231,7 @@
                     <div class="col-lg-3 col-sm-3 quick-links">
                         <h1>BDE ESIEE Paris</h1>
                         <p><a href="{{ path('application_bde_association') }}"><i class="fa fa-fw fa-university" style="color:white;"></i> L'association</a></p>
-                        <p><a href="{{ path('application_bde_aboutus') }}"><i class="fa fa-fw fa-users" style="color:white;"></i> L'équipe</a></p>
+                        <p><a href="{{ path('application_bde_team') }}"><i class="fa fa-fw fa-users" style="color:white;"></i> L'équipe</a></p>
                         <p><a href="{{ path('application_bde_partnership') }}"><i class="fa fa-fw fa-building" style="color:white;"></i> Devenir partenaire</a></p>
                         <p><a href="{{ path('nelmio_api_doc_index') }}"><i class="fa fa-fw fa-code" style="color:white;"></i> Développeurs</a></p>
                     </div>
@@ -231,13 +239,14 @@
                         <h1>Nos partenaires</h1>
                         <div>
                             <ul class="social-link-footer list-unstyled" style="display:inline-block;">
-                                <li><a target="_blank" style="padding:0;" href="http://www.anacours.com/"><img src="{{ asset('bundles/applicationbde/img/sponsors/anacours.jpg') }}" /></a></li>
-                                <li><a target="_blank" style="padding:0;" href="https://www.caisse-epargne.fr/"><img src="{{ asset('bundles/applicationbde/img/sponsors/caisse-epargne.gif') }}" /></a></li>
-                                <li><a target="_blank" style="padding:0;" href="http://www.laforet.com/"><img src="{{ asset('bundles/applicationbde/img/sponsors/foret.jpg') }}" /></a></li>
-                                <li><a target="_blank" style="padding:0;" href="http://www8.hp.com/fr/fr/home.html"><img src="{{ asset('bundles/applicationbde/img/sponsors/hp.jpg') }}" /></a></li>
-                                <li><a target="_blank" style="padding:0;" href="http://www.dell.fr/"><img src="{{ asset('bundles/applicationbde/img/sponsors/dell.jpg') }}" /></a></li>
-                                <li><a target="_blank" style="padding:0;" href="http://www.subwayfrance.fr/trouver-un-restaurant/recherche/48.84233889999999_2.5767865999999913/1/Noisy%20Le%20Grand%20Champy"><img src="{{ asset('bundles/applicationbde/img/sponsors/subway.jpg') }}" /></a></li>
-                                <li><a target="_blank" style="padding:0;" href="http://eso-suposteo.fr/clinique-osteopathique"><img src="{{ asset('bundles/applicationbde/img/sponsors/eso.png') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="http://www.decathlon.com/"><img src="{{ asset('bundles/applicationbde/img/sponsors/decathlon.jpg') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="https://www.caisse-epargne.fr/"><img src="{{ asset('bundles/applicationbde/img/sponsors/banque.jpg') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="http://www.parrot.com/fr/"><img src="{{ asset('bundles/applicationbde/img/sponsors/parrot.jpg') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="http://www.selectronique.fr/"><img src="{{ asset('bundles/applicationbde/img/sponsors/selectronique.jpg') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="http://www.soonnight.com/"><img src="{{ asset('bundles/applicationbde/img/sponsors/soonnight.jpg') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="http://www.placeminute.com/"><img src="{{ asset('bundles/applicationbde/img/sponsors/placeminute.jpg') }}" /></a></li>
+                                <li><a target="_blank" style="padding:0;" href="http://www.le-scribe-numerique.fr/"><img src="{{ asset('bundles/applicationbde/img/sponsors/lescribenumerique.jpg') }}" /></a></li>
+                                <li><img src="{{ asset('bundles/applicationbde/img/sponsors/boulangerie.jpg') }}" /></li>
                             </ul>
                         </div>
                     </div>

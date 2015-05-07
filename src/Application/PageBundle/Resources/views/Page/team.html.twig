@@ -1,0 +1,205 @@
+{% extends '::base.html.twig' %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block title 'Découvrez-nous' %}
+{% block description 'Découvrir qui sont les membres du BDE.' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets 
+		'bundles/applicationbde/css/team.css'
+		filter='cssrewrite,?yui_css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+        <!--testimonial end-->
+		<section class="panel mtop30 tab" style="background:white;">
+	        <div class="panel-body">
+	                <div id="trombi" class="tab-pane">
+						<section id="bureau">
+							<!-- The title -->
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Bureau</h1>
+										<hr>
+										<p class="big thin">Voici le bureau de Zéphyr. C'est le chef de famille. Il supporte l’ensemble du BDE, gère les finances, prend les décisions pour mener à bien le mandat tout au long de l'année. </p>
+									</div>
+								</div>
+							</div>
+							<div style="margin-top: 100px;" class=" text-center">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 bureau-top-center"><span class="name">Guillaume</span><br /><b>Président</b><br /><i class="pic color_bureau guillaume bureau"></i></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-sm-1"></div>
+									<div class="col-xs-12 col-sm-5 bureau-top"><span class="name">Sylvain</span><br /><b>Vice-Président</b><br /><i class="pic color_bureau sylvain bureau"></i></div>
+									<div class="col-xs-12 col-sm-5 bureau-top"><span class="name">Kimberley</span><br /><b>Vice-Présidente</b><br /><i class="pic color_bureau kimberley bureau"></i></div>
+									<div class="col-xs-12 col-sm-1"></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-sm-2"></div>
+									<div class="col-xs-12 col-sm-4 bureau-bottom"><i class="pic color_bureau pauline bureau"></i><br /><span class="name">Pauline</span><br /><b>Trésorière</b></div>
+									<div class="col-xs-12 col-sm-4 bureau-bottom"><i class="pic color_bureau adrian bureau"></i><br /><span class="name">Adrian</span><br /><b>Secrétaire</b></div>
+									<div class="col-xs-12 col-sm-2"></div>
+								</div>
+							</div><br /><br />
+						</section>
+							<section id="event" style="margin-top: 100px;">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Event</h1>
+										<hr>
+										<p class="big thin">Quand il s'agit d'animer l'ESIEE, le pôle Event’ répond toujours présents ! Des membres déjantées comme pas possible ! Plus sérieusement, grâce à la team Sponsor, chaque club sera en mesure de trouver une entreprise partenaire afin de faire quelques achats malins. Et en prime, on te fera voyager !</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-6"><i class="pic color_event david"></i><br />David<br /><b>Respo'</b></div>
+									<div class="col-md-3"></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Animation</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event michael"></i><br />Michaël</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event julian"></i><br />Julian</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event quentinclement"></i><br />Quentin</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Voyage</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event lucie"></i><br />Lucie</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event olivia"></i><br />Olivia</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Sponsor</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event benoit"></i><br />Benoit</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_event siham"></i><br />Siham</div>
+								</div>
+							</div>
+						</section>
+						<section id="vieetud">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Vie Étudiante</h1>
+										<hr>
+										<p class="big thin">La branche vie étudiante est là pour répondre aux besoins des étudiants. Un contrôle samedi prochain ? Besoin de subventions pour les clubs ? Foreign student ? Vous êtes à la bonne adresse. Et des la rentrée, on vous réserve quelques jobs pour arrondir vos fins de mois !</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-6"><i class="pic color_ve maximelains"></i><br />Maxime<br /><b>Respo'</b></div>
+									<div class="col-md-3"></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Clubs</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve philippine"></i><br />Philippine</div> 
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve matteo"></i><br />Matteo</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve dephne"></i><br />Daphné</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Jobs</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve alizee"></i><br />Alizée</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve sarahardenos"></i><br />Sarah</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">International</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve romain"></i><br />Romain</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Annales</div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_ve quentindevilleneuve"></i><br />Quentin</div>
+								</div>
+							</div>
+						</section>
+						<section id="logistique">
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Logistique</h1>
+										<hr>
+										<p class="big thin">Le pôle logistique est l'endroit où tu trouveras des pilotes chevronnés et des bras musclés pour monter les évènements. Tu ne les as pas trouvé ? Ils sont peut-être autour d'une chicha...</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-6"><i class="pic color_log maximeghermaoui"></i><br />Maxime<br /><b>Respo'</b></div>
+									<div class="col-md-3"></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Réserve</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_log adrien"></i><br />Adrien</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_log moussa"></i><br />Moussa</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_log amaury"></i><br />Amaury</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Tac Tuc</div>
+									<div class="col-xs-12 col-md-3 col-md-offset-6"><i class="pic color_log arnaudpantostier"></i><br />Arnaud</div>
+								</div>
+							</div>
+						</section>
+						<section id="crea">
+							<!-- The title -->
+							<div class="">
+								<div class="row">
+									<div class="col-xs-12 col-md-12">
+										<h1>Pôle Communication</h1>
+										<hr>
+										<p class="big thin">En remplacement de la branche créa instaurée par le précédent BDE, nous avons créé le pôle Com'. Il a pour objectif de tenir informer les étudiants, écrire le blaouuuh, produire des créations inimaginables, ou même coder un site web. Attention, fous furieux de Photoshop inside !</p>
+									</div>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="row">
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-6"><i class="pic color_com pierreantoine"></i><br />Pierre-Antoine<br /><b>Respo' Com</b></div>
+									<div class="col-md-3"></div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole" style="vertical-align: middle;">Information</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com estelle"></i><br />Estelle</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com thibault"></i><br />Thibault</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com sarahpiochaud"></i><br />Sarah</div>
+									</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole" style="vertical-align: middle;">Design</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com anhminh"></i><br />Anh-Minh</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com eva"></i><br />Eva</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com arnaudle"></i><br />Arnaud</div>
+										<div class="col-xs-12 col-md-3"><i class="pic color_com rayann"></i><br />Rayann</div>
+									</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">WEB</div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_com kevin"></i><br />Kevin</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_com maxence"></i><br />Maxence</div>
+								</div><br /><br />
+								<div class="row">
+									<div class="col-xs-12 col-md-3 pole">Rédaction</div>
+									<div class="col-md-3"></div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_com nicolas"></i><br />Nicolas</div>
+									<div class="col-xs-12 col-md-3"><i class="pic color_com alexandre"></i><br />Alexandre</div>
+								</div>
+							</div><br /><br />
+						</section>
+	                </div>
+	        </div>
+	    </section>
+{% endblock %}

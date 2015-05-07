@@ -54,11 +54,11 @@ a, a:hover, a:focus {
 }
 
 ::selection {
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     color: #fff;
 }
 ::-moz-selection {
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     color: #fff;
 }
 
@@ -71,7 +71,7 @@ a {
 }
 
 a:hover {
-    color:rgb(62, 200, 183);
+    color:#22A7F0;
 }
 
 p {line-height: 22px}
@@ -96,7 +96,7 @@ p {line-height: 22px}
 }
 
 .navbar-brand span{
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
 }
 
 .header-frontend .navbar-collapse  ul.navbar-nav {
@@ -124,7 +124,7 @@ p {line-height: 22px}
 .header-frontend .nav li.active ul.dropdown-menu li a:hover,
 .header-frontend .nav li.active ul.dropdown-menu li.active a{
     color: #fff ;
-    background-color: rgb(62, 200, 183);
+    background-color: #22A7F0;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -146,7 +146,7 @@ p {line-height: 22px}
 .header-frontend .navbar-default .navbar-nav > .open > a:hover,
 .header-frontend .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: rgb(62, 200, 183);
+    background-color: #22A7F0;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -277,11 +277,11 @@ p {line-height: 22px}
     line-height: normal;
     margin-top: 40px;
     display: block;
-    color: #3EC8B7;
+    color: #22A7F0;
 }
 
 .f-box:hover, .f-box.active {
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -418,7 +418,7 @@ p {line-height: 22px}
 }
 
 .p-head {
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
     font-size: 14px;
     font-weight: 400;
 }
@@ -835,7 +835,7 @@ ul.about-flex-slides {
 }
 
 .most-popular {
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     color: #fff;
 }
 
@@ -846,16 +846,16 @@ ul.about-flex-slides {
 }
 
 .most-popular h2 {
-    background: rgb(62, 200, 183) !important;
+    background: #22A7F0 !important;
     margin-top: 20px !important;
 }
 
 .most-popular ul li {
-    border-bottom: 1px dotted rgb(62, 200, 183) !important;
+    border-bottom: 1px dotted #22A7F0 !important;
 }
 
 .most-popular .price-actions .btn {
-    background: rgb(62, 200, 183) !important;
+    background: #22A7F0 !important;
     margin: 10px 0;
     cursor: pointer;
 }
@@ -963,7 +963,7 @@ ul.about-flex-slides {
 }
 
 .breadcrumb li a{
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
 }
 
 .breadcrumb li.active {
@@ -1132,7 +1132,7 @@ ul.about-flex-slides {
 }
 
 .about-skill-meter .progress-bar-danger {
-    background-color: rgb(62, 200, 183);
+    background-color: #22A7F0;
     box-shadow: none;
 }
 
@@ -1170,11 +1170,11 @@ ul.about-flex-slides {
 }
 
 .team-social-link a:hover {
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
 }
 
 .person-info h4, .person-info h4 a {
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
     font-weight: 300;
     margin-bottom: 5px;
 }
@@ -1252,7 +1252,7 @@ ul.about-flex-slides {
 .date-wrap .date {
     font-size:30px;
     font-weight: 300;
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     color: #fff;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
@@ -1290,7 +1290,7 @@ ul.about-flex-slides {
 
 .blog-item h1, .blog-item h1 a {
     font-size:25px;
-    color:rgb(62, 200, 183);
+    color:#22A7F0;
     font-weight: 300;
     font-family: 'Fjalla One', sans-serif;
 }
@@ -1310,7 +1310,7 @@ ul.about-flex-slides {
 }
 
 .author a, .shate-view a {
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
 }
 
 .shate-view {
@@ -1395,7 +1395,7 @@ ul.tag li a {
 
 
 .footer address a, .footer .quick-links a {
-    color: rgb(62, 200, 183);
+    color: #22A7F0;
 }
 
 .tweet-box {
@@ -1427,7 +1427,7 @@ ul.tag li a {
 }
 
 .tweet-box  a:hover{
-    color: rgb(62, 200, 183) ;
+    color: #22A7F0 ;
 }
 
 .tweet-box i {
@@ -1459,7 +1459,7 @@ ul.tag li a {
 }
 
 .social-link-footer li a:hover {
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -1490,7 +1490,7 @@ ul.tag li a {
 
 .slide_title {
     font-weight: 300;
-    color:rgb(62, 200, 183);
+    color:#22A7F0;
     text-transform: uppercase;
     font-size:35px;
     font-family: 'Fjalla One', sans-serif;
@@ -1540,7 +1540,7 @@ ul.tag li a {
 .slide_btn:hover, .slide_btn:focus {
     font-family: 'Open Sans';
     font-weight: 300;
-    background:rgb(62, 200, 183);
+    background:#22A7F0;
     padding:15px 20px;
     color:#fff;
     font-size:14px;
@@ -1573,7 +1573,7 @@ ul.tag li a {
 }
 
 .bx-controls-direction a:hover {
-    background-color:rgb(62, 200, 183) !important;
+    background-color:#22A7F0 !important;
 
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -1625,7 +1625,7 @@ a.btn-purchase {
     transition: all .3s ease;
 }
 a.btn-purchase:hover, a.btn-purchase:focus{
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     color: #fff;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -1713,7 +1713,7 @@ ul#filters > li > a:hover,
 ul#filters > li > a:focus,
 ul#filters > .active > a,
 ul#filters > .active > span {
-    background: rgb(62, 200, 183);
+    background: #22A7F0;
     padding: 10px 15px;
     display: inline-block;
     color: #fff;
@@ -1814,7 +1814,7 @@ ul#filters > .active > span {
 /*parallax*/
 
 .parallax1 {
-    background: url("../img/Ferus Cerva Est.jpg") no-repeat 0 0 #fff;
+    background: url("../img/couverture.jpg") no-repeat 0 0 #fff;
     /*background-attachment: fixed;*/
     background-position: center;
     /*background-size:cover;*/
@@ -1836,7 +1836,7 @@ ul#filters > .active > span {
 /*parallax*/
 
 .parallax2 {
-    background: url("../img/background.jpg") no-repeat fixed 0 0 #3EC8B7;
+    background: url("../img/background.jpg") no-repeat fixed 0 0 #22A7F0;
     background-size:cover;
     width: 100%;
     min-height: 400px;
@@ -1869,7 +1869,7 @@ ul.dropdown-menu li a i {
 }
 
 .logoClub:hover {
-    box-shadow: 0 0 0 10px #3EC8B7;
+    box-shadow: 0 0 0 10px #22A7F0;
     transition: box-shadow .3s;
 }
 
@@ -1904,7 +1904,7 @@ ul.dropdown-menu li a i {
 
 .fc-state-active, .fc-state-active .fc-button-inner,
 .fc-state-hover, .fc-state-hover .fc-button-inner{
-    background:  #3EC8B7 !important;
+    background:  #22A7F0 !important;
     color: #fff !important;
 }
 
@@ -2014,7 +2014,7 @@ ul.dropdown-menu li a i {
     position: relative;
 }
 .adtocart {
-    background: #3EC8B7;
+    background: #22A7F0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -2131,8 +2131,8 @@ ul.dropdown-menu li a i {
 
 .icon:hover {
     text-decoration: none;
-    color: #3ec8b7;
-    border: 3px solid #3ec8b7;
+    color: #22A7F0;
+    border: 3px solid #22A7F0;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
@@ -2147,7 +2147,7 @@ ul.dropdown-menu li a i {
 }
 
 #logosvg path {
-    fill: #3EC8B7;
+    fill: #22A7F0;
 }
 
 .f-box:hover #logosvg path {
@@ -2162,13 +2162,13 @@ ul.dropdown-menu li a i {
 }
 
 .panel-ferus {
-    border-color: #3EC8B7;
+    border-color: #22A7F0;
 }
 
 .panel-ferus > .panel-heading {
     color: #fff;
-    background-color: #3EC8B7;
-    border-color: #3EC8B7;
+    background-color: #22A7F0;
+    border-color: #22A7F0;
 }
 
 div.sonata-preview-form .row {
