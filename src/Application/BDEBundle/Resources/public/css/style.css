@@ -57,7 +57,7 @@ a, a:hover, a:focus {
     margin: 0;
     padding:20px 15px;
     text-align: center;
-    background: #41cac0;
+    background: #22A7F0;
     border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
     color: #fff;
@@ -115,7 +115,7 @@ a, a:hover, a:focus {
 }
 
 .form-signin a {
-    color: #41cac0;
+    color: #22A7F0;
 }
 
 .form-signin a:hover {
@@ -928,7 +928,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .panel.terques-chart {
-    background: #41cac0;
+    background: #22A7F0;
     color: #fff;
 }
 
@@ -1065,7 +1065,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .badge.bg-info {
-    background: #41cac0;
+    background: #22A7F0;
 }
 
 .badge.bg-inverse {
@@ -1616,7 +1616,7 @@ ul.ft-link li a i {
 }
 
 .post-highlight.terques {
-    background: #41cac0;
+    background: #22A7F0;
     border-radius: 4px 0px 0px 04px;
     -webkit-border-radius: 4px 0px 0px 04px;
 }
@@ -2062,7 +2062,7 @@ ul.labels-info li a i {
 
 .inbox-head {
     padding:20px;
-    background: #41cac0;
+    background: #22A7F0;
     color: #fff;
     border-radius: 0 4px 0 0;
     -webkit-border-radius: 0 4px 0 0;
@@ -2421,7 +2421,7 @@ ul.inbox-pagination li {
 }
 
 .bio-graph-heading {
-    background: #41cac0;
+    background: #22A7F0;
     color: #fff;
     text-align: center;
     font-style: italic;
@@ -3318,7 +3318,7 @@ table.sliders tr td {
     left: 0%;
 }
 .has-switch > div.switch-on label {
-    background-color: #41cac0;
+    background-color: #22A7F0;
 }
 .has-switch input[type=checkbox] {
     display: none;
@@ -3349,7 +3349,7 @@ table.sliders tr td {
 .has-switch span.switch-left {
     border-radius: 30px 0 0 30px;
     background-color: #2A3542;
-    color: #41cac0;
+    color: #22A7F0;
     border-left: 1px solid transparent;
 }
 .has-switch span.switch-right {
@@ -3403,7 +3403,7 @@ table.sliders tr td {
 }
 .switch-square label {
     border-radius: 0 6px 6px 0;
-    border-color: #41cac0;
+    border-color: #22A7F0;
 }
 
 
@@ -3419,7 +3419,7 @@ table.sliders tr td {
 }
 .tagsinput .tag {
     border-radius: 4px;
-    background-color: #41cac0;
+    background-color: #22A7F0;
     color: #ffffff;
     cursor: pointer;
     margin-right: 5px;
@@ -3594,7 +3594,7 @@ table.sliders tr td {
 .datepicker td.active:hover, .datepicker td.active:hover:hover, .datepicker td.active:active, .datepicker td.active:hover:active, .datepicker td.active.active, .datepicker td.active.active:hover, .datepicker td.active.disabled, .datepicker td.active.disabled:hover, .datepicker td.active[disabled], .datepicker td.active[disabled]:hover,
 .datepicker td span.active:hover, .datepicker td span.active:active, .datepicker td span.active.active, .datepicker td span.active.disabled, .datepicker td span.active[disabled],
 .datetimepicker table tr td.active:hover, .datetimepicker table tr td.active:hover:hover, .datetimepicker table tr td.active.disabled:hover, .datetimepicker table tr td.active.disabled:hover:hover, .datetimepicker table tr td.active:active, .datetimepicker table tr td.active:hover:active, .datetimepicker table tr td.active.disabled:active, .datetimepicker table tr td.active.disabled:hover:active, .datetimepicker table tr td.active.active, .datetimepicker table tr td.active.active:hover, .datetimepicker table tr td.active.disabled.active, .datetimepicker table tr td.active.disabled.active:hover, .datetimepicker table tr td.active.disabled, .datetimepicker table tr td.active.disabled:hover, .datetimepicker table tr td.active.disabled.disabled, .datetimepicker table tr td.active.disabled.disabled:hover, .datetimepicker table tr td.active[disabled], .datetimepicker table tr td.active[disabled]:hover, .datetimepicker table tr td.active.disabled[disabled], .datetimepicker table tr td.active.disabled[disabled]:hover{
-    background: #41CAC0;
+    background: #22A7F0;
 }
 
 .daterangepicker .calendar th, .daterangepicker .calendar td {
@@ -3905,7 +3905,7 @@ table.sliders tr td {
 }
 
 .timeline-messages .msg-out  .arrow {
-    /*border-right: 8px solid #41cac0 !important;*/
+    /*border-right: 8px solid #22A7F0 !important;*/
 }
 .timeline-messages .msg-out .arrow {
     border-bottom: 8px solid transparent;
@@ -3932,7 +3932,7 @@ table.sliders tr td {
     width: 14px;
 }
 .msg-time-chat:hover:before {
-    background: #41cac0;
+    background: #22A7F0;
 }
 .msg-time-chat:first-child {
     padding-top: 0;
@@ -4086,7 +4086,7 @@ span.customSelect.changed {
 .rating span.star:hover ~ span.star:before,
 .rating span.star:hover ~ span.star:before {
     content: "\f005";
-    color: #41CAC0;
+    color: #22A7F0;
 }
 
 /*search page*/
@@ -4462,7 +4462,7 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 }
 
 .ui-sortable li.list-primary {
-    border-left: 3px solid #41CAC0;
+    border-left: 3px solid #22A7F0;
 }
 
 .ui-sortable li.list-success {
@@ -5192,7 +5192,7 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 }
 
 .chat-room-head {
-    background:#41CAC0;
+    background:#22A7F0;
     color: #FFFFFF;
     min-height: 70px;
     padding: 15px;

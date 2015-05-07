@@ -135,8 +135,8 @@ ul {
 }
 
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
-    background-color: #41cac0;
-    border-color: #41cac0;
+    background-color: #22A7F0;
+    border-color: #22A7F0;
     color: #fff;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -146,14 +146,14 @@ ul {
 }
 
 .btn-primary {
-    background-color: #41cac0;
-    border-color: #41cac0;
+    background-color: #22A7F0;
+    border-color: #22A7F0;
     color: #FFFFFF;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-    background-color: #39b2a9;
-    border-color: #39b2a9;
+    background-color: #3498DB;
+    border-color: #3498DB;
     color: #FFFFFF;
 }
 
