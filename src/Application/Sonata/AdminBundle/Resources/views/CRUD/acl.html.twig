@@ -9,7 +9,7 @@ file that was distributed with this source code.
 
 #}
 
-{% extends base_template %}
+{# {% extends base_template %}
 
 {% block actions %}
     <li>{% include 'SonataAdminBundle:Button:edit_button.html.twig' %}</li>
@@ -20,12 +20,14 @@ file that was distributed with this source code.
 
 {% import 'ApplicationSonataAdminBundle:CRUD:acl_macro.html.twig' as acl %}
 
-{% block form %}
+{% block form %}#}
 {#     {% block form_acl_roles %}
         {{ acl.render_form(aclRolesForm, permissions, 'td_role', admin, admin_pool, object) }}
     {% endblock %} #}
-    {% block form_acl_users %}
+    {# {% block form_acl_users %}
         {% set permissions_descriptions = {'VIEW': 'Voir l\'objet', 'EDIT': 'Editer l\'objet', 'DELETE': 'Supprimer l\'objet', 'UNDELETE': 'Annuler la suppression de l\'objet', 'OPERATOR': 'Toutes les opérations précédentes', 'MASTER': 'OPERATOR + modifier les droits', 'OWNER': 'Toutes les opérations précédentes'} %}
         {{ acl.render_form(aclUsersForm, permissions, 'td_username', admin, admin_pool, object, permissions_descriptions) }}
     {% endblock %}
-{% endblock %}
+{% endblock %} #}
+
+{% extends 'SonataAdminBundle:CRUD:base_acl.html.twig' %}
