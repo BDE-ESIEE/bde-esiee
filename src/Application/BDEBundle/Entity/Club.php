@@ -151,6 +151,11 @@ class Club
                 return 0;
             }
 
+            if ($first->__toString() == '')
+                return 1;
+            if ($second->__toString() == '')
+                return -1;
+
             return strcmp($first->__toString(), $second->__toString());
         });
 
