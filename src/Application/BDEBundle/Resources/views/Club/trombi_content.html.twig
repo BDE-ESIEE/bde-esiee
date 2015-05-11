@@ -4,11 +4,11 @@
     {% if loop.first %}
         <div class="row text-center">
     {% endif %}
-            <div class="{{ generator ? 'col-xs-3' : 'col-sm-2' }}">
+            <div class="{{ generator ? 'col-xs-3' : 'col-sm-2' }}"{% if not generator and loop.index > 6 or generator and loop.index > 4 %} style="margin-top:6px;"{% endif %}>
                 <img src="https://bde.esiee.fr/fairpay/api/students/photo/by-id/{{ director.student.id }}.jpg" style="width:111px;height:148px;background-color:grey;" /><br />
                 <div style="white-space:nowrap;">{{ director.student.lastName }} {{ director.student.firstName }}</div>
                 {% if director.phone is not null and director.phone|length > 0 %}{{ director.phone }}<br />{% endif %}
-                {% if director.job   is not null %}<b style="margin-bottom:6px;display:block;">{{ director.job }}</b>{% endif %}
+                {% if director.job   is not null and director.job|length > 0 %}<b style="margin-bottom:6px;display:block;">{{ director.job }}</b>{% endif %}
                 {% if not generator %}<span student-id-contributor="{{ director.student.id }}"><i class="fa fa-spinner fa-spin"></i></span>{% endif %}
             </div>
     {% if generator and loop.index % 4 == 0 or not generator and loop.index % 6 == 0 %}
@@ -23,7 +23,7 @@
     {% if loop.first %}
         <div class="row text-center">
     {% endif %}
-            <div class="{{ generator ? 'col-xs-3' : 'col-sm-2' }}" {% if not generator and loop.index > 6 or generator and loop.index > 4 %}style="margin-top:5px;"{% endif %}>
+            <div class="{{ generator ? 'col-xs-3' : 'col-sm-2' }}"{% if not generator and loop.index > 6 or generator and loop.index > 4 %} style="margin-top:6px;"{% endif %}>
                 <img src="https://bde.esiee.fr/fairpay/api/students/photo/by-id/{{ member.student.id }}.jpg" style="width:111px;height:148px;background-color:grey;" /><br />
                 <div style="white-space:nowrap;">{{ member.student.lastName }} {{ member.student.firstName }}</div>
                 {% if not generator %}<span student-id-contributor="{{ member.student.id }}"><i class="fa fa-spinner fa-spin"></i></span>{% endif %}

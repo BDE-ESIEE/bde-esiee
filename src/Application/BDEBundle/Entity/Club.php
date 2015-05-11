@@ -96,7 +96,7 @@ class Club
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="Application\PoudlardBundle\Entity\ClubHasPoints", mappedBy="club")
+     * @ORM\OneToMany(targetEntity="Application\PoudlardBundle\Entity\ClubHasPoints", mappedBy="club", orphanRemoval=true)
      * @Exclude
      */
     private $points;
@@ -109,14 +109,14 @@ class Club
     private $house;
 
     /**
-     * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_member")
+     * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_member", orphanRemoval=true)
      * @Exclude
      * @Since("1.4")
      */
     private $members;
 
     /**
-     * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_director")
+     * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_director", orphanRemoval=true)
      * @Exclude
      * @Since("1.4")
      */
@@ -150,6 +150,11 @@ class Club
             if ($first === $second) {
                 return 0;
             }
+
+            if ($first->__toString() == '')
+                return 1;
+            if ($second->__toString() == '')
+                return -1;
 
             return strcmp($first->__toString(), $second->__toString());
         });
@@ -456,14 +461,15 @@ class Club
     }
 
     /**
-     * Add members
+     * Add member
      *
-     * @param \Application\StudentBundle\Entity\StudentHasClub $members
+     * @param \Application\StudentBundle\Entity\StudentHasClub $member
      * @return Club
      */
-    public function addMember(\Application\StudentBundle\Entity\StudentHasClub $members)
+    public function addMember(\Application\StudentBundle\Entity\StudentHasClub $member)
     {
-        $this->members[] = $members;
+        $this->members[] = $member;
+        $member->setClubMember($this);
 
         return $this;
     }
@@ -475,6 +481,7 @@ class Club
      */
     public function removeMember(\Application\StudentBundle\Entity\StudentHasClub $members)
     {
+        $members->setClubMember(null);
         $this->members->removeElement($members);
     }
 
@@ -489,14 +496,15 @@ class Club
     }
 
     /**
-     * Add directors
+     * Add director
      *
-     * @param \Application\StudentBundle\Entity\StudentHasClub $directors
+     * @param \Application\StudentBundle\Entity\StudentHasClub $director
      * @return Club
      */
-    public function addDirector(\Application\StudentBundle\Entity\StudentHasClub $directors)
+    public function addDirector(\Application\StudentBundle\Entity\StudentHasClub $director)
     {
-        $this->directors[] = $directors;
+        $this->directors[] = $director;
+        $director->setClubDirector($this);
 
         return $this;
     }
@@ -508,6 +516,7 @@ class Club
      */
     public function removeDirector(\Application\StudentBundle\Entity\StudentHasClub $directors)
     {
+        $directors->setClubDirector(null);
         $this->directors->removeElement($directors);
     }
 

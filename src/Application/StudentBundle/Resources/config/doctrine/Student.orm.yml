@@ -22,4 +22,5 @@ Application\StudentBundle\Entity\Student:
         clubs:
             targetEntity:  Application\StudentBundle\Entity\StudentHasClub
             mappedBy: student
+            orphanRemoval: true
     lifecycleCallbacks: {  }

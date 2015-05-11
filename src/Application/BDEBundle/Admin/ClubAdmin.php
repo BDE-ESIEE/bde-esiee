@@ -91,6 +91,7 @@ class ClubAdmin extends Admin
                 ->add('directors', 'sonata_type_collection', array(
                         'cascade_validation' => true,
                         'required'           => false,
+                        'by_reference'       => false,
                     ), array(
                         'edit'       => 'inline',
                         'inline'     => 'table',
@@ -102,6 +103,7 @@ class ClubAdmin extends Admin
                 ->add('members', 'sonata_type_collection', array(
                         'cascade_validation' => true,
                         'required'           => false,
+                        'by_reference'       => false,
                     ), array(
                         'edit'       => 'inline',
                         'inline'     => 'table',
@@ -144,26 +146,6 @@ class ClubAdmin extends Admin
             ->add('shortcode')
             ->add('category')
         ;
-    }
-
-    public function prePersist($object)
-    {
-        foreach ($object->getMembers() as $member) {
-            $member->setClubMember($object);
-        }
-        foreach ($object->getDirectors() as $director) {
-            $director->setClubDirector($object);
-        }
-    }
-
-    public function preUpdate($object)
-    {
-        foreach ($object->getMembers() as $member) {
-            $member->setClubMember($object);
-        }
-        foreach ($object->getDirectors() as $director) {
-            $director->setClubDirector($object);
-        }
     }
 
     protected function configureRoutes(RouteCollection $collection)
