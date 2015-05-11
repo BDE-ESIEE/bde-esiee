@@ -10,6 +10,7 @@ function searchStudent($input) {
 		url: api_road.slice(0,-1) + $input.val(),
 		success: function(response) {
 			$input.val(response.id);
+			$input.blur();
 			var cotisant = (response.is_contributor ? 'Cotisant(e)' : 'Non cotisant(e)');
 			$input.parent().children('span.student-informations').html(response.first_name + ' ' + response.last_name + ' (' + response.class + ') : <span state="' + cotisant + '">' + cotisant + '</span>');
 			$input.parent().children('i.fa-spinner').hide();
