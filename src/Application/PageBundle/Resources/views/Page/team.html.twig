@@ -203,3 +203,34 @@
 	        </div>
 	    </section>
 {% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+			n = 0,
+			alter = false;
+		$(document).keydown(function (e) {
+			if ($('#trombi').is(':visible')) {
+			    if (e.keyCode === k[n++]) {
+			        if (n === k.length) {
+						if (alter) {
+				        	$(".pic").fadeOut('slow', function() {
+					        	$(".pic").removeClass('pic2');
+					        	$(".pic").fadeIn('slow');
+				        	});
+						} else {
+				        	$(".pic").fadeOut('slow', function() {
+					        	$(".pic").addClass('pic2');
+					        	$(".pic").fadeIn('slow');
+				        	});
+			        	}
+			    		n = 0;
+			    		alter = !alter;
+			        }
+			    } else 
+			    	n = 0;
+			}
+		});
+	</script>
+{% endblock %}
