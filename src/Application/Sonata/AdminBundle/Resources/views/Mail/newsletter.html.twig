@@ -113,7 +113,7 @@
 								</table>
 								{% endfor %}
 															
-								{% if week|length > 0 or afterWeek|length > 0%}
+								{% if week|length > 0 %}
 								<!-- Week program separator -->
 								<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
 									<tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
@@ -132,8 +132,9 @@
 									</tr>
 								</table>
 								{% endif %} 
+								
 								<!-- Week posts -->
-								{% for date, posts in week|merge(afterWeek) %}
+								{% for date, posts in week %}
 								<h2 style="color: #2ba0bd; text-decoration: underline; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 36px; margin: 0; padding: 0 37px;" align="left">{{ posts[0].event.dateStart | format_date('eeee dd MMMM', 'fr', 'Europe/Paris') | title }}</h2>
 								{% for post in posts %}
 								<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
@@ -171,7 +172,69 @@
 									</tr>
 								</table>
 								{% endfor %}
-								{% endfor %}								
+								{% endfor %}			
+
+
+								{% if afterWeek|length > 0 %}
+								<!-- AfterWeek program separator -->
+								<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+									<tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+										<td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
+
+											<table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+												<tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+													<td class="" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+
+														<img src="http://i.imgur.com/x2FqMEi.png" alt="" style="width: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; float: left; clear: both; display: block;" align="left" />
+													</td>
+													<td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+								{% endif %} 
+								
+								<!-- AfterWeek posts -->
+								{% for date, posts in afterWeek %}
+								<h2 style="color: #2ba0bd; text-decoration: underline; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 36px; margin: 0; padding: 0 37px;" align="left">{{ posts[0].event.dateStart | format_date('eeee dd MMMM', 'fr', 'Europe/Paris') | title }}</h2>
+								{% for post in posts %}
+								<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+									<tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+										<td class="wrapper" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 20px 0px 0px;" align="left" valign="top">
+
+											<table class="four columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 180px; margin: 0 auto; padding: 0;">
+												<tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+													<td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 10px 0px 37px;" align="left" valign="top">
+
+														<img src="{% if post.thumbnail is null %} http://i.imgur.com/mfIXqYD.png {% else %} {% path post.thumbnail, 'big' %} {% endif%}" alt=" {{ post.title }} " style="width: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; float: left; clear: both; display: block;" align="left" />
+													</td>
+													<td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+												</tr>
+											</table>
+										</td>
+										<td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
+
+											<table class="eight columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 380px; margin: 0 auto; padding: 0;">
+												<tr style="vertical-align: top; text-align: left; padding: 0;" align="left">
+													<td class="" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+
+														<p class="introtext" style="text-align: justify; font-size: 15px; color: #353535; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; margin: 0 0 10px; padding: 20px 37px 20px 10px;" align="justify">
+															<span style="color: #E74C3C; font-weight: bold;"><a style="color:inherit; text-decoration:inherit;" href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }} par {{ post.author }}</a></span>
+ 															<br> {{ post.abstract }}
+ 															<br><a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="color: #2ba6cb; text-decoration: none;">Lire la suite</a>
+
+														</p>
+
+													</td>
+													<td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+								{% endfor %}
+								{% endfor %}					
 							
 								<!-- Footer -->
 								<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
