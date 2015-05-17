@@ -31,6 +31,15 @@ file that was distributed with this source code.
         {% if object.author %}
             par {{ object.author }}
         {% endif %}
+        {% if object.enabled %}
+            {% if date(object.publicationDateStart) < date() %}
+                <span class="label label-success"><i class="glyphicon glyphicon-eye-open"></i> Visible</span>
+            {% else %}
+                <span class="label label-warning"><i class="glyphicon glyphicon-eye-close"></i> Bientôt visible</span>
+            {% endif %}
+        {% else %}
+            <span class="label label-danger"><i class="glyphicon glyphicon-eye-close"></i> Masquée</span>
+        {% endif %}
         <br />
 
         {{ object.abstract|truncate(150) }}
