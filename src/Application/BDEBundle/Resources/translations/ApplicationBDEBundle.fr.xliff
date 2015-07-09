@@ -26,6 +26,10 @@
                 <source>form.label_category</source>
                 <target>Categorie</target>
             </trans-unit>
+            <trans-unit id="form_label_club">
+                <source>form.label_club</source>
+                <target>Club</target>
+            </trans-unit>
             <trans-unit id="form_label_email">
                 <source>form.label_email</source>
                 <target>Email</target>

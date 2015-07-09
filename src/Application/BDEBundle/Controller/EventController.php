@@ -39,6 +39,7 @@ class EventController extends FOSRestController
                 'place'     => $event->getPlace(),
                 'color'     => $event->getCategory()->getBackgroundColor(),
                 'textColor' => $event->getCategory()->getTextColor(),
+                'club_id'   => (null !== $event->getClub() ? $event->getClub()->getId() : null) ,
     		);
     	}
 

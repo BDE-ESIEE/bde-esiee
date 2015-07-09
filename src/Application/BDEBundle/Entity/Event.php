@@ -84,6 +84,12 @@ class Event
      */
     private $category;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\Club")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $club;
+
     public function __toString()
     {
         return (null !== $this->title) ? $this->title : '';
@@ -316,5 +322,28 @@ class Event
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set club
+     *
+     * @param \Application\BDEBundle\Entity\Club $club
+     * @return Event
+     */
+    public function setClub(\Application\BDEBundle\Entity\Club $club = null)
+    {
+        $this->club = $club;
+
+        return $this;
+    }
+
+    /**
+     * Get club
+     *
+     * @return \Application\BDEBundle\Entity\Club 
+     */
+    public function getClub()
+    {
+        return $this->club;
     }
 }

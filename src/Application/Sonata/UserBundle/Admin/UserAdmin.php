@@ -34,6 +34,10 @@ class UserAdmin extends BaseAdmin
                 ))
             ->end()
             ->with('Profile')
+                ->add('club', null, array(
+                    'required'    => true,
+                    'empty_value' => 'Choisissez un club'
+                ))
                 ->add('dateOfBirth', 'birthday', array('required' => false))
                 ->add('firstname', null, array('required' => false))
                 ->add('lastname', null, array('required' => false))

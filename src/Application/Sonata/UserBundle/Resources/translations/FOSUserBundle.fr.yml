@@ -94,3 +94,4 @@ form:
     password_confirmation: "Vérification :"
     new_password: "Nouveau mot de passe :"
     new_password_confirmation: "Vérification :"
+    label_club: Club

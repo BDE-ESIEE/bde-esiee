@@ -39,6 +39,11 @@ class User extends BaseUser
     protected $week_before_exam = 1;
 
     /**
+     * @var \Application\BDEBundle\Entity\Club
+     */
+    private $club;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -83,5 +88,28 @@ class User extends BaseUser
     public function __toString()
     {
         return ''.(($this->lastname !== null) ? $this->lastname : (($this->firstname !== null) ? $this->firstname : $this->username));
+    }
+
+    /**
+     * Set club
+     *
+     * @param \Application\BDEBundle\Entity\Club $club
+     * @return User
+     */
+    public function setClub(\Application\BDEBundle\Entity\Club $club = null)
+    {
+        $this->club = $club;
+
+        return $this;
+    }
+
+    /**
+     * Get club
+     *
+     * @return \Application\BDEBundle\Entity\Club 
+     */
+    public function getClub()
+    {
+        return $this->club;
     }
 }

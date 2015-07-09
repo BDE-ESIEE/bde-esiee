@@ -21,6 +21,10 @@ class EventAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $subject = $formMapper->getAdmin()->getSubject();
+        $user    = $this->getConfigurationPool()->getContainer()->get('security.context')->getToken()->getUser();
+        if (null !== $user->getClub() && null === $subject->getClub())
+            $subject->setClub($user->getClub());
+
         $formMapper
             ->add('title')
             ->add('dateStart', 'sonata_type_datetime_picker', array(
@@ -37,8 +41,14 @@ class EventAdmin extends Admin
             ))
             ->add('private', null, array('required' => false))
             ->add('place', null, array('required' => false))
-            ->add('category', null, array(
-                'expanded' => true,
+            ->add('category', 'entity', array(
+                'expanded'   => true,
+                'class'      => 'ApplicationBDEBundle:EventCategory',
+                'data_class' => 'Application\BDEBundle\Entity\EventCategory'
+            ))
+            ->add('club', null, array(
+                'required'    => true,
+                'empty_value' => 'Choisissez un club'
             ))
         ;
     }
