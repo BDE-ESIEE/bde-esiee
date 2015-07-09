@@ -9,7 +9,6 @@
 /vendor/
 /bin/
 /composer.phar
-/composer.lock
 /*.sublime-workspace
 /*.sublime-project
 /web/uploads/media/news/
