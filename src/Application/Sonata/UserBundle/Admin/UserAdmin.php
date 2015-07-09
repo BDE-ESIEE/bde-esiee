@@ -34,9 +34,11 @@ class UserAdmin extends BaseAdmin
                 ))
             ->end()
             ->with('Profile')
-                ->add('club', null, array(
-                    'required'    => true,
-                    'empty_value' => 'Choisissez un club'
+                ->add('club', 'entity', array(
+                    'required'    => false,
+                    'empty_value' => 'Choisissez un club',
+                    'class'       => 'ApplicationBDEBundle:Club',
+                    'data_class'  => null
                 ))
                 ->add('dateOfBirth', 'birthday', array('required' => false))
                 ->add('firstname', null, array('required' => false))
