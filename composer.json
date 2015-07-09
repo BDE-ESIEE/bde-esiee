@@ -45,8 +45,7 @@
         "knplabs/knp-menu-bundle"                 : "dev-master as 1.1",
         "genemu/form-bundle"                      : "dev-master as 2.2.2",
         "ferus/fairpay-php-sdk"                   : "dev-master",
-        "knplabs/knp-snappy-bundle"               : "dev-master",
-        "raulfraile/ladybug-bundle"               : "~1.0"
+        "knplabs/knp-snappy-bundle"               : "dev-master"
     },
     "scripts": {
         "post-root-package-install": [
