@@ -13,7 +13,7 @@ Site web du BDE ESIEE Paris
 
 Because shitty Windows doesn't use "/" as directory separator in file path like Linux, you need to use a php function called str_replace() in order to replace backslashes by slashes. schemaValidateSource() expects "/" but realpath() function uses "\" on Windows, that is why you need to replace backslashes by slashes after the use of realpath() function. I also corrected an error for the path of the file `routing-1.0.xsd`.
 
-1) Go to `\path-to-www\bde-esiee\vendor\friendsofsymfony\rest-bundle\FOS\RestBundle\Routing\Loader`
+1) Go to `\path-to-www\bde-esiee\vendor\friendsofsymfony\rest-bundle\FOS\RestBundle\Routing\Loader` and open `RestXmlCollectionLoader.php`
 
 2) Search the block (near line 179)
 ```
