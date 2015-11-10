@@ -12,7 +12,10 @@ Application\LinkBundle\Entity\Link:
         token:
             type: string
             length: '10'
+        description:
+            type: text
+            nullable: true
         url:
             type: string
-            length: 255
+            length: 2048
     lifecycleCallbacks: {  }

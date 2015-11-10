@@ -26,6 +26,11 @@ class Link
 
     private $generatedUrl;
 
+    /**
+     * @var string
+     */
+    private $description;
+
     public function __construct()
     {
         $this->token = $this->generateToken();
@@ -133,5 +138,28 @@ class Link
         } while ($i < $limit);
 
         return $token;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Link
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

@@ -37,6 +37,7 @@ class LinkAdmin extends Admin
     {
         $listMapper
             ->add('token')
+            ->add('description')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -54,6 +55,7 @@ class LinkAdmin extends Admin
     {
         $formMapper
             ->add('url')
+            ->add('description')
         ;
     }
 
@@ -68,6 +70,7 @@ class LinkAdmin extends Admin
             ->add('id')
             ->add('token')
             ->add('url', 'url')
+            ->add('description')
             ->add('generatedUrl', 'url')
         ;
     }
