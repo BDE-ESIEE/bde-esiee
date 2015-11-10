@@ -7,7 +7,7 @@ function searchStudent($input) {
 
 	request[$input.attr('id')] = $.ajax({
 		dataType: "json",
-		url: api_road.slice(0,-1) + $input.val(),
+		url: api_road + $input.val(),
 		success: function(response) {
 			$input.val(response.id);
 			$input.blur();
