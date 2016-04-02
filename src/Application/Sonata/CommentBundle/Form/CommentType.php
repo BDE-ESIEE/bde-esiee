@@ -12,7 +12,7 @@
 namespace Application\Sonata\CommentBundle\Form;
 
 use Sonata\CommentBundle\Note\NoteProvider;
-use Sonata\CommentBundle\Form\CommentType as BaseType;
+use Sonata\CommentBundle\Form\Type\CommentType as BaseType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Security\Core\SecurityContext;

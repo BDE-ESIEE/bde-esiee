@@ -10,12 +10,12 @@
     <meta property="article:published_time"        content="{{ post.publicationDateStart | format_date("Y-MM-dd") }}" />
 {% endblock %}
 
-{% block javascripts %}
+{# {% block javascripts %}
     {{ parent() }}
-    {% javascripts '@FOSCommentBundle/Resources/assets/js/comments.js' %}
+    {% javascripts '@FOSCommentBundle/Resources/public/js/comments.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
-{% endblock javascripts %}
+{% endblock javascripts %} #}
 
 {% block archive %}
     {% sonata_template_box 'News template' %}
@@ -93,11 +93,11 @@
             {% endif %}
             <div class="col-lg-offset-2 col-sm-offset-2 col-lg-10 col-sm-10">
                 {% block comments %}
-                {% if post.iscommentable %}
+{#                 {% if post.iscommentable %}
                     {{ render(controller('ApplicationSonataCommentBundle:Comment:renderThread', { 'id': post.id ~ '-' ~ post.slug, 'url': url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) })) }}
                 {% else %}
                     {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
-                {% endif %}
+                {% endif %} #}
                 {% endblock comments %}
             </div>
         </div>
