@@ -45,7 +45,8 @@
         "knplabs/knp-menu-bundle"                 : "dev-master as 1.1",
         "genemu/form-bundle"                      : "dev-master as 2.2.2",
         "ferus/fairpay-php-sdk"                   : "dev-master",
-        "knplabs/knp-snappy-bundle"               : "dev-master"
+        "knplabs/knp-snappy-bundle"               : "dev-master",
+        "oyejorge/less.php"                       : "v1.7.0.10"
     },
     "scripts": {
         "post-root-package-install": [
