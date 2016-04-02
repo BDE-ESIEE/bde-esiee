@@ -18,7 +18,7 @@
     Pas de bureau renseigné.
 {% endfor %}
 </div>
-<h3>Membres</h3>
+<h3 style="margin-top: 0px;">Membres</h3>
 {% for member in club.members if member.student is not null and ((generator and ((contributorOnly and isContributor(member.student.id)) or not contributorOnly)) or (not generator)) %}
     {% if loop.first %}
         <div class="row text-center">
