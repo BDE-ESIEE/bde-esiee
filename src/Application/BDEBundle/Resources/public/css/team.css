@@ -15,55 +15,60 @@
 }
 
 .color_ve{
-	border: 5px solid #578233;
+	border: 5px solid #007B7F;
 }
 
 .color_log{
 	border: 5px solid #F19F3F;
 }
 
-.color_com{
-	border: 5px solid #007B7F;
+.color_crea{
+	border: 5px solid #A23B72;
 }
 
-.pic.daphne{background-position: -0px -0px;}
-.pic.maxence{background-position: -200px -0px;}
-.pic.arnaudle{background-position: -400px -0px;}
-.pic.nicolas{background-position: -600px -0px;}
-.pic.moussa{background-position: -800px -0px;}
-.pic.alexandre{background-position: -1000px -0px;}
-.pic.olivia{background-position: -0px -200px;}
-.pic.quentindevilleneuve{background-position: -200px -200px;}
-.pic.sarahardenos{background-position: -400px -200px;}
-.pic.eva{background-position: -600px -200px;}
-.pic.benoit{background-position: -800px -200px;}
-.pic.philippine{background-position: -1000px -200px;}
-.pic.lucie{background-position: -0px -400px;}
-.pic.siham{background-position: -200px -400px;}
-.pic.michael{background-position: -400px -400px;}
-.pic.matteo{background-position: -600px -400px;}
-.pic.alizee{background-position: -800px -400px;}
-.pic.anhminh{background-position: -1000px -400px;}
-.pic.thibault{background-position: -0px -600px;}
-.pic.adrien{background-position: -200px -600px;}
-.pic.maximelains{background-position: -400px -600px;}
-.pic.rayann{background-position: -600px -600px;}
-.pic.pierreantoine{background-position: -800px -600px;}
-.pic.arnaudpantostier{background-position: -1000px -600px;}
-.pic.maximeghermaoui{background-position: -0px -800px;}
-.pic.julian{background-position: -200px -800px;}
-.pic.romain{background-position: -400px -800px;}
-.pic.sarahpiochaud{background-position: -600px -800px;}
-.pic.adrian{background-position: -800px -800px;}
-.pic.quentinclement{background-position: -1000px -800px;}
-.pic.kimberley{background-position: -0px -1000px;}
-.pic.estelle{background-position: -200px -1000px;}
-.pic.pauline{background-position: -400px -1000px;}
-.pic.amaury{background-position: -600px -1000px;}
-.pic.sylvain{background-position: -800px -1000px;}
-.pic.david{background-position: -1000px -1000px;}
-.pic.guillaume{background-position: -0px -1200px;}
-.pic.kevin{background-position: -200px -1200px;}
+.color_com{
+	border: 5px solid #578233;
+}
+
+.pic.diabo{background-position: -0px -0px;}
+.pic.adsy{background-position: -200px -0px;}
+.pic.alexis{background-position: -400px -0px;}
+.pic.tsuko{background-position: -600px -0px;}
+.pic.anhminh{background-position: -800px -0px;}
+.pic.antoine{background-position: -1000px -0px;}
+.pic.arnaud{background-position: -0px -200px;}
+.pic.arthur{background-position: -200px -200px;}
+.pic.audrey{background-position: -400px -200px;}
+.pic.augustin{background-position: -600px -200px;}
+.pic.aymeric{background-position: -800px -200px;}
+.pic.bastian{background-position: -1000px -200px;}
+.pic.chris{background-position: -0px -400px;}
+.pic.clara{background-position: -200px -400px;}
+.pic.claudia{background-position: -400px -400px;}
+.pic.coralie{background-position: -600px -400px;}
+.pic.delphine{background-position: -800px -400px;}
+.pic.edouard{background-position: -1000px -400px;}
+.pic.elena{background-position: -0px -600px;}
+.pic.evelyne{background-position: -200px -600px;}
+.pic.hugo{background-position: -400px -600px;}
+.pic.jonathan{background-position: -600px -600px;}
+.pic.loic{background-position: -800px -600px;}
+.pic.louis{background-position: -1000px -600px;}
+.pic.marion{background-position: -0px -800px;}
+.pic.marionl{background-position: -200px -800px;}
+.pic.mathilde{background-position: -400px -800px;}
+.pic.maxence{background-position: -600px -800px;}
+.pic.maxime{background-position: -800px -800px;}
+.pic.maxou{background-position: -1000px -800px;}
+.pic.morgane{background-position: -0px -1000px;}
+.pic.mumu{background-position: -200px -1000px;}
+.pic.naji{background-position: -400px -1000px;}
+.pic.romain{background-position: -600px -1000px;}
+.pic.thomas{background-position: -800px -1000px;}
+.pic.thibault{background-position: -1000px -1000px;}
+.pic.vincentm{background-position: -0px -1200px;}
+.pic.vincent{background-position: -200px -1200px;}
+.pic.theo{background-position: -400px -1200px;}
 
 @media (min-width: 750px) {
 	.bureau-top {
@@ -77,6 +82,10 @@
 	}
 	.bureau-bottom-center {
 		margin-bottom:-90px;
+	}
+
+	.pole.big {
+		line-height: 429px;
 	}
 }
 
