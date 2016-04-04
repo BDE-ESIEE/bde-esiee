@@ -5,10 +5,7 @@ Author: Mosaddek Hossain
 Website: http://thevectorlab.net/
 */
 
-/** vars **/
-@main-color: #22A7F0;
-@secondary-color: #475268;
-@secondary-color-lighter: #505b71;
+@import "variables.less";
 
 html{
     height:100%;
@@ -59,11 +56,11 @@ a, a:hover, a:focus {
 }
 
 ::selection {
-    background: @main-color;
+    background: @primary-color;
     color: #fff;
 }
 ::-moz-selection {
-    background: @main-color;
+    background: @primary-color;
     color: #fff;
 }
 
@@ -76,7 +73,7 @@ a {
 }
 
 a:hover {
-    color: @main-color;
+    color: @primary-color;
 }
 
 p {line-height: 22px}
@@ -101,7 +98,7 @@ p {line-height: 22px}
 }
 
 .navbar-brand span{
-    color: @main-color;
+    color: @primary-color;
 }
 
 .header-frontend .navbar-collapse  ul.navbar-nav {
@@ -129,7 +126,7 @@ p {line-height: 22px}
 .header-frontend .nav li.active ul.dropdown-menu li a:hover,
 .header-frontend .nav li.active ul.dropdown-menu li.active a{
     color: #fff ;
-    background-color: @main-color;
+    background-color: @primary-color;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -151,7 +148,7 @@ p {line-height: 22px}
 .header-frontend .navbar-default .navbar-nav > .open > a:hover,
 .header-frontend .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: @main-color;
+    background-color: @primary-color;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -248,7 +245,7 @@ p {line-height: 22px}
 }
 
 .feature-head h1{
-    color: #475168;
+    color: @secondary-color;
     font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
@@ -282,11 +279,11 @@ p {line-height: 22px}
     line-height: normal;
     margin-top: 40px;
     display: block;
-    color: @main-color;
+    color: @primary-color;
 }
 
 .f-box:hover, .f-box.active {
-    background: @main-color;
+    background: @primary-color;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -334,7 +331,7 @@ p {line-height: 22px}
 }
 
 .quote-info {
-    background: #475168;
+    background: @secondary-color;
     padding: 20px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -423,7 +420,7 @@ p {line-height: 22px}
 }
 
 .p-head {
-    color: @main-color;
+    color: @primary-color;
     font-size: 14px;
     font-weight: 400;
 }
@@ -810,7 +807,7 @@ ul.about-flex-slides {
 }
 
 .r-work {
-    color: #475168;
+    color: @secondary-color;
     text-transform: uppercase;
     font-size: 24px;
     font-weight: 400;
@@ -840,7 +837,7 @@ ul.about-flex-slides {
 }
 
 .most-popular {
-    background: @main-color;
+    background: @primary-color;
     color: #fff;
 }
 
@@ -851,16 +848,16 @@ ul.about-flex-slides {
 }
 
 .most-popular h2 {
-    background: @main-color !important;
+    background: @primary-color !important;
     margin-top: 20px !important;
 }
 
 .most-popular ul li {
-    border-bottom: 1px dotted @main-color !important;
+    border-bottom: 1px dotted @primary-color !important;
 }
 
 .most-popular .price-actions .btn {
-    background: @main-color !important;
+    background: @primary-color !important;
     margin: 10px 0;
     cursor: pointer;
 }
@@ -968,7 +965,7 @@ ul.about-flex-slides {
 }
 
 .breadcrumb li a{
-    color: @main-color;
+    color: @primary-color;
 }
 
 .breadcrumb li.active {
@@ -995,7 +992,7 @@ ul.about-flex-slides {
 }
 
 .address h4 {
-    color: #475168;
+    color: @secondary-color;
     text-transform: uppercase;
     margin-bottom: 20px;
     font-family: 'Fjalla One', sans-serif;
@@ -1054,7 +1051,7 @@ ul.about-flex-slides {
 
 .about h3 {
     /*text-transform: uppercase;*/
-    color: #475168;
+    color: @secondary-color;
     font-family: 'Fjalla One', sans-serif;
     margin-top: 0;
 }
@@ -1082,7 +1079,7 @@ ul.about-flex-slides {
 
 .content h3, .media > h3 {
     margin-top: 0;
-    color: #475168;
+    color: @secondary-color;
     font-size: 20px;
     font-family: 'Fjalla One', sans-serif;
 }
@@ -1093,7 +1090,7 @@ ul.about-flex-slides {
 
 .media-body h4 {
     font-size: 16px;
-    color: #475168;
+    color: @secondary-color;
 }
 
 .hiring, .services {
@@ -1137,7 +1134,7 @@ ul.about-flex-slides {
 }
 
 .about-skill-meter .progress-bar-danger {
-    background-color: @main-color;
+    background-color: @primary-color;
     box-shadow: none;
 }
 
@@ -1175,11 +1172,11 @@ ul.about-flex-slides {
 }
 
 .team-social-link a:hover {
-    color: @main-color;
+    color: @primary-color;
 }
 
 .person-info h4, .person-info h4 a {
-    color: @main-color;
+    color: @primary-color;
     font-weight: 300;
     margin-bottom: 5px;
 }
@@ -1257,7 +1254,7 @@ ul.about-flex-slides {
 .date-wrap .date {
     font-size:30px;
     font-weight: 300;
-    background: @main-color;
+    background: @primary-color;
     color: #fff;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
@@ -1295,7 +1292,7 @@ ul.about-flex-slides {
 
 .blog-item h1, .blog-item h1 a {
     font-size:25px;
-    color:@main-color;
+    color:@primary-color;
     font-weight: 300;
     font-family: 'Fjalla One', sans-serif;
 }
@@ -1315,7 +1312,7 @@ ul.about-flex-slides {
 }
 
 .author a, .shate-view a {
-    color: @main-color;
+    color: @primary-color;
 }
 
 .shate-view {
@@ -1400,7 +1397,7 @@ ul.tag li a {
 
 
 .footer address a, .footer .quick-links a {
-    color: @main-color;
+    color: @primary-color;
 }
 
 .tweet-box {
@@ -1432,7 +1429,7 @@ ul.tag li a {
 }
 
 .tweet-box  a:hover{
-    color: @main-color ;
+    color: @primary-color ;
 }
 
 .tweet-box i {
@@ -1464,7 +1461,7 @@ ul.tag li a {
 }
 
 .social-link-footer li a:hover {
-    background: @main-color;
+    background: @primary-color;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -1478,7 +1475,7 @@ ul.tag li a {
 /*slider css*/
 
 .main-slider {
-    background: #475168;
+    background: @secondary-color;
     color: #fff;
 
     z-index: 1;
@@ -1495,7 +1492,7 @@ ul.tag li a {
 
 .slide_title {
     font-weight: 300;
-    color:@main-color;
+    color:@primary-color;
     text-transform: uppercase;
     font-size:35px;
     font-family: 'Fjalla One', sans-serif;
@@ -1545,7 +1542,7 @@ ul.tag li a {
 .slide_btn:hover, .slide_btn:focus {
     font-family: 'Open Sans';
     font-weight: 300;
-    background:@main-color;
+    background:@primary-color;
     padding:15px 20px;
     color:#fff;
     font-size:14px;
@@ -1578,7 +1575,7 @@ ul.tag li a {
 }
 
 .bx-controls-direction a:hover {
-    background-color:@main-color !important;
+    background-color:@primary-color !important;
 
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -1609,7 +1606,7 @@ ul.tag li a {
 }
 
 .property h1 {
-    color: #475168;
+    color: @secondary-color;
     font-size: 24px;
     text-transform: uppercase;
     font-family: 'Fjalla One',sans-serif;
@@ -1618,7 +1615,7 @@ ul.tag li a {
 }
 
 a.btn-purchase {
-    background: #475168;
+    background: @secondary-color;
     color: #fff;
     text-transform: uppercase;
     padding: 20px 40px;
@@ -1630,7 +1627,7 @@ a.btn-purchase {
     transition: all .3s ease;
 }
 a.btn-purchase:hover, a.btn-purchase:focus{
-    background: @main-color;
+    background: @primary-color;
     color: #fff;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -1718,7 +1715,7 @@ ul#filters > li > a:hover,
 ul#filters > li > a:focus,
 ul#filters > .active > a,
 ul#filters > .active > span {
-    background: @main-color;
+    background: @primary-color;
     padding: 10px 15px;
     display: inline-block;
     color: #fff;
@@ -1841,7 +1838,7 @@ ul#filters > .active > span {
 /*parallax*/
 
 .parallax2 {
-    background: url("../img/background.jpg") no-repeat fixed 0 0 @main-color;
+    background: url("../img/background.jpg") no-repeat fixed 0 0 @primary-color;
     background-size:cover;
     width: 100%;
     min-height: 400px;
@@ -1874,7 +1871,7 @@ ul.dropdown-menu li a i {
 }
 
 .logoClub:hover {
-    box-shadow: 0 0 0 10px @main-color;
+    box-shadow: 0 0 0 10px @primary-color;
     transition: box-shadow .3s;
 }
 
@@ -1909,7 +1906,7 @@ ul.dropdown-menu li a i {
 
 .fc-state-active, .fc-state-active .fc-button-inner,
 .fc-state-hover, .fc-state-hover .fc-button-inner{
-    background:  @main-color !important;
+    background:  @primary-color !important;
     color: #fff !important;
 }
 
@@ -2019,7 +2016,7 @@ ul.dropdown-menu li a i {
     position: relative;
 }
 .adtocart {
-    background: @main-color;
+    background: @primary-color;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -2136,8 +2133,8 @@ ul.dropdown-menu li a i {
 
 .icon:hover {
     text-decoration: none;
-    color: @main-color;
-    border: 3px solid @main-color;
+    color: @primary-color;
+    border: 3px solid @primary-color;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
@@ -2152,7 +2149,7 @@ ul.dropdown-menu li a i {
 }
 
 #logosvg path {
-    fill: @main-color;
+    fill: @primary-color;
 }
 
 .f-box:hover #logosvg path {
@@ -2167,13 +2164,13 @@ ul.dropdown-menu li a i {
 }
 
 .panel-ferus {
-    border-color: @main-color;
+    border-color: @primary-color;
 }
 
 .panel-ferus > .panel-heading {
     color: #fff;
-    background-color: @main-color;
-    border-color: @main-color;
+    background-color: @primary-color;
+    border-color: @primary-color;
 }
 
 div.sonata-preview-form .row {
