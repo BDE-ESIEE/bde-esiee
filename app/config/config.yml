@@ -250,8 +250,8 @@ sonata_formatter:
                 - sonata.media.formatter.twig
 
 sonata_admin:
-    title:      Zéphyr Inside
-    title_logo: logoZephyr.png
+    title:      Lagoon Inside
+    title_logo: logo-white.png
     templates:
         layout:  ApplicationSonataAdminBundle::layout.html.twig
         layout:  ApplicationSonataAdminBundle:CRUD:acl.html.twig
