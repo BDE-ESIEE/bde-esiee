@@ -47,6 +47,8 @@ class PostAdmin extends BaseAdmin
         $formMapper->remove('commentsCloseAt');
         $formMapper->remove('commentsDefaultStatus');
         $formMapper->remove('image');
+        $formMapper->remove('tags');
+        $formMapper->remove('collection');
 
         if (!$this->isGranted('OPERATOR'))
         {
@@ -55,6 +57,18 @@ class PostAdmin extends BaseAdmin
         }
 
         $formMapper
+           ->with('Classification', array(
+                'class' => 'col-md-4'
+            ))
+                ->add('tags', 'sonata_type_model_autocomplete', array(
+                    'property' => 'name',
+                    'multiple' => 'true',
+                    'attr' => array(
+                        'style' => 'width: 100%;'
+                    )
+                ))
+                ->add('collection', 'sonata_type_model_list', array('required' => false))
+            ->end()
             ->with('General')
                 ->add('content', 'sonata_formatter_type', array(
                     'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher(),
