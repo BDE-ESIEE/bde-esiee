@@ -371,7 +371,7 @@
 																<table class="callout" style="Margin-bottom:16px;border-collapse:collapse;border-spacing:0;margin-bottom:16px;padding:0;text-align:left;vertical-align:top;width:100%">
 																	<tr style="padding:0;text-align:left;vertical-align:top">
 																		<th class="callout-inner secondary" style="Margin:0;background:#E5E5E5;border:none;border-radius:3px;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:20px;text-align:left;width:100%">
-																			<p style="Margin:0;Margin-bottom:10px;color:#262626;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left"></p>
+																			<p style="Margin:0;Margin-bottom:10px;color:#262626;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left">{{ intro }}</p>
 																		</th>
 																		<th class="expander" style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0"></th>
 																	</tr>
@@ -416,14 +416,14 @@
 												</th>
 											</tr>
 										</tbody>
-									</table>{% for date, posts in week %} {% for post in posts %}
+									</table>{% for date, posts in week|merge(afterWeek) %} {% for post in posts %}
 									<table class="row collapse pad second event" style="background-color:#f2f2f2;border-collapse:collapse;border-spacing:0;display:table;margin-bottom:0;margin-top:0;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
 										<tbody>
 											<tr style="padding:0;text-align:left;vertical-align:top">
 												<th class="small-12 large-12 columns first last" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;padding-top:64px;text-align:left;width:708px">
 													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
 														<tr style="padding:0;text-align:left;vertical-align:top">
-															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left"><img src="{% if post.thumbnail is null %} http://i.imgur.com/mfIXqYD.png {% else %} {% path post.thumbnail, &apos;big&apos; %} {% endif%}" alt=" {{ post.title }} " style="-ms-interpolation-mode:bicubic;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left"><img src="{% if post.thumbnail is null %} {% else %} {% path post.thumbnail, 'big' %} {% endif%}" alt="{{ post.title }} " style="-ms-interpolation-mode:bicubic;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
 															</th>
 															<th class="expander" style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0"></th>
 														</tr>
@@ -448,7 +448,7 @@
 																	</tr>
 																	<tr style="padding:0;text-align:left;vertical-align:top">
 																		<td colspan="2" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-																			<h1 style="Margin:0;Margin-bottom:10px;color:#262626;font-family:serif;font-size:26px;font-weight:700;line-height:1.3;margin:0;margin-bottom:10px;padding:0;text-align:left;word-wrap:normal">{{ posts[0].event.dateStart | format_date(&apos;eeee dd&apos;, &apos;fr&apos;, &apos;Europe/Paris&apos;)}} <span class="light" style="color:#3d3d3d">{{ posts[0].event.dateStart | format_date(&apos;MMMM&apos;, &apos;fr&apos;, &apos;Europe/Paris&apos;)}}</span></h1>
+																			<h1 style="Margin:0;Margin-bottom:10px;color:#262626;font-family:serif;font-size:26px;font-weight:700;line-height:1.3;margin:0;margin-bottom:10px;padding:0;text-align:left;word-wrap:normal">{{ posts[0].event.dateStart | format_date('eeee dd', 'fr', 'Europe/Paris')}} <span class="light" style="color:#3d3d3d">{{ posts[0].event.dateStart | format_date('MMMM', 'fr', 'Europe/Paris')}}</span></h1>
 																		</td>
 																	</tr>
 																</table>
@@ -498,7 +498,7 @@
 													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
 														<tr style="padding:0;text-align:left;vertical-align:top">
 															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
-																<a href="{{ url(&apos;sonata_news_view&apos;, { &apos;permalink&apos;: sonata_news_permalink(post) }) }}" style="Margin:0;color:#2199e8;font-family:serif;font-weight:400;line-height:1.3;margin:0;padding:0;text-align:left;text-decoration:none">
+																<a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="Margin:0;color:#2199e8;font-family:serif;font-weight:400;line-height:1.3;margin:0;padding:0;text-align:left;text-decoration:none">
 																	<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
 																		<tr style="padding:0;text-align:left;vertical-align:top">
 																			<td class="" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word"><img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Clear.gif" alt="" style="-ms-interpolation-mode:bicubic;border:none;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
@@ -520,6 +520,126 @@
 											</tr>
 										</tbody>
 									</table>{% endfor %} {% endfor %}
+
+
+
+
+
+
+
+
+
+{% for post in other %}
+									<table class="row collapse pad second event" style="background-color:#f2f2f2;border-collapse:collapse;border-spacing:0;display:table;margin-bottom:0;margin-top:0;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
+										<tbody>
+											<tr style="padding:0;text-align:left;vertical-align:top">
+												<th class="small-12 large-12 columns first last" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;padding-top:64px;text-align:left;width:708px">
+													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+														<tr style="padding:0;text-align:left;vertical-align:top">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left"><img src="{% if post.thumbnail is null %} {% else %} {% path post.thumbnail, 'big' %} {% endif%}" alt="{{ post.title }} " style="-ms-interpolation-mode:bicubic;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
+															</th>
+															<th class="expander" style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0"></th>
+														</tr>
+													</table>
+												</th>
+											</tr>
+										</tbody>
+									</table>
+									<table class="row collapse pad second-small event" style="background-color:#f2f2f2;border-collapse:collapse;border-spacing:0;display:table;margin-bottom:0;margin-top:0;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
+										<tbody>
+											<tr style="padding:0;text-align:left;vertical-align:top">
+												<th class="date small-5 large-5 columns first" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;padding-top:16px;text-align:left;width:299.67px">
+													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+														<tr style="padding:0;text-align:left;vertical-align:top">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+																<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+																	<tr style="padding:0;text-align:left;vertical-align:top">
+																		<td class="" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word"><img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Clear.gif" alt="" style="-ms-interpolation-mode:bicubic;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
+																		</td>
+																		<td rowspan="2" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word"><img src="https://bde.esiee.fr/mail/img/brush.png" style="-ms-interpolation-mode:bicubic;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:216px;outline:0;text-decoration:none;width:216px">
+																		</td>
+																	</tr>
+																	<tr style="padding:0;text-align:left;vertical-align:top">
+																		<td colspan="2" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
+																			<h1 style="Margin:0;Margin-bottom:10px;color:#262626;font-family:serif;font-size:26px;font-weight:700;line-height:1.3;margin:0;margin-bottom:10px;padding:0;text-align:left;word-wrap:normal">{{ post.title }}</span></h1>
+																		</td>
+																	</tr>
+																</table>
+															</th>
+														</tr>
+													</table>
+												</th>
+												<!--<th class="title small-7 large-7 columns last" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;padding-top:16px;text-align:right;width:416.33px">
+													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+														<tr style="padding:0;text-align:left;vertical-align:top">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+																<h1 class="text-right" style="Margin:0;Margin-bottom:10px;color:#262626;font-family:serif;font-size:26px;font-weight:700;line-height:1.3;margin:0;margin-bottom:10px;padding:0;text-align:right;word-wrap:normal"></h1>
+															</th>
+														</tr>
+													</table>
+												</th>-->
+											</tr>
+										</tbody>
+									</table>
+									<table class="row collapse pad event" style="background-color:#f2f2f2;border-collapse:collapse;border-spacing:0;display:table;margin-bottom:0;margin-top:0;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
+										<tbody>
+											<tr style="padding:0;text-align:left;vertical-align:top">
+												<th class="small-12 large-12 columns first last" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;text-align:left;width:708px">
+													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+														<tr style="padding:0;text-align:left;vertical-align:top">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+																<p style="Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left">{{ post.abstract }}</p>
+															</th>
+															<th class="expander" style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0"></th>
+														</tr>
+													</table>
+												</th>
+											</tr>
+										</tbody>
+									</table>
+									<table class="row collapse pad event" style="background-color:#f2f2f2;border-collapse:collapse;border-spacing:0;display:table;margin-bottom:0;margin-top:0;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
+										<tbody>
+											<tr style="padding:0;text-align:left;vertical-align:top">
+												<th class="small-9 large-9 columns first" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;text-align:left;width:533px">
+													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+														<tr style="padding:0;text-align:left;vertical-align:top">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left"></th>
+														</tr>
+													</table>
+												</th>
+												<th class="small-2 large-2 columns last" style="Margin:0 auto;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0 auto;padding:0;padding-bottom:0;padding-left:40px;padding-right:40px;text-align:left;width:124.67px">
+													<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+														<tr style="padding:0;text-align:left;vertical-align:top">
+															<th style="Margin:0;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+																<a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" style="Margin:0;color:#2199e8;font-family:serif;font-weight:400;line-height:1.3;margin:0;padding:0;text-align:left;text-decoration:none">
+																	<table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+																		<tr style="padding:0;text-align:left;vertical-align:top">
+																			<td class="" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word"><img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Clear.gif" alt="" style="-ms-interpolation-mode:bicubic;border:none;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
+																			</td>
+																			<td rowspan="2" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word"><img src="https://bde.esiee.fr/mail/img/small-brush.png" style="-ms-interpolation-mode:bicubic;border:none;border-radius:3px 3px 3px 3px;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:100%">
+																			</td>
+																		</tr>
+																		<tr style="padding:0;text-align:left;vertical-align:top">
+																			<td colspan="2" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:serif;font-size:16px;font-weight:400;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
+																				<p style="Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:serif;font-size:21px;font-weight:400;line-height:19px;margin:0;margin-bottom:10px;margin-top:5px;padding:0;text-align:center">Suite...</p>
+																			</td>
+																		</tr>
+																	</table>
+																</a>
+															</th>
+														</tr>
+													</table>
+												</th>
+											</tr>
+										</tbody>
+									</table>{% endfor %}
+
+
+
+
+
+
+
 									<table class="row collapse pad second" style="background-color:#f2f2f2;border-collapse:collapse;border-spacing:0;display:table;margin-bottom:0;margin-top:0;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
 										<tbody>
 											<tr style="padding:0;text-align:left;vertical-align:top">
