@@ -29,7 +29,7 @@ $routinglocation = realpath(__DIR__.'/../../Resources/config/schema/routing-1.0.
 $routinglocation = str_replace('\\', '/', $routinglocation);
 ```
 
-4) Don't forget the clear the cache :
+4) Don't forget to clear the cache :
 `php app/console cache:clear --env=dev`
 
 
