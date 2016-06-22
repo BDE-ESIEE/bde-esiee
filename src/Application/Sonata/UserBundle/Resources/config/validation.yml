@@ -3,5 +3,5 @@ FOS\UserBundle\Model\User:
         email:
             - NotBlank: ~
             - Regex:
-                pattern: "/^[a-z0-9\.-]+@edu\.esiee\.fr$/"
+                pattern: "/^[a-z\.-]+[0-9]{0,2}@edu\.esiee\.fr$/"
                 message: Vous devez avoir un mail @edu.esiee.fr
