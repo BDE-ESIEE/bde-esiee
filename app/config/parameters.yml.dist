@@ -20,3 +20,7 @@ parameters:
     use_proxy: false
 
     wkhtmltopdf_binary: /usr/local/bin/wkhtmltopdf.sh
+
+    client_id     : yoloSwag
+    client_secret : 7-1NeverForget
+    proxy: ""

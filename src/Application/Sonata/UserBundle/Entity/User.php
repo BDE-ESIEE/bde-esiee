@@ -44,6 +44,16 @@ class User extends BaseUser
     private $club;
 
     /**
+     * @var string
+     */
+    private $google_id;
+
+    /**
+     * @var string
+     */
+    private $google_access_token;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -59,6 +69,8 @@ class User extends BaseUser
     public function setResource(\Application\BDEBundle\Entity\Resource $resource)
     {
         $this->resource = $resource;
+
+        return $this;
     }
 
     /**
@@ -75,6 +87,8 @@ class User extends BaseUser
     public function setWeekBeforeExam($weekBeforeExam)
     {
         $this->weekBeforeExam = $weekBeforeExam;
+
+        return $this;
     }
 
     /**
@@ -111,5 +125,51 @@ class User extends BaseUser
     public function getClub()
     {
         return $this->club;
+    }
+
+    /**
+     * Set google_id
+     *
+     * @param string $googleId
+     * @return User
+     */
+    public function setGoogleId($googleId)
+    {
+        $this->google_id = $googleId;
+
+        return $this;
+    }
+
+    /**
+     * Get google_id
+     *
+     * @return string 
+     */
+    public function getGoogleId()
+    {
+        return $this->google_id;
+    }
+
+    /**
+     * Set google_access_token
+     *
+     * @param string $googleAccessToken
+     * @return User
+     */
+    public function setGoogleAccessToken($googleAccessToken)
+    {
+        $this->google_access_token = $googleAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get google_access_token
+     *
+     * @return string 
+     */
+    public function getGoogleAccessToken()
+    {
+        return $this->google_access_token;
     }
 }

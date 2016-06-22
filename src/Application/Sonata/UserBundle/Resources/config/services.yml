@@ -13,7 +13,12 @@ services:
         calls:
             - [ setTranslationDomain, [SonataUserBundle]]
             - [ setUserManager, [@fos_user.user_manager]]
+            
     application_sonata_user.twig.user_helper:
         class: Application\Sonata\UserBundle\Services\UserHelper
         tags :
             - { name: twig.extension }
+
+    application_sonata_user.security.user_provider:
+        class     : Application\Sonata\UserBundle\Security\Core\User\FOSUBUserProvider
+        arguments : ['@fos_user.user_manager', '@doctrine.orm.entity_manager', '@validator', { google: google_id }]

@@ -93,3 +93,14 @@ sonata_api_user:
     type:         rest
     prefix:       /api/user
     resource:     "@SonataUserBundle/Resources/config/routing/api.xml"
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+google_login:
+    path: /login/check-google

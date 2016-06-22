@@ -46,7 +46,8 @@
         "genemu/form-bundle"                      : "dev-master as 2.2.2",
         "ferus/fairpay-php-sdk"                   : "dev-master",
         "knplabs/knp-snappy-bundle"               : "dev-master",
-        "oyejorge/less.php"                       : "v1.7.0.10"
+        "oyejorge/less.php"                       : "v1.7.0.10",
+        "hwi/oauth-bundle"                        : "^0.4.1"
     },
     "scripts": {
         "post-root-package-install": [
