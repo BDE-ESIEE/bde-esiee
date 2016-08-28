@@ -9,6 +9,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Sonata\NewsBundle\Model\CommentInterface;
 use Sonata\NewsBundle\Model\PostInterface;
 
@@ -17,10 +18,11 @@ class PostController extends BaseController
     /**
      * @param array $criteria
      * @param array $parameters
+     * @param Request $request
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function renderArchive(array $criteria = array(), array $parameters = array())
+    public function renderArchive(array $criteria = array(), array $parameters = array(), Request $request = null)
     {
         $pager = $this->getPostManager()->getPager(
             $criteria,
@@ -36,7 +38,7 @@ class PostController extends BaseController
 
         $parameters = array_merge(array(
             'pager'            => $pager,
-            'blog'             => $this->get('sonata.news.blog'),
+            'blog'             => $this->getBlog(),
             'tag'              => false,
             'collection'       => false,
             'route'            => $this->getRequest()->get('_route'),
