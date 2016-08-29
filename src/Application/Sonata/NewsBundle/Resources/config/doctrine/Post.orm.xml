@@ -17,7 +17,7 @@
             <generator strategy="AUTO"/>
         </id>
 
-        <many-to-one field="event" target-entity="Application\BDEBundle\Entity\Event" inversed-by="news">
+        <many-to-one field="event" target-entity="Application\BDEBundle\Entity\Event" inversed-by="news" fetch="EAGER">
             <join-column name="event_id" referenced-column-name="id" nullable="true" />
         </many-to-one> 
 

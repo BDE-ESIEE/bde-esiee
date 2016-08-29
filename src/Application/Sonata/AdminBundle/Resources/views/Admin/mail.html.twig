@@ -3,7 +3,7 @@
 {% block sonata_breadcrumb %}
 	<ol class="nav navbar-top-links breadcrumb">
 		<li>
-			<a href="{{ path('sonata_admin_dashboard') }}">⌂</a>
+			<a href="{{ path('sonata_admin_dashboard') }}"><i class="fa fa-home"></i></a>
 		</li>
 		<li class="active">
 			<span>Envoyer Mail Hebdo</span>
@@ -21,7 +21,7 @@
 		<div class="sonata-ba-form">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="box box-success">
+					<div class="box box-danger">
 						<div class="box-header">
 							<h4 class="box-title">Envoyer Mail Hebdo</h4>
 						</div>
@@ -34,7 +34,7 @@
 				</div>
 				{% if posts is not null and mail is not null %}
 					<div class="col-md-12">
-						<div class="box box-success">
+						<div class="box box-danger">
 							<div class="box-header">
 								<h4 class="box-title">Aperçu</h4>
 							</div>
