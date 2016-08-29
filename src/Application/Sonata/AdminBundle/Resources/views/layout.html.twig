@@ -10,17 +10,6 @@
         <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/colorpicker.css') }}" type="text/css" media="all" />
         {{ form_stylesheet(form) }}
     {% endif %}
-    <style type="text/css">
-        span[state^="Cotisant"] {
-            color: green;
-        }
-        span[state^="Non"] {
-            color: red;
-        }
-        td.reAlign .checkbox label {
-            padding-left: 0px;
-        }
-    </style>
 {% endblock %}
 
 {% block javascripts %}
@@ -47,28 +36,30 @@
     <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px;color: white;">v{{ version }}</p>
 {% endblock %}
 
+{% block body_attributes %}class="sonata-bc skin-red fixed"{% endblock %}
+
 {% block sonata_top_nav_menu %}
-    <div class="navbar-right">
+    <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             {% if is_granted('ROLE_COMMUNICATION') %}
                 <li>
                     <a href="{{ path('application_sonata_admin_send_mail') }}">
-                        <i class="fa fa-envelope"></i> Mail hebdo
+                        <i class="fa fa-envelope fa-fw"></i> Mail hebdo
                     </a>
                 </li>
             {% endif %}
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-plus-square"></i> <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-plus-square fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
-                {% include admin_pool.getTemplate('add_block') %}
+                {% include sonata_admin.adminPool.getTemplate('add_block') %}
             </li>
             <li class="dropdown user-menu">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="glyphicon glyphicon-user"></i> <i class="fa fa-caret-down"></i>
+                    <i class="glyphicon glyphicon-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    {% include admin_pool.getTemplate('user_block') %}
+                    {% include sonata_admin.adminPool.getTemplate('user_block') %}
                 </ul>
             </li>
         </ul>

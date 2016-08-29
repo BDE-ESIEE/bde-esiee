@@ -1,0 +1,12 @@
+.breadcrumb > .active {
+    color: #333;
+}
+span[state^="Cotisant"] {
+    color: green;
+}
+span[state^="Non"] {
+    color: red;
+}
+td.reAlign .checkbox label {
+    padding-left: 0px;
+}

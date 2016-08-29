@@ -253,22 +253,11 @@ sonata_admin:
     title:      Lagoon Inside
     title_logo: logo-white.png
     templates:
-        layout:  ApplicationSonataAdminBundle::layout.html.twig
-        layout:  ApplicationSonataAdminBundle:CRUD:acl.html.twig
+        layout:    ApplicationSonataAdminBundle::layout.html.twig
+        # acl:       ApplicationSonataAdminBundle:CRUD:acl.html.twig
+        dashboard: ApplicationSonataAdminBundle::dashboard.html.twig
     dashboard:
         blocks:
-            -
-                position: left
-                type: application.sonata.block.service.editable_text
-                settings:
-                    title : 'dashboard_welcome_message'
-            -
-                position: right
-                type: sonata.block.service.text
-                settings:
-                    content: >
-                        <h2></h2>
-                        <p></p>
             -
                 position: left
                 type: sonata.admin.block.admin_list
@@ -335,6 +324,23 @@ sonata_admin:
         admin_permissions: [CREATE, LIST, DELETE, UNDELETE, EXPORT, OPERATOR, MASTER]
         # permission related to the objects
         object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER]
+    assets:
+        stylesheets:
+            - bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
+            - bundles/sonatacore/vendor/components-font-awesome/css/font-awesome.min.css
+            - bundles/sonatacore/vendor/ionicons/css/ionicons.min.css
+            - bundles/sonataadmin/vendor/admin-lte/dist/css/AdminLTE.min.css
+            - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-red.min.css
+            - bundles/sonataadmin/vendor/iCheck/skins/square/blue.css
+            - bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
+            - bundles/sonataadmin/vendor/jqueryui/themes/base/jquery-ui.css
+            - bundles/sonatacore/vendor/select2/select2.css
+            - bundles/sonatacore/vendor/select2-bootstrap-css/select2-bootstrap.min.css
+            - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
+            - bundles/sonataadmin/css/styles.css
+            - bundles/sonataadmin/css/layout.css
+            - bundles/sonataadmin/css/tree.css
+            - bundles/applicationsonataadmin/css/admin.css
 
 sonata_doctrine_orm_admin:
     templates:
