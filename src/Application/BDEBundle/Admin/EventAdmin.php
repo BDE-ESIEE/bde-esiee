@@ -44,7 +44,7 @@ class EventAdmin extends Admin
             ->add('category', 'entity', array(
                 'expanded'   => true,
                 'class'      => 'ApplicationBDEBundle:EventCategory',
-                'data_class' => 'Application\BDEBundle\Entity\EventCategory'
+                // 'data_class' => 'Application\BDEBundle\Entity\EventCategory'
             ))
             ->add('club', 'entity', array(
                 'required'    => false,
