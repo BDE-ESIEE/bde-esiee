@@ -2279,11 +2279,13 @@ ul.inbox-pagination li {
 }
 
 .error-wrapper .icon-404{
-    background: url("../img/omg.png") no-repeat;
-    width: 289px;
-    height: 274px;
+    background: url("../img/omg_new.jpg") no-repeat;
+    width: 466px;
+    height: 552px;
     display: inline-block;
-    margin-left: 18px;
+    margin-left: -233px;
+    position:absolute;
+    bottom:0;
 }
 
 
@@ -2318,10 +2320,12 @@ ul.inbox-pagination li {
 
 .error-wrapper .icon-500{
     background: url("../img/omg.png") no-repeat;
-    width: 289px;
-    height: 274px;
+    width: 466px;
+    height: 552px;
     display: inline-block;
-    margin-left: 18px;
+    margin-left: -233px;
+    position:absolute;
+    bottom:0;
 }
 
 /*profile*/
