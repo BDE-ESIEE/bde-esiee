@@ -7,7 +7,7 @@ Website: http://thevectorlab.net/
 
 /* Import fonts */
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);*/
-
+o
 body {
     color: #797979;
     background: #f1f2f7;
@@ -2279,7 +2279,7 @@ ul.inbox-pagination li {
 }
 
 .error-wrapper .icon-404{
-    background: url("../img/omg_new.jpg") no-repeat;
+    background: url("../img/omg_new.png") no-repeat;
     width: 466px;
     height: 552px;
     display: inline-block;
@@ -2319,7 +2319,7 @@ ul.inbox-pagination li {
 }
 
 .error-wrapper .icon-500{
-    background: url("../img/omg.png") no-repeat;
+    background: url("../img/omg_new.png") no-repeat;
     width: 466px;
     height: 552px;
     display: inline-block;
