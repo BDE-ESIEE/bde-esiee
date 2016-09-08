@@ -26,7 +26,7 @@
         "nelmio/api-doc-bundle"                   : "2.6.0",
         "sonata-project/admin-bundle"             : "3.4.*",
         "sonata-project/doctrine-orm-admin-bundle": "^3.0",
-        "sonata-project/easy-extends-bundle"      : "dev-master",
+        "sonata-project/easy-extends-bundle"      : "^2.1",
         "sonata-project/core-bundle"              : "^3.0",
         "sonata-project/user-bundle"              : "^3.0",
         "sonata-project/news-bundle"              : "^3.0",
@@ -47,7 +47,8 @@
         "ferus/fairpay-php-sdk"                   : "dev-master",
         "knplabs/knp-snappy-bundle"               : "dev-master",
         "oyejorge/less.php"                       : "v1.7.0.10",
-        "hwi/oauth-bundle"                        : "^0.4.1"
+        "hwi/oauth-bundle"                        : "^0.4.1",
+        "tilleuls/acl-sonata-admin-extension-bundle": "dev-master"
     },
     "scripts": {
         "post-root-package-install": [
