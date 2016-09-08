@@ -262,7 +262,7 @@ sonata_admin:
                 position: left
                 type: sonata.admin.block.admin_list
                 settings:
-                    groups: [blog, bde, poudlard]
+                    groups: [blog, bde, esieegames]
             -
                 position: right
                 type: sonata.admin.block.admin_list
@@ -287,6 +287,10 @@ sonata_admin:
             #     items:
             #         - application_poudlard.admin.house
             #         - application_poudlard.admin.points
+            esieegames:
+                label: ESIEE Games
+                items:
+                    - application_esiee_games.admin.points
             shop:
                 label: Breguet Shop
                 items:

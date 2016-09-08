@@ -40,6 +40,11 @@ class Points
         $this->date = new \DateTime;
     }
 
+    public function __toString()
+    {
+        return $this->value.' points pour '.$this->club;
+    }
+
     /**
      * Get id
      *
