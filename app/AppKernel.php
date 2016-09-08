@@ -66,7 +66,7 @@ class AppKernel extends Kernel
             new Application\BDEBundle\ApplicationBDEBundle(),
             new Application\LinkBundle\ApplicationLinkBundle(),
             new Application\ShopBundle\ApplicationShopBundle(),
-            new Application\PoudlardBundle\ApplicationPoudlardBundle(),
+            // new Application\PoudlardBundle\ApplicationPoudlardBundle(),
             new Application\StudentBundle\ApplicationStudentBundle(),
             new Application\ServiceBundle\ApplicationServiceBundle(),
             new Application\PageBundle\ApplicationPageBundle(),

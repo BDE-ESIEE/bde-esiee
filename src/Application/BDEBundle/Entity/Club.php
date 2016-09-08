@@ -95,18 +95,18 @@ class Club
      */
     private $email;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Application\PoudlardBundle\Entity\ClubHasPoints", mappedBy="club", orphanRemoval=true)
-     * @Exclude
-     */
-    private $points;
+    // /**
+    //  * @ORM\OneToMany(targetEntity="Application\PoudlardBundle\Entity\ClubHasPoints", mappedBy="club", orphanRemoval=true)
+    //  * @Exclude
+    //  */
+    // private $points;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Application\PoudlardBundle\Entity\House", inversedBy="clubs", cascade="persist")
-     * @ORM\JoinColumn(name="house_id", referencedColumnName="id")
-     * @Exclude
-     **/
-    private $house;
+    // /**
+    //  * @ORM\ManyToOne(targetEntity="Application\PoudlardBundle\Entity\House", inversedBy="clubs", cascade="persist")
+    //  * @ORM\JoinColumn(name="house_id", referencedColumnName="id")
+    //  * @Exclude
+    //  **/
+    // private $house;
 
     /**
      * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_member", orphanRemoval=true)
@@ -127,7 +127,7 @@ class Club
      */
     public function __construct()
     {
-        $this->points    = new \Doctrine\Common\Collections\ArrayCollection();
+        // $this->points    = new \Doctrine\Common\Collections\ArrayCollection();
         $this->members   = new \Doctrine\Common\Collections\ArrayCollection();
         $this->directors = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -392,73 +392,73 @@ class Club
         return $this->email;
     }
 
-    /**
-     * Add points
-     *
-     * @param \Application\PoudlardBundle\Entity\ClubHasPoints $points
-     * @return Club
-     */
-    public function addPoint(\Application\PoudlardBundle\Entity\ClubHasPoints $points)
-    {
-        $this->points[] = $points;
+    // /**
+    //  * Add points
+    //  *
+    //  * @param \Application\PoudlardBundle\Entity\ClubHasPoints $points
+    //  * @return Club
+    //  */
+    // public function addPoint(\Application\PoudlardBundle\Entity\ClubHasPoints $points)
+    // {
+    //     $this->points[] = $points;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    /**
-     * Remove points
-     *
-     * @param \Application\PoudlardBundle\Entity\ClubHasPoints $points
-     */
-    public function removePoint(\Application\PoudlardBundle\Entity\ClubHasPoints $points)
-    {
-        $this->points->removeElement($points);
-    }
+    // /**
+    //  * Remove points
+    //  *
+    //  * @param \Application\PoudlardBundle\Entity\ClubHasPoints $points
+    //  */
+    // public function removePoint(\Application\PoudlardBundle\Entity\ClubHasPoints $points)
+    // {
+    //     $this->points->removeElement($points);
+    // }
 
-    /**
-     * Get points
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPoints()
-    {
-        return $this->points;
-    }
+    // /**
+    //  * Get points
+    //  *
+    //  * @return \Doctrine\Common\Collections\Collection 
+    //  */
+    // public function getPoints()
+    // {
+    //     return $this->points;
+    // }
 
-    public function getScore()
-    {
-        $total = 0;
+    // public function getScore()
+    // {
+    //     $total = 0;
 
-        foreach($this->points as $clubHasPoints)
-        {
-            $total += $clubHasPoints->getAmount() + $clubHasPoints->getBonusMalus();
-        }
+    //     foreach($this->points as $clubHasPoints)
+    //     {
+    //         $total += $clubHasPoints->getAmount() + $clubHasPoints->getBonusMalus();
+    //     }
 
-        return $total;
-    }
+    //     return $total;
+    // }
 
-    /**
-     * Set house
-     *
-     * @param \Application\PoudlardBundle\Entity\House $house
-     * @return Club
-     */
-    public function setHouse(\Application\PoudlardBundle\Entity\House $house = null)
-    {
-        $this->house = $house;
+    // /**
+    //  * Set house
+    //  *
+    //  * @param \Application\PoudlardBundle\Entity\House $house
+    //  * @return Club
+    //  */
+    // public function setHouse(\Application\PoudlardBundle\Entity\House $house = null)
+    // {
+    //     $this->house = $house;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    /**
-     * Get house
-     *
-     * @return \Application\PoudlardBundle\Entity\House 
-     */
-    public function getHouse()
-    {
-        return $this->house;
-    }
+    // /**
+    //  * Get house
+    //  *
+    //  * @return \Application\PoudlardBundle\Entity\House 
+    //  */
+    // public function getHouse()
+    // {
+    //     return $this->house;
+    // }
 
     /**
      * Add member

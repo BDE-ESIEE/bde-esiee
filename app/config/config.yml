@@ -54,7 +54,7 @@ assetic:
         - MopaBootstrapBundle
         - SonataNewsBundle
         - ApplicationShopBundle
-        - ApplicationPoudlardBundle
+        # - ApplicationPoudlardBundle
         - ApplicationStudentBundle
         - ApplicationSonataAdminBundle
         - ApplicationPageBundle 
@@ -282,11 +282,11 @@ sonata_admin:
                     - bde.admin.event
                     - application_bde.admin.event_category
                     - bde.admin.club
-            poudlard:
-                label: Poudlard 2.0
-                items:
-                    - application_poudlard.admin.house
-                    - application_poudlard.admin.points
+            # poudlard:
+            #     label: Poudlard 2.0
+            #     items:
+            #         - application_poudlard.admin.house
+            #         - application_poudlard.admin.points
             shop:
                 label: Breguet Shop
                 items:
