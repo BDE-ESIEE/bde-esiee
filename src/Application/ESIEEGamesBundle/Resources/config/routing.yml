@@ -1,0 +1,3 @@
+application_esiee_games_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ApplicationESIEEGamesBundle:Default:index }

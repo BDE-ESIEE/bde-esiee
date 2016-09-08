@@ -70,6 +70,7 @@ class AppKernel extends Kernel
             new Application\StudentBundle\ApplicationStudentBundle(),
             new Application\ServiceBundle\ApplicationServiceBundle(),
             new Application\PageBundle\ApplicationPageBundle(),
+            new Application\ESIEEGamesBundle\ApplicationESIEEGamesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
