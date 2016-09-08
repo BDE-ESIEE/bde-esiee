@@ -1,6 +1,6 @@
 application_esiee_games:
     resource: "@ApplicationESIEEGamesBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /esiee-games
 
 application_page:
     resource: "@ApplicationPageBundle/Resources/config/routing.yml"

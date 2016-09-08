@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title 'ESIEE Games' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{{ dump(clubs) }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

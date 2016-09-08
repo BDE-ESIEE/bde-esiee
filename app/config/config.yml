@@ -442,7 +442,7 @@ shivas_versioning:
 jms_di_extra:
     locations:
         all_bundles: false
-        bundles: [ApplicationStudentBundle, ApplicationServiceBundle]
+        bundles: [ApplicationStudentBundle, ApplicationServiceBundle, ApplicationESIEEGamesBundle]
         directories: ["%kernel.root_dir%/../src"]
     automatic_controller_injections:
         properties:

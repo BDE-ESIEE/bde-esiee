@@ -121,6 +121,8 @@ class Club
      * @Since("1.4")
      */
     private $directors;
+
+    public $points = 0;
     
     /**
      * Constructor
