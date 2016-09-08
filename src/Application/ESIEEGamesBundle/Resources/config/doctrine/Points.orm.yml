@@ -1,0 +1,26 @@
+Application\ESIEEGamesBundle\Entity\Points:
+    type: entity
+    table: esieegames__points
+    repositoryClass: Application\ESIEEGamesBundle\Repository\PointsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        value:
+            type: integer
+        date:
+            type: datetime
+    manyToOne:
+        club:
+            targetEntity: Application\BDEBundle\Entity\Club
+            joinColumn:
+                name: club_id
+                referencedColumnName: id
+            nullable: false
+            inversedBy: points
+    lifecycleCallbacks: {  }
