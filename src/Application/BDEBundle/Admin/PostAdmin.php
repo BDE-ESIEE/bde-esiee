@@ -5,6 +5,7 @@ namespace Application\BDEBundle\Admin;
 use Sonata\NewsBundle\Admin\PostAdmin as BaseAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Knp\Menu\ItemInterface as MenuItemInterface;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Admin\AdminInterface;
@@ -49,11 +50,12 @@ class PostAdmin extends BaseAdmin
         $formMapper->remove('image');
         $formMapper->remove('tags');
         $formMapper->remove('collection');
+        $formMapper->remove('commentsEnabled');
 
         if (!$this->isGranted('OPERATOR'))
         {
             $formMapper->remove('author');
-            $formMapper->remove('enabled');
+            // $formMapper->remove('enabled');
         }
 
         $formMapper
@@ -67,7 +69,10 @@ class PostAdmin extends BaseAdmin
                         'style' => 'width: 100%;'
                     )
                 ))
-                ->add('collection', 'sonata_type_model_list', array('required' => false))
+                ->add('collection', 'sonata_type_model', array(
+                    'required' => false,
+                    'btn_add' => false
+                ))
             ->end()
             ->with('General')
                 ->add('content', 'sonata_formatter_type', array(
@@ -95,13 +100,13 @@ class PostAdmin extends BaseAdmin
                     'new_on_update' => false,
                     'label'         => 'Photo au format rectangle',
                 ))
-                ->add('thumbnail', 'sonata_media_type', array(
-                    'required'      => false,
-                    'provider'      => 'sonata.media.provider.image',
-                    'context'       => 'news',
-                    'new_on_update' => false,
-                    'label'         => 'Photo au format carré',
-                ))
+                // ->add('thumbnail', 'sonata_media_type', array(
+                //     'required'      => false,
+                //     'provider'      => 'sonata.media.provider.image',
+                //     'context'       => 'news',
+                //     'new_on_update' => false,
+                //     'label'         => 'Photo au format carré',
+                // ))
             ->end()
         ;
     }
@@ -142,6 +147,19 @@ class PostAdmin extends BaseAdmin
                 ),
                 'label' => 'Actions'
             ))
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        parent::configureDatagridFilters($datagridMapper);
+        
+        $datagridMapper
+            ->remove('with_open_comments')
+            ->add('collection')
         ;
     }
 
