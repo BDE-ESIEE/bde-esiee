@@ -1,0 +1,11 @@
+services:
+    coop_tilleuls_acl_sonata_admin_extension.acl.extension:
+        class: Application\Sonata\AdminBundle\Admin\AclAdminExtension
+        arguments:
+            - "@security.context"
+            - "@security.acl.dbal.connection"
+            - "%security.role_hierarchy.roles%"
+        tags:
+            - { name: sonata.admin.extension, target: bde.admin.post }
+            - { name: sonata.admin.extension, target: bde.admin.event }
+            - { name: sonata.admin.extension, target: bde.admin.club }

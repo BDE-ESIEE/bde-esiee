@@ -54,7 +54,6 @@ class AppKernel extends Kernel
             new Sonata\FormatterBundle\SonataFormatterBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
             new Sonata\CommentBundle\SonataCommentBundle(),
-            new CoopTilleuls\Bundle\AclSonataAdminExtensionBundle\CoopTilleulsAclSonataAdminExtensionBundle(),
 
             // Application
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),

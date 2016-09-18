@@ -47,8 +47,7 @@
         "ferus/fairpay-php-sdk"                   : "dev-master",
         "knplabs/knp-snappy-bundle"               : "dev-master",
         "oyejorge/less.php"                       : "v1.7.0.10",
-        "hwi/oauth-bundle"                        : "^0.4.1",
-        "tilleuls/acl-sonata-admin-extension-bundle": "dev-master"
+        "hwi/oauth-bundle"                        : "^0.4.1"
     },
     "scripts": {
         "post-root-package-install": [

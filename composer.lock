@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ffe1d65069e370a3000cc007b4485f8b",
-    "content-hash": "fdd73292184a07369ce856e99f384119",
+    "hash": "7baa150e3da4523f2c5366655c05c5fe",
+    "content-hash": "6eaa567761d45f39c854c580c3e5d84d",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -5808,56 +5808,6 @@
             "time": "2016-07-30 08:48:52"
         },
         {
-            "name": "tilleuls/acl-sonata-admin-extension-bundle",
-            "version": "dev-master",
-            "target-dir": "CoopTilleuls/Bundle/AclSonataAdminExtensionBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/coopTilleuls/CoopTilleulsAclSonataAdminExtensionBundle.git",
-                "reference": "731b84e038eda6c697335c62610d70a479f2a118"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/coopTilleuls/CoopTilleulsAclSonataAdminExtensionBundle/zipball/731b84e038eda6c697335c62610d70a479f2a118",
-                "reference": "731b84e038eda6c697335c62610d70a479f2a118",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": "~2.2",
-                "sonata-project/admin-bundle": "^2.2.2|^3.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "CoopTilleuls\\Bundle\\AclSonataAdminExtensionBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kévin Dunglas",
-                    "email": "kevin@les-tilleuls.coop",
-                    "homepage": "http://dunglas.fr"
-                }
-            ],
-            "description": "ACL list filtering for SonataAdmin",
-            "homepage": "http://les-tilleuls.coop",
-            "keywords": [
-                "acl",
-                "admin",
-                "sonata"
-            ],
-            "time": "2016-06-22 12:37:27"
-        },
-        {
             "name": "twbs/bootstrap",
             "version": "dev-master",
             "source": {
@@ -6213,8 +6163,7 @@
         "knplabs/knp-menu-bundle": 20,
         "genemu/form-bundle": 20,
         "ferus/fairpay-php-sdk": 20,
-        "knplabs/knp-snappy-bundle": 20,
-        "tilleuls/acl-sonata-admin-extension-bundle": 20
+        "knplabs/knp-snappy-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
