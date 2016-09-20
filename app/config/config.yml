@@ -55,9 +55,10 @@ assetic:
         - SonataNewsBundle
         - ApplicationShopBundle
         # - ApplicationPoudlardBundle
+        - ApplicationESIEEGamesBundle
         - ApplicationStudentBundle
         - ApplicationSonataAdminBundle
-        - ApplicationPageBundle 
+        - ApplicationPageBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -299,13 +300,13 @@ sonata_admin:
             media:
                 label: sonata_media
                 label_catalogue: SonataMediaBundle
-                items: 
+                items:
                     - sonata.media.admin.media
                     - sonata.media.admin.gallery
             user:
                 label: sonata_user
                 label_catalogue: SonataUserBundle
-                items: 
+                items:
                     - application_sonata_user.admin.user
                     - sonata.user.admin.group
             services:

@@ -1,15 +1,147 @@
 {% extends "::base.html.twig" %}
 
 {% block title 'ESIEE Games' %}
+{% block description 'Tableau d\'avancement des ESIEE Games : où en sont les clubs.' %}
+
+{% set contains_editable_block = 'yes' %}
 
 {% block stylesheets %}
 	{{ parent() }}
+	{% stylesheets
+		'bundles/esieegames/css/esieegames.css'
+		filter='cssrewrite,?yui_css'
+        output='css/esieegames.min.css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
 {% endblock %}
 
 {% block body %}
-	{{ dump(clubs) }}
+<div class="esiee-games">
+	<section class="header container">
+		<h1>ESIEE GAMES</h1>
+		<p>{{ block('description') }}</p>
+	</section>
+	<section class="podium-area">
+		<div class="podium">
+			{% set podium =  ['2' => clubs[1],'1' => clubs[0],'3' => clubs[2]] %}
+			{% for rank,club in podium %}
+				<div class="club-X">
+					<div class="club-desc">
+						<img src="{{club.logoUrl}}" alt="{{club.title}}">
+						<h2>{{club.title}}</h2>
+					</div>
+					<div class="step">
+						<p><span>{{rank}}</span></p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	<section class="podium-area small">
+		<div class="podium">
+			<div class="club-4"<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>>
+				<div class="club-desc small-desc">
+					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
+					<h2>Club PC</h2>
+				</div>
+				<div class="small-step step">
+					<p><span>4</span></p>
+				</div>
+			</div>
+			<div class="club-4">
+				<div class="club-desc small-desc">
+					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
+					<h2>Club PC</h2>
+				</div>
+				<div class="small-step step">
+					<p><span>5</span></p>
+				</div>
+			</div>
+			<div class="club-4">
+				<div class="club-desc small-desc">
+					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
+					<h2>Club PC</h2>
+				</div>
+				<div class="smal<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>l-step step">
+					<p><span>6</span></p>
+				</div>
+			</div>
+			<div class="club-4">
+				<div class="club-desc small-desc">
+					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
+					<h2>Club PC</h2>
+				</div>
+				<div class="small-step step">
+					<p><span>7</span></p>
+				</div>
+			</div>
+			<div class="club-4">
+				<div class="club-desc small-desc">
+					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
+					<h2>Club PC</h2>
+				</div>
+				<div class="small-step step">
+					<p><span>8</span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="tableau container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Rang</th>
+					<th>Nom du club</th>
+					<th>Points</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Larry</td>
+					<td>the Bird</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</div>
 {% endblock %}
 
 {% block javascripts %}
 	{{ parent() }}
+	<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+	<script>
+	$(document).on("ready",function(){
+		const burst = new mojs.Burst({
+			parent:document.querySelector('.club-1 .imgwrap'),
+			radius: {65:130},
+			count: 30,
+			x:0,
+			y:0,
+			children : {
+				repeat:999999999,
+				fill: '#ffc53a',
+				opacity: 1,
+				radius: 3,
+				duration: 2000,
+				isSwirl: true,
+				swirlSize: 'rand(20,40)',
+				swirlFrequency: 'rand(5,8)',
+				delay: 'stagger( rand(0, 300) )',
+				//easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
+			}
+		}).play();
+		});
+	</script>
 {% endblock %}
