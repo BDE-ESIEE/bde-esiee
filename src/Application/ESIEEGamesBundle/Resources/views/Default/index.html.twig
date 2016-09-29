@@ -40,51 +40,17 @@
 	</section>
 	<section class="podium-area small">
 		<div class="podium">
-			<div class="club-4"<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>>
-				<div class="club-desc small-desc">
-					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
-					<h2>Club PC</h2>
+			{% for club in clubs|slice(2, 8) %}
+				<div class="club-4">
+					<div class="club-desc small-desc">
+						<img src="{{club.logoUrl}}" alt="{{club.title}}">
+						<h2>{{club.title}}</h2>
+					</div>
+					<div class="small-step step">
+						<p><span>{{ loop.index + 3 }}</span></p>
+					</div>
 				</div>
-				<div class="small-step step">
-					<p><span>4</span></p>
-				</div>
-			</div>
-			<div class="club-4">
-				<div class="club-desc small-desc">
-					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
-					<h2>Club PC</h2>
-				</div>
-				<div class="small-step step">
-					<p><span>5</span></p>
-				</div>
-			</div>
-			<div class="club-4">
-				<div class="club-desc small-desc">
-					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
-					<h2>Club PC</h2>
-				</div>
-				<div class="smal<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>l-step step">
-					<p><span>6</span></p>
-				</div>
-			</div>
-			<div class="club-4">
-				<div class="club-desc small-desc">
-					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
-					<h2>Club PC</h2>
-				</div>
-				<div class="small-step step">
-					<p><span>7</span></p>
-				</div>
-			</div>
-			<div class="club-4">
-				<div class="club-desc small-desc">
-					<img src="https://bde.esiee.fr/uploads/media/club/0001/01/96e3389190ab9246e7591908b7477f46441ca7e7.png" alt="Club PC">
-					<h2>Club PC</h2>
-				</div>
-				<div class="small-step step">
-					<p><span>8</span></p>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</section>
 	<section class="tableau container">
