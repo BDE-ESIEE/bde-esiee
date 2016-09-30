@@ -65,7 +65,7 @@
 			<tbody>
 				{% for club in clubs %}
 					<tr>
-						<th scope="row">1</th>
+						<th scope="row">{{ loop.index }}</th>
 						<td>{{club.title}}</td>
 						<td>{{club.points}}</td>
 					</tr>
