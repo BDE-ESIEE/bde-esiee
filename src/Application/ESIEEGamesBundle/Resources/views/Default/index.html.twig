@@ -22,37 +22,37 @@
 		<h1>ESIEE GAMES</h1>
 		<p>{{ block('description') }}</p>
 	</section>
-	<section class="podium-area">
-		<div class="podium">
-			{% set podium =  ['2' => clubs[1],'1' => clubs[0],'3' => clubs[2]] %}
-			{% for rank,club in podium %}
-				<div class="club-X">
-					<div class="club-desc">
-						<img src="{{club.logoUrl}}" alt="{{club.title}}">
-						<h2>{{club.title}}</h2>
-					</div>
-					<div class="step">
-						<p><span>{{rank}}</span></p>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-	</section>
-	<section class="podium-area small">
-		<div class="podium">
-			{% for club in clubs|slice(2, 8) %}
-				<div class="club-4">
-					<div class="club-desc small-desc">
-						<img src="{{club.logoUrl}}" alt="{{club.title}}">
-						<h2>{{club.title}}</h2>
-					</div>
-					<div class="small-step step">
-						<p><span>{{ loop.index + 3 }}</span></p>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-	</section>
+        <section class="podium-area">
+                <div class="podium">
+                        {% set podium = {'2': clubs[1], '1': clubs[0], '3': clubs[2]} %}
+                        {% for rank,club in podium %}
+                                <div class="club-X">
+                                        <div class="club-desc">
+                                                {% thumbnail club.logo, 'small' %}
+                                                <h2>{{club.title}}</h2>
+                                        </div>
+                                        <div class="step">
+                                                <p><span>{{rank}}</span></p>
+                                        </div>
+                                </div>
+                        {% endfor %}
+                </div>
+        </section>
+        <section class="podium-area small">
+                <div class="podium">
+                        {% for club in clubs|slice(3, 5) %}
+                                <div class="club-4">
+                                        <div class="club-desc small-desc">
+                                                {% thumbnail club.logo, 'small' %}
+                                                <h2>{{club.title}}</h2>
+                                        </div>
+                                        <div class="small-step step">
+                                                <p><span>{{ loop.index + 3 }}</span></p>
+                                        </div>
+                                </div>
+                        {% endfor %}
+                </div>
+        </section>
 	<section class="tableau container">
 		<table class="table">
 			<thead>
