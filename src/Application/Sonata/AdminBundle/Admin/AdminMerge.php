@@ -22,9 +22,8 @@ abstract class AdminMerge extends Admin
         /* ---> Start of modified code <--- */
         try {
             $em = $this->getModelManager()->getEntityManager($object);
-            $em->merge($object);
+            $result = $em->merge($object);
             $em->flush();
-            $result = null;
         } catch (\PDOException $e) {
             throw new ModelManagerException(sprintf('Failed to create object: %s', ClassUtils::getClass($object)), $e->getCode(), $e);
         } catch (DBALException $e) {
