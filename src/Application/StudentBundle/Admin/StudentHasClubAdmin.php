@@ -53,7 +53,10 @@ class StudentHasClubAdmin extends Admin
         }
 
         $formMapper
-            ->add('student', 'sonata_type_model_list', array('required' => false))
+            ->add('student', 'sonata_type_model_list', array(
+                'required' => false, 
+                'btn_list' => false
+            ))
         ;
 
         if ($has_job)
