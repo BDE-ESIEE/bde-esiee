@@ -1,0 +1,16 @@
+{% block club_fee_choice_widget %}
+    {% spaceless %}
+        {{ block("choice_widget") }}
+        <script type="text/javascript">
+            $(function() {
+                $('input[name="{{ form.vars.full_name }}"]').on('ifChecked', function(e) {
+                    var value = parseInt($(this).val());
+                    var reverse = (value + 1) % 2;
+                    $('[fee-type="' + value + '"]').parent().parent().show();
+                    $('[fee-type="' + reverse + '"]').parent().parent().hide();
+                });
+                $('input[name="{{ form.vars.full_name }}"][value="' + $('input[name="{{ form.vars.full_name }}"]:checked').val() + '"]').trigger('ifChecked');
+            });
+        </script>
+    {% endspaceless %}
+{% endblock %}

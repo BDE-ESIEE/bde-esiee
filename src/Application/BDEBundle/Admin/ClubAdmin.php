@@ -87,6 +87,43 @@ class ClubAdmin extends Admin
                     'ckeditor_context'     => 'main',
                 ))
             ->end()
+            ->with('Cotisations')
+                ->add('isFeeByOld', 'club_fee_choice', array(
+                    'widget_type' => 'inline-btn',
+                    'expanded'    => true,
+                    'choices'     => array('0' => 'Non', '1' => 'Oui')
+                ))
+                ->add('feeE1E3', null, array(
+                    'attr' => array(
+                        'fee-type' => 0
+                    )
+                ))
+                ->add('feeE4', null, array(
+                    'attr' => array(
+                        'fee-type' => 0
+                    )
+                ))
+                ->add('feeE5', null, array(
+                    'attr' => array(
+                        'fee-type' => 0
+                    )
+                ))
+                ->add('feeApprentice', null, array(
+                    'attr' => array(
+                        'fee-type' => 0
+                    )
+                ))
+                ->add('feeNewMember', null, array(
+                    'attr' => array(
+                        'fee-type' => 1
+                    )
+                ))
+                ->add('feeOldMember', null, array(
+                    'attr' => array(
+                        'fee-type' => 1
+                    )
+                ))
+            ->end()
             ->with('Membres')
                 ->add('directors', 'sonata_type_collection', array(
                         'cascade_validation' => true,

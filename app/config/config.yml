@@ -36,6 +36,7 @@ twig:
             - 'SonataCoreBundle:Form:datepicker.html.twig'
             - 'SonataMediaBundle:Form:media_widgets.html.twig'
             - 'ApplicationStudentBundle:Form:student_widget.html.twig'
+            - 'ApplicationBDEBundle:Form:club_fee_choice_widget.html.twig'
     globals:
         version: %application_version%
         piwik_id: %piwik_id%

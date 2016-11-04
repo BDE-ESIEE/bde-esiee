@@ -109,6 +109,55 @@ class Club
      */
     private $directors;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="isFeeByAncient", type="boolean", nullable=true)
+     */
+    private $isFeeByOld = false;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feeE1E3", type="integer", nullable=true)
+     */
+    private $feeE1E3 = 0;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feeE4", type="integer", nullable=true)
+     */
+    private $feeE4 = 0;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feeE5", type="integer", nullable=true)
+     */
+    private $feeE5 = 0;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feeApprentice", type="integer", nullable=true)
+     */
+    private $feeApprentice = 0;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feeNewMember", type="integer", nullable=true)
+     */
+    private $feeNewMember = 0;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feeOldMember", type="integer", nullable=true)
+     */
+    private $feeOldMember = 0;
+
     public $points = 0;
     
     /**
@@ -517,5 +566,166 @@ class Club
     public function getDirectors()
     {
         return $this->directors;
+    }
+
+    /**
+     * Set isFeeByOld
+     *
+     * @param boolean $isFeeByOld
+     * @return Club
+     */
+    public function setIsFeeByOld($isFeeByOld)
+    {
+        $this->isFeeByOld = $isFeeByOld;
+
+        return $this;
+    }
+
+    /**
+     * Get isFeeByOld
+     *
+     * @return boolean 
+     */
+    public function getIsFeeByOld()
+    {
+        return $this->isFeeByOld;
+    }
+
+    /**
+     * Set feeE1E3
+     *
+     * @param integer $feeE1E3
+     * @return Club
+     */
+    public function setFeeE1E3($feeE1E3)
+    {
+        $this->feeE1E3 = $feeE1E3;
+
+        return $this;
+    }
+
+    /**
+     * Get feeE1E3
+     *
+     * @return integer 
+     */
+    public function getFeeE1E3()
+    {
+        return $this->feeE1E3;
+    }
+
+    /**
+     * Set feeE4
+     *
+     * @param integer $feeE4
+     * @return Club
+     */
+    public function setFeeE4($feeE4)
+    {
+        $this->feeE4 = $feeE4;
+
+        return $this;
+    }
+
+    /**
+     * Get feeE4
+     *
+     * @return integer 
+     */
+    public function getFeeE4()
+    {
+        return $this->feeE4;
+    }
+
+    /**
+     * Set feeE5
+     *
+     * @param integer $feeE5
+     * @return Club
+     */
+    public function setFeeE5($feeE5)
+    {
+        $this->feeE5 = $feeE5;
+
+        return $this;
+    }
+
+    /**
+     * Get feeE5
+     *
+     * @return integer 
+     */
+    public function getFeeE5()
+    {
+        return $this->feeE5;
+    }
+
+    /**
+     * Set feeApprentice
+     *
+     * @param integer $feeApprentice
+     * @return Club
+     */
+    public function setFeeApprentice($feeApprentice)
+    {
+        $this->feeApprentice = $feeApprentice;
+
+        return $this;
+    }
+
+    /**
+     * Get feeApprentice
+     *
+     * @return integer 
+     */
+    public function getFeeApprentice()
+    {
+        return $this->feeApprentice;
+    }
+
+    /**
+     * Set feeNewMember
+     *
+     * @param integer $feeNewMember
+     * @return Club
+     */
+    public function setFeeNewMember($feeNewMember)
+    {
+        $this->feeNewMember = $feeNewMember;
+
+        return $this;
+    }
+
+    /**
+     * Get feeNewMember
+     *
+     * @return integer 
+     */
+    public function getFeeNewMember()
+    {
+        return $this->feeNewMember;
+    }
+
+    /**
+     * Set feeOldMember
+     *
+     * @param integer $feeOldMember
+     * @return Club
+     */
+    public function setFeeOldMember($feeOldMember)
+    {
+        $this->feeOldMember = $feeOldMember;
+
+        return $this;
+    }
+
+    /**
+     * Get feeOldMember
+     *
+     * @return integer 
+     */
+    public function getFeeOldMember()
+    {
+        return $this->feeOldMember;
     }
 }

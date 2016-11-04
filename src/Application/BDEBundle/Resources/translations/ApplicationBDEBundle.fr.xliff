@@ -547,6 +547,35 @@
                 <source>breadcrumb.link_club_stats</source>
                 <target>Statistiques</target>
             </trans-unit>
+
+            <trans-unit id="form_label_is_fee_by_old">
+                <source>form.label_is_fee_by_old</source>
+                <target>Cotisation par ancienneté</target>
+            </trans-unit>
+            <trans-unit id="form_label_fee_e1_e3">
+                <source>form.label_fee_e1_e3</source>
+                <target>Cotisation E1-E3</target>
+            </trans-unit>
+            <trans-unit id="form_label_fee_e4">
+                <source>form.label_fee_e4</source>
+                <target>Cotisation E4</target>
+            </trans-unit>
+            <trans-unit id="form_label_fee_e5">
+                <source>form.label_fee_e5</source>
+                <target>Cotisation E5</target>
+            </trans-unit>
+            <trans-unit id="form_label_fee_apprentice">
+                <source>form.label_fee_apprentice</source>
+                <target>Cotisation Apprentis</target>
+            </trans-unit>
+            <trans-unit id="form_label_fee_new_member">
+                <source>form.label_fee_new_member</source>
+                <target>Cotisation nouveau membres</target>
+            </trans-unit>
+            <trans-unit id="form_label_fee_old_member">
+                <source>form.label_fee_old_member</source>
+                <target>Cotisation ancien membres</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

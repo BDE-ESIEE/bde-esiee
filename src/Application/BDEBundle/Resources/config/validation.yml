@@ -9,3 +9,27 @@ Application\BDEBundle\Entity\Club:
         title:
             - Length:
                 min: 3
+        feeE1E3:
+            - Type:
+                type: integer
+                message: La cotisation doit être un nombre entier
+        feeE4:
+            - Type:
+                type: integer
+                message: La cotisation doit être un nombre entier
+        feeE5:
+            - Type:
+                type: integer
+                message: La cotisation doit être un nombre entier
+        feeApprentice:
+            - Type:
+                type: integer
+                message: La cotisation doit être un nombre entier
+        feeNewMember:
+            - Type:
+                type: integer
+                message: La cotisation doit être un nombre entier
+        feeOldMember:
+            - Type:
+                type: integer
+                message: La cotisation doit être un nombre entier
