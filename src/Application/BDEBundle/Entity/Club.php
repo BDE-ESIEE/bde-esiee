@@ -95,19 +95,6 @@ class Club
      */
     private $email;
 
-    // /**
-    //  * @ORM\OneToMany(targetEntity="Application\PoudlardBundle\Entity\ClubHasPoints", mappedBy="club", orphanRemoval=true)
-    //  * @Exclude
-    //  */
-    // private $points;
-
-    // /**
-    //  * @ORM\ManyToOne(targetEntity="Application\PoudlardBundle\Entity\House", inversedBy="clubs", cascade="persist")
-    //  * @ORM\JoinColumn(name="house_id", referencedColumnName="id")
-    //  * @Exclude
-    //  **/
-    // private $house;
-
     /**
      * @ORM\OneToMany(targetEntity="Application\StudentBundle\Entity\StudentHasClub", cascade={"all"}, mappedBy="club_member", orphanRemoval=true)
      * @Exclude

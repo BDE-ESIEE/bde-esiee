@@ -1,6 +1,7 @@
 Application\BDEBundle\Entity\Club:
     properties:
         email:
+            - NotBlank: ~
             - Email: ~
         shortcode:
             - Length:
