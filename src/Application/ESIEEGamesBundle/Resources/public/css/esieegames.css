@@ -1,3 +1,10 @@
+body {
+ background: #393E41;
+}
+body > div > .container {
+  max-width: none;
+  width:100%;
+}
 .esiee-games {
   background-color: #393e41;
   min-height: 100vh;
@@ -36,9 +43,11 @@
 
 .esiee-games .podium-area .podium div[class^="club"] {
   flex-grow: 1;
+  width: 33.3%;
 }
 
 .esiee-games .podium-area .podium div[class^="club"] .club-desc {
+  width:100%;
   display: flex;
   position: relative;
   flex-direction: column;

@@ -78,11 +78,11 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+	<script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
 	<script>
 	$(document).on("ready",function(){
 		const burst = new mojs.Burst({
-			parent:document.querySelector('.club-1 .imgwrap'),
+			parent:document.querySelector('.club-X:nth-child(2) img'),
 			radius: {65:130},
 			count: 30,
 			x:0,
