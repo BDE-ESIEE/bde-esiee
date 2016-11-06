@@ -2,13 +2,14 @@
 
 namespace Application\StudentBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ferus\FairPayApi\Exception\ApiErrorException;
 use Ferus\FairPayApi\FairPay;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use FOS\RestBundle\Controller\FOSRestController;
+use Application\StudentBundle\Entity\Student;
 
-class StudentController extends Controller
+class StudentController extends FOSRestController
 {
     public function searchAction($query)
     {
@@ -38,5 +39,24 @@ class StudentController extends Controller
         return array(
             'form' => $form->createView(),
         );
+    }
+
+    public function clubsByStudentAction(Student $student)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $clubs = $em->getRepository('ApplicationStudentBundle:StudentHasClub')->findClubsbyStudent($student);
+        $clubsSorted = array();
+
+        foreach ($clubs as $club) {
+            if ($club[1])
+                $clubsSorted[] = intval($club[1]);
+            else
+                $clubsSorted[] = intval($club[2]);
+        }
+
+        $view = $this->view($clubsSorted, 200);
+
+        return $this->handleView($view);
     }
 }

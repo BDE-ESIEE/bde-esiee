@@ -8,6 +8,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Application\BDEBundle\Entity\Club;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use JMS\Serializer\SerializationContext;
 
 class ClubController extends FOSRestController
 {
@@ -126,5 +127,28 @@ class ClubController extends FOSRestController
                 'Content-Disposition' => 'attachment; filename="trombi-'.$club->getTitle().'-'.(new \DateTime())->format('M Y').'.'.$_format.'"',
             )
         );
+    }
+
+    public function feesRefundAction()
+    {
+        $em         = $this->getDoctrine()->getManager();
+        $clubs      = $em->getRepository('ApplicationBDEBundle:Club')->findAll();
+        $serializer = $this->get('jms_serializer');
+        $clubsById  = array();
+        foreach ($clubs as $club) {
+            $clubsById[$club->getId()] = $club;
+        }
+        $json       = $serializer->serialize($clubsById, 'json', SerializationContext::create()->setGroups(array('fees')));
+
+        $form = $this->createFormBuilder()
+            ->add('name', 'student', array(
+                'label' => false
+            ))
+            ->getForm();
+
+        return $this->render('ApplicationBDEBundle:Club:fees_refund.html.twig', array(
+            'clubs' => $json,
+            'form'  => $form->createView()
+        ));
     }
 }

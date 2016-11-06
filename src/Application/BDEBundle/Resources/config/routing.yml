@@ -33,3 +33,9 @@ application_bde_events:
     requirements:
         _format: html|json|xml|ics
         _method:  GET
+
+application_bde_clubs_fees_refund:
+    pattern:  /clubs/remboursement-cotisation
+    defaults: { _controller: ApplicationBDEBundle:Club:feesRefund }
+    requirements:
+        _method:  GET

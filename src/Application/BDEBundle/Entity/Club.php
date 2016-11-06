@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\VirtualProperty;
 use JMS\Serializer\Annotation\Since;
+use JMS\Serializer\Annotation\Groups;
 
 /**
  * Club
@@ -24,6 +25,7 @@ class Club
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"fees"})
      */
     private $id;
 
@@ -31,6 +33,7 @@ class Club
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Groups({"fees"})
      */
     private $title;
 
@@ -38,6 +41,7 @@ class Club
      * @var string
      *
      * @ORM\Column(name="shortcode", type="string", length=255)
+     * @Groups({"fees"})
      */
     private $shortcode;
 
@@ -113,6 +117,8 @@ class Club
      * @var boolean
      *
      * @ORM\Column(name="isFeeByAncient", type="boolean", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $isFeeByOld = false;
 
@@ -120,6 +126,8 @@ class Club
      * @var integer
      *
      * @ORM\Column(name="feeE1E3", type="integer", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $feeE1E3 = 0;
 
@@ -127,6 +135,8 @@ class Club
      * @var integer
      *
      * @ORM\Column(name="feeE4", type="integer", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $feeE4 = 0;
 
@@ -134,6 +144,8 @@ class Club
      * @var integer
      *
      * @ORM\Column(name="feeE5", type="integer", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $feeE5 = 0;
 
@@ -141,6 +153,8 @@ class Club
      * @var integer
      *
      * @ORM\Column(name="feeApprentice", type="integer", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $feeApprentice = 0;
 
@@ -148,6 +162,8 @@ class Club
      * @var integer
      *
      * @ORM\Column(name="feeNewMember", type="integer", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $feeNewMember = 0;
 
@@ -155,6 +171,8 @@ class Club
      * @var integer
      *
      * @ORM\Column(name="feeOldMember", type="integer", nullable=true)
+     * @Since("1.5")
+     * @Groups({"fees"})
      */
     private $feeOldMember = 0;
 

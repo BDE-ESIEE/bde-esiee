@@ -9,6 +9,7 @@ function searchStudent($input) {
 		dataType: "json",
 		url: api_road + $input.val(),
 		success: function(response) {
+			$input.trigger('studentFound', response);
 			$input.val(response.id);
 			$input.blur();
 			var cotisant = (response.is_contributor ? 'Cotisant(e)' : 'Non cotisant(e)');

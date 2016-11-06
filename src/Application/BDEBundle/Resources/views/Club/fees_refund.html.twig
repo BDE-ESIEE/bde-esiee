@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title "Remboursement cotisation des clubs" %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="col-lg-12 col-sm-12 text-center amIContributor">
+		<h1>{{ block('title') }}</h1>
+		{{ form(form) }}
+		<div id="results" class="col-sm-9 col-lg-9 hidden">
+			<h4 id="studentName"></h4>
+			<h3>Liste de tes cotisations :</h3>
+			<table id="fees" class="table text-left"></table>
+			<div id="explication"></div>
+		</div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.16.6/lodash.min.js"></script>
+    <script type="text/javascript">
+    	var clubs = {{ clubs|raw }};
+        var api_road = "https://bde.esiee.fr/fairpay/api/students/";
+        var api_clubs_road = "{{ url('application_student_search_clubs', {student: '0000000'}) }}";
+    </script>
+    <script src="{{ asset('bundles/applicationbde/js/fees_refund.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationstudent/js/student_type.js') }}" type="text/javascript"></script>
+{% endblock %}

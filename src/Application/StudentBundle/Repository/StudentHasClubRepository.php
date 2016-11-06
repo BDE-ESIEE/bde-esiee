@@ -3,6 +3,7 @@
 namespace Application\StudentBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Application\StudentBundle\Entity\Student;
 
 /**
  * StudentHasClubRepository
@@ -12,4 +13,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class StudentHasClubRepository extends EntityRepository
 {
+	public function findClubsbyStudent(Student $student)
+	{
+		return $this
+			->createQueryBuilder('shc')
+			->select('IDENTITY(shc.club_director)', 'IDENTITY(shc.club_member)')
+			->where('shc.student = :student')
+				->setParameter('student', $student)
+			->getQuery()
+			->getResult()
+		;
+	}
 }
