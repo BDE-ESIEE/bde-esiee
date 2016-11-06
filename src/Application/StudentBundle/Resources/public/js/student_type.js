@@ -1,4 +1,5 @@
 var request = {};
+var timeout = {};
 function searchStudent($input) {
 	if (undefined !== request[$input.attr('id')] && request[$input.attr('id')].readyState < 4)
 		request[$input.attr('id')].abort();
@@ -25,7 +26,10 @@ function searchStudent($input) {
 
 $(function() {
 	$('.student_type > input').on('keyup', function() {
-		searchStudent($(this));
+		// searchStudent($(this));
+		if (undefined !== timeout[$(this).attr('id')])
+			clearTimeout(timeout[$(this).attr('id')]);
+		timeout[$(this).attr('id')] = setTimeout(searchStudent, 500, $(this));
 	});
 	$('.student_type > input').each(function() {
 		if ($(this).val().length > 0) {

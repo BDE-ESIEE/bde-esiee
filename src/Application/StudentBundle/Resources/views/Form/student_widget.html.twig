@@ -7,7 +7,9 @@
             <script>
                 $(function() {
                     $('.student_type > input').on('keyup', function() {
-                        searchStudent($(this));
+                        if (undefined !== timeout[$(this).attr('id')])
+                            clearTimeout(timeout[$(this).attr('id')]);
+                        timeout[$(this).attr('id')] = setTimeout(searchStudent, 500, $(this));
                     });
                 });
             </script>
