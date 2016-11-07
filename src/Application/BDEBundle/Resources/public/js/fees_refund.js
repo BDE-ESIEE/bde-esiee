@@ -12,12 +12,12 @@ $(function() {
 			var fee = '';
 			var table = '<thead>';
 
-			if (student.class.includes('1') || student.class.includes('2') || student.class.includes('1')) {
+			if (student.class.includes('F')) {
+				fee = 'fee_apprentice';
+			} else if (student.class.includes('1') || student.class.includes('2') || student.class.includes('3')) {
 				fee = 'fee_e1_e3';
 			} else if (student.class.includes('4')) {
 				fee = 'fee_e4';
-			} else if (student.class.includes('F')) {
-				fee = 'fee_apprentice';
 			} else {
 				fee = 'fee_e5';
 			}
