@@ -93,32 +93,32 @@ class ClubAdmin extends Admin
                     'expanded'    => true,
                     'choices'     => array('0' => 'Non', '1' => 'Oui')
                 ))
-                ->add('feeE1E3', null, array(
+                ->add('feeE1E3', 'integer', array(
                     'attr' => array(
                         'fee-type' => 0
                     )
                 ))
-                ->add('feeE4', null, array(
+                ->add('feeE4', 'integer', array(
                     'attr' => array(
                         'fee-type' => 0
                     )
                 ))
-                ->add('feeE5', null, array(
+                ->add('feeE5', 'integer', array(
                     'attr' => array(
                         'fee-type' => 0
                     )
                 ))
-                ->add('feeApprentice', null, array(
+                ->add('feeApprentice', 'integer', array(
                     'attr' => array(
                         'fee-type' => 0
                     )
                 ))
-                ->add('feeNewMember', null, array(
+                ->add('feeNewMember', 'integer', array(
                     'attr' => array(
                         'fee-type' => 1
                     )
                 ))
-                ->add('feeOldMember', null, array(
+                ->add('feeOldMember', 'integer', array(
                     'attr' => array(
                         'fee-type' => 1
                     )
