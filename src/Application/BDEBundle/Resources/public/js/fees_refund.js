@@ -44,6 +44,7 @@ $(function() {
 					feesOldMember[i] = club['fee_old_member'];
 				} else {
 					feesNewMember[i] = club[fee];
+					feesOldMember[i] = club[fee];
 				}
 
 				if (isByOldMember) {
