@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b61571e413f27e4d570d246bd6a7ffad",
-    "content-hash": "1ceb21b45dffdd193dd44e35d7888cf9",
+    "hash": "433c172cdc14fe8e5b640a291e5cb498",
+    "content-hash": "3eed02d711da8a157b6392a9c1d6524f",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -4626,21 +4626,21 @@
         },
         {
             "name": "sonata-project/news-bundle",
-            "version": "3.0.0",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataNewsBundle.git",
-                "reference": "bc4fe26d7e6826b5d7d2c6b4eb7e3da10d5d0627"
+                "reference": "706adb0c6e343341c814b1bfa34a1cc91177f4f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataNewsBundle/zipball/bc4fe26d7e6826b5d7d2c6b4eb7e3da10d5d0627",
-                "reference": "bc4fe26d7e6826b5d7d2c6b4eb7e3da10d5d0627",
+                "url": "https://api.github.com/repos/sonata-project/SonataNewsBundle/zipball/706adb0c6e343341c814b1bfa34a1cc91177f4f9",
+                "reference": "706adb0c6e343341c814b1bfa34a1cc91177f4f9",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3 || ^7.0",
-                "sonata-project/admin-bundle": "^3.0",
+                "sonata-project/admin-bundle": "^3.4",
                 "sonata-project/classification-bundle": "^3.0",
                 "sonata-project/core-bundle": "^3.0",
                 "sonata-project/datagrid-bundle": "^2.2",
@@ -4662,6 +4662,7 @@
                 "friendsofsymfony/rest-bundle": "^1.1",
                 "jms/serializer-bundle": "^0.13 || ^1.0",
                 "nelmio/api-doc-bundle": "^2.4",
+                "sllh/php-cs-fixer-styleci-bridge": "^2.0",
                 "sonata-project/doctrine-orm-admin-bundle": "^3.0",
                 "sonata-project/notification-bundle": "^3.0",
                 "sonata-project/seo-bundle": "^2.0"
@@ -4679,7 +4680,10 @@
             "autoload": {
                 "psr-4": {
                     "Sonata\\NewsBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4704,7 +4708,7 @@
                 "post",
                 "sonata"
             ],
-            "time": "2016-05-27 22:38:21"
+            "time": "2016-11-24 02:00:09"
         },
         {
             "name": "sonata-project/notification-bundle",
@@ -6172,6 +6176,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "sonata-project/news-bundle": 20,
         "mopa/bootstrap-bundle": 20,
         "twbs/bootstrap": 20,
         "shivas/versioning-bundle": 20,

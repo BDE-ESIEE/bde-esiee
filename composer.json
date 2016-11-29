@@ -30,7 +30,7 @@
         "sonata-project/easy-extends-bundle"      : "^2.1",
         "sonata-project/core-bundle"              : "^3.0",
         "sonata-project/user-bundle"              : "^3.0",
-        "sonata-project/news-bundle"              : "^3.0",
+        "sonata-project/news-bundle"              : "3.x-dev",
         "sonata-project/media-bundle"             : "^3.2",
         "sonata-project/seo-bundle"               : "^2.0",
         "sonata-project/block-bundle"             : "^3.0",
