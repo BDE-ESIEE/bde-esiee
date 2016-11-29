@@ -61,11 +61,9 @@ class StudentController extends FOSRestController
         return $this->handleView($view);
     }
 
-    /**
-     * @Secure(roles="ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR")
-     */
     public function markAsRefundedAction(Student $student)
     {
+        $this->denyAccessUnlessGranted('ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR', null, 'Unable to access this page!');
         $em = $this->getDoctrine()->getManager();
 
         $response = array();
@@ -92,11 +90,9 @@ class StudentController extends FOSRestController
         return $this->handleView($view);
     }
 
-    /**
-     * @Secure(roles="ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR")
-     */
     public function isRefundedAction(Student $student)
     {
+        $this->denyAccessUnlessGranted('ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR', null, 'Unable to access this page!');
         $view = $this->view((boolean) $student->getIsRefunded(), 200);
 
         return $this->handleView($view);
