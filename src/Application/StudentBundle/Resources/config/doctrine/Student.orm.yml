@@ -18,6 +18,9 @@ Application\StudentBundle\Entity\Student:
         email:
             type: string
             length: 255
+        isRefunded:
+            type: boolean
+            nullable: true
     oneToMany:
         clubs:
             targetEntity:  Application\StudentBundle\Entity\StudentHasClub

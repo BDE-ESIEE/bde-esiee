@@ -35,6 +35,11 @@ class Student
     private $clubs;
 
     /**
+     * @var boolean
+     */
+    private $isRefunded = false;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -170,5 +175,28 @@ class Student
     public function getClubs()
     {
         return $this->clubs;
+    }
+
+    /**
+     * Set isRefunded
+     *
+     * @param boolean $isRefunded
+     * @return Student
+     */
+    public function setIsRefunded($isRefunded)
+    {
+        $this->isRefunded = $isRefunded;
+
+        return $this;
+    }
+
+    /**
+     * Get isRefunded
+     *
+     * @return boolean 
+     */
+    public function getIsRefunded()
+    {
+        return $this->isRefunded;
     }
 }

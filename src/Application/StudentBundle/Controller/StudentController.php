@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\RestBundle\Controller\FOSRestController;
 use Application\StudentBundle\Entity\Student;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class StudentController extends FOSRestController
 {
@@ -56,6 +57,47 @@ class StudentController extends FOSRestController
         }
 
         $view = $this->view($clubsSorted, 200);
+
+        return $this->handleView($view);
+    }
+
+    /**
+     * @Secure(roles="ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR")
+     */
+    public function markAsRefundedAction(Student $student)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $response = array();
+
+        if ($student->getIsRefunded()) {
+            $response = array(
+                'code'    => 400,
+                'success' => false,
+                'message' => 'already refunded'
+            );
+        } else {
+            $response = array(
+                'code'    => 200,
+                'success' => true,
+                'message' => 'sucessfully refunded'
+            );
+            $student->setIsRefunded(true);
+            $em->persist($student);
+            $em->flush();
+        }
+
+        $view = $this->view($response, $response['code']);
+
+        return $this->handleView($view);
+    }
+
+    /**
+     * @Secure(roles="ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR")
+     */
+    public function isRefundedAction(Student $student)
+    {
+        $view = $this->view((boolean) $student->getIsRefunded(), 200);
 
         return $this->handleView($view);
     }

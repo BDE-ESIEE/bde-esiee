@@ -13,3 +13,19 @@ application_student_search_clubs:
         _format: json
         _method:  GET
         student: \d{7}
+
+application_student_mark_as_refunded:
+    path:     /api/student/{student}/set-refunded
+    defaults: { _controller: ApplicationStudentBundle:Student:markAsRefunded, _format:json }
+    requirements:
+        _format: json
+        _method: PATCH
+        student: \d{7}
+
+application_student_is_refunded:
+    path:     /api/student/{student}/is-refunded
+    defaults: { _controller: ApplicationStudentBundle:Student:isRefunded, _format:json }
+    requirements:
+        _format: json
+        _method: GET
+        student: \d{7}

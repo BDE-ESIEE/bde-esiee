@@ -15,6 +15,9 @@
 			<h3>Liste de tes cotisations :</h3>
 			<table id="fees" class="table text-left"></table>
 			<div id="explication"></div>
+            {% if is_granted('ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR') %}
+                <a id="refundButton" href="{{ path('application_student_mark_as_refunded', {student: '0000000'}) }}" href-check="{{ path('application_student_is_refunded', {student: '0000000'}) }}" class="btn btn-primary">Marquer comme remboursé</a>
+            {% endif %}
 		</div>
     </div>
 {% endblock %}
@@ -29,4 +32,7 @@
     </script>
     <script src="{{ asset('bundles/applicationbde/js/fees_refund.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/applicationstudent/js/student_type.js') }}" type="text/javascript"></script>
+    {% if is_granted('ROLE_APPLICATION_STUDENT_ADMIN_STUDENT_EDITOR') %}
+        <script src="{{ asset('bundles/applicationbde/js/fees_mark_refunded.js') }}" type="text/javascript"></script>
+    {% endif %}
 {% endblock %}
