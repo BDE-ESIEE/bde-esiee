@@ -4,6 +4,7 @@
     "type"       : "project",
     "description": "Site web du BDE ESIEE Paris",
     "autoload"   : {
+        "classmap": ["app/AppKernel.php"],
         "psr-0": { "": "src/" }
     },
     "minimum-stability": "dev",
@@ -23,7 +24,7 @@
         "sensio/generator-bundle"                 : "~2.3",
         "incenteev/composer-parameter-handler"    : "~2.0",
         "friendsofsymfony/rest-bundle"            : "~1.6",
-        "nelmio/api-doc-bundle"                   : "2.6.0",
+        "nelmio/api-doc-bundle"                   : "2.13.0",
         "sonata-project/admin-bundle"             : "3.4.*",
         "sonata-project/doctrine-orm-admin-bundle": "^3.0",
         "sonata-project/easy-extends-bundle"      : "^2.1",

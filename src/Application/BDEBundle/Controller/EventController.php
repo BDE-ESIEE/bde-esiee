@@ -5,6 +5,7 @@ namespace Application\BDEBundle\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Doctrine\Common\Collections\Criteria;
 
 class EventController extends FOSRestController
 {
@@ -24,12 +25,28 @@ class EventController extends FOSRestController
     	$em = $this->getDoctrine()->getManager();
     	$repository = $em->getRepository('ApplicationBDEBundle:Event');
 
-        $all = ($_format != 'html' || $this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED'));
+        $oneMonthAgo = new \DateTime('-1 month');
 
-    	$event_list = $repository->findBy(($all) ? array() : array('private' => false), array('dateStart' => 'ASC'));
+        $criteria = new Criteria();
+        $criteria
+            ->where($criteria->expr()->gt('dateStart', $oneMonthAgo))
+            ->orderBy(array("dateStart" => Criteria::ASC))
+        ;
+
+        if ( !($_format != 'html' || $this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) ) {
+            $criteria->andWhere($criteria->expr()->eq('private', false));
+        }
+
+    	$event_list = $repository->matching($criteria);
     	$event_json = array();
 
     	foreach ($event_list as $event) {
+            $list_news = array();
+            if (!$event->getNews()->isEmpty()) {
+                foreach ($event->getNews() as $news) {
+                    $list_news[] = $news->getId();
+                }
+            }
     		$event_json[] = array(
                 'id'        => $event->getId(),
                 'title'     => $event->getTitle(),
@@ -39,7 +56,8 @@ class EventController extends FOSRestController
                 'place'     => $event->getPlace(),
                 'color'     => $event->getCategory()->getBackgroundColor(),
                 'textColor' => $event->getCategory()->getTextColor(),
-                'club_id'   => (null !== $event->getClub() ? $event->getClub()->getId() : null) ,
+                'club_id'   => (null !== $event->getClub() ? $event->getClub()->getId() : null),
+                'news_ids'  => $list_news,
     		);
     	}
 

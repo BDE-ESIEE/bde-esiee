@@ -3,7 +3,7 @@
 namespace Application\BDEBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Event
@@ -33,6 +33,7 @@ class Event
      * @var \DateTime
      *
      * @ORM\Column(name="dateStart", type="datetime")
+     * @Serializer\SerializedName("start")
      */
     private $dateStart;
 
@@ -40,6 +41,7 @@ class Event
      * @var \DateTime
      *
      * @ORM\Column(name="dateEnd", type="datetime")
+     * @Serializer\SerializedName("end")
      */
     private $dateEnd;
 
@@ -47,12 +49,13 @@ class Event
      * @var boolean
      *
      * @ORM\Column(name="private", type="boolean")
+     * @Serializer\Exclude
      */
     private $private;
 
     /**
      * @ORM\OneToMany(targetEntity="Application\Sonata\NewsBundle\Entity\Post", mappedBy="event")
-     * @Exclude
+     * @Serializer\Exclude
      */
     private $news;
 
@@ -67,6 +70,7 @@ class Event
      * @var string
      *
      * @ORM\Column(name="backgroundColor", type="string", length=255, nullable=true)
+     * @Serializer\SerializedName("color")
      */
     private $backgroundColor;
 
@@ -74,19 +78,21 @@ class Event
      * @var string
      *
      * @ORM\Column(name="textColor", type="string", length=255, nullable=true)
+     * @Serializer\SerializedName("textColor")
      */
     private $textColor;
 
     /**
      * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\EventCategory", inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
-     * @Exclude
+     * @Serializer\Exclude
      */
     private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity="Application\BDEBundle\Entity\Club")
      * @ORM\JoinColumn(nullable=true)
+     * @Serializer\Exclude
      */
     private $club;
 

@@ -386,7 +386,10 @@ fos_rest:
         enabled: true
         validate: true
 
-nelmio_api_doc: ~
+nelmio_api_doc:
+    name: API BDE ESIEE Paris
+    cache:
+        enabled: true
 
 sensio_framework_extra:
     view:    { annotations: false }
