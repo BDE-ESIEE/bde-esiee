@@ -64,9 +64,9 @@ $(function() {
 			var sumOldMember = _.reduce(feesOldMember, function(sum, fee) { return sum + fee; }, 0);
 			var refundFunction = function(sum) {
 				var refund = 0;
-				if (sum > 30 && sum <= 40) {
+				if (sum >= 30 && sum < 40) {
 					refund = _.round(sum * 0.15, 2);
-				} else if (sum > 40) {
+				} else if (sum >= 40) {
 					refund = _.round(sum * 0.20, 2);
 				}
 				return refund;
