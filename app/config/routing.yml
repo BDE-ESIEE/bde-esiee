@@ -78,10 +78,10 @@ NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
 
-sonata_api_media:
-    type:         rest
-    prefix:       /api
-    resource:     "@SonataMediaBundle/Resources/config/routing/api.xml"
+# sonata_api_media:
+#     type:         rest
+#     prefix:       /api
+#     resource:     "@SonataMediaBundle/Resources/config/routing/api.xml"
 
 fos_comment_api:
     type: rest
@@ -93,10 +93,10 @@ application_sonata_block:
     resource: "@ApplicationSonataBlockBundle/Resources/config/routing.yml"
     prefix:   /
 
-sonata_api_user:
-    type:         rest
-    prefix:       /api/user
-    resource:     "@SonataUserBundle/Resources/config/routing/api.xml"
+# sonata_api_user:
+#     type:         rest
+#     prefix:       /api/user
+#     resource:     "@SonataUserBundle/Resources/config/routing/api.xml"
 
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
