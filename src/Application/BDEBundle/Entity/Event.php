@@ -10,6 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
  *
  * @ORM\Table(name="bde__event")
  * @ORM\Entity(repositoryClass="Application\BDEBundle\Repository\EventRepository")
+ * @Serializer\ExclusionPolicy("none")
  */
 class Event
 {
@@ -281,7 +282,7 @@ class Event
      */
     public function getBackgroundColor()
     {
-        return $this->backgroundColor;
+        return $this->category->getBackgroundColor();
     }
 
     /**
@@ -304,7 +305,7 @@ class Event
      */
     public function getTextColor()
     {
-        return $this->textColor;
+        return $this->category->getTextColor();
     }
 
     /**
@@ -351,5 +352,15 @@ class Event
     public function getClub()
     {
         return $this->club;
+    }
+
+    /**
+     * Get club id
+     *
+     * @return integer
+     */
+    public function getClubId()
+    {
+        return (null !== $this->club ? $this->club->getId() : null);
     }
 }

@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    application.sonata.media.serializer.listener.media:
+        class: Application\Sonata\MediaBundle\Serializer\MediaSerializerListener
+        tags:
+            - { name: jms_serializer.event_subscriber}
+        arguments:
+            - @sonata.media.manager.media
+            - @service_container

@@ -28,6 +28,9 @@ class Media extends BaseMedia
      */
     protected $id;
 
+    public $url_thumbnail = '';
+    public $url = '';
+
     /**
      * Get id
      *
