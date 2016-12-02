@@ -392,7 +392,7 @@ nelmio_api_doc:
         enabled: true
 
 sensio_framework_extra:
-    view:    { annotations: false }
+    view:    { annotations: false } # Disabling view annotations because of FOSRestBundle
     router:  { annotations: true }
     request: { converters: true }
 
@@ -487,3 +487,10 @@ hwi_oauth:
             scope         : "email profile"
     http_client:
         proxy: "%proxy%"
+
+jms_serializer:
+    metadata:
+        directories:
+            sonata_datagrid:
+                namespace_prefix: "Sonata\\DatagridBundle"
+                path: "@SonataDatagridBundle/Resources/config/serializer"
