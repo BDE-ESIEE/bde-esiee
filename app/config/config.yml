@@ -71,6 +71,10 @@ assetic:
             file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
             formatter: "compressed"
             apply_to: "\.less$"
+        scssphp:
+            file: %kernel.root_dir%/../vendor/leafo/scssphp/scss.inc.php
+            formatter: "Leafo\ScssPhp\Formatter\Compressed"
+            apply_to: "\.mscss$"
 
 # Doctrine Configuration
 doctrine:

@@ -7,28 +7,21 @@
 
 {% block stylesheets %}
 	{{ parent() }}
+	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 	{% stylesheets 
-		'bundles/applicationbde/css/team.css'
-		filter='cssrewrite,?yui_css'
+		'bundles/applicationpage/scss/programme.mscss'
+		filter='cssrewrite'
+		output='css/programme.min.css'
 	 %}
 		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
 	{% endstylesheets %}
 {% endblock %}
 
-{% block body %}
-        <!--testimonial end-->
-		<section class="panel mtop30 tab" style="background:white;">
-	        <div class="panel-body">
-	            <div class="tab-content tasi-tab">
-	                <div id="programme" class="tab-pane active">
-		                {{ sonata_block_render({ 
-		                    'type': 'application.sonata.block.service.editable_text', 
-		                    'settings' : {
-		                        'title' : 'decouvre_nous_programme'
-		                    }
-		                }) }}
-	                </div>
-	            </div>
-	        </div>
-	    </section>
+{% block container %}
+	{{ sonata_block_render({ 
+	    'type': 'application.sonata.block.service.editable_text', 
+	    'settings' : {
+	        'title' : 'decouvre_nous_programme'
+	    }
+	}) }}
 {% endblock %}
