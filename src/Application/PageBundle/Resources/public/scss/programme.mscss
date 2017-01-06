@@ -48,6 +48,7 @@ section.programme {
 	min-height: 1000px;
 	background-image: url("../images/programme.jpg");
 	background-attachment: fixed;
+	background-size: cover;
 	z-index: 5;
     font-family: "Avenir Next LT Pro Regular", sans-serif;
     font-weight: normal;
