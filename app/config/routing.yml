@@ -108,8 +108,12 @@ hwi_oauth_login:
 
 google_login:
     path: /login/check-google
-
+    
 sonata_api_news:
     type:         rest
     prefix:       /api
     resource:     "@SonataNewsBundle/Resources/config/routing/api.xml"
+
+sonata_api_news_delete:
+    prefix:       /api
+    resource:     "@ApplicationSonataNewsBundle/Resources/config/routing.yml"

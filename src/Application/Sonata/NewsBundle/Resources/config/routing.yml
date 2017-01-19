@@ -1,0 +1,79 @@
+sonata_api_news_comment_delete_comment:
+    path: /comments/{id}.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [DELETE]
+
+sonata_api_news_comment_get_comment:
+    path: /comments/{id}.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [GET]
+
+sonata_api_news_post_delete_post:
+    path: /posts/{id}.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [DELETE]
+
+sonata_api_news_post_put_post:
+    path: /posts/{id}.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [PUT]
+
+sonata_api_news_post_post_post:
+    path: /posts.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [POST]
+
+sonata_api_news_post_get_post_comments:
+    path: /posts/{id}/comments.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [GET]
+
+sonata_api_news_post_post_post_comments:
+    path: /posts/{id}/comments.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [POST]
+
+sonata_api_news_post_put_post_comments:
+    path: /posts/{postId}/comments/{commentId}.{_format}
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        id: 1
+        _format: .json
+        path: /
+        permanent: true
+    methods:  [PUT]
