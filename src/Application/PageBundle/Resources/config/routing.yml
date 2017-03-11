@@ -25,3 +25,7 @@ application_bde_team:
 application_bde_programme:
     pattern:  /programme
     defaults: { _controller: ApplicationPageBundle:Page:programme }
+
+application_bde_privacy_policy:
+    pattern:  /regles-de-confidentialite
+    defaults: { _controller: ApplicationPageBundle:Page:privacyPolicy }

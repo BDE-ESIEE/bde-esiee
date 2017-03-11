@@ -70,4 +70,12 @@ class PageController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Template("ApplicationPageBundle:Page:privacy_policy.html.twig")
+     */
+    public function privacyPolicyAction()
+    {
+        return array();
+    }
 }
