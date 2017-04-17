@@ -60,6 +60,7 @@ assetic:
         - ApplicationStudentBundle
         - ApplicationSonataAdminBundle
         - ApplicationPageBundle
+        - ApplicationAurionBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

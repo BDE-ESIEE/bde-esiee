@@ -26,7 +26,7 @@ class AppKernel extends Kernel
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
 
-            // Others 
+            // Others
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\CommentBundle\FOSCommentBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
@@ -72,6 +72,7 @@ class AppKernel extends Kernel
             new Application\ServiceBundle\ApplicationServiceBundle(),
             new Application\PageBundle\ApplicationPageBundle(),
             new Application\ESIEEGamesBundle\ApplicationESIEEGamesBundle(),
+            new Application\AurionBundle\ApplicationAurionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
