@@ -122,11 +122,19 @@
                                     Calendrier
                                 </a>
                             </li>
-                            <li {% block liAurion  %}{% endblock %}>
-                                <a href="{{ path('application_calendar_homepage') }}">
+                            <li class="dropdown{% block liAurion %}{% endblock %}">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
                                     <i class="fa fa-user"></i>
-                                    Aurion
+                                    Aurion <i class="fa fa-angle-down"></i>
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li {% block liAgenda  %}{% endblock %}>
+                                        <a href="{{ path('application_calendar_homepage') }}">
+                                            <i class="fa fa-calendar"></i>
+                                            Agenda
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
