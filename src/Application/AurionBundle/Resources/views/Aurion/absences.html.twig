@@ -1,0 +1,165 @@
+{% extends '::base.html.twig' %}
+
+{% block title 'Mes Absences' %}
+{% block description 'Mes Absences ESIEE' %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    {% stylesheets
+
+        filter='cssrewrite,?yui_css'
+        output='css/events.min.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	<div class="col-lg-12">
+		<section class="panel">
+			<div class="panel-body">
+		        {{ sonata_block_render({
+		            'type': 'application.sonata.block.service.editable_text',
+		            'settings' : {
+		                'title' : 'absences'
+		            }
+		        }) }}
+						<div class="col-md-6 col-md-offset-3" id="connexion">
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<h2 class="panel-title">Identification</h2>
+									</div>
+									<div class="panel-body">
+
+										<form id="connexionForm" class="form-horizontal" action="{{ path('application_absences_login')}}" method="POST">
+											<div class="form-group" id="login">
+										    <label class="col-lg-3 col-sm-3 control-label" for="login">Login ESIEE :</label>
+												<div class="col-lg-9 col-sm-9">
+										    	<input type="text" class="form-control" id="login" name="login" required="required" placeholder="Login ESIEE"/>
+												</div>
+											</div>
+											<div class="form-group" id="password" >
+										    <label class="col-lg-3 col-sm-3 control-label" for="password">Mot de passe :</label>
+												<div class="col-lg-9 col-sm-9">
+										    	<input type="password"class="form-control" id="password" name="password" required="required" placeholder="Password"/>
+												</div>
+											</div>
+											<div class="col-sm-offset-3 col-sm-9">
+										    <input type="submit" class="btn btn-primary" id="envoyer" value="Se Connecter" />
+											</div>
+										</form>
+									</div>
+								</div>
+						</div>
+
+						<table class="table table-striped" id="notes">
+						<tbody>
+						</tbody>
+						</table>
+			</div>
+			<div class="panel-body">
+				<div id="calendar" class="has-toolbar"></div>
+			</div>
+		</section>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+    {% javascripts
+        'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js'
+
+        filter='?yui_js'
+        output='js/events.min.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+		$(document).ready(function() {
+	// Lorsque je soumets le formulaire
+				$('#connexionForm').on('submit', function(e) {
+						e.preventDefault(); // J'empêche le comportement par défaut du navigateur, c-à-d de soumettre le formulaire
+
+						var $this = $(this); // L'objet jQuery du formulaire
+
+						// Je récupère les valeurs
+						var login = $('#login').val();
+						var password = $('#password').val();
+
+
+						// Envoi de la requête HTTP en mode asynchrone
+						$.ajax({
+								url: $this.attr('action'), // Le nom du fichier indiqué dans le formulaire
+								type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
+								data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+								success: function(json) { // Je récupère la réponse du fichier PHP
+										if (json == 1){
+											$('#loading').modal('hide');
+											document.getElementById ("connexion").style.display = "inline";
+											document.getElementById('login').classList.add('has-error');
+											document.getElementById('password').classList.add('has-error');
+										}
+										else {
+											 	 $("#notes").append("<tr style='font-weight: bold;'><td>Date</td><td>Heure</td><td>Unite</td><td>Nom</td><td>Professeur</td><td>Type</td><td>Nombre</td><td>Raison</td></tr>");
+										jQuery.each(json, function(index, value) {
+										     $("#notes").append("<tr><td>" + value["date"] + "</td><td>" + value["hours"] + "</td><td>" + value["unite_code"] + "</td><td>" + value["name"] + "</td><td>" + value["prof"] + "</td><td>" + value["type"] + "</td><td>" + value["number"] + "</td><td>" + value["reason"] + "</td></tr>");
+										});
+										 //alert(json);
+											$('#loading').modal('hide');
+											document.getElementById ("connexion").style.display = "none";
+										}
+								}
+						});
+
+						$('#loading').modal('show');
+
+
+				});
+
+		    $('#connexionForm').formValidation({
+		        framework: 'bootstrap',
+		        icon: {
+		            valid: 'glyphicon glyphicon-ok',
+		            invalid: 'glyphicon glyphicon-remove',
+		            validating: 'glyphicon glyphicon-refresh'
+		        },
+		        row: {
+		            valid: 'field-success',
+		            invalid: 'field-error'
+		        },
+		        fields: {
+		            username: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Un login ESIEE est requis'
+		                    }
+		                }
+		            },
+		            password: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Un mot de passe est requis'
+		                    }
+		                }
+		            }
+		        }
+		    });
+		});
+    </script>
+		<div id="loading" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  	<div class="modal-dialog modal-sm" role="document">
+		    	<div class="modal-content">
+		      	<img class="img-responsive center-block" src="{{ asset('bundles/applicationaurion/images/loading.gif') }}"/>
+		    	</div>
+	  		</div>
+		</div>
+		<style type="text/css">
+			.fc-agenda-slots td div {
+	     height: 125px !important;
+		 	}
+		</style>
+{% endblock %}
+
+{% block liAbsences %}class='active'{% endblock %}
