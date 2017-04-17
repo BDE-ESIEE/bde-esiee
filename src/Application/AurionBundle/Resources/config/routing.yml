@@ -13,3 +13,11 @@ application_marks_homepage:
 application_marks_login:
     path:     /aurion/marks/login
     defaults: { _controller: ApplicationAurionBundle:Marks:getData}
+
+application_absences_homepage:
+    path:     /aurion/absences
+    defaults: { _controller: ApplicationAurionBundle:Absences:index}
+
+application_absences_login:
+    path:     /aurion/absences/login
+    defaults: { _controller: ApplicationAurionBundle:Absences:getData}

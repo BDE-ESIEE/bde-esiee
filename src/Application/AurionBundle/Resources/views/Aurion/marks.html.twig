@@ -102,7 +102,7 @@
 											document.getElementById('password').classList.add('has-error');
 										}
 										else {
-											 	 $("#notes").append("<tr><td>Année</td><td>Unitée</td><td>Nom</td><td>Note</td><td>Coefficient</td></tr>");
+											 	 $("#notes").append("<tr style='font-weight: bold;'><td>Année</td><td>Unitée</td><td>Nom</td><td>Note</td><td>Coefficient</td></tr>");
 										jQuery.each(json, function(index, value) {
 										     $("#notes").append("<tr><td>" + value["year"] + "</td><td>" + value["unite"] + "</td><td>" + value["name"] + "</td><td>" + value["mark"] + "</td><td>" + value["coeff"] + "</td></tr>");
 										});

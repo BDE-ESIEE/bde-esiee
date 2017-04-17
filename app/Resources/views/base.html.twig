@@ -140,6 +140,12 @@
                                             Mes Notes
                                         </a>
                                     </li>
+                                    <li {% block liAbsences  %}{% endblock %}>
+                                        <a href="{{ path('application_absences_homepage') }}">
+                                            <i class="fa fa-calendar"></i>
+                                            Mes Absences
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">
