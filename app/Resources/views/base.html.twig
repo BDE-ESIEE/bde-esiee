@@ -134,6 +134,24 @@
                                             Agenda
                                         </a>
                                     </li>
+                                    <li {% block liMarks  %}{% endblock %}>
+                                        <a href="{{ path('application_marks_homepage') }}">
+                                            <i class="fa fa-eye"></i>
+                                            Mes Notes
+                                        </a>
+                                    </li>
+                                    <li {% block liAbsences  %}{% endblock %}>
+                                        <a href="{{ path('application_absences_homepage') }}">
+                                            <i class="fa fa-calendar"></i>
+                                            Mes Absences
+                                        </a>
+                                    </li>
+                                    <li {% block liAppreciations  %}{% endblock %}>
+                                        <a href="{{ path('application_appreciations_homepage') }}">
+                                            <i class="fa fa-list"></i>
+                                            Mes Appréciations
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">

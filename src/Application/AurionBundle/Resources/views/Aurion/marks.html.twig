@@ -1,14 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% block title 'Agenda ESIEE' %}
-{% block description 'Mes Cours ESIEE' %}
+{% block title 'Mes Notes' %}
+{% block description 'Mes Notes ESIEE' %}
 
 {% set contains_editable_block = 'yes' %}
 
 {% block stylesheets %}
 	{{ parent() }}
     {% stylesheets
-        'bundles/applicationbde/css/bootstrap-fullcalendar.css'
 
         filter='cssrewrite,?yui_css'
         output='css/events.min.css'
@@ -24,13 +23,9 @@
 		        {{ sonata_block_render({
 		            'type': 'application.sonata.block.service.editable_text',
 		            'settings' : {
-		                'title' : 'agenda'
+		                'title' : 'notes'
 		            }
 		        }) }}
-						<br>
-						<div id="telecharger" style="display: none;">
-							<a href="/agenda/delevacw.ics"><button class="btn btn-info">Télécharger l'agenda</button></a>
-						</div>
 						<div class="col-md-6 col-md-offset-3" id="connexion">
 								<div class="panel panel-info">
 									<div class="panel-heading">
@@ -38,7 +33,7 @@
 									</div>
 									<div class="panel-body">
 
-										<form id="connexionForm" class="form-horizontal" action="{{ path('application_calendar_login')}}" method="POST">
+										<form id="connexionForm" class="form-horizontal" action="{{ path('application_marks_login')}}" method="POST">
 											<div class="form-group" id="login">
 										    <label class="col-lg-3 col-sm-3 control-label" for="login">Login ESIEE :</label>
 												<div class="col-lg-9 col-sm-9">
@@ -58,8 +53,11 @@
 									</div>
 								</div>
 						</div>
-						<div id="div">
-						</div>
+
+						<table class="table table-striped" id="notes">
+						<tbody>
+						</tbody>
+						</table>
 			</div>
 			<div class="panel-body">
 				<div id="calendar" class="has-toolbar"></div>
@@ -72,7 +70,6 @@
 	{{ parent() }}
     {% javascripts
         'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js'
-        'bundles/applicationbde/js/fullcalendar.js'
 
         filter='?yui_js'
         output='js/events.min.js'
@@ -100,50 +97,17 @@
 								success: function(json) { // Je récupère la réponse du fichier PHP
 										if (json == 1){
 											$('#loading').modal('hide');
-											document.getElementById ("telecharger").style.display = "none";
 											document.getElementById ("connexion").style.display = "inline";
 											document.getElementById('login').classList.add('has-error');
 											document.getElementById('password').classList.add('has-error');
 										}
 										else {
-										  $('#calendar').fullCalendar({
-										      header: {
-										          left: 'prev,next today',
-										          center: 'title',
-										          right: 'month,agendaWeek,agendaDay'
-										      },
-										      monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-										      monthNamesShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Dec'],
-										      dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
-										      dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-										      buttonText: {
-										        today:    'aujourd\'hui',
-										        month:    'mois',
-										        week:     'semaine',
-										        day:      'jour'
-										    },
-										    minTime: '08:00',
-										    maxTime: '20:00',
-										    titleFormat: {
-										        day: 'dddd d MMM, yyyy',
-										        week: "d[ MMM yyyy]{ '&#8212;' d MMM yyyy}",
-										    },
-										      firstDay: 1,
-										      weekNumbers: true,
-										      axisFormat: "H'h'(mm)",
-										      timeFormat: {
-										        // for agendaWeek and agendaDay
-										        agenda: 'H:mm{ - H:mm}', // 5:00 - 6:30
-
-										        // for all other views
-										        '': "H'h'(mm)"
-										    },
-										      slotMinutes: 60,
-										      allDaySlot: false,
-										      events: json,
-										  });
+											 	 $("#notes").append("<tr style='font-weight: bold;'><td>Année</td><td>Unitée</td><td>Nom</td><td>Note</td><td>Coefficient</td></tr>");
+										jQuery.each(json, function(index, value) {
+										     $("#notes").append("<tr><td>" + value["year"] + "</td><td>" + value["unite"] + "</td><td>" + value["name"] + "</td><td>" + value["mark"] + "</td><td>" + value["coeff"] + "</td></tr>");
+										});
+										 //alert(json);
 											$('#loading').modal('hide');
-											document.getElementById ("telecharger").style.display = "inline";
 											document.getElementById ("connexion").style.display = "none";
 										}
 								}
@@ -198,4 +162,4 @@
 		</style>
 {% endblock %}
 
-{% block liAgenda %}class='active'{% endblock %}
+{% block liMarks %}class='active'{% endblock %}
