@@ -146,6 +146,12 @@
                                             Mes Absences
                                         </a>
                                     </li>
+                                    <li {% block liAppreciations  %}{% endblock %}>
+                                        <a href="{{ path('application_appreciations_homepage') }}">
+                                            <i class="fa fa-list"></i>
+                                            Mes Appréciations
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">

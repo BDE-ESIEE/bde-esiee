@@ -21,3 +21,11 @@ application_absences_homepage:
 application_absences_login:
     path:     /aurion/absences/login
     defaults: { _controller: ApplicationAurionBundle:Absences:getData}
+
+application_appreciations_homepage:
+    path:     /aurion/appreciations
+    defaults: { _controller: ApplicationAurionBundle:Appreciations:index}
+
+application_appreciations_login:
+    path:     /aurion/appreciations/login
+    defaults: { _controller: ApplicationAurionBundle:Appreciations:getData}
