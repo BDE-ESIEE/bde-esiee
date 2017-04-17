@@ -134,6 +134,12 @@
                                             Agenda
                                         </a>
                                     </li>
+                                    <li {% block liMarks  %}{% endblock %}>
+                                        <a href="{{ path('application_marks_homepage') }}">
+                                            <i class="fa fa-eye"></i>
+                                            Mes Notes
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">
