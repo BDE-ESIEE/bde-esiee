@@ -1,0 +1,98 @@
+{% extends '::base.html.twig' %}
+
+{% block title 'Calendrier' %}
+{% block description 'Calendrier de tous les événements de l\'associatif esieen.' %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    {% stylesheets
+        'bundles/applicationbde/css/bootstrap-fullcalendar.css'
+
+        filter='cssrewrite,?yui_css'
+        output='css/events.min.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	<div class="col-lg-12">
+		<section class="panel">
+			<div class="panel-body">
+		        {{ sonata_block_render({
+		            'type': 'application.sonata.block.service.editable_text',
+		            'settings' : {
+		                'title' : 'agenda'
+		            }
+		        }) }}
+						<a href="/agenda/delevacw.ics">Télécharger l'agenda</a>
+			</div>
+			<div class="panel-body">
+				<div id="calendar" class="has-toolbar"></div>
+			</div>
+		</section>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+    {% javascripts
+        'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js'
+        'bundles/applicationbde/js/fullcalendar.js'
+
+        filter='?yui_js'
+        output='js/events.min.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+    	$(function(){
+			$('#calendar').fullCalendar({
+			    header: {
+			        left: 'prev,next today',
+			        center: 'title',
+			        right: 'month,agendaWeek,agendaDay'
+			    },
+			    monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+			    monthNamesShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Dec'],
+			    dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+			    dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+			    buttonText: {
+				    today:    'aujourd\'hui',
+				    month:    'mois',
+				    week:     'semaine',
+				    day:      'jour'
+				},
+				minTime: '08:00',
+				maxTime: '20:00',
+				titleFormat: {
+				    day: 'dddd d MMM, yyyy',
+				    week: "d[ MMM yyyy]{ '&#8212;' d MMM yyyy}",
+				},
+			    firstDay: 1,
+			    weekNumbers: true,
+			    axisFormat: "H'h'(mm)",
+			    timeFormat: {
+				    // for agendaWeek and agendaDay
+				    agenda: 'H:mm{ - H:mm}', // 5:00 - 6:30
+
+				    // for all other views
+				    '': "H'h'(mm)"
+				},
+			    slotMinutes: 60,
+			    allDaySlot: false,
+			    events: {{ events|serialize('json')|raw }},
+			});
+    	});
+    </script>
+
+		<style type="text/css">
+			.fc-agenda-slots td div {
+	     height: 125px !important;
+		 	}
+		</style>
+{% endblock %}
+
+{% block liAgenda %}class='active'{% endblock %}

@@ -1,0 +1,201 @@
+{% extends '::base.html.twig' %}
+
+{% block title 'Calendrier' %}
+{% block description 'Calendrier de tous les événements de l\'associatif esieen.' %}
+
+{% set contains_editable_block = 'yes' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    {% stylesheets
+        'bundles/applicationbde/css/bootstrap-fullcalendar.css'
+
+        filter='cssrewrite,?yui_css'
+        output='css/events.min.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	<div class="col-lg-12">
+		<section class="panel">
+			<div class="panel-body">
+		        {{ sonata_block_render({
+		            'type': 'application.sonata.block.service.editable_text',
+		            'settings' : {
+		                'title' : 'agenda'
+		            }
+		        }) }}
+						<br>
+						<div id="telecharger" style="display: none;">
+							<a href="/agenda/delevacw.ics"><button class="btn btn-info">Télécharger l'agenda</button></a>
+						</div>
+						<div class="col-md-6 col-md-offset-3" id="connexion">
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<h2 class="panel-title">Identification</h2>
+									</div>
+									<div class="panel-body">
+
+										<form id="connexionForm" class="form-horizontal" action="{{ path('application_calendar_login')}}" method="POST">
+											<div class="form-group" id="login">
+										    <label class="col-lg-3 col-sm-3 control-label" for="login">Login ESIEE :</label>
+												<div class="col-lg-9 col-sm-9">
+										    	<input type="text" class="form-control" id="login" name="login" required="required" placeholder="Login ESIEE"/>
+												</div>
+											</div>
+											<div class="form-group" id="password" >
+										    <label class="col-lg-3 col-sm-3 control-label" for="password">Mot de passe :</label>
+												<div class="col-lg-9 col-sm-9">
+										    	<input type="password"class="form-control" id="password" name="password" required="required" placeholder="Password"/>
+												</div>
+											</div>
+											<div class="col-sm-offset-3 col-sm-9">
+										    <input type="submit" class="btn btn-primary" id="envoyer" value="Se Connecter" />
+											</div>
+										</form>
+									</div>
+								</div>
+						</div>
+						<div id="div">
+						</div>
+			</div>
+			<div class="panel-body">
+				<div id="calendar" class="has-toolbar"></div>
+			</div>
+		</section>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+    {% javascripts
+        'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js'
+        'bundles/applicationbde/js/fullcalendar.js'
+
+        filter='?yui_js'
+        output='js/events.min.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+		$(document).ready(function() {
+	// Lorsque je soumets le formulaire
+				$('#connexionForm').on('submit', function(e) {
+						e.preventDefault(); // J'empêche le comportement par défaut du navigateur, c-à-d de soumettre le formulaire
+
+						var $this = $(this); // L'objet jQuery du formulaire
+
+						// Je récupère les valeurs
+						var login = $('#login').val();
+						var password = $('#password').val();
+
+
+						// Envoi de la requête HTTP en mode asynchrone
+						$.ajax({
+								url: $this.attr('action'), // Le nom du fichier indiqué dans le formulaire
+								type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
+								data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+								success: function(json) { // Je récupère la réponse du fichier PHP
+										if (json == 1){
+											$('#loading').modal('hide');
+											document.getElementById ("telecharger").style.display = "none";
+											document.getElementById ("connexion").style.display = "inline";
+											document.getElementById('login').classList.add('has-error');
+											document.getElementById('password').classList.add('has-error');
+										}
+										else {
+										  $('#calendar').fullCalendar({
+										      header: {
+										          left: 'prev,next today',
+										          center: 'title',
+										          right: 'month,agendaWeek,agendaDay'
+										      },
+										      monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+										      monthNamesShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Dec'],
+										      dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+										      dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+										      buttonText: {
+										        today:    'aujourd\'hui',
+										        month:    'mois',
+										        week:     'semaine',
+										        day:      'jour'
+										    },
+										    minTime: '08:00',
+										    maxTime: '20:00',
+										    titleFormat: {
+										        day: 'dddd d MMM, yyyy',
+										        week: "d[ MMM yyyy]{ '&#8212;' d MMM yyyy}",
+										    },
+										      firstDay: 1,
+										      weekNumbers: true,
+										      axisFormat: "H'h'(mm)",
+										      timeFormat: {
+										        // for agendaWeek and agendaDay
+										        agenda: 'H:mm{ - H:mm}', // 5:00 - 6:30
+
+										        // for all other views
+										        '': "H'h'(mm)"
+										    },
+										      slotMinutes: 60,
+										      allDaySlot: false,
+										      events: json,
+										  });
+											$('#loading').modal('hide');
+											document.getElementById ("telecharger").style.display = "inline";
+											document.getElementById ("connexion").style.display = "none";
+										}
+								}
+						});
+
+						$('#loading').modal('show');
+
+
+				});
+
+		    $('#connexionForm').formValidation({
+		        framework: 'bootstrap',
+		        icon: {
+		            valid: 'glyphicon glyphicon-ok',
+		            invalid: 'glyphicon glyphicon-remove',
+		            validating: 'glyphicon glyphicon-refresh'
+		        },
+		        row: {
+		            valid: 'field-success',
+		            invalid: 'field-error'
+		        },
+		        fields: {
+		            username: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Un login ESIEE est requis'
+		                    }
+		                }
+		            },
+		            password: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Un mot de passe est requis'
+		                    }
+		                }
+		            }
+		        }
+		    });
+		});
+    </script>
+		<div id="loading" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  	<div class="modal-dialog modal-sm" role="document">
+		    	<div class="modal-content">
+		      	<img class="img-responsive center-block" src="{{ asset('bundles/applicationaurion/images/loading.gif') }}"/>
+		    	</div>
+	  		</div>
+		</div>
+		<style type="text/css">
+			.fc-agenda-slots td div {
+	     height: 125px !important;
+		 	}
+		</style>
+{% endblock %}
+
+{% block liAgenda %}class='active'{% endblock %}

@@ -37,7 +37,7 @@
         <meta name="theme-color" content="#ff4e33">
 
         {% block stylesheets %}
-            {% stylesheets 
+            {% stylesheets
                 'bundles/applicationbde/css/bootstrap.min.css'
                 'bundles/applicationbde/css/theme.css'
                 'bundles/applicationbde/less/bootstrap-reset.less'
@@ -45,18 +45,18 @@
                 'bundles/applicationbde/less/style.less'
                 'bundles/applicationbde/css/style-responsive.bis.css'
 
-                filter='cssrewrite,?yui_css' 
+                filter='cssrewrite,?yui_css'
                 output='css/base.min.css'
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
-            {% endstylesheets %} 
+            {% endstylesheets %}
             <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" type='text/css' />
             <link href='//fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
             {% if is_granted('ROLE_EDITOR') %}
                 <link rel="stylesheet" href="{{ asset('bundles/applicationbde/css/bootstrap-dialog.css') }}" type='text/css' />
             {% endif %}
         {% endblock %}
-        
+
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
         <!--[if lt IE 9]>
@@ -121,6 +121,20 @@
                                     <i class="fa fa-calendar"></i>
                                     Calendrier
                                 </a>
+                            </li>
+                            <li class="dropdown{% block liAurion %}{% endblock %}">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
+                                    <i class="fa fa-user"></i>
+                                    Aurion <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li {% block liAgenda  %}{% endblock %}>
+                                        <a href="{{ path('application_calendar_homepage') }}">
+                                            <i class="fa fa-calendar"></i>
+                                            Agenda
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="dropdown{% block liServices %}{% endblock %}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
@@ -321,16 +335,16 @@
                 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
             <![endif]-->
 
-            {% javascripts 
-                'bundles/applicationbde/js/jquery.js' 
-                'bundles/applicationbde/js/bootstrap.min.js' 
+            {% javascripts
+                'bundles/applicationbde/js/jquery.js'
+                'bundles/applicationbde/js/bootstrap.min.js'
                 'bundles/applicationbde/js/modernizr.custom.js'
 
-                filter='?yui_js' 
+                filter='?yui_js'
                 output='js/base.min.js'
             %}
                 <script src="{{ asset_url }}"></script>
-            {% endjavascripts %} 
+            {% endjavascripts %}
             <!-- Piwik -->
             <script type="text/javascript">
               var _paq = _paq || [];
@@ -368,7 +382,7 @@
                         "filebrowserImageUploadUrl": "{{ path('admin_sonata_media_media_ckeditor_upload') }}?provider=sonata.media.provider.image",
                         "readOnly": false
                     };
-                    $(function() { 
+                    $(function() {
                         var script = document.createElement("script");
                         script.type = "text/javascript";
                         script.async = true;
@@ -392,7 +406,7 @@
                                     $(this).attr('contenteditable', 'true');
                                     CKEDITOR.inline($(this).attr('id'), config);
                                 }
-                                else { 
+                                else {
                                     $(this).attr('contenteditable', 'false');
                                     html.push($(this).html());
                                     title.push($(this).attr('blockTitle'));

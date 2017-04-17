@@ -30,6 +30,10 @@ application_bde:
     resource: "@ApplicationBDEBundle/Resources/config/routing.yml"
     prefix:   /
 
+application_aurion:
+    resource: "@ApplicationAurionBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
@@ -108,7 +112,7 @@ hwi_oauth_login:
 
 google_login:
     path: /login/check-google
-    
+
 sonata_api_news:
     type:         rest
     prefix:       /api

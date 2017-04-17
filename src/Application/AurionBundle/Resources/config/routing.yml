@@ -1,0 +1,15 @@
+application_calendar_homepage:
+    path:     /aurion/agenda
+    defaults: { _controller: ApplicationAurionBundle:Calendar:index}
+
+application_calendar_login:
+    path:     /aurion/agenda/login
+    defaults: { _controller: ApplicationAurionBundle:Calendar:getData}
+
+application_marks_homepage:
+    path:     /aurion/marks
+    defaults: { _controller: ApplicationAurionBundle:Marks:index}
+
+application_marks_login:
+    path:     /aurion/marks/login
+    defaults: { _controller: ApplicationAurionBundle:Marks:getData}
