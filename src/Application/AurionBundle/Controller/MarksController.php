@@ -21,7 +21,7 @@ class MarksController extends FOSRestController
     }
 
     public function getDataAction(){
-      $url = "http://ade.wallforfry.fr/api/ade-esiee/marks";
+      $url = "http://localhost:5000/api/ade-esiee/marks";
 
       $data = array("username" => $_POST["login"], "password" => $_POST["password"]);
 

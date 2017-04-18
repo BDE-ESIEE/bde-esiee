@@ -56,7 +56,7 @@ class CalendarController extends FOSRestController
     }
 
     public function getDataAction(){
-      $url = "http://ade.wallforfry.fr/api/ade-esiee/calendar";
+      $url = "http://localhost:5000/api/ade-esiee/calendar";
 
       $data = array("username" => $_POST["login"], "password" => $_POST["password"], "day" => "", "month" => "");
 

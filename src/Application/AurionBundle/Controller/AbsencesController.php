@@ -21,7 +21,7 @@ class AbsencesController extends FOSRestController
     }
 
     public function getDataAction(){
-      $url = "http://ade.wallforfry.fr/api/ade-esiee/absences";
+      $url = "http://localhost:5000/api/ade-esiee/absences";
 
       $data = array("username" => $_POST["login"], "password" => $_POST["password"]);
 
