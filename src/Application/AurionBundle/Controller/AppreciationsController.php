@@ -21,15 +21,13 @@ class AppreciationsController extends FOSRestController
     }
 
     public function getDataAction(){
-      $url = "http://ade.wallforfry.fr/api/ade-esiee/appreciations";
+      $url = "http://localhost:5000/api/ade-esiee/appreciations";
 
       $data = array("username" => $_POST["login"], "password" => $_POST["password"]);
 
       $ch = curl_init($url);
 
       curl_setopt($ch, CURLOPT_POST, 1);
-      curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
-      curl_setopt($ch, CURLOPT_PROXY, 'proxy.esiee.fr:3128');
       curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
