@@ -122,6 +122,8 @@
 										        week:     'semaine',
 										        day:      'jour'
 										    },
+												defaultView: "agendaWeek",
+												height: 800,
 										    minTime: '08:00',
 										    maxTime: '20:00',
 										    titleFormat: {
@@ -136,7 +138,8 @@
 										        agenda: 'H:mm{ - H:mm}', // 5:00 - 6:30
 
 										        // for all other views
-										        '': "H'h'(mm)"
+										        //'': "H'h'(mm)"
+										        '': "H:mm{ - H:mm}\n"
 										    },
 										      slotMinutes: 60,
 										      allDaySlot: false,
