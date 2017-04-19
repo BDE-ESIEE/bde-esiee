@@ -6,6 +6,10 @@ application_calendar_login:
     path:     /aurion/agenda/login
     defaults: { _controller: ApplicationAurionBundle:Calendar:getData}
 
+application_calendar_groups:
+    path:     /aurion/agenda/groups
+    defaults: { _controller: ApplicationAurionBundle:Calendar:getGroups}
+
 application_marks_homepage:
     path:     /aurion/marks
     defaults: { _controller: ApplicationAurionBundle:Marks:index}

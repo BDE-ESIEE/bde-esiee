@@ -29,7 +29,7 @@
 		        }) }}
 						<br>
 						<div id="telecharger" style="display: none;">
-							<a href="/agenda/delevacw.ics"><button class="btn btn-info">Télécharger l'agenda</button></a>
+							<a href="/agenda/ics/delevacw.ics"><button class="btn btn-info">Télécharger l'agenda</button></a>
 						</div>
 						<div class="col-md-6 col-md-offset-3" id="connexion">
 								<div class="panel panel-info">
@@ -38,7 +38,7 @@
 									</div>
 									<div class="panel-body">
 
-										<form id="connexionForm" class="form-horizontal" action="{{ path('application_calendar_login')}}" method="POST">
+										<form id="connexionForm" class="form-horizontal" action="{{ path('application_calendar_groups')}}" method="POST">
 											<div class="form-group" id="login">
 										    <label class="col-lg-3 col-sm-3 control-label" for="login">Login ESIEE :</label>
 												<div class="col-lg-9 col-sm-9">
