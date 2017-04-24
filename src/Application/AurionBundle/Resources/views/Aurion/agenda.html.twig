@@ -29,7 +29,7 @@
 		        }) }}
 						<br>
 						<div id="telecharger" style="display: none;">
-							<a href="/agenda/delevacw.ics"><button class="btn btn-info">Télécharger l'agenda</button></a>
+							<a href="/agenda/ics/delevacw.ics"><button class="btn btn-info">Télécharger l'agenda</button></a>
 						</div>
 						<div class="col-md-6 col-md-offset-3" id="connexion">
 								<div class="panel panel-info">
@@ -38,7 +38,7 @@
 									</div>
 									<div class="panel-body">
 
-										<form id="connexionForm" class="form-horizontal" action="{{ path('application_calendar_login')}}" method="POST">
+										<form id="connexionForm" class="form-horizontal" action="{{ path('application_calendar_groups')}}" method="POST">
 											<div class="form-group" id="login">
 										    <label class="col-lg-3 col-sm-3 control-label" for="login">Login ESIEE :</label>
 												<div class="col-lg-9 col-sm-9">
@@ -64,6 +64,7 @@
 			<div class="panel-body">
 				<div id="calendar" class="has-toolbar"></div>
 			</div>
+			<p>Le BDE ESIEE Paris n'est en aucun cas responsable d'une éventuelle erreur d'emploi du temps, ce système de génération n'est pas officiel et vous ne pourrez l'en tenir responsable</p>
 		</section>
 	</div>
 {% endblock %}
@@ -122,6 +123,8 @@
 										        week:     'semaine',
 										        day:      'jour'
 										    },
+												defaultView: "agendaWeek",
+												height: 800,
 										    minTime: '08:00',
 										    maxTime: '20:00',
 										    titleFormat: {
@@ -136,7 +139,8 @@
 										        agenda: 'H:mm{ - H:mm}', // 5:00 - 6:30
 
 										        // for all other views
-										        '': "H'h'(mm)"
+										        //'': "H'h'(mm)"
+										        '': "H:mm{ - H:mm}\n"
 										    },
 										      slotMinutes: 60,
 										      allDaySlot: false,

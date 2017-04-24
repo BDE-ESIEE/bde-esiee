@@ -55,6 +55,117 @@ class CalendarController extends FOSRestController
         return $this->handleView($view);
     }
 
+    public function getGroupsAction($_format){
+      try {
+          $file_groups = file_get_contents("agenda/groups/".$_POST["login"].".json");
+
+          $response = $this->getAgendaAction($file_groups);
+          $response = new Response(json_encode($response));
+          $response->headers->set('Content-Type', 'application/json');
+          return $response;
+
+      } catch(\Exception $e) {
+
+          $url = "http://localhost:5000/api/ade-esiee/groups";
+
+          $data = array("username" => $_POST["login"], "password" => $_POST["password"]);
+
+          $ch = curl_init($url);
+
+          curl_setopt($ch, CURLOPT_POST, 1);
+          curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+          $response = curl_exec($ch);
+          curl_close($ch);
+
+
+          $groups_list = json_decode($response, true);
+
+          if(!empty($groups_list[0]["error"])){
+            $response = new Response(json_encode("1"));
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+          }
+          else {
+            file_put_contents("agenda/groups/".$_POST["login"].".json", $response, LOCK_EX);
+
+            $response = $this->getAgendaAction($response);
+            $response = new Response(json_encode($response));
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+          }
+        }
+    }
+
+    public function getAgendaAction($groups){
+      $url = "http://localhost:5000/api/ade-esiee/agenda";
+
+      $data = array("groups" => $groups);
+
+      $ch = curl_init($url);
+
+      curl_setopt($ch, CURLOPT_POST, 1);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+      $response = curl_exec($ch);
+      curl_close($ch);
+
+
+      $event_list = json_decode($response, true);
+      $event_json = array();
+
+      if(!empty($event_list[0]["error"])){
+        $response = new Response(json_encode("1"));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+      }
+      else {
+
+        $event_id = 0;
+
+        foreach ($event_list as $event) {
+          if (preg_match("/TD/", $event["name"])) {
+            $color = "#f39c12";
+          }
+          elseif (preg_match("/CTRL/", $event["name"])){
+            $color = "#e74c3c";
+          }
+          elseif (preg_match("/PERS/", $event["name"])){
+            $color = "#95a5a6";
+          }
+          elseif (preg_match("/TP/", $event["name"])){
+            $color = "#27ae60";
+          }
+          else {
+            $color = "#35a9fb";
+          }
+
+          $event_json[] = array(
+                  'id'        => $event_id,
+                  'title'     => $event["name"]."\n".$event["rooms"]."\n".$event["prof"],
+                  'name'      => $event["name"],
+                  'start'     => date("Y-m-d H:i:s", strtotime($event["start"])),
+                  'end'       => date("Y-m-d H:i:s", strtotime($event["end"])),
+                  'allDay'    => false,
+                  'color'     => $color,//$event->getCategory()->getBackgroundColor(),
+                  'textColor' => "white",//$event->getCategory()->getTextColor(),
+                  'place'     => $event["rooms"],
+                  'prof'      => $event["prof"],
+                  'club_id'   => null,
+                  'news_ids'  => 0,
+          );
+          $event_id = $event_id + 1;
+        }
+
+          $ics_file = $this->decode($event_json);
+          file_put_contents("agenda/ics/".$_POST["login"].".ics", $ics_file, LOCK_EX);
+
+          return $event_json;
+      }
+    }
+
     public function getDataAction(){
       $url = "http://localhost:5000/api/ade-esiee/calendar";
 
@@ -119,7 +230,7 @@ class CalendarController extends FOSRestController
 
 
           $ics_file = $this->decode($event_json);
-          file_put_contents("agenda/".$_POST["login"].".ics", $ics_file, LOCK_EX);
+          file_put_contents("agenda/ics/".$_POST["login"].".ics", $ics_file, LOCK_EX);
 
           $response = new Response(json_encode($event_json));
           $response->headers->set('Content-Type', 'application/json');
