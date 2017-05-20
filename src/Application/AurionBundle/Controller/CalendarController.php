@@ -56,15 +56,15 @@ class CalendarController extends FOSRestController
     }
 
     public function getGroupsAction($_format){
-      try {
-          $file_groups = file_get_contents("agenda/groups/".$_POST["login"].".json");
-
+      if(($file_groups = @file_get_contents("agenda/groups/".$_POST["login"].".json")) != false)
+      {
           $response = $this->getAgendaAction($file_groups);
-          $response = $response;//new Response(json_encode($response));
+          $response = new Response(json_encode($response));
           $response->headers->set('Content-Type', 'application/json');
           return $response;
 
-      } catch(\Exception $e) {
+      }
+      else {
 
           $url = "http://localhost:5000/api/ade-esiee/groups";
 
