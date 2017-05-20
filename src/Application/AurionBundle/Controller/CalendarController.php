@@ -60,7 +60,7 @@ class CalendarController extends FOSRestController
           $file_groups = file_get_contents("agenda/groups/".$_POST["login"].".json");
 
           $response = $this->getAgendaAction($file_groups);
-          $response = new Response(json_encode($response));
+          $response = $response;//new Response(json_encode($response));
           $response->headers->set('Content-Type', 'application/json');
           return $response;
 
