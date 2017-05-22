@@ -11,7 +11,7 @@
         'bundles/applicationbde/css/bootstrap-fullcalendar.css'
 
         filter='cssrewrite,?yui_css'
-        output='css/events.min.css'
+        output='css/calendar.min.css'
     %}
         <link rel="stylesheet" href="{{ asset_url }}" type='text/css' />
     {% endstylesheets %}
@@ -73,10 +73,10 @@
 	{{ parent() }}
     {% javascripts
         'bundles/applicationbde/js/jquery-ui-1.9.2.custom.min.js'
-        'bundles/applicationbde/js/fullcalendar.js'
+        'bundles/applicationbde/js/fullcalendar.min.js'
 
         filter='?yui_js'
-        output='js/events.min.js'
+        output='js/calendar.min.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
