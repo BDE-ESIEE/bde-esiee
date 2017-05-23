@@ -144,7 +144,7 @@ class CalendarController extends FOSRestController
 
           $event_json[] = array(
                   'id'        => $event_id,
-                  'title'     => $event["name"]."\n".$event["rooms"]."\n".$event["prof"],
+                  'title'     => $event["name"]."\n".$event["unite"]."\n".$event["rooms"]."\n".$event["prof"],
                   'name'      => $event["name"],
                   'start'     => date("Y-m-d H:i:s", strtotime($event["start"])),
                   'end'       => date("Y-m-d H:i:s", strtotime($event["end"])),
