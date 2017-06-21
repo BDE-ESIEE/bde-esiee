@@ -237,4 +237,77 @@ class CalendarController extends FOSRestController
           return $response;
       }
     }
+
+    public function getAgendaFromCSVAction(){
+
+      $url = "http://localhost:5000/api/ade-esiee/agenda";
+
+      $data = array("mail" => $_POST['mail']);
+
+      $ch = curl_init($url);
+
+      curl_setopt($ch, CURLOPT_POST, 1);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+      $response = curl_exec($ch);
+      curl_close($ch);
+
+
+      $event_list = json_decode($response, true);
+      $event_json = array();
+
+      if(!empty($event_list[0]["error"])){
+        $response = new Response(json_encode("1"));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+      }
+      else {
+
+        $event_id = 0;
+
+        foreach ($event_list as $event) {
+          if (preg_match("/TD/", $event["name"])) {
+            $color = "#f39c12";
+          }
+          elseif (preg_match("/CTRL/", $event["name"])){
+            $color = "#e74c3c";
+          }
+          elseif (preg_match("/PERS/", $event["name"])){
+            $color = "#95a5a6";
+          }
+          elseif (preg_match("/TP/", $event["name"])){
+            $color = "#27ae60";
+          }
+          else {
+            $color = "#35a9fb";
+          }
+
+          $event_json[] = array(
+                  'id'        => $event_id,
+                  'title'     => $event["name"]."\n".$event["unite"]."\n".$event["rooms"]."\n".$event["prof"],
+                  'name'      => $event["name"],
+                  'start'     => date("Y-m-d H:i:s", strtotime($event["start"])),
+                  'end'       => date("Y-m-d H:i:s", strtotime($event["end"])),
+                  'allDay'    => false,
+                  'color'     => $color,//$event->getCategory()->getBackgroundColor(),
+                  'textColor' => "white",//$event->getCategory()->getTextColor(),
+                  'place'     => $event["rooms"],
+                  'prof'      => $event["prof"],
+                  'club_id'   => null,
+                  'news_ids'  => 0,
+          );
+          $event_id = $event_id + 1;
+        }
+
+          $ics_file = $this->decode($event_json);
+          file_put_contents("agenda/ics/".$_POST["mail"].".ics", $ics_file, LOCK_EX);
+
+          $response = new Response(json_encode($event_json));
+          $response->headers->set('Content-Type', 'application/json');
+          return $response;
+
+      }
+
+    }
 }
