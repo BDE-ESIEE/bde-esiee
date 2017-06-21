@@ -159,8 +159,8 @@ class CalendarController extends FOSRestController
           $event_id = $event_id + 1;
         }
 
-          $ics_file = $this->decode($event_json);
-          file_put_contents("agenda/ics/".$_POST["login"].".ics", $ics_file, LOCK_EX);
+          #$ics_file = $this->decode($event_json);
+          #file_put_contents("agenda/ics/".$_POST["login"].".ics", $ics_file, LOCK_EX);
 
           return $event_json;
       }
