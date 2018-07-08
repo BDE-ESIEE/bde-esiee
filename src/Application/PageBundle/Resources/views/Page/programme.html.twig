@@ -5,6 +5,18 @@
 {% block title 'Programme' %}
 {% block description 'Découvrir notre programme.' %}
 
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+	{% stylesheets 
+		'bundles/applicationpage/scss/programme.mscss'
+		filter='cssrewrite'
+		output='css/programme.min.css'
+	 %}
+		<link rel="stylesheet" href="{{ asset_url }}" type='text/css'/>
+	{% endstylesheets %}
+{% endblock %}
+
 {% block container %}
 	{{ sonata_block_render({ 
 	    'type': 'application.sonata.block.service.editable_text', 

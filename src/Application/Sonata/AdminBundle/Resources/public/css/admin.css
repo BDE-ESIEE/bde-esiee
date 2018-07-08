@@ -1,5 +1,5 @@
 .breadcrumb > .active {
-    color: #fff;
+    color: #333;
 }
 span[state^="Cotisant"] {
     color: green;

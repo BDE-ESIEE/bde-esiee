@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/vnd.microsoft.icon" href="{{ asset('favicon.ico') }}?v=2" />
-        <title>{% block title 'Macao' %}</title>
-        <meta name="description" content="{% block description 'Site web de Macao, BDE ESIEE Paris.' %}">
+        <title>{% block title 'Lagoon' %}</title>
+        <meta name="description" content="{% block description 'Site web de Lagoon, BDE ESIEE Paris.' %}">
         {% block opengraph %}
-        <meta property="og:site_name"   content="{% block og_site_name 'Macao - BDE ESIEE Paris' %}"/>
+        <meta property="og:site_name"   content="{% block og_site_name 'Lagoon - BDE ESIEE Paris' %}"/>
         <meta property="og:url"         content="{% block og_url %}{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}{% endblock %}" />
         <meta property="og:image"       content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('logoZephyr_Transparant_Noir.png') }}{% endblock %}"/>
         <meta property="og:locale"      content="fr_FR"/>
@@ -15,26 +15,26 @@
         <meta property="og:description" content="{{ block('description') }}" />
         <meta property="og:type"        content="{% block og_type 'website' %}" />
         {% endblock %}
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}?v=69kE3YLjl5">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon-180x180.png') }}?v=69kE3YLjl5">
-        <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}?v=69kE3YLjl5" sizes="32x32">
-        <link rel="icon" type="image/png" href="{{ asset('favicon-194x194.png') }}?v=69kE3YLjl5" sizes="194x194">
-        <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}?v=69kE3YLjl5" sizes="96x96">
-        <link rel="icon" type="image/png" href="{{ asset('android-chrome-192x192.png') }}?v=69kE3YLjl5" sizes="192x192">
-        <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}?v=69kE3YLjl5" sizes="16x16">
-        <link rel="manifest" href="{{ asset('manifest.json') }}?v=69kE3YLjl5">
-        <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg?v=69kE3YLjl5') }}" color="#45A050">
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v=69kE3YLjl5">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}?v=xQQ9KQ9YEN">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon-180x180.png') }}?v=xQQ9KQ9YEN">
+        <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}?v=xQQ9KQ9YEN" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ asset('favicon-194x194.png') }}?v=xQQ9KQ9YEN" sizes="194x194">
+        <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}?v=xQQ9KQ9YEN" sizes="96x96">
+        <link rel="icon" type="image/png" href="{{ asset('android-chrome-192x192.png') }}?v=xQQ9KQ9YEN" sizes="192x192">
+        <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}?v=xQQ9KQ9YEN" sizes="16x16">
+        <link rel="manifest" href="{{ asset('manifest.json') }}?v=xQQ9KQ9YEN">
+        <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg?v=xQQ9KQ9YEN') }}" color="#ff4e33">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v=xQQ9KQ9YEN">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}?v=69kE3YLjl5">
-        <meta name="theme-color" content="#45A050">
+        <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}?v=xQQ9KQ9YEN">
+        <meta name="theme-color" content="#ff4e33">
 
         {% block stylesheets %}
             {% stylesheets
@@ -71,7 +71,7 @@
             <div class="navbar navbar-default navbar-static-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="{{ url('application_bde_homepage') }}"><span>Macao</span> - BDE ESIEE PARIS</a>
+                        <a class="navbar-brand" href="{{ url('application_bde_homepage') }}"><span>Lagoon</span> - BDE ESIEE PARIS</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="fa fa-bars"></span>
                         </button>
