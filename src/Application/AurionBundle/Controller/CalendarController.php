@@ -238,26 +238,16 @@ class CalendarController extends FOSRestController
       }
     }
 
-    public function getAgendaFromCSVAction(){
-
-      $url = "http://localhost:5000/api/ade-esiee/agenda";
-
+    public function getAgendaFromCSVAction()
+    {
+      //$url = "http://localhost:5000/api/ade-esiee/agenda";
+      $url = "http://ade.wallforfry.fr/api/ade-esiee/agenda";
       $data = array("mail" => $_POST['mail']);
-
-      $ch = curl_init($url);
-
-      curl_setopt($ch, CURLOPT_POST, 1);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-      $response = curl_exec($ch);
-      curl_close($ch);
-
-
+      $response = shell_exec('curl -X POST '.$url.' --data "mail='.$data['mail'].'" --proxy "https://proxy.esiee.fr:3128"');
       $event_list = json_decode($response, true);
       $event_json = array();
 
-      if(!empty($event_list[0]["error"])){
+      if(!empty($event_list[0]["error"]) || $response == false){
         $response = new Response(json_encode("1"));
         $response->headers->set('Content-Type', 'application/json');
         return $response;
@@ -308,6 +298,5 @@ class CalendarController extends FOSRestController
           return $response;
 
       }
-
     }
 }
