@@ -58,11 +58,12 @@
 .pic.valentin{background-position: -0px -1000px;}
 .pic.georges{background-position: -200px -1000px;}
 .pic.aymeric{background-position: -400px -1000px;}
-.pic.ghislain{background-position: -600px -1000px;}
+.pic.lea{background-position: -600px -1000px;}
 .pic.leopold{background-position: -800px -1000px;}
 .pic.guillaume{background-position: -0px -1200px;}
 .pic.gabo{background-position: -200px -1200px;}
 .pic.etienne{background-position: -400px -1200px;}
+.pic.pq{background-position: -600px -1200px;}
 
 @media (min-width: 750px) {
 	.bureau-top {
