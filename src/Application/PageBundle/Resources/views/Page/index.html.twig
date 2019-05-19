@@ -2,7 +2,7 @@
 
 {% set contains_editable_block = 'yes' %}
 
-{% block title %}Fuego{% endblock %}
+{% block title %}Django{% endblock %}
 
 {% block containerClass %} class="property" style="padding-top: 0px;"{% endblock %}
 
@@ -21,8 +21,8 @@
 <div class="container">
     <div class="row">
         <!--feature start-->
-        {{ sonata_block_render({ 
-            'type': 'application.sonata.block.service.editable_text', 
+        {{ sonata_block_render({
+            'type': 'application.sonata.block.service.editable_text',
             'settings' : {
                 'title' : 'index_title'
             }
@@ -40,8 +40,8 @@
                 <i class="fa fa-university"></i>
                 <h2>L'associatif</h2>
             </div>
-            {{ sonata_block_render({ 
-                'type': 'application.sonata.block.service.editable_text', 
+            {{ sonata_block_render({
+                'type': 'application.sonata.block.service.editable_text',
                 'settings' : {
                     'title' : 'index_association'
                 }
@@ -55,8 +55,8 @@
                 <i class="fa fa-fire"></i>
                 <h2>L'équipe</h2>
             </div>
-            {{ sonata_block_render({ 
-                'type': 'application.sonata.block.service.editable_text', 
+            {{ sonata_block_render({
+                'type': 'application.sonata.block.service.editable_text',
                 'settings' : {
                     'title' : 'index_equipe'
                 }
@@ -70,8 +70,8 @@
                 <i class="fa fa-building"></i>
                 <h2>Entreprises</h2>
             </div>
-            {{ sonata_block_render({ 
-                'type': 'application.sonata.block.service.editable_text', 
+            {{ sonata_block_render({
+                'type': 'application.sonata.block.service.editable_text',
                 'settings' : {
                     'title' : 'index_entreprises'
                 }

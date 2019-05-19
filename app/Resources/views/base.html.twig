@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/vnd.microsoft.icon" href="{{ asset('favicon.ico') }}?v=2" />
-        <title>{% block title 'Fuego' %}</title>
-        <meta name="description" content="{% block description 'Site web de Fuego, BDE ESIEE Paris.' %}">
+        <title>{% block title 'Django' %}</title>
+        <meta name="description" content="{% block description 'Site web de Django, BDE ESIEE Paris.' %}">
         {% block opengraph %}
-        <meta property="og:site_name"   content="{% block og_site_name 'Fuego - BDE ESIEE Paris' %}"/>
+        <meta property="og:site_name"   content="{% block og_site_name 'Django - BDE ESIEE Paris' %}"/>
         <meta property="og:url"         content="{% block og_url %}{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}{% endblock %}" />
         <meta property="og:image"       content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('logoZephyr_Transparant_Noir.png') }}{% endblock %}"/>
         <meta property="og:locale"      content="fr_FR"/>
@@ -34,7 +34,7 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v=xQQ9KQ9YEN">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}?v=xQQ9KQ9YEN">
-        <meta name="theme-color" content="#f4373b">
+        <meta name="theme-color" content="#84c922">
 
         {% block stylesheets %}
             {% stylesheets
@@ -71,7 +71,7 @@
             <div class="navbar navbar-default navbar-static-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="{{ url('application_bde_homepage') }}"><span>Fuego</span> - BDE ESIEE PARIS</a>
+                        <a class="navbar-brand" href="{{ url('application_bde_homepage') }}"><span>Django</span> - BDE ESIEE PARIS</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="fa fa-bars"></span>
                         </button>
