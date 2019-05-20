@@ -7,7 +7,7 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	{% stylesheets 
+	{% stylesheets
 		'bundles/applicationbde/css/team.css'
 		filter='cssrewrite,?yui_css'
 	 %}
@@ -17,201 +17,365 @@
 
 {% block body %}
         <!--testimonial end-->
-		<section class="panel mtop30 tab" style="background:white;">
-	        <div class="panel-body">
-                <div id="trombi" class="tab-pane">
-					<section id="bureau">
+				<section class="panel mtop30 tab" style="background:white;">
+			        <div class="panel-body">
+		                <div id="trombi" class="tab-pane">
+							<section id="bureau">
+								<!-- The title -->
+								<div class="">
+									<div class="row">
+										<div class="col-xs-12 col-md-12">
+											<h1>Bureau</h1>
+											<hr>
+											<p class="big thin">Voici le bureau de DJANGO. Il supporte l’ensemble du BDE, gère les finances, prend les décisions pour mener à bien le mandat tout au long de l'année.</p>
+										</div>
+									</div>
+								</div>
+								<div style="margin-top: 100px;" class=" text-center">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 member-top-center">
+										<b>Président</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_bureau mafe bureau"></i>
+										</div>
+										<span class="name">Mafé</span>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-xs-12 col-sm-6 member-top">
+										<b>Vice-Président</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_bureau chloe bureau"></i>
+										</div>
+										<span class="name">Adrien Mormin</span>
+									</div>
+									<div class="col-xs-12 col-sm-6 member-top">
+										<b>Vice-Présidente</b>
+										<div class="animated bounceIn delay-05s">
+											<i class="pic color_bureau adrien bureau"></i>
+										</div>
+										<span class="name">Chloé</span>
+									</div>
+									</div>
+
+									<div class="row">
+										<div class="col-xs-12 col-sm-6 member-bottom">
+											<b>Trésorier</b>
+											<div class="animated bounceIn delay-05s">
+												<i class="pic color_bureau hicham bureau"></i>
+											</div>
+											<span class="name">Hicham Mohamed Abdellaoui</span>
+										</div>
+										<div class="col-xs-12 col-sm-6 member-bottom">
+											<b>Trésorier</b>
+											<div class="animated bounceIn delay-075s">
+												<i class="pic color_bureau thomas bureau"></i>
+											</div>
+											<span class="name">Thomas Lestang</span></div>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 member-bottom-center">
+												<b>Secrétaire</b>
+												<div class="animated bounceIn delay-075s">
+													<i class="pic color_bureau laurads bureau"></i>
+												</div>
+												<span class="name">Laura Da Silva</span></div>
+											</div>
+										</div>
+									</section>
+							<section id="com">
+								<!-- The title -->
+								<div class="">
+									<div class="row">
+										<div class="col-xs-12 col-md-12">
+											<h1>Pôle Com</h1>
+											<hr>
+											<p class="big thin">Le pôle Com</p>
+										</div>
+									</div>
+								</div>
+								<div  style="margin-top: 100px;" class="text-center ">
+									<div class="row">
+												<div class="col-xs-12 col-sm-12 member-top-center">
+													<b>Respo</b>
+													<div class="animated bounceIn delay-025s">
+														<i class="pic color_com audrey bureau"></i>
+													</div>
+													<span class="name">Audrey</span>
+												</div>
+											</div>
+							<div class="row justify-content-center">
+								<div class="col-xs-12 col-sm-6 member-top">
+									<b>Presque respo</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_com leopold bureau"></i>
+									</div>
+									<span class="name">Léo le + beau</span>
+								</div>
+								<div class="col-xs-12 col-sm-6 member-top member-right">
+									<b>Réseaux sociaux</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_com brice bureau"></i>
+									</div>
+									<span class="name">Brice</span>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-xs-12 col-sm-6 member-bottom">
+										<b>Réseaux sociaux</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_com cedric bureau"></i>
+										</div>
+										<span class="name">Cedric</span></div>
+										<div class="col-xs-12 col-sm-6 member-bottom member-right">
+											<b>Réseaux sociaux</b>
+											<div class="animated bounceIn delay-025s">
+												<i class="pic color_com camille bureau"></i>
+											</div>
+											<span class="name">Camille</span></div>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 member-center-center">
+												<b>Réseaux sociaux + Design</b>
+												<div class="animated bounceIn delay-025s">
+													<i class="pic color_com cyrine bureau"></i>
+												</div>
+												<span class="name">Cyrine</span></div>
+											</div>
+
+
+											<div class="row justify-content-center">
+												<div class="col-xs-12 col-sm-6 member-top">
+													<b>Design</b>
+													<div class="animated bounceIn delay-025s">
+														<i class="pic color_com naila bureau"></i>
+													</div>
+													<span class="name">Naïla</span>
+												</div>
+												<div class="col-xs-12 col-sm-6 member-top member-right">
+													<b>Design</b>
+													<div class="animated bounceIn delay-025s">
+														<i class="pic color_com aurelie bureau"></i>
+													</div>
+													<span class="name">Aurélie</span>
+													</div>
+												</div>
+												<div class="row justify-content-center">
+													<div class="col-xs-12 col-sm-6 member-bottom">
+														<b>Web</b>
+														<div class="animated bounceIn delay-025s">
+															<i class="pic color_com antoinel bureau"></i>
+														</div>
+														<span class="name">Antoine</span></div>
+														<div class="col-xs-12 col-sm-6 member-bottom member-right">
+															<b>Vidéo</b>
+															<div class="animated bounceIn delay-025s">
+																<i class="pic color_com nael bureau"></i>
+															</div>
+															<span class="name">Naël</span></div>
+														</div>
+													</div>
+								</div><br /><br />
+							</section>
+							<section id="ave">
 						<!-- The title -->
 						<div class="">
-							<div class="row">
+							<div style="margin-top: 100px;" class="row">
 								<div class="col-xs-12 col-md-12">
-									<h1>Bureau</h1>
+									<h1>Pôle AVE</h1>
 									<hr>
-									<p class="big thin">Voici le bureau de FUEGO. Il supporte l’ensemble du BDE, gère les finances, prend les décisions pour mener à bien le mandat tout au long de l'année.</p>
+									<p class="big thin">Voici le pôle AVE blabla</p>
 								</div>
 							</div>
 						</div>
 						<div style="margin-top: 100px;" class=" text-center">
 							<div class="row">
-								<div class="col-xs-12 col-sm-12 bureau-top-center"><span class="name">Boris</span><br /><b>Président</b><br /><i class="pic color_bureau boris bureau"></i></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-sm-offset-1 col-sm-5 bureau-top"><span class="name">Maximilien</span><br /><b>Vice-Président</b><br /><i class="pic color_bureau maximilien bureau"></i></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-sm-offset-1 col-sm-5 bureau-bottom"><i class="pic color_bureau sebm bureau"></i><br /><span class="name">Sébastien</span><br /><b>Co-trésorier</b></div>
-								<div class="col-xs-12 col-sm-5 bureau-bottom"><i class="pic color_bureau joris bureau"></i><br /><span class="name">Joris</span><br /><b>Co-trésorier</b></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-sm-12 bureau-bottom-center"><i class="pic color_bureau arthur bureau"></i><br /><span class="name">Arthur</span><br /><b>Secrétaire</b></div>
+								<div class="col-xs-12 col-sm-12 member-top-center">
+									<b>Respo</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_ave pepito bureau"></i>
+									</div>
+									<span class="name">Maxime</span>
+								</div>
 							</div>
-						</div><br /><br />
-					</section>
-					<section id="crea">
+							<div class="row justify-content-center">
+								<div class="col-xs-12 col-sm-6 member-top">
+									<b>Anim</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_ave yasmina bureau"></i>
+									</div>
+									<span class="name">Yasmina</span>
+								</div>
+								<div class="col-xs-12 col-sm-6 member-top member-right">
+									<b>Anim</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_ave steph bureau"></i>
+									</div>
+									<span class="name">Steph'</span>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-xs-12 col-sm-6 member-bottom">
+										<b>Anim</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_ave gregoire bureau"></i>
+										</div>
+										<span class="name">Greg'</span></div>
+										<div class="col-xs-12 col-sm-6 member-bottom member-right">
+											<b>Anim</b>
+											<div class="animated bounceIn delay-025s">
+												<i class="pic color_ave miguel bureau"></i>
+											</div>
+											<span class="name">Miguel</span></div>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 member-center-center">
+												<b>Voyage</b>
+												<div class="animated bounceIn delay-025s">
+													<i class="pic color_ave catherine bureau"></i>
+												</div>
+												<span class="name">Catherine</span></div>
+											</div>
+
+
+
+											<div class="row justify-content-center">
+												<div class="col-xs-12 col-sm-6 member-top">
+													<b>Club</b>
+													<div class="animated bounceIn delay-025s">
+														<i class="pic color_ave antoiner bureau"></i>
+													</div>
+													<span class="name">Antoine</span>
+												</div>
+												<div class="col-xs-12 col-sm-6 member-top member-right">
+													<b>Club</b>
+													<div class="animated bounceIn delay-025s">
+														<i class="pic color_ave yann bureau"></i>
+													</div>
+													<span class="name">Yann</span>
+													</div>
+												</div>
+								<div class="row justify-content-center">
+									<div class="col-xs-12 col-sm-6 member-bottom">
+										<b>Club</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_ave julien bureau"></i>
+										</div>
+										<span class="name">Julien</span></div>
+										<div class="col-xs-12 col-sm-6 member-bottom member-right">
+											<b>Club</b>
+											<div class="animated bounceIn delay-025s">
+												<i class="pic color_ave victoria bureau"></i>
+											</div>
+											<span class="name">Victoria</span></div>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 member-center-center">
+												<b>Scolarité</b>
+												<div class="animated bounceIn delay-025s">
+													<i class="pic color_ave rana bureau"></i>
+												</div>
+												<span class="name">Rana</span>
+											</div>
+										</div>
+
+
+										<div class="row justify-content-center">
+											<div class="col-xs-12 col-sm-6 member-top">
+												<b>Campus</b>
+												<div class="animated bounceIn delay-025s">
+													<i class="pic color_ave laurag bureau"></i>
+												</div>
+												<span class="name">Laura</span>
+											</div>
+											<div class="col-xs-12 col-sm-6 member-top member-right">
+												<b>Campus</b>
+												<div class="animated bounceIn delay-025s">
+													<i class="pic color_ave raphaelle bureau"></i>
+												</div>
+												<span class="name">Raphaëlle</span>
+												</div>
+											</div>
+										</div>
+									</section>
+					<section id="log">
 						<!-- The title -->
 						<div class="">
-							<div class="row">
+							<div style="margin-top: 100px;" class="row">
 								<div class="col-xs-12 col-md-12">
-									<h1>Pôle Créa</h1>
+									<h1>Pôle Log</h1>
 									<hr>
-									<p class="big thin">Le pôle Créa ou plutôt le pôle R-Andy qui s'occupe des designs d'évènements. On n'est pas beaucoup mais on fait plein de trucs.</p>
+									<p class="big thin">Voici le pôle Log blabla</p>
 								</div>
 							</div>
 						</div>
-						<div class="text-center ">
+						<div style="margin-top: 100px;" class=" text-center">
 							<div class="row">
-								<div class="col-md-offset-9 col-md-3 col-xs-12"><i class="pic color_crea andy"></i><br />Andy<br /><b>Respo'</b></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Design / Web</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_crea randy"></i><br />Randy</div>
-							</div><br /><br />
-						</div><br /><br />
-					</section>
-					<section id="vieetud">
-						<div class="">
-							<div class="row">
-								<div class="col-xs-12 col-md-12">
-									<h1>Pôle Vie Étudiante</h1>
-									<hr>
-									<p class="big thin">Le pôle Vie Étudiante est là pour répondre aux besoins des étudiants. Ils dénichent les bons plans et font l'intermédiaire avec le campus.</p>
+								<div class="col-xs-12 col-sm-12 member-top-center">
+									<b>Respo</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_log marc bureau"></i>
+									</div>
+									<span class="name">Marc</span>
 								</div>
 							</div>
-						</div>
-						<div class="text-center ">
-							<div class="row">
-								<div class="col-md-offset-9 col-xs-12 col-md-3"><i class="pic color_ve mafe"></i><br />Mafé<br /><b>Respo'</b></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Clubs</div>
-								<div class="col-xs-12 col-md-3"></div> 
-								<div class="col-xs-12 col-md-3"><i class="pic color_ve rams"></i><br />Rams</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_ve maxime"></i><br />Maxime</div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Bons plans</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_ve floriane"></i><br />Floriane</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_ve gregoire"></i><br />Grégoire</div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Campus</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_ve jordan"></i><br />Jordan</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Annales</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_ve pq"></i><br />Pierre-Quentin</div>
-							</div>
-						</div><br /><br />
-					</section>
-					<section id="logistique">
-						<div class="">
-							<div class="row">
-								<div class="col-xs-12 col-md-12">
-									<h1>Pôle Logistique</h1>
-									<hr>
-									<p class="big thin">Le pôle logistique est l'endroit où tu trouveras des pilotes chevronnés et des bras musclés pour monter les évènements. C'est aussi ceux qui remplissent le frigo vide du BDE.</p>
+							<div class="row justify-content-center">
+								<div class="col-xs-12 col-sm-6 member-top">
+									<b>Respo</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_log geraldine bureau"></i>
+									</div>
+									<span class="name">Geraldine</span>
+								</div>
+								<div class="col-xs-12 col-sm-6 member-top member-right">
+									<b>Log Bricoleur</b>
+									<div class="animated bounceIn delay-025s">
+										<i class="pic color_log doryan bureau"></i>
+									</div>
+									<span class="name">Doryan</span>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-xs-12 col-sm-6 member-bottom">
+										<b>Log Costaud</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_log geraud bureau"></i>
+										</div>
+										<span class="name">Geraud</span>
+									</div>
+									<div class="col-xs-12 col-sm-6 member-bottom member-right">
+										<b>Grand Log</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_log georges bureau"></i>
+										</div>
+										<span class="name">Georges</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 member-center-center">
+										<b>Log Cinéphile</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_log theo bureau"></i>
+										</div>
+										<span class="name">Théo</span>
+									</div>
+								</div>
+
+								<div class="row justify-content-center">
+									<div class="col-xs-12 col-sm-12">
+										<b>Log Daron</b>
+										<div class="animated bounceIn delay-025s">
+											<i class="pic color_log geoffroy bureau"></i>
+										</div>
+										<span class="name">Geoffroy</span>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="text-center ">
-							<div class="row">
-								<div class="col-md-offset-9 col-xs-12 col-md-3"><i class="pic color_log sebl"></i><br />Sébastien<br /><b>Co-Respo'</b></div>
-								<div class="col-md-offset-9 col-xs-12 col-md-3"><i class="pic color_log pm"></i><br />PM<br /><b>Co-Respo'</b></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Réserve</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_log georges"></i><br />Georges</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_log corentin"></i><br />Corentin</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_log abdel"></i><br />Abdel</div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Tac Tuc</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_log xinyu"></i><br />Xinyu</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_log benji"></i><br />Benji</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_log victor"></i><br />Victor</div>
-							</div>
-						</div><br /><br />
-					</section>
-					<section id="com">
-						<div class="">
-							<div class="row">
-								<div class="col-xs-12 col-md-12">
-									<h1>Pôle Communication</h1>
-									<hr>
-									<p class="big thin">Le pôle Communication a pour objectif de tenir informés les étudiants via les réseaux sociaux et les mails hebdos.</p>
-								</div>
-							</div>
-						</div>
-						<div class="text-center ">
-							<div class="row">
-								<div class="col-md-offset-9 col-xs-12 col-md-3"><i class="pic color_com brice"></i><br />Brice<br /><b>Respo'</b></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Web / Mail</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_com antoine"></i><br />Antoine</div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Réseaux Sociaux</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_com geraldine"></i><br />Géraldine</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_com camille"></i><br />Camille</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Sponsors</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_com valentin"></i><br />Valentin</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_com lucas"></i><br />Lucas</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Respo Servgen</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_com lea"></i><br />Léa</div>
-							</div>
-						</div><br /><br />
-					</section>
-					<section id="event" style="margin-top: 100px;">
-						<div class="">
-							<div class="row">
-								<div class="col-xs-12 col-md-12">
-									<h1>Pôle Event</h1>
-									<hr>
-									<p class="big thin">Quand il s'agit d'animer l'ESIEE, le pôle Event répond toujours présent !</p>
-								</div>
-							</div>
-						</div>
-						<div class="text-center ">
-							<div class="row">
-								<div class="col-md-offset-9 col-xs-12 col-md-3"><i class="pic color_event aymeric"></i><br />Aymeric<br /><b>Respo'</b></div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Animation</div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-3"></div>
-                                    <div class="col-xs-12 col-md-3"><i class="pic color_event leopold"></i><br />Léopold</div>
-                                    <div class="col-xs-12 col-md-3"><i class="pic color_event guillaume"></i><br />Guillaume</div>
-                                </div>
-							</div><br /><br />
-							<div class="row">
-								<div class="col-xs-12 col-md-3 pole">Voyage</div>
-								<div class="col-xs-12 col-md-3"></div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_event gabo"></i><br />Gabo</div>
-								<div class="col-xs-12 col-md-3"><i class="pic color_event etienne"></i><br />Etienne</div>
-							</div><br /><br />
-						</div>
-					</section>
-                </div>
-	        </div>
-	    </section>
+						</section>
+
+		                </div>
+			        </div>
+			    </section>
 {% endblock %}
 
 {% block javascripts %}
@@ -238,7 +402,7 @@
 			    		n = 0;
 			    		alter = !alter;
 			        }
-			    } else 
+			    } else
 			    	n = 0;
 			}
 		});

@@ -1,5 +1,5 @@
 .pic{
-	background: url('../img/tiles_pics.jpg');
+	background: url('tiles_pics.jpg');
 	width: 200px;
 	height: 200px;
 	display: inline-block;
@@ -7,65 +7,59 @@
 }
 
 .color_bureau{
-	border: 5px solid #006D8C;
+	border: 5px solid #d4582c;
 }
 
-.color_event{
-	border: 5px solid #DF262E;
-}
-
-.color_ve{
-	border: 5px solid #007B7F;
+.color_ave{
+	border: 5px solid #ff9529;
 }
 
 .color_log{
-	border: 5px solid #F19F3F;
-}
-
-.color_crea{
-	border: 5px solid #A23B72;
+	border: 5px solid #fdab3a;
 }
 
 .color_com{
-	border: 5px solid #578233;
+	border: 5px solid #fb7125;
 }
 
-.pic.boris{background-position: -0px -0px;}
-.pic.maximilien{background-position: -200px -0px;}
-.pic.sebm{background-position: -400px -0px;}
-.pic.joris{background-position: -600px -0px;}
-.pic.arthur{background-position: -800px -0px;}
-.pic.andy{background-position: -0px -200px;}
-.pic.randy{background-position: -200px -200px;}
-.pic.mafe{background-position: -400px -200px;}
-.pic.rams{background-position: -600px -200px;}
-.pic.maxime{background-position: -800px -200px;}
-.pic.floriane{background-position: -0px -400px;}
-.pic.gregoire{background-position: -200px -400px;}
-.pic.jordan{background-position: -400px -400px;}
-.pic.sebl{background-position: -600px -400px;}
-.pic.pm{background-position: -800px -400px;}
-.pic.corentin{background-position: -0px -600px;}
-.pic.abdel{background-position: -200px -600px;}
-.pic.xinyu{background-position: -400px -600px;}
-.pic.benji{background-position: -600px -600px;}
-.pic.victor{background-position: -800px -600px;}
-.pic.brice{background-position: -0px -800px;}
-.pic.antoine{background-position: -200px -800px;}
-.pic.geraldine{background-position: -400px -800px;}
-.pic.camille{background-position: -600px -800px;}
-.pic.lucas{background-position: -800px -800px;}
-.pic.valentin{background-position: -0px -1000px;}
-.pic.georges{background-position: -200px -1000px;}
-.pic.aymeric{background-position: -400px -1000px;}
-.pic.lea{background-position: -600px -1000px;}
-.pic.leopold{background-position: -800px -1000px;}
-.pic.guillaume{background-position: -0px -1200px;}
-.pic.gabo{background-position: -200px -1200px;}
-.pic.etienne{background-position: -400px -1200px;}
-.pic.pq{background-position: -600px -1200px;}
+.pic.mafe{background-position: -0px -0px;}
+.pic.adrien{background-position: -200px -0px;}
+.pic.hicham{background-position: -400px -0px;}
+.pic.laurads{background-position: -600px -0px;}
+.pic.thomas{background-position: -800px -0px;}
+.pic.chloe{background-position: -0px -200px;}
+.pic.audrey{background-position: -200px -200px;}
+.pic.leopold{background-position: -400px -200px;}
+.pic.cedric{background-position: -600px -200px;}
+.pic.cyrine{background-position: -800px -200px;}
+.pic.camille{background-position: -0px -400px;}
+.pic.brice{background-position: -200px -400px;}
+.pic.naila{background-position: -400px -400px;}
+.pic.antoinel{background-position: -600px -400px;}
+.pic.aurelie{background-position: -800px -400px;}
+.pic.nael{background-position: -0px -600px;}
+.pic.pepito{background-position: -200px -600px;}
+.pic.yasmina{background-position: -400px -600px;}
+.pic.gregoire{background-position: -600px -600px;}
+.pic.steph{background-position: -800px -600px;}
+.pic.miguel{background-position: -0px -800px;}
+.pic.catherine{background-position: -200px -800px;}
+.pic.antoiner{background-position: -400px -800px;}
+.pic.julien{background-position: -600px -800px;}
+.pic.yann{background-position: -800px -800px;}
+.pic.victoria{background-position: -0px -1000px;}
+.pic.rana{background-position: -200px -1000px;}
+.pic.laurag{background-position: -400px -1000px;}
+.pic.raphaelle{background-position: -600px -1000px;}
+.pic.marc{background-position: -800px -1000px;}
+.pic.geraldine{background-position: -0px -1200px;}
+.pic.geraud{background-position: -200px -1200px;}
+.pic.theo{background-position: -400px -1200px;}
+.pic.georges{background-position: -600px -1200px;}
+.pic.doryan{background-position: -800px -1200px;}
+.pic.geoffroy{background-position: -0px -1400px;}
 
-@media (min-width: 750px) {
+/*@media (min-width: 750px) {
 	.bureau-top {
 		margin-top:-145px;
 	}
@@ -82,7 +76,46 @@
 	.pole.big {
 		line-height: 429px;
 	}
+}*/
+
+@media screen and (max-width: 750px) {
+  .member-top-center {
+      margin-top: 30px;
 }
+
+.member-center-center {
+    margin-top: 30px;
+}
+.member-bottom-center {
+    margin-top: 30px;
+}
+  .member-top {
+    margin-top: 30px;
+  }
+  .member-bottom {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .member-top-center {
+      margin-top: -90px;
+}
+
+.member-center-center {
+    margin-top: -130px;
+}
+.member-bottom-center {
+    margin-top: -150px;
+}
+  .member-top {
+    margin-top: -110px;
+  }
+  .member-bottom {
+    margin-top: 10px;
+  }
+}
+
 
 .pole {
 	text-transform:uppercase;
@@ -93,5 +126,5 @@
 }
 
 .pic2 {
-	background: url('../img/tiles_pics_alter.jpg');
+	background: url('tiles_pics_alter.jpg');
 }
