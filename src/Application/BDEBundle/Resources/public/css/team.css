@@ -1,5 +1,5 @@
 .pic{
-	background: url('tiles_pics.jpg');
+	background: url('../img/tiles_pics.jpg');
 	width: 200px;
 	height: 200px;
 	display: inline-block;
