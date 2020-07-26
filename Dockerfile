@@ -60,6 +60,4 @@ RUN rm app/cache -rf
 
 EXPOSE 80
 
-ENTRYPOINT ["bash", "-c"]
-
 CMD ["./init.sh"]
