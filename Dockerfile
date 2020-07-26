@@ -41,9 +41,6 @@ RUN mv composer.phar /usr/bin/composer
 COPY . /bde
 WORKDIR /bde
 
-RUN mv docker/init.sh .
-RUN rm docker -rf
-
 # Install sources
 RUN composer install
 # Install assets
