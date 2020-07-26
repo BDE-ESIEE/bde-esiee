@@ -45,6 +45,8 @@ parameters:
     proxy: ""
 EOF
 
+chown www-data:www-data /bde/app/logs/ -R
+chown www-data:www-data /bde/app/cache/ -R
 
 # source environment variables to get APACHE_PID_FILE
 . "$DOCKER_ENVVARS"
