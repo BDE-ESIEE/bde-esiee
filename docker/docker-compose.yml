@@ -1,7 +1,9 @@
 version: '3'
 services:
   web:
-    image: bde-esiee
+    image: bde-esiee:latest
+    volumes:
+      - db_data:/bde/web/uploads
     ports: 
       - 80:80
     environment:
@@ -32,3 +34,4 @@ services:
 
 volumes:
    db_data:
+   uploads:
