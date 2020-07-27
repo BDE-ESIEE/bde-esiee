@@ -46,6 +46,7 @@ parameters:
 EOF
 
 chown www-data:www-data /bde/app/logs/ -R
+mkdir /bde/app/cache/
 chown www-data:www-data /bde/app/cache/ -R
 
 # source environment variables to get APACHE_PID_FILE

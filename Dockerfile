@@ -8,7 +8,7 @@ RUN apt full-upgrade -y
 RUN mkdir -p /usr/share/man/man1
 
 # Install dependencies
-RUN apt install -y git zip unzip libpng-dev nano wkhtmltopdf openjdk-11-jre
+RUN apt install -y git zip unzip libpng-dev nano wkhtmltopdf openjdk-11-jre  zlib1g-dev libicu-dev g++
 
 
 # Update php.ini
@@ -20,6 +20,7 @@ RUN echo "memory_limit = 2048M" >> "$PHP_INI_DIR/php.ini"
 # Install dependencies mods
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install intl
 RUN pecl install apcu
 RUN pecl install apcu_bc
 RUN echo "extension=apcu.so" >> "$PHP_INI_DIR/php.ini"
