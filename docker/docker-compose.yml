@@ -1,0 +1,37 @@
+version: '3'
+services:
+  web:
+    image: bde-esiee:latest
+    volumes:
+      - db_data:/bde/web/uploads
+    ports: 
+      - 80:80
+    environment:
+      - DB_HOST=database
+      - DB_NAME=bde
+      - DB_USER=bde
+      - DB_PASSWORD=bde
+      - MAILER_HOST=change.it
+      - MAILER_USER=~
+      - MAILER_PASSWORD=~
+      - SECRET_KEY=CHANGEIT
+      - HOSTNAME=http://localhost
+      - PIWIK_ID=0
+      - PIWIK_URL=http://change.it/
+      - GOOGLE_CLIENT_ID=CHANGE IT
+      - GOOGLE_CLIENT_SECRET=CHANGE IT
+      
+    
+  database:
+    image: mysql:5.7
+    volumes:
+       - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=CHANGEIT
+      - MYSQL_DATABASE=bde
+      - MYSQL_USER=bde
+      - MYSQL_PASSWORD=bde
+
+volumes:
+   db_data:
+   uploads:
