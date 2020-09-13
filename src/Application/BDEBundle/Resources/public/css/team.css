@@ -7,57 +7,56 @@
 }
 
 .color_bureau{
-	border: 5px solid #d4582c;
+	border: 5px solid #48c8ed;
 }
 
 .color_ave{
-	border: 5px solid #ff9529;
+	border: 5px solid #48c8ed;
 }
 
 .color_log{
-	border: 5px solid #fdab3a;
+	border: 5px solid #f056a1;
 }
 
 .color_com{
-	border: 5px solid #fb7125;
+	border: 5px solid #f056a1;
 }
 
-.pic.mafe{background-position: -0px -0px;}
-.pic.adrien{background-position: -200px -0px;}
-.pic.hicham{background-position: -400px -0px;}
-.pic.laurads{background-position: -600px -0px;}
-.pic.thomas{background-position: -800px -0px;}
-.pic.chloe{background-position: -0px -200px;}
-.pic.audrey{background-position: -200px -200px;}
-.pic.leopold{background-position: -400px -200px;}
-.pic.cedric{background-position: -600px -200px;}
-.pic.cyrine{background-position: -800px -200px;}
-.pic.camille{background-position: -0px -400px;}
-.pic.brice{background-position: -200px -400px;}
-.pic.naila{background-position: -400px -400px;}
-.pic.antoinel{background-position: -600px -400px;}
-.pic.aurelie{background-position: -800px -400px;}
-.pic.nael{background-position: -0px -600px;}
-.pic.pepito{background-position: -200px -600px;}
-.pic.yasmina{background-position: -400px -600px;}
-.pic.gregoire{background-position: -600px -600px;}
-.pic.steph{background-position: -800px -600px;}
+.pic.abdel{background-position: -0px -0px;}
+.pic.allan{background-position: -200px -0px;}
+.pic.anais{background-position: -400px -0px;}
+.pic.andrea{background-position: -600px -0px;}
+.pic.anto{background-position: -800px -0px;}
+.pic.legrand{background-position: -0px -200px;}
+.pic.chloe{background-position: -200px -200px;}
+.pic.driss{background-position: -400px -200px;}
+.pic.emilie{background-position: -600px -200px;}
+.pic.ethan{background-position: -800px -200px;}
+.pic.fatia{background-position: -0px -400px;}
+.pic.geof{background-position: -200px -400px;}
+.pic.guillaume{background-position: -400px -400px;}
+.pic.jad{background-position: -600px -400px;}
+.pic.julien{background-position: -800px -400px;}
+.pic.julie{background-position: -0px -600px;}
+.pic.justine{background-position: -200px -600px;}
+.pic.lucas{background-position: -400px -600px;}
+.pic.marine{background-position: -600px -600px;}
+.pic.mathieu{background-position: -800px -600px;}
 .pic.miguel{background-position: -0px -800px;}
-.pic.catherine{background-position: -200px -800px;}
-.pic.antoiner{background-position: -400px -800px;}
-.pic.julien{background-position: -600px -800px;}
-.pic.yann{background-position: -800px -800px;}
-.pic.victoria{background-position: -0px -1000px;}
-.pic.rana{background-position: -200px -1000px;}
-.pic.laurag{background-position: -400px -1000px;}
-.pic.raphaelle{background-position: -600px -1000px;}
-.pic.marc{background-position: -800px -1000px;}
-.pic.geraldine{background-position: -0px -1200px;}
-.pic.geraud{background-position: -200px -1200px;}
-.pic.theo{background-position: -400px -1200px;}
-.pic.georges{background-position: -600px -1200px;}
-.pic.doryan{background-position: -800px -1200px;}
-.pic.geoffroy{background-position: -0px -1400px;}
+.pic.nico{background-position: -200px -800px;}
+.pic.noemie{background-position: -400px -800px;}
+.pic.onur{background-position: -600px -800px;}
+.pic.pidoux{background-position: -800px -800px;}
+.pic.rana{background-position: -0px -1000px;}
+.pic.remi{background-position: -200px -1000px;}
+.pic.romain{background-position: -400px -1000px;}
+.pic.said{background-position: -600px -1000px;}
+.pic.sarra{background-position: -800px -1000px;}
+.pic.tchao{background-position: -0px -1200px;}
+.pic.thibaut{background-position: -200px -1200px;}
+.pic.vic{background-position: -400px -1200px;}
+.pic.vincent{background-position: -600px -1200px;}
+.pic.dufief{background-position: -800px -1200px;}
 
 /*@media (min-width: 750px) {
 	.bureau-top {
